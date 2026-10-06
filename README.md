@@ -53,6 +53,12 @@ Evento sem `inicio` é tratado como “dia todo”.
 
 A chave **anon** só consegue: *ler* itens `aprovado` (sem `contato_privado`) e *inserir* itens `pendente`. Nada além disso.
 
+> **Plano gratuito do Supabase:** o projeto é **pausado após ~1 semana sem uso** (os dados ficam guardados, mas o site para de
+> receber e mostrar colaborações até alguém reativar no painel). O workflow `.github/workflows/manter-banco-ativo.yml` faz uma
+> consulta leve duas vezes por semana para evitar isso. O GitHub desativa agendamentos de repositórios **sem nenhuma atividade
+> por 60 dias**: se isso acontecer, reative em Actions. Para dispensar tudo isso, o plano pago do Supabase (Pro) não pausa.
+> Limites do plano gratuito: 500 MB de banco, 5 GB de tráfego por mês.
+
 ### 2. Site (GitHub Pages)
 Envie o repositório ao GitHub, em **Settings → Pages → Source: GitHub Actions**. O workflow `.github/workflows/pages.yml`
 roda os testes e publica a cada push em `main`. Domínio próprio: Settings → Pages → Custom domain.
