@@ -97,7 +97,7 @@ export function meusEventosPendentes() {
 function checarLimite() {
   const hora = Date.now() - 3600000;
   const recentes = ler(LS_RATE).filter((t) => t > hora);
-  if (recentes.length >= 6) throw new Error('Muitos envios seguidos. Respire e tente de novo daqui a pouco 🙂');
+  if (recentes.length >= 6) throw new Error('Muitos envios seguidos. Tente novamente daqui a pouco.');
   gravar(LS_RATE, [...recentes, Date.now()]);
 }
 

@@ -13,7 +13,7 @@ function iconePino(l, selecionado) {
     iconSize: [44, 60],
     iconAnchor: [22, 57],
     tooltipAnchor: [0, -50],
-    html: `<div class="${cls}" style="--c:${c.cor}">${talo(l.id, l.categoria)}<i class="pin__stem"></i><i class="pin__dot"></i>${l.aoVivo ? '<b class="pin__live" title="Rola hoje"></b>' : ''}</div>`,
+    html: `<div class="${cls}" style="--c:${c.cor}">${talo(l.id, l.categoria)}<i class="pin__stem"></i><i class="pin__dot"></i>${l.aoVivo ? '<b class="pin__live" title="Acontece hoje"></b>' : ''}</div>`,
   });
 }
 

@@ -37,10 +37,10 @@ export function janelasHTML(atual, gratis) {
     + `<button class="pill" data-acao="gratis" aria-pressed="${gratis}">Só grátis</button>`;
 }
 
-/** Texto do "próximo rolê" mostrado no card do lugar. */
+/** Texto do "próximo evento" mostrado no card do lugar. */
 export function proxTexto(oc, status, hoje) {
   if (!oc) return '';
-  const quando = status === 'agora' ? 'Rolando agora' : `${rotuloDia(oc.data, hoje)}${oc.inicio ? ` ${hora(oc.inicio)}` : ''}`;
+  const quando = status === 'agora' ? 'Acontecendo agora' : `${rotuloDia(oc.data, hoje)}${oc.inicio ? ` ${hora(oc.inicio)}` : ''}`;
   return `${quando} · ${oc.titulo}`;
 }
 
@@ -60,7 +60,7 @@ export function cardLugar(l, { prox = '', dist = null, i = 0 } = {}) {
 export function cardEvento(oc, lugar, status, i = 0) {
   const c = cat(oc.categoria || lugar?.categoria);
   const tags = [];
-  if (status === 'agora') tags.push('<span class="tag tag--agora">Rolando agora</span>');
+  if (status === 'agora') tags.push('<span class="tag tag--agora">Acontecendo agora</span>');
   tags.push(ehGratis(oc) ? '<span class="tag tag--gratis">Grátis</span>' : `<span class="tag">${esc(oc.preco)}</span>`);
   if (oc.repete && oc.repete !== 'nao') tags.push(`<span class="tag tag--rec">${esc(recorrenciaTexto(oc))}</span>`);
   if ((oc.repete === 'diaria' || oc.repete === 'dias_uteis') && oc.repete_ate) tags.push(`<span class="tag">até ${esc(oc.repete_ate.slice(8))}/${esc(oc.repete_ate.slice(5, 7))}</span>`);
@@ -110,12 +110,12 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
     const quando = o.inicio ? `${hora(o.inicio)}${o.fim ? `–${hora(o.fim)}` : ''}` : 'Dia todo';
     return `<div class="mini-ev">
       <div class="mini-ev__d"><b>${n.dia}</b><small>${esc(n.sem)} · ${esc(n.mes)}</small></div>
-      <div class="mini-ev__t">${esc(o.titulo)}<span>${esc(quando)} · ${ehGratis(o) ? 'Grátis' : esc(o.preco)}${o.repete && o.repete !== 'nao' ? ` · ${esc(recorrenciaTexto(o))}` : ''}${statusDe(o) === 'agora' ? ' · <b>rolando agora</b>' : ''}</span>
+      <div class="mini-ev__t">${esc(o.titulo)}<span>${esc(quando)} · ${ehGratis(o) ? 'Grátis' : esc(o.preco)}${o.repete && o.repete !== 'nao' ? ` · ${esc(recorrenciaTexto(o))}` : ''}${statusDe(o) === 'agora' ? ' · <b>acontecendo agora</b>' : ''}</span>
         ${o.confirmar ? `<span class="conf">⚠ ${esc(o.confirmar)}</span>` : ''}
         ${o.descricao ? `<details class="mais"><summary>detalhes</summary><p>${esc(o.descricao)}</p>${o.fonte ? `<a href="${esc(o.fonte)}" target="_blank" rel="noopener">fonte ↗</a>` : ''}</details>` : ''}
       </div>
       <button class="btn-redondo" data-acao="ics" data-key="${esc(o.key)}" aria-label="Adicionar ao calendário: ${esc(o.titulo)}" title="Adicionar ao calendário">${I.cal}</button>
-      <button class="btn-redondo" data-acao="chamar" data-key="${esc(o.key)}" aria-label="Compartilhar: ${esc(o.titulo)}" title="Chamar a galera">${I.enviar.replace('width="18" height="18"', 'width="16" height="16"')}</button>
+      <button class="btn-redondo" data-acao="chamar" data-key="${esc(o.key)}" aria-label="Compartilhar: ${esc(o.titulo)}" title="Compartilhar evento">${I.enviar.replace('width="18" height="18"', 'width="16" height="16"')}</button>
     </div>`;
   }).join('');
 
@@ -138,7 +138,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
         <a class="btn btn--cheio" href="${esc(linkRota(l))}" target="_blank" rel="noopener">${I.rota} Como chegar</a>
         <button class="btn" data-acao="compartilhar" data-id="${esc(l.id)}">${I.enviar} Compartilhar</button>
       </div>
-      <div class="secao"><h3>Próximos rolês</h3>${l.virtual || l.pendente ? '' : `<button class="link" data-acao="add-evento" data-id="${esc(l.id)}">+ adicionar evento</button>`}</div>
+      <div class="secao"><h3>Próximos eventos</h3>${l.virtual || l.pendente ? '' : `<button class="link" data-acao="add-evento" data-id="${esc(l.id)}">+ adicionar evento</button>`}</div>
       ${evs || `<div class="vazio" style="margin:0 0 8px"><b>Nada marcado ainda</b>${l.virtual ? '' : 'Sabe de algo que vai rolar aqui?'}</div>`}
       ${perto ? `<div class="secao"><h3>Também por perto</h3></div><div class="perto">${perto}</div>` : ''}
       ${l.virtual || l.pendente ? '' : `<div class="secao"><h3>Esta ficha</h3></div>

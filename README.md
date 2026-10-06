@@ -1,4 +1,4 @@
-# Cartografia Líquen — mapa vivo das culturas da Grande Florianópolis
+# Mapa cultural vivo — Cartografia Líquen
 
 Mapa colaborativo e gratuito de lugares, coletivos e eventos culturais: **capoeira, ateliês, artes visuais,
 festas, rap/hip-hop, samba, movimentos sociais, cultura popular, teatro, música, foto/cinema, espaços e memória**.
@@ -10,13 +10,13 @@ Funciona em qualquer hospedagem estática.
 
 ## O que o mapa faz
 
-| Para quem vai ao rolê | Para quem faz a cena |
+| Para quem quer saber o que acontece | Para quem faz a cultura |
 |---|---|
-| **Rola hoje**: o que acontece agora e hoje | **Colaborar**: cadastre lugar ou evento em 2 minutos |
+| **Acontece hoje**: o que está em andamento e o que vem hoje | **Colaborar**: cadastre lugar ou evento em 2 minutos |
 | **Agenda** por período (hoje, amanhã, fim de semana, 7/30 dias) e “só grátis” | Eventos com **data, horário e repetição** (semanal, quinzenal, mensal) |
 | Filtro por categoria + busca | Foto reduzida no próprio aparelho + **descrição da imagem** (acessibilidade) |
 | **Perto de mim** (geolocalização) | **Sugerir correção / “este espaço é seu?”** em cada ficha |
-| Salvar no calendário (`.ics`) e **chamar a galera** (WhatsApp/compartilhar) | Link direto para cada ficha (`#/ponto/ID`) e para o formulário (`#/colaborar`) — ótimo para QR code |
+| Salvar no calendário (`.ics`) e compartilhar o evento (WhatsApp) | Link direto para cada ficha (`#/ponto/ID`) e para o formulário (`#/colaborar`) — ótimo para QR code |
 | **Rede de líquen**: liga os pontos entre si | Contato privado visível **só** para a curadoria |
 | Modo dia/noite, instalável no celular (PWA) | Licença aberta (CC BY-SA 4.0, configurável) |
 
@@ -72,8 +72,8 @@ Categorias e cores: `js/categorias.js` (basta adicionar um item).
 
 - **Cartaz pronto para imprimir** em `divulgacao/cartaz-colaborar-A4.pdf` (com QR code do formulário). Os QR codes em SVG (`qr-colaborar.svg`, `qr-mapa.svg`) apontam para `https://kauepisauro.github.io/mapa-cultura/`; se você usar domínio próprio, gere outros e refaça o cartaz.
 - Peça a cada coletivo mapeado para **cadastrar a própria agenda** (eventos recorrentes cobrem a rotina inteira com um cadastro).
-- O botão **chamar a galera** em cada evento já gera a mensagem pronta para WhatsApp — o mapa vira o jeito mais fácil de divulgar.
-- Poste os “Rola hoje” nas redes; `#/agenda` abre direto na agenda.
+- O botão de compartilhar em cada evento já gera a mensagem pronta para WhatsApp — o mapa vira o jeito mais fácil de divulgar.
+- Poste o “Acontece hoje” nas redes; `#/agenda` abre direto na agenda.
 - Ao mapear, **peça a anuência** do coletivo (modelo do Anexo XI): o formulário já traz a caixa de autorização.
 
 ## Estrutura

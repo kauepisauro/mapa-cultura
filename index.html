@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Cartografia Líquen — mapa vivo das culturas da Grande Florianópolis</title>
-  <meta name="description" content="Capoeira, ateliês, samba, rap, festas, movimentos sociais e cultura popular da Grande Florianópolis num só mapa colaborativo — com agenda do que rola hoje.">
+  <title>Mapa cultural vivo — Cartografia Líquen</title>
+  <meta name="description" content="Capoeira, ateliês, samba, rap, festas, movimentos sociais e cultura popular da Grande Florianópolis num só mapa colaborativo — com agenda de eventos.">
   <meta name="theme-color" content="#E8E3D1">
-  <meta property="og:title" content="Cartografia Líquen — mapa vivo das culturas da Grande Florianópolis">
+  <meta property="og:title" content="Mapa cultural vivo — Cartografia Líquen">
   <meta property="og:description" content="Descubra e divulgue a cultura da Ilha e da região: lugares, coletivos e eventos num mapa feito por quem faz a cena.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="icons/icon-512.png">
@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500..900,0..100,0..1;1,9..144,500..900,0..100,0..1&family=Hanken+Grotesk:wght@400..800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400..800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -50,16 +50,16 @@
         <div class="marca__deco" id="deco" aria-hidden="true"></div>
         <div class="marca__logo" id="logo"></div>
         <div class="marca__txt">
-          <span class="marca__pre">Cartografia</span>
-          <h1 class="marca__nome">Líquen</h1>
+          <h1 class="marca__nome">Mapa cultural vivo</h1>
+          <span class="marca__pre">Cartografia Líquen</span>
         </div>
         <button class="btn-redondo" id="btn-sobre" aria-label="Sobre o projeto" title="Sobre">?</button>
-        <p class="marca__sub">mapa vivo das culturas da Grande Florianópolis</p>
+        <p class="marca__sub">culturas da Grande Florianópolis</p>
       </header>
 
       <section class="hoje" id="hoje" aria-labelledby="hoje-t">
         <div class="hoje__topo">
-          <h2 id="hoje-t"><span class="vivo" aria-hidden="true"></span>Rola hoje</h2>
+          <h2 id="hoje-t"><span class="vivo" aria-hidden="true"></span>Acontece hoje</h2>
           <button class="link" id="hoje-ver">ver agenda →</button>
         </div>
         <div class="hoje__trilho" id="hoje-lista"></div>
@@ -67,7 +67,7 @@
 
       <div class="busca">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
-        <input id="busca" type="search" placeholder="Buscar lugar, coletivo, rolê…" autocomplete="off" aria-label="Buscar">
+        <input id="busca" type="search" placeholder="Buscar lugar, coletivo ou evento…" autocomplete="off" aria-label="Buscar">
         <button class="busca__x" id="busca-x" aria-label="Limpar busca" hidden>×</button>
       </div>
 
@@ -85,6 +85,7 @@
 
       <footer class="rodape">
         <p>Conteúdo colaborativo sob <a id="lic" target="_blank" rel="noopener"></a>. Mapa © OpenStreetMap.</p>
+        <p>Acompanhe: <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a></p>
         <p id="rodape-modo"></p>
       </footer>
     </div>
@@ -104,24 +105,25 @@
 
 <dialog id="dlg-sobre" class="dlg dlg--sobre" aria-labelledby="sobre-t">
   <div class="dlg__cab">
-    <h2 id="sobre-t">O que é o <em>Cartografia Líquen</em>?</h2>
+    <h2 id="sobre-t">O que é o <em>Mapa cultural vivo</em>?</h2>
     <button class="btn-redondo" data-fechar aria-label="Fechar">×</button>
   </div>
   <div class="dlg__corpo prosa">
-    <p class="lead">Um mapa vivo, público e gratuito das culturas da Grande Florianópolis — a Ilha, São José, Palhoça, Biguaçu e arredores: lugares, coletivos, artistas e manifestações — da roda de capoeira ao ateliê, do rap ao Boi de Mamão, do samba aos movimentos sociais.</p>
-    <h3>Por que “líquen”?</h3>
+    <p class="lead">O Mapa cultural vivo, projeto do Cartografia Líquen, é um mapa público e gratuito das culturas da Grande Florianópolis — a Ilha, São José, Palhoça, Biguaçu e arredores: lugares, coletivos, artistas e manifestações — da roda de capoeira ao ateliê, do rap ao Boi de Mamão, do samba aos movimentos sociais.</p>
+    <h3>Por que Cartografia Líquen?</h3>
     <p>O líquen é um organismo que só existe na simbiose entre um fungo e uma alga. Cultura também é assim: uma rede de interdependências. Cada ponto do mapa ganha sentido pelas relações com os outros — por isso o botão <strong>rede</strong> liga os pontos entre si.</p>
     <h3>Como funciona</h3>
     <ol>
       <li><strong>Qualquer pessoa pode colaborar</strong> — sugerindo um lugar, um coletivo ou um evento (com data, horário e repetição).</li>
       <li><strong>A curadoria confere</strong> os dados e a autorização do coletivo antes de publicar.</li>
-      <li><strong>O mapa vira agenda</strong>: “Rola hoje” mostra o que acontece agora, e você leva o evento para o seu calendário.</li>
+      <li><strong>O mapa vira agenda</strong>: “Acontece hoje” mostra o que está em andamento, e você leva o evento para o seu calendário.</li>
     </ol>
     <h3>Território-piloto</h3>
-    <p>Começamos pela <strong>Lagoa da Conceição</strong>, com sua forte cultura popular de matriz açoriana, e vamos crescendo para todos os territórios da Ilha e da Grande Florianópolis. Em qualquer bairro ou cidade da região, você pode colocar a sua cena no mapa.</p>
+    <p>Começamos pela <strong>Lagoa da Conceição</strong>, com sua forte cultura popular de matriz açoriana, e vamos crescendo para todos os territórios da Ilha e da Grande Florianópolis. Em qualquer bairro ou cidade da região, você pode incluir o seu espaço ou coletivo no mapa.</p>
     <h3>Seus dados e seu conteúdo</h3>
     <p>Só publicamos o que o coletivo autoriza. Contatos privados ficam apenas com a curadoria. O conteúdo é publicado sob <a id="lic2" target="_blank" rel="noopener"></a>, preservando os direitos de autores e comunidades. É um bem comum feito pela própria cena.</p>
     <p class="credito" id="creditos" hidden></p>
+    <p class="credito">Divulgação e novidades: <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a> no Instagram.</p>
     <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar data-abrir-colab>Quero colaborar</button></div>
   </div>
 </dialog>

@@ -117,7 +117,7 @@ async function reduzir(file, max = 960) {
 }
 
 function resumoWhats(tipo, d) {
-  const linhas = [`*Nova colaboração — Cartografia Líquen* (${tipo})`];
+  const linhas = [`*Nova colaboração — Mapa cultural vivo* (${tipo})`];
   for (const [k, v] of Object.entries(d)) {
     if (v == null || v === '' || k === 'foto' || k.startsWith('_') || k === 'tem_autorizacao') continue;
     linhas.push(`${k}: ${Array.isArray(v) ? v.join(', ') : v}`);
@@ -297,7 +297,7 @@ export function iniciarContribuir(ctx) {
 
   function canais(texto) {
     const w = CONFIG.curadoriaWhatsapp ? linkWhatsapp(CONFIG.curadoriaWhatsapp, texto) : '';
-    const m = CONFIG.curadoriaEmail ? `mailto:${CONFIG.curadoriaEmail}?subject=${encodeURIComponent('Colaboração — Cartografia Líquen')}&body=${encodeURIComponent(texto)}` : '';
+    const m = CONFIG.curadoriaEmail ? `mailto:${CONFIG.curadoriaEmail}?subject=${encodeURIComponent('Colaboração — Mapa cultural vivo')}&body=${encodeURIComponent(texto)}` : '';
     return `${w ? `<a class="btn btn--terra" href="${esc(w)}" target="_blank" rel="noopener">${I.whats} Enviar por WhatsApp</a>` : ''}${m ? `<a class="btn" href="${esc(m)}">Enviar por e-mail</a>` : ''}`;
   }
 

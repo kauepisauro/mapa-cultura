@@ -34,7 +34,7 @@ async function compartilhar(url, texto) {
   if (navigator.share) {
     try { await navigator.share({ title: CONFIG.nome, text: texto, url }); return; } catch (e) { if (e.name === 'AbortError') return; }
   }
-  try { await navigator.clipboard.writeText(`${texto}\n${url}`); toast('Link copiado! Cole onde quiser 🙂'); } catch { window.prompt('Copie o link:', url); }
+  try { await navigator.clipboard.writeText(`${texto}\n${url}`); toast('Link copiado. Cole onde quiser.'); } catch { window.prompt('Copie o link:', url); }
 }
 
 // ───────── dados derivados ─────────
@@ -101,13 +101,13 @@ function render() {
   setHTML(el.janelas, janelasHTML(S.janela, S.gratis));
   el.janelas.hidden = S.aba !== 'agenda';
 
-  // "Rola hoje"
+  // "Acontece hoje"
   const hojeOc = S.ocorr.filter((o) => { const st = status(o); return st === 'agora' || (o.data === hoje && st !== 'encerrado'); })
     .sort((a, b) => (status(b) === 'agora') - (status(a) === 'agora') || (a.inicio || '').localeCompare(b.inicio || ''));
   const aoVivo = new Set(hojeOc.map((o) => o.lugarId));
   setHTML(el.hoje, hojeOc.length
     ? hojeOc.slice(0, 12).map((o) => miniHoje(o, S.porId.get(o.lugarId), status(o))).join('')
-    : '<p class="hoje__vazio">Nada marcado para hoje ainda. Sabe de um rolê? <button class="link" data-acao="colab" style="color:#1b2a22">Divulgue aqui</button></p>');
+    : '<p class="hoje__vazio">Nada marcado para hoje ainda. Sabe de algum evento? <button class="link" data-acao="colab" style="color:#1b2a22">Divulgue aqui</button></p>');
 
   let itensMapa;
   let html;
@@ -134,7 +134,7 @@ function render() {
         ultimo = o.data;
         return cab + cardEvento(o, S.porId.get(o.lugarId), status(o), i);
       }).join('');
-    if (!html) html = vazioHTML('Nenhum evento nesse período', 'Mude o período ou os filtros. Ou divulgue o próximo rolê!');
+    if (!html) html = vazioHTML('Nenhum evento nesse período', 'Mude o período ou os filtros. Ou divulgue o próximo evento.');
     S.nEventos = cartaz.length + normais.length;
     const ids = [...new Set(evFiltrados.map((o) => o.lugarId))];
     itensMapa = ids.map((id) => S.porId.get(id));
@@ -262,15 +262,15 @@ function baixarICS(key) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-  toast('Evento baixado — abra o arquivo para salvar no seu calendário 📅');
+  toast('Evento baixado. Abra o arquivo para salvar no seu calendário.');
 }
 
-function chamarGalera(key) {
+function compartilharEvento(key) {
   const o = S.porKey.get(key);
   if (!o) return;
   const l = S.porId.get(o.lugarId);
   const quando = `${rotuloDia(o.data, hojeISO())}, ${dataCurta(o.data)}${o.inicio ? ` às ${hora(o.inicio)}` : ''}`;
-  const texto = `${o.titulo}\n${quando} · ${l.nome}${l.bairro ? ` (${l.bairro})` : ''}\nVi no Cartografia Líquen:`;
+  const texto = `${o.titulo}\n${quando} · ${l.nome}${l.bairro ? ` (${l.bairro})` : ''}\nVi no Mapa cultural vivo:`;
   const url = `${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`;
   if (navigator.share) compartilhar(url, texto);
   else window.open(`https://wa.me/?text=${encodeURIComponent(`${texto} ${url}`)}`, '_blank', 'noopener');
@@ -288,8 +288,8 @@ const acoes = {
   sel(t) { const id = t.dataset.id; if (id) abrirDetalhe(id); },
   'fechar-det': () => fecharDetalhe(),
   ics: (t) => baixarICS(t.dataset.key),
-  chamar: (t) => chamarGalera(t.dataset.key),
-  compartilhar(t) { const l = S.porId.get(t.dataset.id); compartilhar(`${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`, `${l.nome} — ${cat(l.categoria).nome} na Grande Florianópolis. Vi no Cartografia Líquen:`); },
+  chamar: (t) => compartilharEvento(t.dataset.key),
+  compartilhar(t) { const l = S.porId.get(t.dataset.id); compartilhar(`${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`, `${l.nome} — ${cat(l.categoria).nome} na Grande Florianópolis. Vi no Mapa cultural vivo:`); },
   colab: () => contrib.abrir(),
   'add-evento': (t) => contrib.abrir({ tipo: 'evento', pontoId: t.dataset.id }),
   corrigir: (t) => contrib.abrirSugestao(S.porId.get(t.dataset.id), 'correcao'),
@@ -362,7 +362,7 @@ async function iniciar() {
     const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
     e.currentTarget.setAttribute('aria-pressed', String(on));
     mapa.setRede(on);
-    if (on) toast('Rede de líquen ligada: cada ponto se conecta aos mais próximos 🌿');
+    if (on) toast('Rede ligada: cada ponto se conecta aos mais próximos.');
   };
   $('#ctl-onde').onclick = async () => {
     try {

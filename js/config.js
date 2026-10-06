@@ -3,9 +3,10 @@
 //  Tudo o que você precisa ajustar para publicar está neste arquivo.
 // ─────────────────────────────────────────────────────────────
 export const CONFIG = {
-  versao: '2026-10-06.5', // aparece no rodapé do painel; ajuda a conferir o que está publicado
-  nome: 'Cartografia Líquen',
-  subtitulo: 'mapa vivo das culturas da Grande Florianópolis',
+  versao: '2026-10-06.6', // aparece no rodapé do painel; ajuda a conferir o que está publicado
+  nome: 'Mapa cultural vivo',
+  projeto: 'Cartografia Líquen',
+  subtitulo: 'culturas da Grande Florianópolis',
 
   // ── Banco de dados colaborativo (Supabase, plano gratuito) ──
   // Passo a passo no README.md. Deixe vazio para rodar em "modo demonstração"
@@ -16,7 +17,7 @@ export const CONFIG = {
   // ── Curadoria: para onde vão os envios quando o banco não está configurado ──
   curadoriaWhatsapp: '', // ex.: '5548999999999'
   curadoriaEmail: '', // ex.: 'contato@seudominio.org'
-  instagram: '', // ex.: 'cartografialiquen'
+  instagram: 'zona.liquen',
 
   // ── Mapa ──
   // Recorte: Grande Florianópolis (ilha + continente: São José, Palhoça, Biguaçu, Santo Amaro, Gov. Celso Ramos…)
