@@ -394,7 +394,7 @@ async function iniciar() {
     return;
   }
   S.carregou = true;
-  $('#rodape-modo').textContent = S.modo === 'demo' ? 'Modo demonstração: os dados marcados como “exemplo” são fictícios.' : '';
+  $('#rodape-modo').textContent = `${S.modo === 'demo' ? 'Modo demonstração: os dados marcados como “exemplo” são fictícios. ' : ''}v${CONFIG.versao}`;
   derivar();
   S.ajustar = true;
   render();
