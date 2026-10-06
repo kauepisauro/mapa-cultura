@@ -22,11 +22,15 @@ export const CONFIG = {
   centro: [-27.63, -48.55],
   zoomInicial: 10.5,
   limites: [[-28.1, -49.1], [-27.15, -48.25]], // não deixa o mapa "fugir" da região
+  // Mapa-base: OpenStreetMap (gratuito, sem chave). Para tráfego alto, use MapTiler/Stadia (com chave)
+  // ou hospede seus tiles — veja a política: https://operations.osmfoundation.org/policies/tiles/
+  // O modo noite usa os mesmos tiles com um filtro escuro (CSS).
   tiles: {
-    dia: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    noite: 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png',
-    atribuicao: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
+    dia: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    noite: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    atribuicao: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
+
 
   // Território-piloto (aparece como uma "mancha" no mapa). Use null para ocultar.
   territorioPiloto: { nome: 'Território-piloto · Lagoa da Conceição', centro: [-27.6045, -48.4655], raioM: 2700 },

@@ -158,7 +158,7 @@ export function iniciarContribuir(ctx) {
     mapa?.remove();
     const centro = inicial || CONFIG.centro;
     mapa = L.map(el, { zoomControl: true, attributionControl: false, scrollWheelZoom: false, maxBounds: L.latLngBounds(CONFIG.limites) }).setView(centro, inicial ? 17 : 12);
-    L.tileLayer(CONFIG.tiles[ctx.tema()], { subdomains: 'abcd', maxZoom: 19, className: `tiles tiles--${ctx.tema()}` }).addTo(mapa);
+    L.tileLayer(CONFIG.tiles[ctx.tema()], { maxZoom: 19, className: `tiles tiles--${ctx.tema()}` }).addTo(mapa);
     const cor = () => dlg.querySelector('input[name=categoria]:checked')?.value || 'espaco';
     const por = (lat, lng, mover = false) => {
       const ic = () => iconePino({ id: 'novo', categoria: cor() }, true);

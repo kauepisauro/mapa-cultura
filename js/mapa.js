@@ -124,7 +124,6 @@ export class Mapa {
     this.tema = tema;
     if (this.tiles) this.map.removeLayer(this.tiles);
     this.tiles = L.tileLayer(CONFIG.tiles[tema], {
-      subdomains: 'abcd',
       maxZoom: 19,
       detectRetina: false,
       className: `tiles tiles--${tema}`,

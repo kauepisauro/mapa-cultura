@@ -54,7 +54,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ── mapa: tinta nos tiles para dar clima de papel/líquen ── */
 .tiles--dia { filter: sepia(0.3) saturate(1.1) hue-rotate(-8deg) contrast(0.96) brightness(1.01); }
-.tiles--noite { filter: sepia(0.6) hue-rotate(95deg) saturate(1.35) brightness(1.18) contrast(1.02); }
+.tiles--noite { filter: invert(1) hue-rotate(180deg) saturate(0.85) brightness(0.92) contrast(0.92); }
 .leaflet-container { font-family: var(--f-ui); background: var(--paper-2); }
 .leaflet-container a { color: inherit; }
 .leaflet-control-attribution { background: color-mix(in srgb, var(--paper) 82%, transparent) !important; color: var(--ink-2); font-size: 10.5px; border-radius: 10px 10px 0 0; padding: 2px 8px; backdrop-filter: blur(4px); }

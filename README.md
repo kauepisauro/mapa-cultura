@@ -89,8 +89,9 @@ tests/run.mjs         testes (node --test)
 
 ## Créditos técnicos e licenças
 
-- Mapas: © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), tiles © [CARTO](https://carto.com/attributions)
-  (uso gratuito com atribuição; para alto tráfego considere outro provedor e troque `CONFIG.tiles`).
+- Mapas: © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), tiles padrão do OpenStreetMap
+  (gratuito, sem chave; veja a [política de uso](https://operations.osmfoundation.org/policies/tiles/)). Para tráfego alto,
+  troque `CONFIG.tiles` por um provedor com chave (MapTiler, Stadia) ou hospede seus tiles.
 - Leaflet (BSD-2) e Leaflet.markercluster (MIT) em `vendor/`. Fontes: Fraunces e Hanken Grotesk (Google Fonts, OFL).
 - Busca de endereço: Nominatim (OpenStreetMap), apenas por ação da pessoa usuária.
 - Conteúdo colaborativo: licença configurada em `CONFIG.licenca`.
