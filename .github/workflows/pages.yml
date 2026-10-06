@@ -1,9 +1,9 @@
-# Publica o site no GitHub Pages a cada push na branch principal.
+# Publica o site no GitHub Pages a cada push na branch principal (main) ou na branch de desenvolvimento.
 # Ative em: Settings → Pages → Source: "GitHub Actions".
 name: Publicar site
 on:
   push:
-    branches: [main]
+    branches: [main, claude/great-albattani-kxi1un]
   workflow_dispatch:
 permissions:
   contents: read

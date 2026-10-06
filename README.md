@@ -62,7 +62,7 @@ Categorias e cores: `js/categorias.js` (basta adicionar um item).
 
 ## Fazer as pessoas usarem de fato
 
-- **QR code** do endereço `https://SEU-SITE/#/colaborar` em cartazes nos espaços mapeados e na oficina.
+- **Cartaz pronto para imprimir** em `divulgacao/cartaz-colaborar-A4.pdf` (com QR code do formulário). Os QR codes em SVG (`qr-colaborar.svg`, `qr-mapa.svg`) apontam para `https://kauepisauro.github.io/mapa-cultura/`; se você usar domínio próprio, gere outros e refaça o cartaz.
 - Peça a cada coletivo mapeado para **cadastrar a própria agenda** (eventos recorrentes cobrem a rotina inteira com um cadastro).
 - O botão **chamar a galera** em cada evento já gera a mensagem pronta para WhatsApp — o mapa vira o jeito mais fácil de divulgar.
 - Poste os “Rola hoje” nas redes; `#/agenda` abre direto na agenda.
