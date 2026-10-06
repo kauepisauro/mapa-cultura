@@ -28,8 +28,16 @@ python3 -m http.server 8000   # ou: npx serve .
 # abra http://localhost:8000
 ```
 
-Sem banco configurado, o site roda em **modo demonstração**: usa `data/seed.json` (itens com `"exemplo": true` são
-fictícios) e os envios ficam só no navegador de quem enviou, com botão para mandar à curadoria por WhatsApp/e-mail.
+Sem banco configurado, o site roda em **modo demonstração**: usa `data/seed.json` e os envios ficam só no navegador de quem
+enviou, com botão para mandar à curadoria por WhatsApp/e-mail.
+
+### Dados do `data/seed.json`
+São **lugares e eventos reais pesquisados em 06/10/2026**, cada evento com link da `fonte`. Itens com `"confirmar"` têm
+dia/horário vindos de reportagens antigas (rodas e batalhas recorrentes) e aparecem com o aviso *“confirme antes de ir”*.
+Eventos recorrentes **não são verificados semana a semana**: peça aos coletivos que confirmem a própria agenda.
+Para criar dados de teste, use `"exemplo": true` (aparecem com o selo “exemplo”).
+Tipos de repetição: `nao`, `diaria`, `dias_uteis`, `semanal`, `quinzenal`, `mensal` (mesmo dia), `mensal_semana` (ex.: 1º sábado).
+Evento sem `inicio` é tratado como “dia todo”.
 
 ## Colocar no ar com colaboração de verdade (≈ 15 min, grátis)
 

@@ -84,12 +84,12 @@ const camposEvento = (pontos, pontoId) => `
   <div class="linha linha--3">
     ${campo(`Data ${obrig}`, `<input type="date" id="data" name="data" required min="${hojeISO()}">`, '', 'data')}
     <div class="linha linha--hora" style="grid-column: span 2">
-      ${campo(`Começa ${obrig}`, '<input type="time" id="inicio" name="inicio" required>', '', 'inicio')}
+      ${campo('Começa', '<input type="time" id="inicio" name="inicio">', 'Sem horário? Deixe vazio: aparece como “dia todo”.', 'inicio')}
       ${campo('Termina', '<input type="time" id="fim" name="fim">', '', 'fim')}
     </div>
   </div>
   <div class="linha">
-    ${campo('Se repete?', '<select id="repete" name="repete"><option value="nao">Não, é um evento único</option><option value="semanal">Toda semana</option><option value="quinzenal">A cada 15 dias</option><option value="mensal">Todo mês</option></select>', '', 'repete')}
+    ${campo('Se repete?', '<select id="repete" name="repete"><option value="nao">Não, é um evento único</option><option value="semanal">Toda semana</option><option value="quinzenal">A cada 15 dias</option><option value="mensal">Todo mês, no mesmo dia (ex.: dia 10)</option><option value="mensal_semana">Todo mês, no mesmo dia da semana (ex.: 1º sábado)</option><option value="dias_uteis">De segunda a sexta (exposições)</option><option value="diaria">Todos os dias (festival de vários dias)</option></select>', '', 'repete')}
     <div id="bloco-ate" hidden>${campo('Repete até', '<input type="date" id="repete_ate" name="repete_ate">', 'Deixe vazio se não tem data para acabar.', 'repete_ate')}</div>
   </div>
   <div class="linha">

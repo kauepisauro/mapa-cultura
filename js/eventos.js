@@ -1,5 +1,5 @@
 // Lógica de agenda: expansão de eventos recorrentes e janelas de tempo (sem DOM).
-import { addDias, addMeses, diffDias, diaSemana, fromISO, toISO } from './utils.js';
+import { addDias, addMeses, diffDias, diaSemana, fromISO, nesimoDiaSemana, ordemNoMes, toISO } from './utils.js';
 
 const minutos = (h) => {
   const [hh, mm] = h.split(':').map(Number);
@@ -23,7 +23,21 @@ export function expandir(eventos, de, ate) {
       if (ev.data >= de && ev.data <= ate) poe(ev, ev.data);
       continue;
     }
-    if (rep === 'semanal' || rep === 'quinzenal') {
+    if (rep === 'diaria' || rep === 'dias_uteis') {
+      for (let d = ev.data < de ? de : ev.data; d <= limite; d = addDias(d, 1)) {
+        const dow = diaSemana(d);
+        if (rep === 'diaria' || (dow >= 1 && dow <= 5)) poe(ev, d);
+      }
+    } else if (rep === 'mensal_semana') {
+      const base = fromISO(ev.data);
+      const dow = base.getDay();
+      const n = ordemNoMes(ev.data);
+      for (let i = 0; i < 120; i++) {
+        const d = nesimoDiaSemana(base.getFullYear(), base.getMonth() + i, dow, n);
+        if (d > limite) break;
+        if (d >= de && d >= ev.data) poe(ev, d);
+      }
+    } else if (rep === 'semanal' || rep === 'quinzenal') {
       const passo = rep === 'semanal' ? 7 : 14;
       let d = ev.data;
       if (d < de) {
@@ -47,7 +61,8 @@ export function statusOcorrencia(oc, agora = new Date()) {
   const hoje = toISO(agora);
   const ontem = addDias(hoje, -1);
   const nowMin = agora.getHours() * 60 + agora.getMinutes();
-  const ini = oc.inicio ? minutos(oc.inicio) : 0;
+  if (!oc.inicio) return oc.data > hoje ? 'futuro' : oc.data === hoje ? 'agora' : 'encerrado'; // sem horário = dia todo
+  const ini = minutos(oc.inicio);
   let fim = oc.fim ? minutos(oc.fim) : ini + 120;
   const viraNoite = fim <= ini;
   if (viraNoite) fim += 1440;

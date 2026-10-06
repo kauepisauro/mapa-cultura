@@ -25,6 +25,7 @@ create table if not exists public.pontos (
   instagram       text check (char_length(instagram) <= 200),
   whatsapp        text check (char_length(whatsapp) <= 30),
   site            text check (char_length(site) <= 300),
+  fonte           text check (char_length(fonte) <= 300),   -- link de onde veio a informação (curadoria)
   foto            text check (char_length(foto) <= 400000),   -- imagem reduzida (data URL) ou link
   foto_alt        text check (char_length(foto_alt) <= 300),  -- descrição da imagem (acessibilidade)
   tags            text[] check (cardinality(tags) <= 12),
@@ -43,10 +44,12 @@ create table if not exists public.eventos (
   data            date not null,
   inicio          text check (inicio ~ '^[0-2][0-9]:[0-5][0-9]$'),
   fim             text check (fim ~ '^[0-2][0-9]:[0-5][0-9]$'),
-  repete          text not null default 'nao' check (repete in ('nao','semanal','quinzenal','mensal')),
+  repete          text not null default 'nao' check (repete in ('nao','diaria','dias_uteis','semanal','quinzenal','mensal','mensal_semana')),
   repete_ate      date,
   preco           text check (char_length(preco) <= 60),
   link            text check (char_length(link) <= 300),
+  fonte           text check (char_length(fonte) <= 300),
+  confirmar       text check (char_length(confirmar) <= 300), -- aviso "confirme antes de ir" (curadoria)
   lat             double precision check (lat between -29 and -26),
   lng             double precision check (lng between -50 and -47),
   local_nome      text check (char_length(local_nome) <= 140),
@@ -87,12 +90,12 @@ create policy "publico envia sugestoes" on public.sugestoes for insert to anon w
 revoke all on public.pontos, public.eventos, public.sugestoes from anon, authenticated;
 
 grant select (id, criado_em, nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario,
-              instagram, whatsapp, site, foto, foto_alt, tags, status) on public.pontos to anon;
+              instagram, whatsapp, site, fonte, foto, foto_alt, tags, status) on public.pontos to anon;
 grant insert (nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario, instagram, whatsapp,
               site, foto, foto_alt, tags, contato_privado, tem_autorizacao) on public.pontos to anon;
 
 grant select (id, criado_em, ponto_id, titulo, categoria, descricao, data, inicio, fim, repete, repete_ate,
-              preco, link, lat, lng, local_nome, foto, foto_alt, status) on public.eventos to anon;
+              preco, link, fonte, confirmar, lat, lng, local_nome, foto, foto_alt, status) on public.eventos to anon;
 grant insert (ponto_id, titulo, categoria, descricao, data, inicio, fim, repete, repete_ate, preco, link,
               lat, lng, local_nome, foto, foto_alt, contato_privado, tem_autorizacao) on public.eventos to anon;
 

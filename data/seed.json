@@ -1,5 +1,5 @@
 {
- "_aviso": "Dados de DEMONSTRAÇÃO. Itens com \"exemplo\": true são fictícios. Troque por dados reais (ou use o banco Supabase). Em eventos, \"em\" = dias a partir de hoje.",
+ "_aviso": "Eventos com fonte pesquisados em 06/10/2026. Itens com \"confirmar\" têm dia/horário de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
  "pontos": [
   {
    "id": "arreda-boi",
@@ -8,7 +8,7 @@
    "lat": -27.6032,
    "lng": -48.4655,
    "bairro": "Lagoa da Conceição",
-   "descricao": "Espaço cultural, teatro e escola da Lagoa da Conceição, casa do Boi de Mamão e da cultura popular de matriz açoriana. Parceiro do Cartografia Líquen e ponto de partida do mapeamento colaborativo.",
+   "descricao": "Espaço cultural, teatro e escola da Lagoa da Conceição, casa do Boi de Mamão e da cultura popular de matriz açoriana. O grupo nasceu em 1994, na comunidade da Barra da Lagoa, reunindo gerações em torno do Boi de Mamão. Parceiro do Cartografia Líquen.",
    "aprox": true,
    "tags": [
     "boi de mamão",
@@ -16,7 +16,43 @@
     "escola",
     "cultura açoriana"
    ],
-   "horario": "Consulte a programação"
+   "site": "arredaboi.org.br",
+   "horario": "Consulte a programação com o grupo"
+  },
+  {
+   "id": "roda-capoeira-mercado",
+   "nome": "Roda de Capoeira do Mercado Público",
+   "categoria": "capoeira",
+   "lat": -27.5966,
+   "lng": -48.5497,
+   "bairro": "Centro",
+   "descricao": "Roda de rua criada em 1988 pelo contra-mestre Alemão, do Grupo Capoeira Angola Palmares, diante do Mercado Público. Já recebeu mestres e professores de vários estados. Segundo o registro mais recente que encontramos, acontece no 1º sábado do mês, às 10h.",
+   "aprox": true,
+   "tags": [
+    "roda de rua",
+    "capoeira angola",
+    "desde 1988"
+   ],
+   "horario": "1º sábado do mês, 10h (confirme com o grupo)",
+   "fonte": "https://portalcapoeira.com/capoeira/eventos-agenda/20-anos-roda-de-capoeira-no-mercado-publico-de-florianopolis/"
+  },
+  {
+   "id": "largo-alfandega",
+   "nome": "Largo da Alfândega · Batalha da Alfândega",
+   "categoria": "rap",
+   "lat": -27.5974,
+   "lng": -48.5503,
+   "bairro": "Centro",
+   "descricao": "Palco da Batalha da Alfândega, batalha de rima de rua que acontece no Largo ao lado do Mercado Público desde 2009 e é referência nacional da cultura hip-hop. Reúne MCs e DJs da cena de Florianópolis, com entrada aberta.",
+   "aprox": true,
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "MCs e DJs"
+   ],
+   "horario": "Quintas, 19h (confirme antes de ir)",
+   "fonte": "https://ndmais.com.br/cultura/vem-que-hoje-tem-batalha-da-alfandega-em-floripa/"
   },
   {
    "id": "mercado-publico",
@@ -40,12 +76,28 @@
    "lat": -27.5952,
    "lng": -48.5483,
    "bairro": "Centro",
-   "descricao": "Teatro histórico do Centro, um dos palcos mais antigos do estado.",
+   "descricao": "Teatro histórico do Centro, um dos palcos mais antigos do estado, com 441 lugares e programação da Fundação Catarinense de Cultura. Rua Marechal Guilherme, 26.",
    "aprox": true,
    "tags": [
     "teatro",
     "histórico",
     "palco"
+   ],
+   "site": "tac.sc.gov.br"
+  },
+  {
+   "id": "cic",
+   "nome": "CIC · Centro Integrado de Cultura",
+   "categoria": "espaco",
+   "lat": -27.5862,
+   "lng": -48.5345,
+   "bairro": "Agronômica",
+   "descricao": "Complexo cultural do estado: Teatro Ademir Rosa, Cinema Gilberto Gerlach, MASC e outros espaços. Av. Gov. Irineu Bornhausen, 5600.",
+   "aprox": true,
+   "tags": [
+    "teatro",
+    "cinema",
+    "museu"
    ]
   },
   {
@@ -55,12 +107,30 @@
    "lat": -27.5858,
    "lng": -48.5338,
    "bairro": "Agronômica · CIC",
-   "descricao": "Museu de arte do estado, dentro do Centro Integrado de Cultura (CIC).",
+   "descricao": "Museu de arte do estado, dentro do CIC, com entrada gratuita nas exposições. Av. Gov. Irineu Bornhausen, 5600.",
    "aprox": true,
    "tags": [
     "museu",
     "exposições"
-   ]
+   ],
+   "site": "cultura.sc.gov.br"
+  },
+  {
+   "id": "badesc",
+   "nome": "Fundação Cultural Badesc",
+   "categoria": "arte",
+   "lat": -27.5937,
+   "lng": -48.5482,
+   "bairro": "Centro",
+   "descricao": "Espaço de artes visuais no Centro Histórico, com exposições gratuitas. Rua Visconde de Ouro Preto, 216.",
+   "aprox": true,
+   "tags": [
+    "galeria",
+    "exposições",
+    "artes visuais"
+   ],
+   "site": "fundacaoculturalbadesc.com",
+   "horario": "Seg a sex, 13h–19h · sáb, 10h–16h"
   },
   {
    "id": "palacio-cruz-e-sousa",
@@ -69,7 +139,7 @@
    "lat": -27.5958,
    "lng": -48.5493,
    "bairro": "Centro",
-   "descricao": "Museu instalado no antigo palácio do governo, de frente para a Praça XV.",
+   "descricao": "Museu instalado no antigo palácio do governo, de frente para a Praça XV. Praça XV de Novembro, 227.",
    "aprox": true,
    "tags": [
     "museu",
@@ -119,6 +189,68 @@
    ]
   },
   {
+   "id": "bugio-trindade",
+   "nome": "Bugio Trindade",
+   "categoria": "samba",
+   "lat": -27.5978,
+   "lng": -48.5232,
+   "bairro": "Trindade",
+   "descricao": "Bar perto da UFSC que recebe rodas de música e eventos. Servidão Cristiano Vanderlei Faria, 25.",
+   "aprox": true,
+   "tags": [
+    "bar",
+    "roda de choro",
+    "música ao vivo"
+   ],
+   "horario": "Seg a sex, 17h–23h55 · sáb, 18h–23h55"
+  },
+  {
+   "id": "bugio-centro",
+   "nome": "Bugio Centro",
+   "categoria": "samba",
+   "lat": -27.5949,
+   "lng": -48.5497,
+   "bairro": "Centro Histórico",
+   "descricao": "Bar do Centro Histórico com programação de música. Rua Victor Meirelles, 112.",
+   "aprox": true,
+   "tags": [
+    "bar",
+    "roda de choro",
+    "música ao vivo"
+   ]
+  },
+  {
+   "id": "centrosul",
+   "nome": "CentroSul · Centro de Convenções",
+   "categoria": "popular",
+   "lat": -27.5995,
+   "lng": -48.558,
+   "bairro": "Centro",
+   "descricao": "Centro de convenções que recebe a Fenaostra, a Festa Nacional da Ostra e da Cultura Açoriana.",
+   "aprox": true,
+   "tags": [
+    "Fenaostra",
+    "cultura açoriana",
+    "feira"
+   ]
+  },
+  {
+   "id": "bento-silverio",
+   "nome": "Centro Cultural Bento Silvério · Casarão das Rendeiras",
+   "categoria": "atelie",
+   "lat": -27.6046,
+   "lng": -48.4663,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "O Casarão da Lagoa abriga, desde os anos 1990, o núcleo de oficinas de renda de bilro da Fundação Franklin Cascaes, hoje Casarão das Rendeiras. Também recebe exposições e apresentações de Boi de Mamão.",
+   "aprox": true,
+   "tags": [
+    "renda de bilro",
+    "rendeiras",
+    "exposições",
+    "boi de mamão"
+   ]
+  },
+  {
    "id": "av-rendeiras",
    "nome": "Avenida das Rendeiras",
    "categoria": "atelie",
@@ -154,7 +286,7 @@
    "lat": -27.5738,
    "lng": -48.4268,
    "bairro": "Barra da Lagoa",
-   "descricao": "Vila de pescadores artesanais junto ao canal da Lagoa; pesca, redes e festas populares.",
+   "descricao": "Vila de pescadores artesanais junto ao canal da Lagoa; pesca, redes e festas populares. Berço do Arreda Boi.",
    "aprox": true,
    "tags": [
     "pesca artesanal",
@@ -191,561 +323,321 @@
    ]
   },
   {
-   "id": "ex-capoeira-lagoa",
-   "nome": "Roda de Capoeira da Lagoa",
-   "categoria": "capoeira",
-   "lat": -27.604,
-   "lng": -48.4684,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "id": "boulevard-1432",
+   "nome": "Boulevard 14/32 · Floripa Airport",
+   "categoria": "popular",
+   "lat": -27.6702,
+   "lng": -48.5473,
+   "bairro": "Carianos",
+   "descricao": "Espaço aberto no Aeroporto Internacional de Florianópolis que recebe edições do Cultura Mané.",
    "aprox": true,
-   "exemplo": true,
    "tags": [
-    "roda",
-    "angola e regional"
-   ],
-   "instagram": "@exemplo"
-  },
-  {
-   "id": "ex-capoeira-campeche",
-   "nome": "Capoeira no Campeche",
-   "categoria": "capoeira",
-   "lat": -27.6745,
-   "lng": -48.4795,
-   "bairro": "Campeche",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "grupo",
-    "crianças"
+    "Cultura Mané",
+    "feira",
+    "boi de mamão"
    ]
   },
   {
-   "id": "ex-atelie-ceramica",
-   "nome": "Ateliê de Cerâmica Aberto",
-   "categoria": "atelie",
-   "lat": -27.513,
-   "lng": -48.517,
-   "bairro": "Santo Antônio de Lisboa",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "cerâmica",
-    "oficinas"
-   ]
-  },
-  {
-   "id": "ex-galeria",
-   "nome": "Galeria Independente",
-   "categoria": "arte",
-   "lat": -27.5985,
-   "lng": -48.5512,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "exposições",
-    "artistas locais"
-   ]
-  },
-  {
-   "id": "ex-mural",
-   "nome": "Muro Coletivo",
-   "categoria": "arte",
-   "lat": -27.5895,
-   "lng": -48.545,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "grafite",
-    "muralismo"
-   ]
-  },
-  {
-   "id": "ex-festa-rua",
-   "nome": "Festa de Rua do Centrinho",
+   "id": "passarela-nego-quirido",
+   "nome": "Passarela Nego Quirido",
    "categoria": "festa",
-   "lat": -27.6051,
-   "lng": -48.4672,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "lat": -27.5995,
+   "lng": -48.552,
+   "bairro": "Centro",
+   "descricao": "Passarela do samba do Centro, palco do desfile das escolas de samba no Carnaval e de grandes festas.",
    "aprox": true,
-   "exemplo": true,
    "tags": [
+    "carnaval",
     "festa",
-    "verão"
+    "escolas de samba"
    ]
   },
   {
-   "id": "ex-batalha",
-   "nome": "Batalha de Rima do Centro",
-   "categoria": "rap",
-   "lat": -27.5963,
-   "lng": -48.5499,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "batalha",
-    "freestyle"
-   ]
-  },
-  {
-   "id": "ex-hiphop-estreito",
-   "nome": "Coletivo Hip-Hop do Estreito",
-   "categoria": "rap",
-   "lat": -27.599,
-   "lng": -48.579,
-   "bairro": "Estreito",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "coletivo",
-    "grafite",
-    "dj"
-   ]
-  },
-  {
-   "id": "ex-samba-centro",
-   "nome": "Roda de Samba do Centro",
-   "categoria": "samba",
-   "lat": -27.5976,
-   "lng": -48.5512,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "roda",
-    "pagode"
-   ]
-  },
-  {
-   "id": "ex-escola-samba",
-   "nome": "Escola de Samba do Morro",
-   "categoria": "samba",
-   "lat": -27.5915,
-   "lng": -48.5585,
-   "bairro": "Monte Serrat",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "escola de samba",
-    "ensaio"
-   ]
-  },
-  {
-   "id": "ex-coletivo-moradia",
-   "nome": "Coletivo de Moradia e Cultura",
+   "id": "beira-mar-continental",
+   "nome": "Avenida Beira-Mar Continental",
    "categoria": "social",
-   "lat": -27.593,
-   "lng": -48.5545,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "lat": -27.5995,
+   "lng": -48.587,
+   "bairro": "Estreito · Coqueiros",
+   "descricao": "Avenida de frente para a baía, tradicional ponto de concentração da Parada LGBTI+ de Florianópolis.",
    "aprox": true,
-   "exemplo": true,
    "tags": [
-    "moradia",
-    "coletivo"
-   ]
-  },
-  {
-   "id": "ex-assoc-moradores",
-   "nome": "Associação de Moradores",
-   "categoria": "social",
-   "lat": -27.599,
-   "lng": -48.4605,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "bairro",
-    "direitos"
-   ]
-  },
-  {
-   "id": "ex-terno-reis",
-   "nome": "Terno de Reis",
-   "categoria": "popular",
-   "lat": -27.709,
-   "lng": -48.561,
-   "bairro": "Ribeirão da Ilha",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "terno de reis",
-    "tradição"
-   ]
-  },
-  {
-   "id": "ex-teatro-rua",
-   "nome": "Companhia de Teatro de Rua",
-   "categoria": "teatro",
-   "lat": -27.602,
-   "lng": -48.464,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "teatro de rua",
-    "oficinas"
-   ]
-  },
-  {
-   "id": "ex-musica-viva",
-   "nome": "Bar com Música ao Vivo",
-   "categoria": "musica",
-   "lat": -27.6048,
-   "lng": -48.47,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "bar",
-    "autoral"
-   ]
-  },
-  {
-   "id": "ex-choro",
-   "nome": "Roda de Choro",
-   "categoria": "musica",
-   "lat": -27.5968,
-   "lng": -48.5496,
-   "bairro": "Centro",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "choro",
-    "instrumental"
-   ]
-  },
-  {
-   "id": "ex-cineclube",
-   "nome": "Cineclube da Barra",
-   "categoria": "audiovisual",
-   "lat": -27.5745,
-   "lng": -48.429,
-   "bairro": "Barra da Lagoa",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "cinema",
-    "debate"
-   ]
-  },
-  {
-   "id": "ex-sj-rap",
-   "nome": "Batalha de Rima de São José",
-   "categoria": "rap",
-   "lat": -27.595,
-   "lng": -48.63,
-   "bairro": "Kobrasol (São José)",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "batalha",
-    "freestyle"
-   ]
-  },
-  {
-   "id": "ex-sj-teatro",
-   "nome": "Teatro Comunitário",
-   "categoria": "teatro",
-   "lat": -27.61,
-   "lng": -48.635,
-   "bairro": "Barreiros (São José)",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "teatro",
-    "bairro"
-   ]
-  },
-  {
-   "id": "ex-palhoca-capoeira",
-   "nome": "Capoeira em Palhoça",
-   "categoria": "capoeira",
-   "lat": -27.645,
-   "lng": -48.67,
-   "bairro": "Palhoça",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "roda",
-    "grupo"
-   ]
-  },
-  {
-   "id": "ex-pinheira-atelie",
-   "nome": "Ateliê de Artes na Pinheira",
-   "categoria": "atelie",
-   "lat": -27.85,
-   "lng": -48.615,
-   "bairro": "Pinheira (Palhoça)",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "artesanato",
-    "oficinas"
-   ]
-  },
-  {
-   "id": "ex-biguacu-samba",
-   "nome": "Roda de Samba de Biguaçu",
-   "categoria": "samba",
-   "lat": -27.494,
-   "lng": -48.658,
-   "bairro": "Biguaçu",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "roda",
-    "pagode"
-   ]
-  },
-  {
-   "id": "ex-santo-amaro-popular",
-   "nome": "Festa Popular em Santo Amaro",
-   "categoria": "popular",
-   "lat": -27.687,
-   "lng": -48.779,
-   "bairro": "Santo Amaro da Imperatriz",
-   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
-   "aprox": true,
-   "exemplo": true,
-   "tags": [
-    "festa",
-    "tradição"
+    "parada",
+    "direitos",
+    "LGBTI+"
    ]
   }
  ],
  "eventos": [
   {
-   "id": "ev1",
-   "ponto_id": "ex-capoeira-lagoa",
-   "titulo": "Roda de Capoeira aberta",
-   "categoria": "capoeira",
-   "em": 0,
-   "inicio": "18:00",
-   "fim": "20:00",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev2",
-   "ponto_id": "ex-batalha",
-   "titulo": "Batalha de Rima",
-   "categoria": "rap",
-   "em": 1,
-   "inicio": "19:30",
-   "fim": "22:30",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev3",
-   "ponto_id": "ex-samba-centro",
-   "titulo": "Roda de Samba",
-   "categoria": "samba",
-   "em": 2,
-   "inicio": "17:00",
-   "fim": "21:00",
-   "repete": "semanal",
-   "preco": "Grátis (consumação à parte)",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev4",
-   "ponto_id": "ex-festa-rua",
-   "titulo": "Festa de Rua — edição de verão",
-   "categoria": "festa",
-   "em": 3,
-   "inicio": "22:00",
-   "fim": "04:00",
-   "repete": "nao",
-   "preco": "R$ 30",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev5",
-   "ponto_id": "ex-cineclube",
-   "titulo": "Sessão + debate",
-   "categoria": "audiovisual",
-   "em": 4,
-   "inicio": "19:00",
-   "fim": "21:30",
-   "repete": "quinzenal",
-   "preco": "Contribuição consciente",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev6",
-   "ponto_id": "ex-teatro-rua",
-   "titulo": "Oficina aberta de teatro",
-   "categoria": "teatro",
-   "em": 0,
-   "inicio": "15:00",
-   "fim": "17:00",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev7",
-   "ponto_id": "ex-choro",
-   "titulo": "Roda de Choro",
-   "categoria": "musica",
-   "em": 5,
-   "inicio": "16:00",
-   "fim": "19:00",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev8",
-   "ponto_id": "ex-atelie-ceramica",
-   "titulo": "Oficina de cerâmica",
-   "categoria": "atelie",
-   "em": 6,
-   "inicio": "14:00",
-   "fim": "17:00",
-   "repete": "mensal",
-   "preco": "R$ 80",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev9",
-   "ponto_id": "ex-galeria",
-   "titulo": "Abertura de exposição",
-   "categoria": "arte",
-   "em": 8,
-   "inicio": "19:00",
-   "fim": "22:00",
-   "repete": "nao",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev10",
-   "ponto_id": "ex-terno-reis",
-   "titulo": "Ensaio aberto",
+   "id": "fenaostra-abertura",
+   "ponto_id": "centrosul",
+   "titulo": "Abertura da Fenaostra 2026",
    "categoria": "popular",
-   "em": 2,
-   "inicio": "19:30",
-   "fim": "21:30",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
+   "data": "2026-10-06",
+   "repete": "nao",
+   "preco": "Entrada gratuita na abertura",
+   "descricao": "24ª Fenaostra, a Festa Nacional da Ostra e da Cultura Açoriana, de 6 a 12 de outubro. Os portões abrem às 18h e a entrada é gratuita na noite de abertura. A programação reúne gastronomia, artesanato, boi de mamão, desfile cultural, contação de histórias e shows.",
+   "inicio": "18:00",
+   "fonte": "https://floripa.com/programe-se/fenaostra-2026-tera-sete-dias-de-experiencias-gastronomia-e-cultura-em-outubro/"
   },
   {
-   "id": "ev11",
-   "ponto_id": "ex-assoc-moradores",
-   "titulo": "Assembleia aberta do bairro",
-   "categoria": "social",
-   "em": 1,
-   "inicio": "19:00",
-   "fim": "21:00",
-   "repete": "mensal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev12",
-   "ponto_id": "ex-musica-viva",
-   "titulo": "Noite de autorais",
+   "id": "fenaostra-dazaranha",
+   "ponto_id": "centrosul",
+   "titulo": "Dazaranha na Fenaostra",
    "categoria": "musica",
-   "em": 3,
+   "data": "2026-10-08",
+   "repete": "nao",
+   "preco": "Ingresso (ver site da Fenaostra)",
+   "descricao": "Show especial da banda catarinense Dazaranha, dividindo a noite com outros artistas de Florianópolis, exposições e manifestações da cultura local.",
+   "inicio": "22:00",
+   "fonte": "https://scc10.com.br/cotidiano/cultura/alexandre-pires-e-dazaranha-sao-atracoes-da-fenaostra-2026-que-comeca-nesta-terca-veja-programacao/"
+  },
+  {
+   "id": "fenaostra-alexandre",
+   "ponto_id": "centrosul",
+   "titulo": "Alexandre Pires na Fenaostra",
+   "categoria": "musica",
+   "data": "2026-10-09",
+   "repete": "nao",
+   "preco": "Ingresso (ver site da Fenaostra)",
+   "descricao": "Principal show da edição. Entrada gratuita até 18h com retirada antecipada de ingresso e doação de 1 kg de alimento não perecível. Horário do show: consulte a Fenaostra.",
+   "fonte": "https://scc10.com.br/cotidiano/cultura/alexandre-pires-e-dazaranha-sao-atracoes-da-fenaostra-2026-que-comeca-nesta-terca-veja-programacao/"
+  },
+  {
+   "id": "sambaostra",
+   "ponto_id": "centrosul",
+   "titulo": "Sambaostra: Samba da Lapa, Demônios da Garoa e sambas-enredo",
+   "categoria": "samba",
+   "data": "2026-10-11",
+   "repete": "nao",
+   "preco": "Ingresso (ver site da Fenaostra)",
+   "descricao": "Domingo de samba na Fenaostra: Samba da Lapa no almoço, Demônios da Garoa à tarde e Quinteto S.A. à noite, com apresentação dos sambas-enredo das escolas de samba de Florianópolis para o Carnaval 2027. Horários de cada atração: consulte a Fenaostra.",
+   "inicio": "12:00",
+   "fonte": "https://floripa.com/eventos/fenaostra-2026-sambaostra-com-demonios-da-garoa-e-carnaval-de-florianopolis/"
+  },
+  {
+   "id": "fenaostra-kids",
+   "ponto_id": "centrosul",
+   "titulo": "Fenaostra Kids: Boi de Mamão e Cultura Mané",
+   "categoria": "popular",
+   "data": "2026-10-12",
+   "repete": "nao",
+   "preco": "Ingresso (ver site da Fenaostra)",
+   "descricao": "Dia da criançada e das famílias, com Boi de Mamão, intervenções do Cultura Mané, oficinas, brincadeiras e o show de Maria Clara & JP.",
+   "fonte": "https://floripa.com/eventos/fenaostra-2026-fenaostra-kids/"
+  },
+  {
+   "id": "clapton",
+   "ponto_id": "cic",
+   "titulo": "Riding with Clapton",
+   "categoria": "musica",
+   "data": "2026-10-07",
+   "repete": "nao",
+   "preco": "Ingresso (Pensa no Evento)",
+   "descricao": "Guitarristas catarinenses (Marcelo d'Ávila, Cris Ferreira, Dinho Stormowski e Yuri Koch) celebram Eric Clapton, com Isa Buffon nos vocais. No Teatro Ademir Rosa, no CIC.",
    "inicio": "21:00",
-   "fim": "00:00",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/riding-with-clapton-guitarristas-catarinenses-teatro-ademir-rosa-7-outubro/"
+  },
+  {
+   "id": "choro-1",
+   "ponto_id": "bugio-trindade",
+   "titulo": "Roda de Choro Aberta · Festival Choro Mulheril",
+   "categoria": "samba",
+   "data": "2026-10-12",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Abertura do 3º Festival Choro Mulheril (12 a 18/10), que reúne mulheres do choro de seis estados, com programação gratuita.",
+   "inicio": "20:00",
+   "fonte": "https://floripamanha.org/2026/10/festival-choro-mulheril-reune-artistas-de-seis-estados-em-semana-de-programacao-gratuita/"
+  },
+  {
+   "id": "choro-2",
+   "ponto_id": "bugio-trindade",
+   "titulo": "Roda de Choro Aberta · Festival Choro Mulheril",
+   "categoria": "samba",
+   "data": "2026-10-13",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Segunda noite de rodas abertas do 3º Festival Choro Mulheril, com programação gratuita.",
+   "inicio": "20:00",
+   "fonte": "https://floripamanha.org/2026/10/festival-choro-mulheril-reune-artistas-de-seis-estados-em-semana-de-programacao-gratuita/"
+  },
+  {
+   "id": "choro-3",
+   "ponto_id": "bugio-centro",
+   "titulo": "Grande Roda de Choro Mulheril",
+   "categoria": "samba",
+   "data": "2026-10-14",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Grande roda de choro do 3º Festival Choro Mulheril, no Bugio Centro (Rua Victor Meirelles, 112). Programação gratuita.",
+   "inicio": "15:00",
+   "fonte": "https://floripamanha.org/2026/10/festival-choro-mulheril-reune-artistas-de-seis-estados-em-semana-de-programacao-gratuita/"
+  },
+  {
+   "id": "bilros",
+   "ponto_id": "bento-silverio",
+   "titulo": "Exposição “Entre Piques e Bilros”",
+   "categoria": "atelie",
+   "data": "2026-10-06",
+   "repete": "dias_uteis",
+   "preco": "Grátis",
+   "descricao": "Bordados e outras técnicas têxteis feitos pelo grupo Bordando Tradições, a partir das memórias das participantes e inspirados nas rendeiras e na renda de bilro. Em cartaz até 26/10, de segunda a sexta.",
+   "inicio": "13:00",
+   "fim": "18:00",
+   "repete_ate": "2026-10-26",
+   "fonte": "https://floripamanha.org/2026/09/centro-cultural-bento-silverio-recebe-exposicao-entre-piques-e-bilros/"
+  },
+  {
+   "id": "badesc-bruschi",
+   "ponto_id": "badesc",
+   "titulo": "Exposição “outros tipos de palavras” (Guilherme Bruschi)",
+   "categoria": "arte",
+   "data": "2026-10-06",
+   "repete": "dias_uteis",
+   "preco": "Grátis",
+   "descricao": "Primeira exposição individual de Guilherme Bruschi na Fundação Cultural Badesc. Segunda a sexta, 13h–19h, e sábados, 10h–16h, até 13/10.",
+   "inicio": "13:00",
+   "fim": "19:00",
+   "repete_ate": "2026-10-13",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/exposicao-desejo-flavia-fernandes-fundacao-cultural-badesc-florianopolis/"
+  },
+  {
+   "id": "badesc-desejo",
+   "ponto_id": "badesc",
+   "titulo": "Exposição “Desejo” (Flávia Fernandes)",
+   "categoria": "arte",
+   "data": "2026-10-06",
+   "repete": "dias_uteis",
+   "preco": "Grátis",
+   "descricao": "Instalação interativa de Flávia Fernandes no Espaço Lena Peixer, sobre aquilo que se deseja e não se pode alcançar. Segunda a sexta, 13h–19h, e sábados, 10h–16h, até 25/11.",
+   "inicio": "13:00",
+   "fim": "19:00",
+   "repete_ate": "2026-11-25",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/exposicao-desejo-flavia-fernandes-fundacao-cultural-badesc-florianopolis/"
+  },
+  {
+   "id": "cinema-infantil",
+   "ponto_id": "cic",
+   "titulo": "25ª Mostra de Cinema Infantil de Florianópolis",
+   "categoria": "audiovisual",
+   "data": "2026-10-09",
+   "repete": "diaria",
+   "preco": "Grátis",
+   "descricao": "Mostra com 137 filmes, oficinas, debates, masterclasses e uma exposição retrospectiva das 25 edições, no Teatro Ademir Rosa e na Sala Gilberto Gerlach, no CIC. Programação gratuita. Horários das sessões: consulte o site da Mostra.",
+   "repete_ate": "2026-10-17",
+   "fonte": "https://www.mostradecinemainfantil.com.br/mostra-de-cinema-infantil-de-florianopolis-celebra-25-anos-com-a-exibicao-de-137-filmes-entre-9-e-31-de-outubro/"
+  },
+  {
+   "id": "horror",
+   "ponto_id": "cic",
+   "titulo": "Floripa Que Horror! · Festival Internacional de Cinema Fantástico",
+   "categoria": "audiovisual",
+   "data": "2026-10-27",
+   "repete": "diaria",
+   "preco": "Consulte",
+   "descricao": "7ª edição do festival de cinema fantástico, na sala de cinema do CIC. Horários e valores: consulte o festival.",
+   "repete_ate": "2026-10-31",
+   "fonte": "https://filmfreeway.com/FloripaQueHorror"
+  },
+  {
+   "id": "mostra-danca",
+   "ponto_id": "cic",
+   "titulo": "Mostra de Dança de Florianópolis 2026",
+   "categoria": "teatro",
+   "data": "2026-10-21",
+   "repete": "diaria",
+   "preco": "Consulte",
+   "descricao": "Edição 2026 da Mostra de Dança, no Teatro Ademir Rosa (CIC). Horários e valores: consulte o site da Mostra.",
+   "repete_ate": "2026-10-25",
+   "fonte": "https://mostradedanca.com.br/florianopolis/"
+  },
+  {
+   "id": "folia-1",
+   "ponto_id": "passarela-nego-quirido",
+   "titulo": "Folianópolis · noite 1: Léo Santana, Banda Eva e Psirico",
+   "categoria": "festa",
+   "data": "2026-10-30",
+   "repete": "nao",
+   "preco": "Ingresso (ver site)",
+   "descricao": "Abertura da 19ª Folianópolis, a micareta de Florianópolis, na Passarela Nego Quirido.",
+   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/"
+  },
+  {
+   "id": "folia-2",
+   "ponto_id": "passarela-nego-quirido",
+   "titulo": "Folianópolis · noite 2: Timbalada, Claudia Leitte e Tomate",
+   "categoria": "festa",
+   "data": "2026-10-31",
+   "repete": "nao",
+   "preco": "Ingresso (ver site)",
+   "descricao": "Segunda noite da 19ª Folianópolis, na Passarela Nego Quirido. A festa segue em 1º de novembro.",
+   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/"
+  },
+  {
+   "id": "mane-nov",
+   "ponto_id": "boulevard-1432",
+   "titulo": "Cultura Mané · edição de novembro",
+   "categoria": "popular",
+   "data": "2026-11-01",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato e gastronomia, exposições culturais, Boi de Mamão, música, e presença de rendeira e pescador com exposições e aulas. Entrada gratuita.",
+   "inicio": "15:00",
+   "fim": "19:30",
+   "fonte": "https://visitefloripa.com.br/en_us/agenda/mane-culture/"
+  },
+  {
+   "id": "mane-dez",
+   "ponto_id": "boulevard-1432",
+   "titulo": "Cultura Mané · edição de dezembro",
+   "categoria": "popular",
+   "data": "2026-12-13",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato e gastronomia, exposições culturais, Boi de Mamão e música. Entrada gratuita.",
+   "inicio": "15:00",
+   "fim": "19:30",
+   "fonte": "https://visitefloripa.com.br/en_us/agenda/mane-culture/"
+  },
+  {
+   "id": "batalha",
+   "ponto_id": "largo-alfandega",
+   "titulo": "Batalha da Alfândega",
+   "categoria": "rap",
+   "data": "2026-10-08",
    "repete": "semanal",
-   "preco": "R$ 15",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev13",
-   "ponto_id": "ex-hiphop-estreito",
-   "titulo": "Oficina de grafite e DJ",
-   "categoria": "rap",
-   "em": 6,
-   "inicio": "10:00",
-   "fim": "13:00",
-   "repete": "nao",
    "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev14",
-   "ponto_id": "ex-capoeira-campeche",
-   "titulo": "Batizado e roda de encerramento",
-   "categoria": "capoeira",
-   "em": 11,
-   "inicio": "09:00",
-   "fim": "14:00",
-   "repete": "nao",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
-   "exemplo": true
-  },
-  {
-   "id": "ev15",
-   "ponto_id": "ex-sj-rap",
-   "titulo": "Batalha de Rima",
-   "categoria": "rap",
-   "em": 2,
+   "descricao": "Batalha de rima de rua, com MCs e DJs da cena hip-hop de Florianópolis. Entrada aberta.",
    "inicio": "19:00",
-   "fim": "22:00",
-   "repete": "semanal",
-   "preco": "Grátis",
-   "descricao": "Evento de exemplo.",
-   "exemplo": true
+   "fonte": "https://ndmais.com.br/cultura/vem-que-hoje-tem-batalha-da-alfandega-em-floripa/",
+   "confirmar": "Dia e horário vêm de reportagens anteriores. Confirme nas redes da Batalha antes de ir."
   },
   {
-   "id": "ev16",
-   "ponto_id": "ex-palhoca-capoeira",
-   "titulo": "Roda de Capoeira aberta",
+   "id": "roda-mercado",
+   "ponto_id": "roda-capoeira-mercado",
+   "titulo": "Roda de Capoeira do Mercado Público",
    "categoria": "capoeira",
-   "em": 1,
-   "inicio": "18:30",
-   "fim": "20:30",
-   "repete": "semanal",
+   "data": "2026-10-03",
+   "repete": "mensal_semana",
    "preco": "Grátis",
-   "descricao": "Evento de exemplo.",
-   "exemplo": true
+   "descricao": "Roda de rua diante do Mercado Público, criada em 1988 pelo contra-mestre Alemão (Grupo Capoeira Angola Palmares).",
+   "inicio": "10:00",
+   "fonte": "https://portalcapoeira.com/capoeira/eventos-agenda/20-anos-roda-de-capoeira-no-mercado-publico-de-florianopolis/",
+   "confirmar": "Registro de 1º sábado do mês, 10h. Confirme com o grupo antes de ir."
+  },
+  {
+   "id": "parada",
+   "ponto_id": "beira-mar-continental",
+   "titulo": "Parada LGBTI+ de Florianópolis",
+   "categoria": "social",
+   "data": "2026-11-28",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Parada do Orgulho LGBTI+ de Florianópolis, com data de 28 de novembro divulgada em calendários de paradas. Local e horário a confirmar.",
+   "fonte": "https://notstr8ight.com/explore/parada-lgbti-de-floripa/",
+   "confirmar": "Data divulgada em calendário de paradas; confirme local e horário com a organização."
   }
  ]
 }

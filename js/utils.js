@@ -87,10 +87,26 @@ const minutos = (h) => {
   return hh * 60 + (mm || 0);
 };
 
+/** n-ésimo dia da semana do mês (n=5 => último). Retorna ISO. */
+export function nesimoDiaSemana(ano, mes, dow, n) {
+  const primeiro = new Date(ano, mes, 1, 12).getDay();
+  let dia = 1 + ((dow - primeiro + 7) % 7) + (n - 1) * 7;
+  const ultimo = new Date(ano, mes + 1, 0, 12).getDate();
+  while (dia > ultimo) dia -= 7;
+  return toISO(new Date(ano, mes, dia, 12));
+}
+export const ordemNoMes = (iso) => Math.min(5, Math.ceil(fromISO(iso).getDate() / 7));
+
 export function recorrenciaTexto(ev) {
   const dia = DIAS_LONGOS[diaSemana(ev.data)];
   const plural = `${dia}s`;
   switch (ev.repete) {
+    case 'diaria': return 'Todos os dias';
+    case 'dias_uteis': return 'De segunda a sexta';
+    case 'mensal_semana': {
+      const n = ordemNoMes(ev.data);
+      return n === 5 ? `Todo último ${dia} do mês` : `Todo ${n}º ${dia} do mês`;
+    }
     case 'semanal': return `Toda ${dia}`.replace('Toda sábado', 'Todo sábado').replace('Toda domingo', 'Todo domingo');
     case 'quinzenal': return `A cada 15 dias (${plural})`;
     case 'mensal': return `Todo dia ${fromISO(ev.data).getDate()} do mês`;
@@ -144,19 +160,30 @@ function dobrar(linha) {
   return out.join('\r\n');
 }
 
+const BYDAY = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 export function gerarICS(oc, { local = '', url = '' } = {}) {
-  const inicio = oc.inicio || '19:00';
+  const diaTodo = !oc.inicio;
+  const inicio = oc.inicio || '00:00';
   let fimData = oc.data;
   let fim = oc.fim;
-  if (!fim) {
+  if (diaTodo) {
+    fim = null;
+  } else if (!fim) {
     const m = minutos(inicio) + 120;
     fim = `${p2(Math.floor((m % 1440) / 60))}:${p2(m % 60)}`;
     if (m >= 1440) fimData = addDias(oc.data, 1);
   } else if (minutos(fim) <= minutos(inicio)) {
     fimData = addDias(oc.data, 1);
   }
-  const rrule = { semanal: 'FREQ=WEEKLY', quinzenal: 'FREQ=WEEKLY;INTERVAL=2', mensal: 'FREQ=MONTHLY' }[oc.repete];
-  const ate = oc.repete_ate ? `;UNTIL=${oc.repete_ate.replace(/-/g, '')}T235959` : '';
+  const rrule = {
+    diaria: 'FREQ=DAILY',
+    dias_uteis: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
+    semanal: 'FREQ=WEEKLY',
+    quinzenal: 'FREQ=WEEKLY;INTERVAL=2',
+    mensal: 'FREQ=MONTHLY',
+    mensal_semana: `FREQ=MONTHLY;BYDAY=${ordemNoMes(oc.data) === 5 ? '-1' : ordemNoMes(oc.data)}${BYDAY[diaSemana(oc.data)]}`,
+  }[oc.repete];
+  const ate = oc.repete_ate ? (diaTodo ? `;UNTIL=${oc.repete_ate.replace(/-/g, '')}` : `;UNTIL=${oc.repete_ate.replace(/-/g, '')}T235959`) : '';
   const linhas = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -165,8 +192,8 @@ export function gerarICS(oc, { local = '', url = '' } = {}) {
     'BEGIN:VEVENT',
     `UID:${oc.key || oc.id}@cartografia-liquen`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '')}`,
-    `DTSTART:${dt(oc.data, inicio)}`,
-    `DTEND:${dt(fimData, fim)}`,
+    diaTodo ? `DTSTART;VALUE=DATE:${oc.data.replace(/-/g, '')}` : `DTSTART:${dt(oc.data, inicio)}`,
+    diaTodo ? `DTEND;VALUE=DATE:${addDias(oc.data, 1).replace(/-/g, '')}` : `DTEND:${dt(fimData, fim)}`,
     `SUMMARY:${icsEsc(oc.titulo)}`,
     local && `LOCATION:${icsEsc(local)}`,
     oc.descricao && `DESCRIPTION:${icsEsc(oc.descricao)}`,

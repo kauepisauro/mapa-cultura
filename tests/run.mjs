@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { addDias, addMeses, toISO, fromISO, rotuloDia, hora, linkWhatsapp, linkInstagram, gerarICS, norm, distanciaKm, recorrenciaTexto } from '../js/utils.js';
+import { nesimoDiaSemana, addDias, addMeses, toISO, fromISO, rotuloDia, hora, linkWhatsapp, linkInstagram, gerarICS, norm, distanciaKm, recorrenciaTexto } from '../js/utils.js';
 import { expandir, statusOcorrencia, janela, ehGratis } from '../js/eventos.js';
 
 test('datas: soma de dias atravessa mês/ano e DST', () => {
@@ -107,4 +107,35 @@ test('geo e recorrência em texto', () => {
   assert.equal(recorrenciaTexto({ data: '2026-10-08', repete: 'semanal' }), 'Toda quinta');
   assert.equal(recorrenciaTexto({ data: '2026-10-10', repete: 'semanal' }), 'Todo sábado');
   assert.equal(recorrenciaTexto({ data: '2026-10-10' }), '');
+});
+
+test('recorrência: dias úteis com data final', () => {
+  const ev = { id: 'x', data: '2026-10-06', inicio: '13:00', repete: 'dias_uteis', repete_ate: '2026-10-13' };
+  const out = expandir([ev], '2026-10-06', '2026-10-31').map((o) => o.data);
+  assert.deepEqual(out, ['2026-10-06', '2026-10-07', '2026-10-08', '2026-10-09', '2026-10-12', '2026-10-13']);
+});
+
+test('recorrência: diária (festival de vários dias)', () => {
+  const ev = { id: 'f', data: '2026-10-09', repete: 'diaria', repete_ate: '2026-10-11' };
+  assert.deepEqual(expandir([ev], '2026-10-10', '2026-10-31').map((o) => o.data), ['2026-10-10', '2026-10-11']);
+});
+
+test('recorrência: n-ésimo dia da semana do mês (1º sábado)', () => {
+  assert.equal(nesimoDiaSemana(2026, 10, 6, 1), '2026-11-07'); // 1º sábado de nov/2026
+  assert.equal(nesimoDiaSemana(2026, 11, 6, 1), '2026-12-05');
+  assert.equal(nesimoDiaSemana(2026, 9, 4, 5), '2026-10-29'); // "5º" quinta = última
+  const ev = { id: 'm', data: '2026-10-03', inicio: '10:00', repete: 'mensal_semana' };
+  assert.deepEqual(expandir([ev], '2026-10-06', '2027-01-31').map((o) => o.data), ['2026-11-07', '2026-12-05', '2027-01-02']);
+  assert.equal(recorrenciaTexto(ev), 'Todo 1º sábado do mês');
+});
+
+test('evento sem horário é dia todo e vai ao calendário como dia inteiro', () => {
+  const oc = { data: '2026-10-06', repete: 'nao' };
+  assert.equal(statusOcorrencia(oc, new Date(2026, 9, 6, 23, 0)), 'agora');
+  assert.equal(statusOcorrencia({ data: '2026-10-05' }, new Date(2026, 9, 6, 1, 0)), 'encerrado');
+  const ics = gerarICS({ key: 'k', titulo: 'Festival', data: '2026-10-09' });
+  assert.match(ics, /DTSTART;VALUE=DATE:20261009/);
+  assert.match(ics, /DTEND;VALUE=DATE:20261010/);
+  const ics2 = gerarICS({ key: 'k', titulo: 'Roda', data: '2026-10-03', inicio: '10:00', repete: 'mensal_semana' });
+  assert.match(ics2, /RRULE:FREQ=MONTHLY;BYDAY=1SA/);
 });

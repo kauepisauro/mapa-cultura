@@ -63,11 +63,13 @@ export function cardEvento(oc, lugar, status, i = 0) {
   if (status === 'agora') tags.push('<span class="tag tag--agora">Rolando agora</span>');
   tags.push(ehGratis(oc) ? '<span class="tag tag--gratis">Grátis</span>' : `<span class="tag">${esc(oc.preco)}</span>`);
   if (oc.repete && oc.repete !== 'nao') tags.push(`<span class="tag tag--rec">${esc(recorrenciaTexto(oc))}</span>`);
+  if ((oc.repete === 'diaria' || oc.repete === 'dias_uteis') && oc.repete_ate) tags.push(`<span class="tag">até ${esc(oc.repete_ate.slice(8))}/${esc(oc.repete_ate.slice(5, 7))}</span>`);
+  if (oc.confirmar) tags.push(`<span class="tag tag--conf" title="${esc(oc.confirmar)}">confirme antes de ir</span>`);
   if (oc.exemplo) tags.push('<span class="tag">exemplo</span>');
   if (oc.pendente) tags.push('<span class="tag">em análise</span>');
   const onde = lugar ? `${esc(lugar.nome)}${lugar.bairro ? ` · ${esc(lugar.bairro)}` : ''}` : esc(oc.local_nome || '');
   return `<button class="ev" style="--c:${c.cor};animation-delay:${Math.min(i, 14) * 28}ms" data-acao="sel" data-id="${esc(lugar?.id || '')}" data-key="${esc(oc.key)}">
-    <div class="ev__hora"><b>${esc(hora(oc.inicio) || '—')}</b><small>${oc.fim ? `até ${esc(hora(oc.fim))}` : ''}</small></div>
+    <div class="ev__hora"><b>${oc.inicio ? esc(hora(oc.inicio)) : 'dia'}</b><small>${oc.inicio ? (oc.fim ? `até ${esc(hora(oc.fim))}` : '') : 'todo'}</small></div>
     <div class="ev__corpo">
       <div class="ev__tit">${esc(oc.titulo)}</div>
       <div class="ev__loc">${onde}</div>
@@ -80,7 +82,7 @@ export const grupoDia = (iso, hoje) => `<div class="grupo"><b>${esc(rotuloDia(is
 export function miniHoje(oc, lugar, status) {
   const c = cat(oc.categoria || lugar?.categoria);
   return `<button class="mini" style="--c:${c.cor}" data-acao="sel" data-id="${esc(lugar?.id || '')}" data-key="${esc(oc.key)}">
-    <div class="mini__hora">${status === 'agora' ? '<span class="vivo"></span>' : ''}${status === 'agora' ? 'Agora' : esc(hora(oc.inicio))}</div>
+    <div class="mini__hora">${status === 'agora' ? '<span class="vivo"></span>' : ''}${status === 'agora' ? 'Agora' : esc(hora(oc.inicio) || 'Hoje')}</div>
     <div class="mini__tit">${esc(oc.titulo)}</div>
     <div class="mini__loc">${esc(lugar?.nome || oc.local_nome || '')}</div></button>`;
 }
@@ -96,6 +98,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
   if (l.horario) info.push(`<div>${I.relogio}<span>${esc(l.horario)}</span></div>`);
   if (l.instagram) info.push(`<div>${I.insta}<a href="${esc(linkInstagram(l.instagram))}" target="_blank" rel="noopener">${esc(String(l.instagram).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '@').replace(/\/$/, ''))}</a></div>`);
   if (l.whatsapp && linkWhatsapp(l.whatsapp)) info.push(`<div>${I.whats}<a href="${esc(linkWhatsapp(l.whatsapp, `Oi! Vi vocês no Cartografia Líquen (${l.nome}).`))}" target="_blank" rel="noopener">Chamar no WhatsApp</a></div>`);
+  if (l.fonte) info.push(`<div>${I.globo}<a href="${esc(l.fonte)}" target="_blank" rel="noopener">Fonte da informação ↗</a></div>`);
   if (l.site) info.push(`<div>${I.globo}<a href="${esc(linkSite(l.site))}" target="_blank" rel="noopener">${esc(String(l.site).replace(/^https?:\/\/(www\.)?/i, '').replace(/\/$/, ''))}</a></div>`);
 
   const avisos = [];
@@ -104,9 +107,13 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
 
   const evs = ocorr.slice(0, 6).map((o) => {
     const n = dataNumero(o.data);
+    const quando = o.inicio ? `${hora(o.inicio)}${o.fim ? `–${hora(o.fim)}` : ''}` : 'Dia todo';
     return `<div class="mini-ev">
       <div class="mini-ev__d"><b>${n.dia}</b><small>${esc(n.sem)} · ${esc(n.mes)}</small></div>
-      <div class="mini-ev__t">${esc(o.titulo)}<span>${esc(hora(o.inicio))}${o.fim ? `–${esc(hora(o.fim))}` : ''} · ${ehGratis(o) ? 'Grátis' : esc(o.preco)}${statusDe(o) === 'agora' ? ' · <b>rolando agora</b>' : ''}</span></div>
+      <div class="mini-ev__t">${esc(o.titulo)}<span>${esc(quando)} · ${ehGratis(o) ? 'Grátis' : esc(o.preco)}${o.repete && o.repete !== 'nao' ? ` · ${esc(recorrenciaTexto(o))}` : ''}${statusDe(o) === 'agora' ? ' · <b>rolando agora</b>' : ''}</span>
+        ${o.confirmar ? `<span class="conf">⚠ ${esc(o.confirmar)}</span>` : ''}
+        ${o.descricao ? `<details class="mais"><summary>detalhes</summary><p>${esc(o.descricao)}</p>${o.fonte ? `<a href="${esc(o.fonte)}" target="_blank" rel="noopener">fonte ↗</a>` : ''}</details>` : ''}
+      </div>
       <button class="btn-redondo" data-acao="ics" data-key="${esc(o.key)}" aria-label="Adicionar ao calendário: ${esc(o.titulo)}" title="Adicionar ao calendário">${I.cal}</button>
       <button class="btn-redondo" data-acao="chamar" data-key="${esc(o.key)}" aria-label="Compartilhar: ${esc(o.titulo)}" title="Chamar a galera">${I.enviar.replace('width="18" height="18"', 'width="16" height="16"')}</button>
     </div>`;

@@ -4,7 +4,7 @@ import { CATEGORIAS, cat } from './categorias.js';
 import { carregar, meusEventosPendentes, meusPontosPendentes } from './store.js';
 import { expandir, ehGratis, janela, statusOcorrencia } from './eventos.js';
 import { Mapa } from './mapa.js';
-import { logo } from './arte.js';
+import { colonia, logo } from './arte.js';
 import { addDias, distanciaKm, dataCurta, gerarICS, hojeISO, hora, norm, rotuloDia, slug } from './utils.js';
 import { cardEvento, cardLugar, chipsHTML, detalheHTML, grupoDia, janelasHTML, miniHoje, proxTexto, vazioHTML } from './painel.js';
 import { iniciarContribuir } from './contribuir.js';
@@ -122,18 +122,26 @@ function render() {
       : vazioHTML('Nada por aqui… ainda', q || S.cats.size ? 'Tente outra busca ou limpe os filtros. E se o lugar existe e não está no mapa, cadastre!' : 'Seja a primeira pessoa a colocar um ponto no mapa.');
     itensMapa = ord;
   } else {
+    // exposições/mostras de vários dias entram uma vez só, em "Em cartaz"
+    const multi = (o) => o.repete === 'diaria' || o.repete === 'dias_uteis';
+    const vistos = new Set();
+    const cartaz = evFiltrados.filter((o) => multi(o) && !vistos.has(o.serie) && vistos.add(o.serie));
+    const normais = evFiltrados.filter((o) => !multi(o));
     let ultimo = '';
-    html = evFiltrados.map((o, i) => {
-      const cab = o.data !== ultimo ? grupoDia(o.data, hoje) : '';
-      ultimo = o.data;
-      return cab + cardEvento(o, S.porId.get(o.lugarId), status(o), i);
-    }).join('') || vazioHTML('Nenhum evento nesse período', 'Mude o período ou os filtros. Ou divulgue o próximo rolê!');
+    html = (cartaz.length ? `<div class="grupo"><b>Em cartaz</b><span>exposições e mostras</span></div>${cartaz.map((o, i) => cardEvento(o, S.porId.get(o.lugarId), status(o), i)).join('')}` : '')
+      + normais.map((o, i) => {
+        const cab = o.data !== ultimo ? grupoDia(o.data, hoje) : '';
+        ultimo = o.data;
+        return cab + cardEvento(o, S.porId.get(o.lugarId), status(o), i);
+      }).join('');
+    if (!html) html = vazioHTML('Nenhum evento nesse período', 'Mude o período ou os filtros. Ou divulgue o próximo rolê!');
+    S.nEventos = cartaz.length + normais.length;
     const ids = [...new Set(evFiltrados.map((o) => o.lugarId))];
     itensMapa = ids.map((id) => S.porId.get(id));
   }
   setHTML(el.lista, html);
   $('#n-lugares').textContent = lugaresFiltrados.length;
-  $('#n-eventos').textContent = evFiltrados.length;
+  $('#n-eventos').textContent = S.aba === 'agenda' ? S.nEventos : new Set(evFiltrados.map((o) => o.serie)).size;
 
   // abas
   document.querySelectorAll('.abas [role=tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.aba === S.aba)));
@@ -313,7 +321,8 @@ let mapa;
 let contrib;
 
 async function iniciar() {
-  $('#logo').innerHTML = logo(54);
+  $('#logo').innerHTML = logo(58);
+  $('#deco').innerHTML = colonia(190, 120, 11);
   $('#lic').textContent = CONFIG.licenca; $('#lic').href = CONFIG.licencaUrl;
   $('#lic2').textContent = CONFIG.licenca; $('#lic2').href = CONFIG.licencaUrl;
   if (CONFIG.mostrarCreditosEdital) {
@@ -394,10 +403,12 @@ async function iniciar() {
     return;
   }
   S.carregou = true;
-  $('#rodape-modo').textContent = `${S.modo === 'demo' ? 'Modo demonstração: os dados marcados como “exemplo” são fictícios. ' : ''}v${CONFIG.versao}`;
+  $('#ctl-rede').setAttribute('aria-pressed', 'true');
+  $('#rodape-modo').textContent = `${S.modo === 'demo' ? (S.pontosPub.some((p) => p.exemplo) ? 'Modo demonstração: itens marcados “exemplo” são fictícios. ' : 'Eventos pesquisados em 06/10/2026; confira a fonte antes de ir. ') : ''}v${CONFIG.versao}`;
   derivar();
   S.ajustar = true;
   render();
+  mapa.setRede(true);
   rota();
   setInterval(() => { derivar(); render(); }, 60000);
 }

@@ -2,22 +2,18 @@
 /* global L */
 import { CONFIG } from './config.js';
 import { cat, icone, CATEGORIAS } from './categorias.js';
-import { distanciaKm, esc, hash } from './utils.js';
-
-const RAIOS = ['50% 50% 46% 54% / 56% 44% 56% 44%', '44% 56% 52% 48% / 50% 58% 42% 50%', '56% 44% 48% 52% / 46% 52% 48% 54%', '48% 52% 58% 42% / 54% 46% 54% 46%'];
+import { distanciaKm, esc, hash, rng } from './utils.js';
+import { colonias, talo } from './arte.js';
 
 function iconePino(l, selecionado) {
   const c = cat(l.categoria);
-  const raio = RAIOS[hash(l.id) % RAIOS.length];
   const cls = ['pin', selecionado && 'is-sel', l.aoVivo && 'is-live', l.pendente && 'is-pend', l.exemplo && 'is-ex'].filter(Boolean).join(' ');
   return L.divIcon({
     className: 'pin-wrap',
-    iconSize: [46, 56],
-    iconAnchor: [23, 52],
-    tooltipAnchor: [0, -46],
-    html: `<div class="${cls}" style="--c:${c.cor};--r:${raio}">
-      <span class="pin__body">${icone(l.categoria, 22)}</span><i class="pin__tail"></i>
-      ${l.aoVivo ? '<b class="pin__live" title="Rola hoje"></b>' : ''}</div>`,
+    iconSize: [44, 60],
+    iconAnchor: [22, 57],
+    tooltipAnchor: [0, -50],
+    html: `<div class="${cls}" style="--c:${c.cor}">${talo(l.id, l.categoria)}<i class="pin__stem"></i><i class="pin__dot"></i>${l.aoVivo ? '<b class="pin__live" title="Rola hoje"></b>' : ''}</div>`,
   });
 }
 
@@ -26,17 +22,11 @@ function iconeCluster(cluster) {
   const cont = {};
   filhos.forEach((m) => { cont[m.options.cat] = (cont[m.options.cat] || 0) + 1; });
   const n = filhos.length;
-  let acc = 0;
-  const fatias = Object.entries(cont).sort((a, b) => b[1] - a[1]).map(([id, q]) => {
-    const ini = (acc / n) * 360;
-    acc += q;
-    return `${cat(id).cor} ${ini.toFixed(1)}deg ${((acc / n) * 360).toFixed(1)}deg`;
-  });
-  const tam = Math.min(70, 42 + Math.log2(n) * 7);
+  const tam = Math.round(Math.min(92, 60 + Math.log2(n) * 9));
   return L.divIcon({
     className: 'cluster-wrap',
     iconSize: [tam, tam],
-    html: `<div class="cluster" style="--g:conic-gradient(${fatias.join(',')});width:${tam}px;height:${tam}px"><span>${n}</span></div>`,
+    html: `<div class="cluster" style="width:${tam}px;height:${tam}px">${colonias(cont, n, tam)}<span>${n}</span></div>`,
   });
 }
 
@@ -112,11 +102,19 @@ export class Mapa {
   #piloto() {
     const t = CONFIG.territorioPiloto;
     if (!t) return;
-    this.piloto = L.circle(t.centro, { radius: t.raioM, className: 'piloto', color: '#6E9B1F', weight: 2.5, dashArray: '2 9', lineCap: 'round', fillColor: '#9BBF3A', fillOpacity: 0.16, interactive: false }).addTo(this.map);
-    // rótulo preso à borda de cima do círculo (não cobre os pontos do meio)
-    const topo = [t.centro[0] + t.raioM / 111320, t.centro[1]];
+    const rand = rng(21);
+    const [lat0, lng0] = t.centro;
+    const kLat = 111320;
+    const kLng = 111320 * Math.cos((lat0 * Math.PI) / 180);
+    const pts = Array.from({ length: 36 }, (_, i) => {
+      const a = (i / 36) * Math.PI * 2;
+      const k = 1 + 0.17 * Math.sin(a * 3 + 1) + 0.09 * Math.sin(a * 5) + (rand() - 0.5) * 0.06;
+      return [lat0 + ((t.raioM * k) / kLat) * Math.sin(a), lng0 + ((t.raioM * k) / kLng) * Math.cos(a)];
+    });
+    this.piloto = L.polygon(pts, { className: 'piloto', color: '#5f7a2a', weight: 1.6, dashArray: '1 7', lineCap: 'round', fillColor: '#a7b456', fillOpacity: 0.13, interactive: false, smoothFactor: 1.2 }).addTo(this.map);
+    const topo = pts.reduce((m, p) => (p[0] > m[0] ? p : m), pts[0]);
     this.pilotoRotulo = L.circleMarker(topo, { radius: 0, opacity: 0, fillOpacity: 0, interactive: false })
-      .bindTooltip(`<span>${esc(t.nome)}</span>`, { permanent: true, direction: 'top', className: 'tt-piloto', interactive: false, offset: [0, 6] })
+      .bindTooltip(`<span>${esc(t.nome)}</span>`, { permanent: true, direction: 'top', className: 'tt-piloto', interactive: false, offset: [0, 4] })
       .addTo(this.map);
   }
 
@@ -202,7 +200,7 @@ export class Mapa {
     this.camadaVizinhos.clearLayers();
     if (!origem) return;
     for (const v of vizinhos) {
-      L.polyline(curva(origem, v, origem.id + v.id), { pane: 'rede', className: 'rede-sel', color: cat(v.categoria).cor, weight: 5.5, opacity: 1, lineCap: 'round' }).addTo(this.camadaVizinhos);
+      L.polyline(curva(origem, v, origem.id + v.id), { pane: 'rede', className: 'rede-sel', color: cat(v.categoria).cor, weight: 3.2, opacity: 1, lineCap: 'round' }).addTo(this.camadaVizinhos);
     }
   }
 
@@ -221,7 +219,7 @@ export class Mapa {
         const k = [a.id, b.id].sort().join('~');
         if (feitos.has(k)) continue;
         feitos.add(k);
-        L.polyline(curva(a, b, k), { pane: 'rede', className: 'rede-linha', color: cat(a.categoria).cor, weight: 4, opacity: 0.95, lineCap: 'round' }).addTo(this.camadaRede);
+        L.polyline(curva(a, b, k), { pane: 'rede', className: 'rede-linha', color: cat(a.categoria).cor, weight: 2.8, opacity: 0.9, lineCap: 'round' }).addTo(this.camadaRede);
       }
     }
   }
