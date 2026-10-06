@@ -1,0 +1,751 @@
+{
+ "_aviso": "Dados de DEMONSTRAÇÃO. Itens com \"exemplo\": true são fictícios. Troque por dados reais (ou use o banco Supabase). Em eventos, \"em\" = dias a partir de hoje.",
+ "pontos": [
+  {
+   "id": "arreda-boi",
+   "nome": "Associação Cultural Arreda Boi",
+   "categoria": "popular",
+   "lat": -27.6032,
+   "lng": -48.4655,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Espaço cultural, teatro e escola da Lagoa da Conceição, casa do Boi de Mamão e da cultura popular de matriz açoriana. Parceiro do Cartografia Líquen e ponto de partida do mapeamento colaborativo.",
+   "aprox": true,
+   "tags": [
+    "boi de mamão",
+    "teatro",
+    "escola",
+    "cultura açoriana"
+   ],
+   "horario": "Consulte a programação"
+  },
+  {
+   "id": "mercado-publico",
+   "nome": "Mercado Público de Florianópolis",
+   "categoria": "espaco",
+   "lat": -27.5969,
+   "lng": -48.55,
+   "bairro": "Centro",
+   "descricao": "Mercado histórico do Centro: boxes de comida, artesanato e um dos pontos de encontro mais tradicionais da cidade.",
+   "aprox": true,
+   "tags": [
+    "histórico",
+    "gastronomia",
+    "artesanato"
+   ]
+  },
+  {
+   "id": "tac",
+   "nome": "Teatro Álvaro de Carvalho (TAC)",
+   "categoria": "teatro",
+   "lat": -27.5952,
+   "lng": -48.5483,
+   "bairro": "Centro",
+   "descricao": "Teatro histórico do Centro, um dos palcos mais antigos do estado.",
+   "aprox": true,
+   "tags": [
+    "teatro",
+    "histórico",
+    "palco"
+   ]
+  },
+  {
+   "id": "masc",
+   "nome": "Museu de Arte de Santa Catarina (MASC)",
+   "categoria": "arte",
+   "lat": -27.5858,
+   "lng": -48.5338,
+   "bairro": "Agronômica · CIC",
+   "descricao": "Museu de arte do estado, dentro do Centro Integrado de Cultura (CIC).",
+   "aprox": true,
+   "tags": [
+    "museu",
+    "exposições"
+   ]
+  },
+  {
+   "id": "palacio-cruz-e-sousa",
+   "nome": "Museu Histórico de SC · Palácio Cruz e Sousa",
+   "categoria": "espaco",
+   "lat": -27.5958,
+   "lng": -48.5493,
+   "bairro": "Centro",
+   "descricao": "Museu instalado no antigo palácio do governo, de frente para a Praça XV.",
+   "aprox": true,
+   "tags": [
+    "museu",
+    "memória"
+   ]
+  },
+  {
+   "id": "praca-xv",
+   "nome": "Praça XV de Novembro",
+   "categoria": "espaco",
+   "lat": -27.5971,
+   "lng": -48.5486,
+   "bairro": "Centro",
+   "descricao": "Praça central com a figueira centenária; ponto de encontro histórico, de feiras e de manifestações.",
+   "aprox": true,
+   "tags": [
+    "praça",
+    "ponto de encontro"
+   ]
+  },
+  {
+   "id": "casa-alfandega",
+   "nome": "Casa da Alfândega",
+   "categoria": "atelie",
+   "lat": -27.5973,
+   "lng": -48.5508,
+   "bairro": "Centro",
+   "descricao": "Prédio histórico junto ao Mercado Público que abriga artesanato local.",
+   "aprox": true,
+   "tags": [
+    "artesanato",
+    "histórico"
+   ]
+  },
+  {
+   "id": "ufsc",
+   "nome": "UFSC · Campus Trindade",
+   "categoria": "audiovisual",
+   "lat": -27.6003,
+   "lng": -48.5187,
+   "bairro": "Trindade",
+   "descricao": "Campus com cineclubes, teatros, mostras e uma cena cultural estudantil intensa.",
+   "aprox": true,
+   "tags": [
+    "universidade",
+    "cineclube"
+   ]
+  },
+  {
+   "id": "av-rendeiras",
+   "nome": "Avenida das Rendeiras",
+   "categoria": "atelie",
+   "lat": -27.6012,
+   "lng": -48.4598,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Rua que leva o nome da renda de bilro, tradição açoriana mantida por rendeiras da Lagoa. Território de saber manual e de memória.",
+   "aprox": true,
+   "tags": [
+    "renda de bilro",
+    "tradição açoriana"
+   ]
+  },
+  {
+   "id": "centrinho-lagoa",
+   "nome": "Centrinho da Lagoa",
+   "categoria": "festa",
+   "lat": -27.6044,
+   "lng": -48.4695,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Coração da vida noturna e das feiras da Lagoa da Conceição.",
+   "aprox": true,
+   "tags": [
+    "noite",
+    "feira",
+    "bares"
+   ]
+  },
+  {
+   "id": "barra-lagoa",
+   "nome": "Barra da Lagoa · comunidade pesqueira",
+   "categoria": "popular",
+   "lat": -27.5738,
+   "lng": -48.4268,
+   "bairro": "Barra da Lagoa",
+   "descricao": "Vila de pescadores artesanais junto ao canal da Lagoa; pesca, redes e festas populares.",
+   "aprox": true,
+   "tags": [
+    "pesca artesanal",
+    "tradição"
+   ]
+  },
+  {
+   "id": "ribeirao-ilha",
+   "nome": "Ribeirão da Ilha · tradição açoriana",
+   "categoria": "popular",
+   "lat": -27.7142,
+   "lng": -48.564,
+   "bairro": "Ribeirão da Ilha",
+   "descricao": "Freguesia de arquitetura e costumes açorianos, com ostras, engenhos e festas religiosas.",
+   "aprox": true,
+   "tags": [
+    "açorianidade",
+    "arquitetura",
+    "ostras"
+   ]
+  },
+  {
+   "id": "santo-antonio",
+   "nome": "Santo Antônio de Lisboa",
+   "categoria": "atelie",
+   "lat": -27.5118,
+   "lng": -48.5155,
+   "bairro": "Santo Antônio de Lisboa",
+   "descricao": "Freguesia açoriana na baía norte, com ateliês, cerâmica e artesanato à beira-mar.",
+   "aprox": true,
+   "tags": [
+    "artesanato",
+    "açorianidade"
+   ]
+  },
+  {
+   "id": "ex-capoeira-lagoa",
+   "nome": "Roda de Capoeira da Lagoa",
+   "categoria": "capoeira",
+   "lat": -27.604,
+   "lng": -48.4684,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "roda",
+    "angola e regional"
+   ],
+   "instagram": "@exemplo"
+  },
+  {
+   "id": "ex-capoeira-campeche",
+   "nome": "Capoeira no Campeche",
+   "categoria": "capoeira",
+   "lat": -27.6745,
+   "lng": -48.4795,
+   "bairro": "Campeche",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "grupo",
+    "crianças"
+   ]
+  },
+  {
+   "id": "ex-atelie-ceramica",
+   "nome": "Ateliê de Cerâmica Aberto",
+   "categoria": "atelie",
+   "lat": -27.513,
+   "lng": -48.517,
+   "bairro": "Santo Antônio de Lisboa",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "cerâmica",
+    "oficinas"
+   ]
+  },
+  {
+   "id": "ex-galeria",
+   "nome": "Galeria Independente",
+   "categoria": "arte",
+   "lat": -27.5985,
+   "lng": -48.5512,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "exposições",
+    "artistas locais"
+   ]
+  },
+  {
+   "id": "ex-mural",
+   "nome": "Muro Coletivo",
+   "categoria": "arte",
+   "lat": -27.5895,
+   "lng": -48.545,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "grafite",
+    "muralismo"
+   ]
+  },
+  {
+   "id": "ex-festa-rua",
+   "nome": "Festa de Rua do Centrinho",
+   "categoria": "festa",
+   "lat": -27.6051,
+   "lng": -48.4672,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "festa",
+    "verão"
+   ]
+  },
+  {
+   "id": "ex-batalha",
+   "nome": "Batalha de Rima do Centro",
+   "categoria": "rap",
+   "lat": -27.5963,
+   "lng": -48.5499,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "batalha",
+    "freestyle"
+   ]
+  },
+  {
+   "id": "ex-hiphop-estreito",
+   "nome": "Coletivo Hip-Hop do Estreito",
+   "categoria": "rap",
+   "lat": -27.599,
+   "lng": -48.579,
+   "bairro": "Estreito",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "coletivo",
+    "grafite",
+    "dj"
+   ]
+  },
+  {
+   "id": "ex-samba-centro",
+   "nome": "Roda de Samba do Centro",
+   "categoria": "samba",
+   "lat": -27.5976,
+   "lng": -48.5512,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "roda",
+    "pagode"
+   ]
+  },
+  {
+   "id": "ex-escola-samba",
+   "nome": "Escola de Samba do Morro",
+   "categoria": "samba",
+   "lat": -27.5915,
+   "lng": -48.5585,
+   "bairro": "Monte Serrat",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "escola de samba",
+    "ensaio"
+   ]
+  },
+  {
+   "id": "ex-coletivo-moradia",
+   "nome": "Coletivo de Moradia e Cultura",
+   "categoria": "social",
+   "lat": -27.593,
+   "lng": -48.5545,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "moradia",
+    "coletivo"
+   ]
+  },
+  {
+   "id": "ex-assoc-moradores",
+   "nome": "Associação de Moradores",
+   "categoria": "social",
+   "lat": -27.599,
+   "lng": -48.4605,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "bairro",
+    "direitos"
+   ]
+  },
+  {
+   "id": "ex-terno-reis",
+   "nome": "Terno de Reis",
+   "categoria": "popular",
+   "lat": -27.709,
+   "lng": -48.561,
+   "bairro": "Ribeirão da Ilha",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "terno de reis",
+    "tradição"
+   ]
+  },
+  {
+   "id": "ex-teatro-rua",
+   "nome": "Companhia de Teatro de Rua",
+   "categoria": "teatro",
+   "lat": -27.602,
+   "lng": -48.464,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "teatro de rua",
+    "oficinas"
+   ]
+  },
+  {
+   "id": "ex-musica-viva",
+   "nome": "Bar com Música ao Vivo",
+   "categoria": "musica",
+   "lat": -27.6048,
+   "lng": -48.47,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "bar",
+    "autoral"
+   ]
+  },
+  {
+   "id": "ex-choro",
+   "nome": "Roda de Choro",
+   "categoria": "musica",
+   "lat": -27.5968,
+   "lng": -48.5496,
+   "bairro": "Centro",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "choro",
+    "instrumental"
+   ]
+  },
+  {
+   "id": "ex-cineclube",
+   "nome": "Cineclube da Barra",
+   "categoria": "audiovisual",
+   "lat": -27.5745,
+   "lng": -48.429,
+   "bairro": "Barra da Lagoa",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "cinema",
+    "debate"
+   ]
+  },
+  {
+   "id": "ex-sj-rap",
+   "nome": "Batalha de Rima de São José",
+   "categoria": "rap",
+   "lat": -27.595,
+   "lng": -48.63,
+   "bairro": "Kobrasol (São José)",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "batalha",
+    "freestyle"
+   ]
+  },
+  {
+   "id": "ex-sj-teatro",
+   "nome": "Teatro Comunitário",
+   "categoria": "teatro",
+   "lat": -27.61,
+   "lng": -48.635,
+   "bairro": "Barreiros (São José)",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "teatro",
+    "bairro"
+   ]
+  },
+  {
+   "id": "ex-palhoca-capoeira",
+   "nome": "Capoeira em Palhoça",
+   "categoria": "capoeira",
+   "lat": -27.645,
+   "lng": -48.67,
+   "bairro": "Palhoça",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "roda",
+    "grupo"
+   ]
+  },
+  {
+   "id": "ex-pinheira-atelie",
+   "nome": "Ateliê de Artes na Pinheira",
+   "categoria": "atelie",
+   "lat": -27.85,
+   "lng": -48.615,
+   "bairro": "Pinheira (Palhoça)",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "artesanato",
+    "oficinas"
+   ]
+  },
+  {
+   "id": "ex-biguacu-samba",
+   "nome": "Roda de Samba de Biguaçu",
+   "categoria": "samba",
+   "lat": -27.494,
+   "lng": -48.658,
+   "bairro": "Biguaçu",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "roda",
+    "pagode"
+   ]
+  },
+  {
+   "id": "ex-santo-amaro-popular",
+   "nome": "Festa Popular em Santo Amaro",
+   "categoria": "popular",
+   "lat": -27.687,
+   "lng": -48.779,
+   "bairro": "Santo Amaro da Imperatriz",
+   "descricao": "Ponto de exemplo, só para mostrar como as fichas aparecem. Conhece um lugar assim de verdade? Clique em Colaborar e cadastre!",
+   "aprox": true,
+   "exemplo": true,
+   "tags": [
+    "festa",
+    "tradição"
+   ]
+  }
+ ],
+ "eventos": [
+  {
+   "id": "ev1",
+   "ponto_id": "ex-capoeira-lagoa",
+   "titulo": "Roda de Capoeira aberta",
+   "categoria": "capoeira",
+   "em": 0,
+   "inicio": "18:00",
+   "fim": "20:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev2",
+   "ponto_id": "ex-batalha",
+   "titulo": "Batalha de Rima",
+   "categoria": "rap",
+   "em": 1,
+   "inicio": "19:30",
+   "fim": "22:30",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev3",
+   "ponto_id": "ex-samba-centro",
+   "titulo": "Roda de Samba",
+   "categoria": "samba",
+   "em": 2,
+   "inicio": "17:00",
+   "fim": "21:00",
+   "repete": "semanal",
+   "preco": "Grátis (consumação à parte)",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev4",
+   "ponto_id": "ex-festa-rua",
+   "titulo": "Festa de Rua — edição de verão",
+   "categoria": "festa",
+   "em": 3,
+   "inicio": "22:00",
+   "fim": "04:00",
+   "repete": "nao",
+   "preco": "R$ 30",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev5",
+   "ponto_id": "ex-cineclube",
+   "titulo": "Sessão + debate",
+   "categoria": "audiovisual",
+   "em": 4,
+   "inicio": "19:00",
+   "fim": "21:30",
+   "repete": "quinzenal",
+   "preco": "Contribuição consciente",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev6",
+   "ponto_id": "ex-teatro-rua",
+   "titulo": "Oficina aberta de teatro",
+   "categoria": "teatro",
+   "em": 0,
+   "inicio": "15:00",
+   "fim": "17:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev7",
+   "ponto_id": "ex-choro",
+   "titulo": "Roda de Choro",
+   "categoria": "musica",
+   "em": 5,
+   "inicio": "16:00",
+   "fim": "19:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev8",
+   "ponto_id": "ex-atelie-ceramica",
+   "titulo": "Oficina de cerâmica",
+   "categoria": "atelie",
+   "em": 6,
+   "inicio": "14:00",
+   "fim": "17:00",
+   "repete": "mensal",
+   "preco": "R$ 80",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev9",
+   "ponto_id": "ex-galeria",
+   "titulo": "Abertura de exposição",
+   "categoria": "arte",
+   "em": 8,
+   "inicio": "19:00",
+   "fim": "22:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev10",
+   "ponto_id": "ex-terno-reis",
+   "titulo": "Ensaio aberto",
+   "categoria": "popular",
+   "em": 2,
+   "inicio": "19:30",
+   "fim": "21:30",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev11",
+   "ponto_id": "ex-assoc-moradores",
+   "titulo": "Assembleia aberta do bairro",
+   "categoria": "social",
+   "em": 1,
+   "inicio": "19:00",
+   "fim": "21:00",
+   "repete": "mensal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev12",
+   "ponto_id": "ex-musica-viva",
+   "titulo": "Noite de autorais",
+   "categoria": "musica",
+   "em": 3,
+   "inicio": "21:00",
+   "fim": "00:00",
+   "repete": "semanal",
+   "preco": "R$ 15",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev13",
+   "ponto_id": "ex-hiphop-estreito",
+   "titulo": "Oficina de grafite e DJ",
+   "categoria": "rap",
+   "em": 6,
+   "inicio": "10:00",
+   "fim": "13:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev14",
+   "ponto_id": "ex-capoeira-campeche",
+   "titulo": "Batizado e roda de encerramento",
+   "categoria": "capoeira",
+   "em": 11,
+   "inicio": "09:00",
+   "fim": "14:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo. Os eventos reais aparecem aqui assim que a comunidade cadastrar.",
+   "exemplo": true
+  },
+  {
+   "id": "ev15",
+   "ponto_id": "ex-sj-rap",
+   "titulo": "Batalha de Rima",
+   "categoria": "rap",
+   "em": 2,
+   "inicio": "19:00",
+   "fim": "22:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo.",
+   "exemplo": true
+  },
+  {
+   "id": "ev16",
+   "ponto_id": "ex-palhoca-capoeira",
+   "titulo": "Roda de Capoeira aberta",
+   "categoria": "capoeira",
+   "em": 1,
+   "inicio": "18:30",
+   "fim": "20:30",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Evento de exemplo.",
+   "exemplo": true
+  }
+ ]
+}

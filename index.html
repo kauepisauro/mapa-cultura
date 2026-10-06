@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cartografia Líquen — mapa vivo das culturas da Grande Florianópolis</title>
+  <meta name="description" content="Capoeira, ateliês, samba, rap, festas, movimentos sociais e cultura popular da Grande Florianópolis num só mapa colaborativo — com agenda do que rola hoje.">
+  <meta name="theme-color" content="#F3E9D8">
+  <meta property="og:title" content="Cartografia Líquen — mapa vivo das culturas da Grande Florianópolis">
+  <meta property="og:description" content="Descubra e divulgue a cultura da Ilha e da região: lugares, coletivos e eventos num mapa feito por quem faz a cena.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="icons/icon-512.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500..900,0..100,0..1;1,9..144,500..900,0..100,0..1&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="pular" href="#lista">Pular para a lista</a>
+
+<div id="app" data-tema="dia">
+  <div id="mapa" role="application" aria-label="Mapa interativo da cultura de Florianópolis"></div>
+
+  <!-- controles do mapa -->
+  <div class="ctl" role="group" aria-label="Controles do mapa">
+    <button class="ctl__btn" id="ctl-mais" aria-label="Aproximar">+</button>
+    <button class="ctl__btn" id="ctl-menos" aria-label="Afastar">−</button>
+    <button class="ctl__btn" id="ctl-rede" aria-pressed="false" aria-label="Mostrar a rede de líquen que liga os pontos" title="Rede de líquen">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.3"/><circle cx="19" cy="8" r="2.3"/><circle cx="12" cy="19" r="2.3"/><path d="M7 6.8c4 0 7 .3 10 1.2M6 8c1.5 4 3 7.5 4.4 9.6M17.7 10c-1 3.5-2.8 6-4.4 8"/></svg>
+    </button>
+    <button class="ctl__btn" id="ctl-onde" aria-label="Mostrar onde estou" title="Perto de mim">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="8"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg>
+    </button>
+    <button class="ctl__btn" id="ctl-tema" aria-label="Alternar entre mapa de dia e de noite" title="Dia / noite">
+      <svg class="ico-lua" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      <svg class="ico-sol" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+    </button>
+  </div>
+
+  <!-- painel / bottom-sheet -->
+  <aside id="painel" class="painel" aria-label="Lugares e agenda">
+    <button class="painel__alca" id="alca" aria-label="Expandir ou recolher o painel"><span></span></button>
+
+    <div class="painel__rolagem" id="rolagem">
+      <header class="marca">
+        <div class="marca__logo" id="logo"></div>
+        <div class="marca__txt">
+          <span class="marca__pre">Cartografia</span>
+          <h1 class="marca__nome">Líquen</h1>
+        </div>
+        <button class="btn-redondo" id="btn-sobre" aria-label="Sobre o projeto" title="Sobre">?</button>
+        <p class="marca__sub">mapa vivo das culturas da Grande Florianópolis</p>
+      </header>
+
+      <section class="hoje" id="hoje" aria-labelledby="hoje-t">
+        <div class="hoje__topo">
+          <h2 id="hoje-t"><span class="vivo" aria-hidden="true"></span>Rola hoje</h2>
+          <button class="link" id="hoje-ver">ver agenda →</button>
+        </div>
+        <div class="hoje__trilho" id="hoje-lista"></div>
+      </section>
+
+      <div class="busca">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="busca" type="search" placeholder="Buscar lugar, coletivo, rolê…" autocomplete="off" aria-label="Buscar">
+        <button class="busca__x" id="busca-x" aria-label="Limpar busca" hidden>×</button>
+      </div>
+
+      <div class="chips is-fechado" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+      <button class="link chips__mais" id="chips-mais" aria-expanded="false">todas as categorias ▾</button>
+
+      <nav class="abas" id="abas" role="tablist" aria-label="Visão">
+        <button role="tab" id="aba-explorar" data-aba="explorar" aria-selected="true" aria-controls="lista">Explorar <small id="n-lugares"></small></button>
+        <button role="tab" id="aba-agenda" data-aba="agenda" aria-selected="false" aria-controls="lista">Agenda <small id="n-eventos"></small></button>
+      </nav>
+
+      <div class="janelas" id="janelas" hidden role="group" aria-label="Período da agenda"></div>
+
+      <div id="lista" class="lista" role="tabpanel" tabindex="-1"></div>
+
+      <footer class="rodape">
+        <p>Conteúdo colaborativo sob <a id="lic" target="_blank" rel="noopener"></a>. Mapa © OpenStreetMap · CARTO.</p>
+        <p id="rodape-modo"></p>
+      </footer>
+    </div>
+
+    <section id="detalhe" class="detalhe" aria-label="Detalhes" hidden></section>
+  </aside>
+
+  <button class="fab" id="fab">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+    <span>Colaborar</span>
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+
+<dialog id="dlg-colaborar" class="dlg" aria-labelledby="colab-t"></dialog>
+
+<dialog id="dlg-sobre" class="dlg dlg--sobre" aria-labelledby="sobre-t">
+  <div class="dlg__cab">
+    <h2 id="sobre-t">O que é o <em>Cartografia Líquen</em>?</h2>
+    <button class="btn-redondo" data-fechar aria-label="Fechar">×</button>
+  </div>
+  <div class="dlg__corpo prosa">
+    <p class="lead">Um mapa vivo, público e gratuito das culturas da Grande Florianópolis — a Ilha, São José, Palhoça, Biguaçu e arredores: lugares, coletivos, artistas e manifestações — da roda de capoeira ao ateliê, do rap ao Boi de Mamão, do samba aos movimentos sociais.</p>
+    <h3>Por que “líquen”?</h3>
+    <p>O líquen é um organismo que só existe na simbiose entre um fungo e uma alga. Cultura também é assim: uma rede de interdependências. Cada ponto do mapa ganha sentido pelas relações com os outros — por isso o botão <strong>rede</strong> liga os pontos entre si.</p>
+    <h3>Como funciona</h3>
+    <ol>
+      <li><strong>Qualquer pessoa pode colaborar</strong> — sugerindo um lugar, um coletivo ou um evento (com data, horário e repetição).</li>
+      <li><strong>A curadoria confere</strong> os dados e a autorização do coletivo antes de publicar.</li>
+      <li><strong>O mapa vira agenda</strong>: “Rola hoje” mostra o que acontece agora, e você leva o evento para o seu calendário.</li>
+    </ol>
+    <h3>Território-piloto</h3>
+    <p>Começamos pela <strong>Lagoa da Conceição</strong>, com sua forte cultura popular de matriz açoriana, e vamos crescendo para todos os territórios da Ilha e da Grande Florianópolis. Em qualquer bairro ou cidade da região, você pode colocar a sua cena no mapa.</p>
+    <h3>Seus dados e seu conteúdo</h3>
+    <p>Só publicamos o que o coletivo autoriza. Contatos privados ficam apenas com a curadoria. O conteúdo é publicado sob <a id="lic2" target="_blank" rel="noopener"></a>, preservando os direitos de autores e comunidades. É um bem comum feito pela própria cena.</p>
+    <p class="credito" id="creditos" hidden></p>
+    <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar data-abrir-colab>Quero colaborar</button></div>
+  </div>
+</dialog>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/markercluster/leaflet.markercluster.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
