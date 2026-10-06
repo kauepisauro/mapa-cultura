@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { nesimoDiaSemana, addDias, addMeses, toISO, fromISO, rotuloDia, hora, linkWhatsapp, linkInstagram, gerarICS, norm, distanciaKm, recorrenciaTexto } from '../js/utils.js';
+import { parseVideo, nesimoDiaSemana, addDias, addMeses, toISO, fromISO, rotuloDia, hora, linkWhatsapp, linkInstagram, gerarICS, norm, distanciaKm, recorrenciaTexto } from '../js/utils.js';
 import { expandir, statusOcorrencia, janela, ehGratis } from '../js/eventos.js';
 
 test('datas: soma de dias atravessa mês/ano e DST', () => {
@@ -138,4 +138,14 @@ test('evento sem horário é dia todo e vai ao calendário como dia inteiro', ()
   assert.match(ics, /DTEND;VALUE=DATE:20261010/);
   const ics2 = gerarICS({ key: 'k', titulo: 'Roda', data: '2026-10-03', inicio: '10:00', repete: 'mensal_semana' });
   assert.match(ics2, /RRULE:FREQ=MONTHLY;BYDAY=1SA/);
+});
+
+test('vídeo: reconhece YouTube, Vimeo e arquivo', () => {
+  assert.deepEqual(parseVideo('https://www.youtube.com/watch?v=dQw4w9WgXcQ'), { tipo: 'youtube', id: 'dQw4w9WgXcQ' });
+  assert.deepEqual(parseVideo('https://youtu.be/dQw4w9WgXcQ?t=10'), { tipo: 'youtube', id: 'dQw4w9WgXcQ' });
+  assert.deepEqual(parseVideo('https://www.youtube.com/shorts/dQw4w9WgXcQ'), { tipo: 'youtube', id: 'dQw4w9WgXcQ' });
+  assert.deepEqual(parseVideo('https://vimeo.com/76979871'), { tipo: 'vimeo', id: '76979871' });
+  assert.deepEqual(parseVideo('videos/roda.mp4'), { tipo: 'arquivo', src: 'videos/roda.mp4' });
+  assert.equal(parseVideo('https://exemplo.com/pagina'), null);
+  assert.equal(parseVideo(''), null);
 });

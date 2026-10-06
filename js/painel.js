@@ -1,7 +1,7 @@
 // Construtores de HTML do painel (cards, agenda, ficha de detalhe). Sem estado.
 import { CATEGORIAS, cat, icone } from './categorias.js';
 import { capa } from './arte.js';
-import { dataCurta, dataNumero, esc, hora, kmTexto, linkInstagram, linkRota, linkSite, linkWhatsapp, recorrenciaTexto, rotuloDia } from './utils.js';
+import { dataCurta, dataNumero, esc, hora, kmTexto, linkInstagram, linkRota, linkSite, linkWhatsapp, parseVideo, recorrenciaTexto, rotuloDia } from './utils.js';
 import { ehGratis } from './eventos.js';
 
 const svg = (d, t = 18) => `<svg width="${t}" height="${t}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -19,10 +19,11 @@ export const I = {
   bandeira: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>'),
   tag: svg('<path d="M20 12 12 20 3.5 11.5V3.5h8Z"/><circle cx="8" cy="8" r="1.2"/>'),
   cal: svg('<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>', 16),
+  play: svg('<path d="M8 5.5v13l11-6.5Z" fill="currentColor"/>', 26),
 };
 
-export const imgCapa = (item) =>
-  item.foto ? `<img src="${esc(item.foto)}" alt="${esc(item.foto_alt || '')}" loading="lazy" decoding="async">` : capa({ id: item.id, nome: item.nome || item.titulo, categoria: item.categoria });
+export const imgCapa = (item, mini = false) =>
+  item.foto ? `<img src="${esc(mini && item.foto_mini ? item.foto_mini : item.foto)}" alt="${esc(item.foto_alt || '')}" loading="lazy" decoding="async">` : capa({ id: item.id, nome: item.nome || item.titulo, categoria: item.categoria });
 
 const selos = (l) => `${l.exemplo ? '<span class="selo">exemplo</span>' : ''}${l.pendente ? '<span class="selo selo--pend">em análise</span>' : ''}`;
 
@@ -48,7 +49,7 @@ export function cardLugar(l, { prox = '', dist = null, i = 0 } = {}) {
   const c = cat(l.categoria);
   const sub = [l.bairro, dist != null ? kmTexto(dist) : ''].filter(Boolean).join(' · ');
   return `<button class="card" style="--c:${c.cor};animation-delay:${Math.min(i, 14) * 28}ms" data-acao="sel" data-id="${esc(l.id)}">
-    <div class="card__capa">${imgCapa(l)}</div>
+    <div class="card__capa">${imgCapa(l, true)}</div>
     <div class="card__txt">
       <div class="card__cat">${icone(l.categoria, 13)}${esc(c.nome)}${selos(l)}</div>
       <div class="card__nome">${esc(l.nome)}</div>
@@ -89,6 +90,20 @@ export function miniHoje(oc, lugar, status) {
 
 export const vazioHTML = (titulo, texto, botao = true) => `<div class="vazio"><b>${esc(titulo)}</b>${esc(texto)}${botao ? '<br><button class="btn btn--cheio" data-acao="colab">Colaborar com o mapa</button>' : ''}</div>`;
 
+/** Vídeo: YouTube/Vimeo carregam só no clique (privacidade e velocidade); arquivo usa <video> com legenda. */
+export function videoHTML(l) {
+  const v = parseVideo(l.video);
+  if (!v) return '';
+  const legenda = [l.video_titulo && esc(l.video_titulo), l.video_credito && `Vídeo: ${esc(l.video_credito)}`].filter(Boolean).join(' · ');
+  let corpo;
+  if (v.tipo === 'arquivo') {
+    corpo = `<video class="video__player" controls playsinline preload="metadata" ${l.foto ? `poster="${esc(l.foto)}"` : ''} src="${esc(v.src)}">${l.video_legenda ? `<track kind="captions" srclang="pt" label="Português" src="${esc(l.video_legenda)}" default>` : ''}</video>`;
+  } else {
+    corpo = `<button class="video__capa" data-acao="video" data-tipo="${v.tipo}" data-id="${esc(v.id)}" aria-label="Reproduzir vídeo${l.video_titulo ? `: ${esc(l.video_titulo)}` : ''}"><span class="video__bg">${imgCapa(l)}</span><span class="video__play">${I.play}</span></button>`;
+  }
+  return `<div class="secao"><h3>Vídeo</h3></div><figure class="video">${corpo}${legenda ? `<figcaption>${legenda}</figcaption>` : ''}</figure>`;
+}
+
 /** Ficha completa de um lugar. */
 export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, statusDe }) {
   const c = cat(l.categoria);
@@ -124,6 +139,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
   return `<div class="detalhe__rolagem">
     <div class="detalhe__capa">
       ${imgCapa(l)}
+      ${l.foto && l.foto_credito ? `<span class="detalhe__credito">Foto: ${esc(l.foto_credito)}</span>` : ''}
       <button class="btn-redondo detalhe__voltar" data-acao="fechar-det" aria-label="Voltar à lista">${I.voltar}</button>
       <span class="detalhe__sel" style="--c:${c.cor}">${icone(l.categoria, 17)}${esc(c.nome)}</span>
     </div>
@@ -138,8 +154,9 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
         <a class="btn btn--cheio" href="${esc(linkRota(l))}" target="_blank" rel="noopener">${I.rota} Como chegar</a>
         <button class="btn" data-acao="compartilhar" data-id="${esc(l.id)}">${I.enviar} Compartilhar</button>
       </div>
+      ${videoHTML(l)}
       <div class="secao"><h3>Próximos eventos</h3>${l.virtual || l.pendente ? '' : `<button class="link" data-acao="add-evento" data-id="${esc(l.id)}">+ adicionar evento</button>`}</div>
-      ${evs || `<div class="vazio" style="margin:0 0 8px"><b>Nada marcado ainda</b>${l.virtual ? '' : 'Sabe de algo que vai rolar aqui?'}</div>`}
+      ${evs || `<div class="vazio" style="margin:0 0 8px"><b>Nada marcado ainda</b>${l.virtual ? '' : 'Sabe de algum evento neste local?'}</div>`}
       ${perto ? `<div class="secao"><h3>Também por perto</h3></div><div class="perto">${perto}</div>` : ''}
       ${l.virtual || l.pendente ? '' : `<div class="secao"><h3>Esta ficha</h3></div>
       <div class="acoes">

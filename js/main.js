@@ -290,6 +290,19 @@ const acoes = {
   ics: (t) => baixarICS(t.dataset.key),
   chamar: (t) => compartilharEvento(t.dataset.key),
   compartilhar(t) { const l = S.porId.get(t.dataset.id); compartilhar(`${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`, `${l.nome} — ${cat(l.categoria).nome} na Grande Florianópolis. Vi no Mapa cultural vivo:`); },
+  video(t) {
+    const { tipo, id } = t.dataset;
+    const src = tipo === 'youtube'
+      ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&cc_load_policy=1&hl=pt-BR`
+      : `https://player.vimeo.com/video/${id}?autoplay=1&dnt=1`;
+    const f = document.createElement('iframe');
+    f.className = 'video__frame';
+    f.src = src;
+    f.title = t.getAttribute('aria-label') || 'Vídeo';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    t.replaceWith(f);
+  },
   colab: () => contrib.abrir(),
   'add-evento': (t) => contrib.abrir({ tipo: 'evento', pontoId: t.dataset.id }),
   corrigir: (t) => contrib.abrirSugestao(S.porId.get(t.dataset.id), 'correcao'),

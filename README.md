@@ -68,6 +68,20 @@ Nome, contatos da curadoria (WhatsApp/e-mail para o modo demo), limites e centro
 licença e créditos do edital (`mostrarCreditosEdital: true` só depois de contemplado).
 Categorias e cores: `js/categorias.js` (basta adicionar um item).
 
+## Fotos e vídeos
+
+**Fotos** (ex.: ensaio fotográfico do projeto):
+1. Rode `python3 tools/otimizar_foto.py caminho/foto.jpg nome-do-lugar` (precisa de `pip install pillow`). O script corrige a
+   rotação, **apaga os metadados (inclusive GPS)** e gera `fotos/nome-do-lugar.jpg` (ficha) e `fotos/nome-do-lugar-mini.jpg` (lista).
+2. No `data/seed.json` (ou na tabela `pontos`), preencha no lugar: `foto`, `foto_mini`, `foto_alt` (**descrição da imagem**, obrigatória
+   para acessibilidade) e `foto_credito` (aparece sobre a imagem: “Foto: Nome”).
+3. Só publique imagens de pessoas com **autorização de uso de imagem** (Anexo da proposta) e com o crédito de quem fotografou.
+
+**Vídeos:** publique no YouTube ou Vimeo e cole o link em `video` (mais `video_titulo` e `video_credito`). Ele só carrega quando a
+pessoa clica (sem cookies de terceiros antes disso). Prefira vídeos **legendados** (a proposta exige). Também funciona arquivo
+`.mp4` hospedado no site (`"video": "videos/roda.mp4"`) com legenda `.vtt` em `video_legenda`; mantenha os arquivos pequenos.
+Quem colabora pelo formulário também pode enviar foto (com descrição e crédito) e link de vídeo.
+
 ## Fazer as pessoas usarem de fato
 
 - **Cartaz pronto para imprimir** em `divulgacao/cartaz-colaborar-A4.pdf` (com QR code do formulário). Os QR codes em SVG (`qr-colaborar.svg`, `qr-mapa.svg`) apontam para `https://kauepisauro.github.io/mapa-cultura/`; se você usar domínio próprio, gere outros e refaça o cartaz.

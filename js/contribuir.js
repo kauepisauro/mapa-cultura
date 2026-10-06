@@ -39,8 +39,16 @@ const blocoFoto = () => `<div class="campo">
     <label for="foto-alt" style="margin-bottom:4px">Descreva a imagem ${obrig}</label>
     <textarea id="foto-alt" name="foto_alt" style="min-height:70px;width:100%" maxlength="300" placeholder="Ex.: Roda de capoeira na praia, com berimbaus ao fundo"></textarea>
     <small class="dica">Para pessoas cegas ou com baixa visão. Todas as imagens do mapa têm descrição.</small>
+    <label for="foto-cred" style="margin:10px 0 4px">Crédito da foto ${obrig}</label>
+    <input type="text" id="foto-cred" name="foto_credito" maxlength="120" style="width:100%" placeholder="Nome de quem fez a foto">
     <button type="button" class="link" id="foto-x">remover foto</button></div></div>
   <input type="hidden" name="foto">
+</div>`;
+
+const blocoVideo = () => `<div class="campo">
+  <label for="video">Vídeo <small style="font-weight:600">(opcional)</small></label>
+  <input type="text" id="video" name="video" maxlength="300" placeholder="Link do YouTube ou Vimeo">
+  <small class="dica">Publique o vídeo no YouTube ou Vimeo e cole o link. Se possível, com legenda: o mapa valoriza vídeos acessíveis.</small>
 </div>`;
 
 const blocoFinal = (tipo) => `
@@ -68,6 +76,7 @@ const camposPonto = () => `
   ${campo('Site ou link', '<input type="text" id="site" name="site" maxlength="300" placeholder="seusite.com.br">', '', 'site')}
   ${campo('Palavras-chave', '<input type="text" id="tags" name="tags" maxlength="200" placeholder="angola, crianças, roda aberta (separe por vírgula)">', '', 'tags')}
   ${blocoFoto()}
+  ${blocoVideo()}
   ${blocoFinal('ponto')}`;
 
 const camposEvento = (pontos, pontoId) => `
@@ -217,10 +226,11 @@ export function iniciarContribuir(ctx) {
         dlg.querySelector('#foto-img').src = url;
         prev.hidden = false;
         dlg.querySelector('#foto-alt').required = true;
+        dlg.querySelector('#foto-cred').required = true;
         erro('');
       } catch (e) { inp.value = ''; erro(e.message || 'Não consegui ler essa imagem.'); }
     });
-    dlg.querySelector('#foto-x').onclick = () => { inp.value = ''; dlg.querySelector('[name=foto]').value = ''; dlg.querySelector('#foto-alt').required = false; dlg.querySelector('#foto-alt').value = ''; prev.hidden = true; };
+    dlg.querySelector('#foto-x').onclick = () => { inp.value = ''; dlg.querySelector('[name=foto]').value = ''; dlg.querySelector('#foto-alt').required = false; dlg.querySelector('#foto-alt').value = ''; dlg.querySelector('#foto-cred').required = false; dlg.querySelector('#foto-cred').value = ''; prev.hidden = true; };
   }
 
   function desenhar() {
@@ -271,7 +281,7 @@ export function iniciarContribuir(ctx) {
         nome: v('nome'), categoria: v('categoria'), descricao: v('descricao'), lat, lng, aprox: fd.get('aprox') === 'on',
         bairro: v('bairro'), endereco: v('endereco'), horario: v('horario'), instagram: v('instagram'), whatsapp: v('whatsapp'), site: v('site'),
         tags: v('tags').split(',').map((t) => t.trim().slice(0, 30)).filter(Boolean).slice(0, 8),
-        foto: v('foto'), foto_alt: v('foto_alt'), contato_privado: v('contato_privado'), tem_autorizacao: true, _ninho: v('empresa'),
+        foto: v('foto'), foto_alt: v('foto_alt'), foto_credito: v('foto_credito'), video: v('video'), contato_privado: v('contato_privado'), tem_autorizacao: true, _ninho: v('empresa'),
       };
     } else {
       const outro = fd.get('ponto_id') === '__outro';
@@ -280,7 +290,7 @@ export function iniciarContribuir(ctx) {
         ponto_id: outro ? null : v('ponto_id'), titulo: v('titulo'), categoria: v('categoria'), descricao: v('descricao'),
         data: v('data'), inicio: v('inicio'), fim: v('fim'), repete: v('repete') || 'nao', repete_ate: v('repete') !== 'nao' ? v('repete_ate') : '',
         preco: v('preco'), link: v('link'), ...(outro ? { lat, lng, local_nome: v('local_nome') } : {}),
-        foto: v('foto'), foto_alt: v('foto_alt'), contato_privado: v('contato_privado'), tem_autorizacao: true, _ninho: v('empresa'),
+        foto: v('foto'), foto_alt: v('foto_alt'), foto_credito: v('foto_credito'), contato_privado: v('contato_privado'), tem_autorizacao: true, _ninho: v('empresa'),
       };
     }
     const btn = f.querySelector('#enviar');

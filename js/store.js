@@ -8,8 +8,8 @@ const LS_RATE = 'liquen:envios';
 export const temBanco = () => Boolean(CONFIG.supabaseUrl && CONFIG.supabaseAnonKey);
 
 const COLS = {
-  pontos: 'id,nome,categoria,descricao,lat,lng,aprox,bairro,endereco,horario,instagram,whatsapp,site,fonte,foto,foto_alt,tags',
-  eventos: 'id,ponto_id,titulo,categoria,descricao,data,inicio,fim,repete,repete_ate,preco,link,fonte,confirmar,lat,lng,local_nome,foto,foto_alt',
+  pontos: 'id,nome,categoria,descricao,lat,lng,aprox,bairro,endereco,horario,instagram,whatsapp,site,fonte,foto,foto_mini,foto_alt,foto_credito,video,video_titulo,video_credito,tags',
+  eventos: 'id,ponto_id,titulo,categoria,descricao,data,inicio,fim,repete,repete_ate,preco,link,fonte,confirmar,lat,lng,local_nome,foto,foto_alt,foto_credito',
 };
 
 const hh = (v) => (v ? String(v).slice(0, 5) : null);

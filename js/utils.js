@@ -204,3 +204,15 @@ export function gerarICS(oc, { local = '', url = '' } = {}) {
   ].filter(Boolean);
   return `${linhas.map(dobrar).join('\r\n')}\r\n`;
 }
+
+/** Reconhece link de vídeo: YouTube, Vimeo ou arquivo (.mp4/.webm). */
+export function parseVideo(url) {
+  const u = String(url ?? '').trim();
+  if (!u) return null;
+  let m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  if (m) return { tipo: 'youtube', id: m[1] };
+  m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (m) return { tipo: 'vimeo', id: m[1] };
+  if (/\.(mp4|webm|ogv)(\?.*)?$/i.test(u)) return { tipo: 'arquivo', src: u };
+  return null;
+}
