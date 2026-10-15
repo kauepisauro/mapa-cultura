@@ -59,9 +59,6 @@ export function renderInicio(ctx) {
       raiz.append(secao(`Seus encaminhamentos, ${eu.split(' ')[0]}`,
         meus.length ? h('div', { class: 'lista' }, meus.slice(0, 5).map((e) => cartaoEnc(ctx, e))) : h('p', { class: 'vazio-linha' }, 'Nada em aberto no seu nome.'),
         { contagem: meus.length || null, acao: meus.length > 5 ? h('a', { class: 'link', href: '#/tarefas', onclick: () => Object.assign(ctx.ui.tarefas, { pessoa: eu, frente: '' }) }, 'Ver todos') : null }));
-    } else {
-      raiz.append(h('button', { class: 'cartao convite', type: 'button', onclick: () => ctx.pedirNome() },
-        icone('eu'), h('span', {}, h('strong', {}, 'Quem é você?'), h('small', {}, 'Diga seu nome para ver só o que está com você.'))));
     }
     const atencao = ordenarEncaminhamentos(estado.encaminhamentos.filter((e) => e.status !== 'feito'
       && (situacaoPrazo(e, hoje) === 'atrasado' || !e.responsaveis.length) && !(eu && e.responsaveis.includes(eu))), hoje);
@@ -71,19 +68,18 @@ export function renderInicio(ctx) {
     }
   }
 
-  // ----- ideias na mesa -----
-  const ideias = filtrarIdeias(estado, { grupo: 'mesa' });
-  if (ideias.length) {
-    raiz.append(secao('Ideias na mesa', h('div', { class: 'lista' }, ideias.slice(0, 3).map((i) => cartaoIdeia(ctx, i))),
-      { contagem: ideias.length, acao: h('a', { class: 'link', href: '#/ideias' }, ideias.length > 3 ? 'Ver todas' : 'Abrir') }));
-  }
-
   // ----- próximos 7 dias -----
   const semana = proximos.filter((e) => e.data <= somarDias(hoje, 7));
   const depois = proximos.filter((e) => e.data > somarDias(hoje, 7)).slice(0, 3);
   if (semana.length || depois.length) {
     raiz.append(secao('Nos próximos dias', h('div', { class: 'lista' }, [...semana, ...depois].map((e) => cartaoEvento(ctx, e))),
       { acao: h('a', { class: 'link', href: '#/calendario' }, 'Calendário completo') }));
+  }
+  // ----- ideias na mesa -----
+  const ideias = filtrarIdeias(estado, { grupo: 'mesa' });
+  if (ideias.length) {
+    raiz.append(secao('Ideias na mesa', h('div', { class: 'lista' }, ideias.slice(0, 3).map((i) => cartaoIdeia(ctx, i))),
+      { contagem: ideias.length, acao: h('a', { class: 'link', href: '#/ideias' }, ideias.length > 3 ? 'Ver todas' : 'Abrir') }));
   }
   return raiz;
 }
