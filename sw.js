@@ -1,6 +1,6 @@
 // Service worker do Mapa Vivo Florianópolis: funciona sem internet, abre rápido e atualiza com aviso.
 // IMPORTANTE: VERSAO precisa ser igual a CONFIG.versao (js/config.js). O teste `npm test` confere.
-const VERSAO = '2026-10-15.13';
+const VERSAO = '2026-10-15.14';
 const SHELL = `shell-${VERSAO}`;
 const DADOS = 'dados-v1';
 const TILES = 'tiles-v1';
@@ -10,8 +10,9 @@ const MAX_TILES = 700;
 const ARQUIVOS = [
   './', 'index.html', 'manifest.webmanifest', 'css/style.css',
   'js/main.js', 'js/config.js', 'js/categorias.js', 'js/utils.js', 'js/eventos.js', 'js/store.js',
-  'js/mapa.js', 'js/arte.js', 'js/painel.js', 'js/contribuir.js',
+  'js/mapa.js', 'js/arte.js', 'js/painel.js', 'js/contribuir.js', 'js/estilo-mapa.js',
   'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'vendor/markercluster/leaflet.markercluster.js',
+  'vendor/maplibre/maplibre-gl.js', 'vendor/maplibre/maplibre-gl.css', 'vendor/maplibre/leaflet-maplibre-gl.js',
   'icons/icon.svg', 'icons/icon-192.png', 'data/seed.json',
 ];
 
@@ -75,6 +76,10 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
 
   if (url.hostname === 'tile.openstreetmap.org') return e.respondWith(tile(req));
+  if (url.hostname === 'tiles.openfreemap.org') {
+    // TileJSON muda a cada atualização dos dados: rede primeiro. Tiles e fontes: cache primeiro.
+    return e.respondWith(/\/planet\/?$/.test(url.pathname) ? primeiroRede(req, DADOS) : tile(req));
+  }
   if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') return e.respondWith(usarERenovar(req, FONTES));
   if (url.pathname.includes('/rest/v1/')) return e.respondWith(primeiroRede(req, DADOS));
   if (url.origin !== self.location.origin) return; // YouTube, busca de endereço etc.: direto da rede

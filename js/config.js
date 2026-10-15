@@ -3,7 +3,7 @@
 //  Tudo o que você precisa ajustar para publicar está neste arquivo.
 // ─────────────────────────────────────────────────────────────
 export const CONFIG = {
-  versao: '2026-10-15.13', // aparece no rodapé do painel; ajuda a conferir o que está publicado
+  versao: '2026-10-15.14', // aparece no rodapé do painel; ajuda a conferir o que está publicado
   nome: 'Mapa Vivo Florianópolis',
   projeto: 'Cartografia Líquen',
   subtitulo: 'culturas da Grande Florianópolis',
@@ -29,6 +29,13 @@ export const CONFIG = {
   // Mapa-base: OpenStreetMap (gratuito, sem chave). Para tráfego alto, use MapTiler/Stadia (com chave)
   // ou hospede seus tiles — veja a política: https://operations.osmfoundation.org/policies/tiles/
   // O modo noite usa os mesmos tiles com um filtro escuro (CSS).
+  // Mapa-base vetorial com estilo próprio (js/estilo-mapa.js). Grátis, sem chave: https://openfreemap.org
+  // Se falhar (sem WebGL ou serviço fora), o site volta sozinho para os tiles raster abaixo.
+  mapaVetorial: {
+    fonte: 'https://tiles.openfreemap.org/planet',
+    glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+    atribuicao: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> · dados © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+  },
   tiles: {
     dia: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
     noite: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',

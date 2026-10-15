@@ -4,6 +4,11 @@ import { CONFIG } from './config.js';
 import { cat, icone, CATEGORIAS } from './categorias.js';
 import { distanciaKm, esc, hash, rng } from './utils.js';
 import { colonias, talo } from './arte.js';
+import { estiloMapa } from './estilo-mapa.js';
+
+const temWebGL = () => {
+  try { const c = document.createElement('canvas'); return Boolean(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; }
+};
 
 function iconePino(l, selecionado) {
   const c = cat(l.categoria);
@@ -72,7 +77,8 @@ export class Mapa {
       wheelPxPerZoomLevel: 90,
     }).setView(CONFIG.centro, CONFIG.zoomInicial);
 
-    L.control.attribution({ position: 'bottomleft', prefix: false }).addTo(this.map).addAttribution(CONFIG.tiles.atribuicao);
+    L.control.attribution({ position: 'bottomleft', prefix: false }).addTo(this.map);
+    this.vetorial = Boolean(CONFIG.mapaVetorial && window.maplibregl && L.maplibreGL && temWebGL());
 
     this.map.createPane('rede').style.zIndex = 450;
     this.map.getPane('rede').style.pointerEvents = 'none';
@@ -120,14 +126,51 @@ export class Mapa {
 
   setTema(tema) {
     this.tema = tema;
+    if (this.vetorial) {
+      try {
+        if (this.gl) { if (this.temaGL !== tema) this.gl.getMaplibreMap().setStyle(estiloMapa(tema)); }
+        else this.#iniciarVetorial();
+        this.temaGL = tema;
+        return;
+      } catch (err) {
+        console.warn('[mapa] estilo vetorial indisponível, usando raster:', err);
+        this.#paraRaster();
+        return;
+      }
+    }
     if (this.tiles) this.map.removeLayer(this.tiles);
     this.tiles = L.tileLayer(CONFIG.tiles[tema], {
       maxZoom: 19,
       detectRetina: false,
       className: `tiles tiles--${tema}`,
       crossOrigin: true,
+      attribution: CONFIG.tiles.atribuicao,
     }).addTo(this.map);
     this.tiles.bringToBack();
+  }
+
+  #iniciarVetorial() {
+    this.gl = L.maplibreGL({ style: estiloMapa(this.tema), attribution: CONFIG.mapaVetorial.atribuicao, interactive: false });
+    this.gl.addTo(this.map);
+    const gl = this.gl.getMaplibreMap();
+    let carregou = false;
+    let erros = 0;
+    gl.on('load', () => { carregou = true; });
+    gl.on('error', (e) => {
+      // só conta falhas de carregar dados (fonte/tiles); avisos de estilo não derrubam o mapa
+      if (!e?.sourceId && !e?.tile && !/fetch|network|status|load/i.test(String(e?.error?.message || ''))) return;
+      erros += 1;
+      if (!carregou || erros >= 8) this.#paraRaster(e?.error); // serviço fora antes de carregar (ou falhando muito): plano B
+    });
+    // se em 8 s nada carregou (rede muito lenta ou serviço fora), volta para o raster
+    setTimeout(() => { if (!carregou && this.gl) this.#paraRaster('tempo esgotado'); }, 8000);
+  }
+
+  #paraRaster(motivo) {
+    if (motivo) console.warn('[mapa] voltando para o mapa raster:', motivo);
+    this.vetorial = false;
+    if (this.gl) { this.map.removeLayer(this.gl); this.gl = null; }
+    this.setTema(this.tema);
   }
 
   setPadding(esq, baixo) { this.padding = { esq, baixo }; }

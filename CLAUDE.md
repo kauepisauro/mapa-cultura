@@ -23,6 +23,8 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
 - Texto sóbrio: nada de gírias “descoladas” (“rolê”, “rola hoje”, “galera”) nem emojis em avisos. Usar “Acontece hoje”, “eventos”.
 - Estética “herbário de líquens”: papel osso, nanquim fino, rótulos em mono (DM Mono), títulos em serifa
   (Instrument Serif — o autor ainda pode trocar a fonte), cores de líquen. Nada infantil/“adesivo”.
+- Mapa-base vetorial (OpenFreeMap) com estilo próprio em `js/estilo-mapa.js`: sem ícones (picos/“triângulos”, comércios).
+  Plano B automático para raster OSM (`CONFIG.tiles`). O território-piloto não aparece no mapa (`territorioPiloto: null`).
 - O mapa não vende nem faz propaganda pessoal; divulgação vai pelo Instagram @zona.liquen.
 
 ## Pendências conhecidas

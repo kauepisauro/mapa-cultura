@@ -128,7 +128,10 @@ tests/run.mjs         testes (node --test)
 
 ## Créditos técnicos e licenças
 
-- Mapas: © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), tiles padrão do OpenStreetMap
+- Mapa-base: **vetorial**, dados © [OpenStreetMap](https://www.openstreetmap.org/copyright) via [OpenFreeMap](https://openfreemap.org)
+  (grátis, sem chave) com estilo próprio em `js/estilo-mapa.js` (sem ícones de picos/comércios), desenhado com MapLibre GL
+  (BSD-3, em `vendor/maplibre/`). Se o aparelho não tiver WebGL ou o serviço falhar, o site volta sozinho para os
+  tiles padrão do OpenStreetMap
   (gratuito, sem chave; veja a [política de uso](https://operations.osmfoundation.org/policies/tiles/)). Para tráfego alto,
   troque `CONFIG.tiles` por um provedor com chave (MapTiler, Stadia) ou hospede seus tiles.
 - Leaflet (BSD-2) e Leaflet.markercluster (MIT) em `vendor/`. Fontes: Fraunces e Hanken Grotesk (Google Fonts, OFL).

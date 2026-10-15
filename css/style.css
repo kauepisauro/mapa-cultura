@@ -467,3 +467,6 @@ img, svg { display: block; max-width: 100%; }
 .contato a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: var(--lichen-d); text-underline-offset: 3px; }
 .contato__nota { font-size: 13px; color: var(--ink-2); margin-top: 4px !important; }
 .prosa a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: var(--lichen-d); text-underline-offset: 3px; }
+
+/* mapa vetorial: o canvas do MapLibre fica no lugar dos tiles */
+.leaflet-maplibre-gl, .leaflet-gl-layer { pointer-events: none; }
