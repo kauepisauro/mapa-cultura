@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { somarDias, diffDias, grade, dataCurta, dataLonga, relativo, hora, valida, deslocarMes } from '../js/datas.js';
 import {
   estadoInicial, normalizar, situacaoPrazo, porPessoa, numeros, filtrarEncaminhamentos, avancarStatus,
-  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
+  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, mesclarInicial, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
 } from '../js/logica.js';
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
@@ -323,6 +323,54 @@ test('GTs do movimento: os quatro, em ordem, nos dados padrão e nos dados inici
   assert.deepEqual(seed.frentes.map((f) => f.nome), nomes);
   assert.equal(seed.encaminhamentos[0].frente, seed.frentes[0].id); // GT de Comunicação → Cauê
   assert.equal(seed.eventos.find((x) => x.id === 'ev-ato-17out').local, 'Praia Mole');
+});
+
+test('atualizar dados iniciais: troca o que veio da lista, mantém o que a pessoa criou e o andamento', () => {
+  const seed = JSON.parse(readFileSync(join(raiz, 'data/inicial.json'), 'utf8'));
+  assert.ok(seed.edicao >= 2);
+  // aparelho com a edição 1 (frentes genéricas, ato sem local) + coisas da própria pessoa
+  const antigo = normalizar({
+    frentes: [{ id: 'f-comunicacao', nome: 'Comunicação', cor: '#3d78c4' }, { id: 'f-juridico', nome: 'Jurídico', cor: '#e0bb3a' }, { id: 'minha', nome: 'Minha frente', cor: '#e5262b' }],
+    eventos: [
+      { id: 'ev-ato-17out', titulo: 'Ato contra a privatização', tipo: 'ato', data: '2026-10-17', hora: '09:00', local: 'Local a confirmar', frente: 'f-juridico' },
+      { id: 'ev-reuniao-ultima', titulo: 'Última reunião', tipo: 'reuniao', data: '2026-10-15', ata: 'Minha ata editada', pauta: 'Minha pauta', presentes: ['Joana'] },
+      { id: 'meu-evento', titulo: 'Meu evento', tipo: 'outro', data: '2026-11-01' },
+    ],
+    encaminhamentos: [
+      { id: 'enc-gt-comunicacao', texto: 'GT de Comunicação (antigo)', responsaveis: ['Cauê'], status: 'feito', feitoEm: '2026-10-16', frente: 'f-comunicacao', origem: 'ev-reuniao-ultima' },
+      { id: 'meu-enc', texto: 'Comprar tinta', responsaveis: ['Joana'], frente: 'f-juridico' },
+    ],
+    ideias: [{ id: 'id-apa', titulo: 'APA', status: 'estudando', interessados: ['Joana'], origem: 'ev-reuniao-ultima' }, { id: 'minha-ideia', titulo: 'Minha ideia' }],
+    pessoas: ['Cauê', 'Joana'],
+  });
+  const novo = mesclarInicial(antigo, seed);
+  const ids = (a) => a.map((x) => x.id);
+  // frentes: os 4 GTs primeiro, a própria frente depois; as genéricas antigas somem
+  assert.deepEqual(novo.frentes.map((f) => f.nome), ['GT de Comunicação', 'GT Técnico', 'GT de Cultura', 'GT de Mobilização', 'Minha frente']);
+  // ato ganhou Praia Mole e deixou de apontar para a frente que sumiu
+  const ato = novo.eventos.find((e) => e.id === 'ev-ato-17out');
+  assert.equal(ato.local, 'Praia Mole'); assert.equal(ato.frente, '');
+  // registro/pauta/presenças da reunião ficam como estavam
+  const reu = novo.eventos.find((e) => e.id === 'ev-reuniao-ultima');
+  assert.deepEqual([reu.ata, reu.pauta, reu.presentes], ['Minha ata editada', 'Minha pauta', ['Joana']]);
+  assert.ok(ids(novo.eventos).includes('meu-evento') && ids(novo.eventos).includes('ev-cafezinho-20out'));
+  // tarefa da lista: texto novo, mas continua "feito"; a tarefa criada pela pessoa continua, sem a frente apagada
+  const gt = novo.encaminhamentos.find((e) => e.id === 'enc-gt-comunicacao');
+  assert.deepEqual([gt.status, gt.feitoEm, gt.frente === novo.frentes[0].id], ['feito', '2026-10-16', true]);
+  assert.equal(novo.encaminhamentos.find((e) => e.id === 'meu-enc').frente, '');
+  // ideias: andamento e "quem topa" ficam; ideia própria continua
+  const apa = novo.ideias.find((i) => i.id === 'id-apa');
+  assert.deepEqual([apa.status, apa.interessados], ['estudando', ['Joana']]);
+  assert.ok(ids(novo.ideias).includes('minha-ideia') && ids(novo.ideias).includes('id-monitoramento'));
+  assert.deepEqual(novo.pessoas, ['Cauê', 'Joana']);
+  // idempotente
+  assert.deepEqual(mesclarInicial(novo, seed), novo);
+});
+
+test('service worker: assume sozinho e lista inicial vem da rede', () => {
+  const sw = readFileSync(join(raiz, 'sw.js'), 'utf8');
+  assert.match(sw, /skipWaiting\(\)/);
+  assert.match(sw, /inicial\.json/);
 });
 
 test('app: versão do service worker = config; todos os arquivos do app existem', () => {

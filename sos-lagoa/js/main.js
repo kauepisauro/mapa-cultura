@@ -2,7 +2,7 @@
 import { CONFIG } from './config.js';
 import { criarStore } from './store.js';
 import { hojeISO } from './datas.js';
-import { garantirPessoas } from './logica.js';
+import { garantirPessoas, mesclarInicial } from './logica.js';
 import { h, icone, folha, campo, toast } from './ui.js';
 import { menuNovo } from './formularios.js';
 import { renderInicio } from './telas/inicio.js';
@@ -113,37 +113,63 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) rend
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); instalador = e; if (location.hash === '#/ajustes') render(); });
 render();
 
-// Primeira abertura neste aparelho: carrega os dados iniciais do movimento (data/inicial.json), uma vez só.
-// Depois disso, tudo é do aparelho; "Apagar tudo" não recarrega.
-async function semear() {
-  if (store.temDadosSalvos || store.pref.ler(CONFIG.chaveSemeado)) return;
-  store.pref.gravar(CONFIG.chaveSemeado, '1');
-  try {
-    const r = await fetch('data/inicial.json');
-    if (r.ok) store.importar(await r.text());
-  } catch { /* sem internet na 1ª vez: abre vazio, dá para carregar exemplos ou restaurar backup */ }
+// ---- dados iniciais do movimento (data/inicial.json) ----
+// 1ª abertura: carrega. Depois: se o movimento publicar uma edição nova, oferece atualizar (sem apagar o que a pessoa criou).
+const edicaoAplicada = () => Number(store.pref.ler(CONFIG.chaveSemeado)) || 0;
+async function buscarInicial() {
+  try { const r = await fetch('data/inicial.json', { cache: 'no-cache' }); return r.ok ? JSON.parse(await r.text()) : null; } catch { return null; }
 }
 
-// primeira vez: carrega dados iniciais e pergunta o nome (uma vez só)
+async function semear() {
+  if (edicaoAplicada()) return;
+  const seed = await buscarInicial();
+  if (!seed) return; // sem internet na 1ª vez: tenta de novo na próxima abertura
+  if (!store.temDadosSalvos) store.importar(JSON.stringify(seed));
+  store.pref.gravar(CONFIG.chaveSemeado, String(seed.edicao || 1));
+}
+
+function oferecerAtualizacao(seed, { manual = false } = {}) {
+  folha(manual ? 'Recarregar dados do movimento' : 'Há dados novos do movimento', (fechar) => h('div', { class: 'pilha' },
+    h('p', {}, 'Isto atualiza as datas, locais e GTs que vieram da lista inicial do movimento. ',
+      h('strong', {}, 'O que você criou continua'), ', assim como o que já marcou como feito, as presenças e os registros.'),
+    h('div', { class: 'linha-botoes' },
+      h('button', { class: 'btn', type: 'button', onclick: () => { store.pref.gravar(CONFIG.chaveEdicaoRecusada, String(seed.edicao || 0)); fechar(); } }, 'Agora não'),
+      h('button', { class: 'btn primario grande', type: 'button', onclick: () => {
+        store.atualizar((e) => Object.assign(e, mesclarInicial(e, seed)));
+        store.pref.gravar(CONFIG.chaveSemeado, String(seed.edicao || 1));
+        fechar();
+        toast('Dados do movimento atualizados.');
+      } }, 'Atualizar'))));
+}
+
+async function verificarAtualizacao() {
+  const seed = await buscarInicial();
+  if (!seed || !(seed.edicao > edicaoAplicada())) return;
+  if (Number(store.pref.ler(CONFIG.chaveEdicaoRecusada)) >= seed.edicao) return;
+  oferecerAtualizacao(seed);
+}
+
+ctx.atualizarInicial = async () => {
+  const seed = await buscarInicial();
+  if (!seed) { toast('Sem conexão agora. Tente de novo com internet.'); return; }
+  oferecerAtualizacao(seed, { manual: true });
+};
+
+// primeira vez: carrega dados iniciais e pergunta o nome (uma vez só); nas seguintes, confere se há edição nova
 semear().then(() => {
   if (!store.pref.ler(CONFIG.chaveBoasVindas)) {
     store.pref.gravar(CONFIG.chaveBoasVindas, '1');
     if (!ctx.eu()) setTimeout(() => ctx.pedirNome(), 600);
-  }
+  } else verificarAtualizacao();
 });
 
-// funciona sem internet + aviso de nova versão
+// funciona sem internet; versão nova do app entra sozinha (recarrega uma vez)
 if ('serviceWorker' in navigator) {
-  let atualizando = false;
-  navigator.serviceWorker.register('sw.js').then((reg) => {
-    reg.addEventListener('updatefound', () => {
-      const novo = reg.installing;
-      novo?.addEventListener('statechange', () => {
-        if (novo.state === 'installed' && navigator.serviceWorker.controller) {
-          toast('Há uma versão nova do app.', { rotulo: 'Atualizar', fn: () => { atualizando = true; novo.postMessage('atualizar'); } });
-        }
-      });
-    });
-  }).catch(() => {});
-  navigator.serviceWorker.addEventListener('controllerchange', () => { if (atualizando) location.reload(); });
+  const tinhaControle = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!tinhaControle) return; // 1ª instalação: nada a recarregar
+    if (document.querySelector('dialog[open]')) toast('Versão nova pronta.', { rotulo: 'Atualizar', fn: () => location.reload() });
+    else location.reload();
+  });
 }

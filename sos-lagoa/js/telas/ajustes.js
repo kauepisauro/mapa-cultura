@@ -57,6 +57,8 @@ export function renderAjustes(ctx) {
       h('button', { class: 'btn', type: 'button', onclick: () => baixar(`backup-sos-lagoa-${hojeISO()}.json`, store.exportar(), 'application/json') }, icone('baixar'), 'Baixar backup'),
       h('button', { class: 'btn', type: 'button', onclick: () => arquivo.click() }, icone('subir'), 'Restaurar backup'), arquivo),
     h('div', { class: 'linha-botoes solta' },
+      h('button', { class: 'btn', type: 'button', onclick: () => ctx.atualizarInicial() }, icone('baixar'), 'Atualizar dados do movimento')),
+    h('div', { class: 'linha-botoes solta' },
       !temExemplo && h('button', { class: 'btn', type: 'button', onclick: () => {
         store.atualizar((s) => { const ex = exemplos(hojeISO(), s); s.eventos.push(...ex.eventos); s.encaminhamentos.push(...ex.encaminhamentos); garantirPessoas(s, ex.pessoas); });
         toast('Exemplos carregados.');

@@ -193,6 +193,32 @@ export function removerPessoa(estado, nome) {
   estado.ideias.forEach((i) => { i.interessados = i.interessados.filter((p) => p !== nome); });
 }
 
+// ---------- atualização dos dados iniciais ----------
+// Troca os itens que vieram da lista inicial (mesmo id) pela versão nova, preserva o que o aparelho já tinha de
+// andamento (feito, presenças, registro, quem topa) e mantém tudo que a pessoa criou. `seed.remover` apaga ids obsoletos.
+const MANTER = {
+  frentes: ['coordenacao'],
+  eventos: ['pauta', 'presentes', 'ata'],
+  encaminhamentos: ['status', 'feitoEm'],
+  ideias: ['status', 'interessados'],
+};
+
+export function mesclarInicial(estado, seedBruto) {
+  const seed = normalizar(seedBruto);
+  const remover = new Set(lista(seedBruto.remover));
+  const novo = { versao: 1, pessoas: [...estado.pessoas, ...seed.pessoas] };
+  for (const [chave, manter] of Object.entries(MANTER)) {
+    const locais = new Map(estado[chave].map((x) => [x.id, x]));
+    const doSeed = seed[chave].map((s) => {
+      const l = locais.get(s.id);
+      return l ? { ...s, ...Object.fromEntries(manter.map((k) => [k, l[k]])) } : s;
+    });
+    const ids = new Set(doSeed.map((x) => x.id));
+    novo[chave] = [...doSeed, ...estado[chave].filter((x) => !ids.has(x.id) && !remover.has(x.id))];
+  }
+  return normalizar(novo); // limpa referências a frentes/eventos que sumiram
+}
+
 // ---------- ideias ----------
 // grupo: 'mesa' (novas e em estudo) | 'virou' | 'arquivada'
 export function filtrarIdeias(estado, { frente = '', grupo = 'mesa' } = {}) {

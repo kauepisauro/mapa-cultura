@@ -1,6 +1,6 @@
 // Service worker do SOS Lagoa: abre sem internet e atualiza com aviso.
 // IMPORTANTE: VERSAO precisa ser igual a CONFIG.versao (js/config.js). O teste confere.
-const VERSAO = '2026-10-15.3';
+const VERSAO = '2026-10-15.4';
 const SHELL = `soslagoa-shell-${VERSAO}`;
 
 const ARQUIVOS = [
@@ -14,7 +14,8 @@ const ARQUIVOS = [
 
 self.addEventListener('install', (e) => {
   // cache: 'reload' evita guardar cópias velhas do cache HTTP
-  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(ARQUIVOS.map((u) => new Request(u, { cache: 'reload' })))));
+  // skipWaiting: a versão nova assume sozinha (o app recarrega uma vez), sem depender de aviso.
+  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(ARQUIVOS.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
@@ -31,6 +32,17 @@ self.addEventListener('message', (e) => { if (e.data === 'atualizar') self.skipW
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  // A lista inicial do movimento muda sem trocar a versão do app: rede primeiro, cache só se estiver sem internet.
+  if (new URL(req.url).pathname.endsWith('/data/inicial.json')) {
+    e.respondWith((async () => {
+      try {
+        const r = await fetch(req, { cache: 'no-cache' });
+        if (r.ok) (await caches.open(SHELL)).put(req, r.clone());
+        return r;
+      } catch { return (await caches.match(req)) || Response.error(); }
+    })());
+    return;
+  }
   e.respondWith((async () => {
     const hit = await caches.match(req, { ignoreSearch: true });
     if (hit) return hit;

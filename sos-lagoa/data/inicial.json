@@ -1,4 +1,12 @@
 {
+  "edicao": 2,
+  "remover": [
+    "f-comunicacao",
+    "f-juridico",
+    "f-mobilizacao",
+    "f-pesquisa",
+    "f-articulacao"
+  ],
   "versao": 1,
   "frentes": [
     {
