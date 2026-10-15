@@ -32,7 +32,3 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
   sem pausa (planilha Google) — decisão do autor. Sem banco, roda em modo demonstração.
 - Fotos (tools/otimizar_foto.py, crédito + descrição obrigatórios, autorização de imagem) e vídeos (YouTube/Vimeo).
 - Domínio próprio (refazer QR codes e cartaz em `divulgacao/` se mudar o endereço).
-
-## SOS Lagoa (`sos-lagoa/`)
-App separado do Mapa Vivo (organização de reuniões/encaminhamentos do movimento SOS Lagoa). Tem `sw.js`, `versao` e testes próprios —
-siga `sos-lagoa/README.md`. Não misturar com `js/`/`sw.js` da raiz. Cores e identidade vêm da logo do movimento, não da estética “herbário”.
