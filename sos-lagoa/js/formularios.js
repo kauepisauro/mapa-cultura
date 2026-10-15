@@ -74,6 +74,11 @@ export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pes
   const novo = !enc;
   const texto = h('textarea', { class: 'campo-input', rows: '3', required: true, maxlength: '600', placeholder: 'O que precisa ser feito? Ex.: Imprimir 200 cartazes' }, enc?.texto || textoInicial);
   const quem = seletorPessoas(estado.pessoas, enc ? enc.responsaveis : (pessoa ? [pessoa] : []), { rotulo: 'Quem vai fazer?' });
+  const todos = h('input', { type: 'checkbox', checked: !!enc?.paraTodos });
+  const todosEl = h('label', { class: 'check' }, todos, h('span', {}, h('strong', {}, 'Para todo mundo'), h('small', {}, 'A tarefa vale para todas as pessoas do grupo, sem escolher nomes.')));
+  const mostrarQuem = () => { quem.el.style.display = todos.checked ? 'none' : ''; };
+  todos.addEventListener('change', mostrarQuem);
+  mostrarQuem();
   const prazo = h('input', { class: 'campo-input', type: 'date', value: enc?.prazo || '' });
   const frente = h('select', { class: 'campo-input' }, opcoesFrente(estado, enc ? enc.frente : frenteInicial));
   let status = enc?.status || 'fazer';
@@ -88,15 +93,17 @@ export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pes
     e.preventDefault();
     const t = texto.value.trim();
     if (!t) { toast('Escreva o que precisa ser feito.'); return false; }
-    const responsaveis = quem.valor();
+    const paraTodos = todos.checked;
+    const responsaveis = paraTodos ? [] : quem.valor();
     const hoje = ctx.hoje();
     ctx.store.atualizar((s) => {
       garantirPessoas(s, responsaveis);
       if (novo) {
-        s.encaminhamentos.push({ id: novoId(), texto: t, responsaveis, prazo: prazo.value, status, frente: frente.value, origem, criadoEm: hoje, feitoEm: status === 'feito' ? hoje : '' });
+        s.encaminhamentos.push({ id: novoId(), texto: t, responsaveis, prazo: prazo.value, status, frente: frente.value, origem, criadoEm: hoje, feitoEm: status === 'feito' ? hoje : '', ...(paraTodos ? { paraTodos: true } : {}) });
       } else {
         const x = s.encaminhamentos.find((i) => i.id === enc.id);
         Object.assign(x, { texto: t, responsaveis, prazo: prazo.value, frente: frente.value });
+        if (paraTodos) x.paraTodos = true; else delete x.paraTodos;
         if (x.status !== status) { x.status = status; x.feitoEm = status === 'feito' ? hoje : ''; }
       }
     });
@@ -111,6 +118,7 @@ export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pes
   },
   origemEv && h('p', { class: 'dica' }, `Vem de: ${origemEv.titulo}`),
   campo('O que precisa ser feito', texto),
+  todosEl,
   quem.el,
   h('div', { class: 'campo' },
     h('span', { class: 'campo-rotulo' }, 'Até quando?'),

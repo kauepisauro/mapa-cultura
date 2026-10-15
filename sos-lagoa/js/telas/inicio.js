@@ -1,7 +1,7 @@
 // Tela inicial: o que vem aí e o que precisa de atenção.
 import { h, icone, gaivotas, toast } from '../ui.js';
 import { dataLonga, hora, relativo, somarDias } from '../datas.js';
-import { proximosEventos, proximoCompromisso, filtrarIdeias, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, exemplos } from '../logica.js';
+import { proximosEventos, proximoCompromisso, filtrarIdeias, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, semResponsavel, exemplos } from '../logica.js';
 import { cartaoEvento, cartaoEnc, cartaoIdeia, secao, seloFrente } from '../componentes.js';
 import { formEvento } from '../formularios.js';
 
@@ -60,11 +60,14 @@ export function renderInicio(ctx) {
         meus.length ? h('div', { class: 'lista' }, meus.slice(0, 5).map((e) => cartaoEnc(ctx, e))) : h('p', { class: 'vazio-linha' }, 'Nada em aberto no seu nome.'),
         { contagem: meus.length || null, acao: meus.length > 5 ? h('a', { class: 'link', href: '#/tarefas', onclick: () => Object.assign(ctx.ui.tarefas, { pessoa: eu, frente: '' }) }, 'Ver todos') : null }));
     }
-    const atencao = ordenarEncaminhamentos(estado.encaminhamentos.filter((e) => e.status !== 'feito'
-      && (situacaoPrazo(e, hoje) === 'atrasado' || !e.responsaveis.length) && !(eu && e.responsaveis.includes(eu))), hoje);
-    if (atencao.length) {
-      raiz.append(secao('Precisam de atenção', h('div', { class: 'lista' }, atencao.slice(0, 4).map((e) => cartaoEnc(ctx, e))),
-        { contagem: atencao.length, acao: atencao.length > 4 ? h('a', { class: 'link', href: '#/tarefas' }, 'Ver todos') : null }));
+    // Prazos e pendências de QUALQUER pessoa: atrasadas, para hoje ou até 7 dias, ou sem responsável.
+    // (O que é "seu" já aparece acima, então não repete.)
+    const meusIds = new Set(eu ? filtrarEncaminhamentos(estado, { pessoa: eu, status: 'aberto' }).map((e) => e.id) : []);
+    const emFoco = ordenarEncaminhamentos(estado.encaminhamentos.filter((e) => e.status !== 'feito' && !meusIds.has(e.id)
+      && (['atrasado', 'hoje', 'semana'].includes(situacaoPrazo(e, hoje)) || semResponsavel(e))), hoje);
+    if (emFoco.length) {
+      raiz.append(secao('Encaminhamentos', h('div', { class: 'lista' }, emFoco.slice(0, 6).map((e) => cartaoEnc(ctx, e))),
+        { contagem: emFoco.length, acao: h('a', { class: 'link', href: '#/tarefas' }, emFoco.length > 6 ? 'Ver todos' : 'Abrir') }));
     }
   }
 

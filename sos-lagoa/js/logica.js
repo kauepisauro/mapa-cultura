@@ -24,6 +24,9 @@ export const IDEIA_STATUS = {
 };
 
 export const SEM_RESPONSAVEL = 'Sem responsável';
+export const TODO_MUNDO = 'Todo mundo';
+// Sem ninguém marcado e não é "para todo mundo".
+export const semResponsavel = (e) => !e.paraTodos && e.responsaveis.length === 0;
 
 export const novoId = () =>
   (globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`).slice(0, 12);
@@ -80,6 +83,7 @@ export function normalizar(bruto) {
     status: STATUS[x.status] ? x.status : 'fazer', frente: frenteOk(x.frente),
     origem: idsEvento.has(x.origem) ? x.origem : '',
     criadoEm: texto(x.criadoEm, 30), feitoEm: valida(x.feitoEm) ? x.feitoEm : '',
+    ...(x.paraTodos ? { paraTodos: true } : {}),
     ...(x.exemplo ? { exemplo: true } : {}),
   }));
   const ideias = lista(bruto.ideias).filter((x) => x && x.id).map((x) => ({
@@ -144,21 +148,23 @@ export function filtrarEncaminhamentos(estado, { pessoa = '', frente = '', statu
     if (frente && e.frente !== frente) return false;
     if (origem && e.origem !== origem) return false;
     if (status === 'aberto' ? e.status === 'feito' : status && e.status !== status) return false;
-    if (pessoa === SEM_RESPONSAVEL) return e.responsaveis.length === 0;
-    if (pessoa) return e.responsaveis.includes(pessoa);
+    if (pessoa === SEM_RESPONSAVEL) return semResponsavel(e);
+    if (pessoa) return e.paraTodos || e.responsaveis.includes(pessoa); // tarefa de todo mundo vale para qualquer pessoa
     return true;
   });
 }
+
+const ordemGrupo = (p) => (p === SEM_RESPONSAVEL ? 0 : p === TODO_MUNDO ? 1 : 2);
 
 // "Quem vai fazer o quê": itens abertos agrupados por pessoa (quem tem 2 responsáveis aparece nos dois).
 export function porPessoa(estado, hoje, filtro = {}) {
   const grupos = new Map();
   for (const e of filtrarEncaminhamentos(estado, { ...filtro, status: 'aberto' })) {
-    const donos = e.responsaveis.length ? e.responsaveis : [SEM_RESPONSAVEL];
+    const donos = e.paraTodos ? [TODO_MUNDO] : (e.responsaveis.length ? e.responsaveis : [SEM_RESPONSAVEL]);
     for (const p of donos) grupos.set(p, [...(grupos.get(p) || []), e]);
   }
   return [...grupos.entries()]
-    .sort(([a], [b]) => (a === SEM_RESPONSAVEL ? -1 : b === SEM_RESPONSAVEL ? 1 : a.localeCompare(b, 'pt-BR')))
+    .sort(([a], [b]) => (ordemGrupo(a) - ordemGrupo(b)) || a.localeCompare(b, 'pt-BR'))
     .map(([pessoa, itens]) => ({ pessoa, itens: ordenarEncaminhamentos(itens, hoje) }));
 }
 
@@ -167,7 +173,7 @@ export function numeros(estado, hoje) {
   return {
     abertos: abertos.length,
     atrasados: abertos.filter((e) => situacaoPrazo(e, hoje) === 'atrasado').length,
-    semDono: abertos.filter((e) => !e.responsaveis.length).length,
+    semDono: abertos.filter(semResponsavel).length,
     feitos: estado.encaminhamentos.length - abertos.length,
   };
 }

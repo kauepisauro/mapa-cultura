@@ -1,6 +1,6 @@
 // Encaminhamentos: quadro (a fazer / fazendo / feito) ou "quem vai fazer o quê".
 import { h, icone, copiar } from '../ui.js';
-import { STATUS, SEM_RESPONSAVEL, filtrarEncaminhamentos, ordenarEncaminhamentos, porPessoa, situacaoPrazo } from '../logica.js';
+import { STATUS, SEM_RESPONSAVEL, TODO_MUNDO, filtrarEncaminhamentos, ordenarEncaminhamentos, porPessoa, situacaoPrazo } from '../logica.js';
 import { cartaoEnc, chipsFrente, vazio } from '../componentes.js';
 import { formEnc } from '../formularios.js';
 import { resumoPendencias } from '../texto.js';
@@ -55,8 +55,8 @@ export function renderTarefas(ctx) {
     }
     raiz.append(...(grupos.length ? grupos.map((g) => h('section', { class: `secao grupo-pessoa${g.pessoa === SEM_RESPONSAVEL ? ' sem-dono' : ''}` },
       h('div', { class: 'secao-topo' },
-        h('h2', {}, h('span', { class: 'avatar', 'aria-hidden': 'true' }, g.pessoa === SEM_RESPONSAVEL ? '?' : g.pessoa.charAt(0).toUpperCase()), g.pessoa, h('span', { class: 'contador' }, g.itens.length)),
-        g.pessoa !== SEM_RESPONSAVEL && h('button', { class: 'btn pequeno', type: 'button', onclick: () => formEnc(ctx, { pessoa: g.pessoa, frente: ui.frente }) }, icone('mais'))),
+        h('h2', {}, h('span', { class: 'avatar', 'aria-hidden': 'true' }, g.pessoa === SEM_RESPONSAVEL ? '?' : g.pessoa === TODO_MUNDO ? '★' : g.pessoa.charAt(0).toUpperCase()), g.pessoa, h('span', { class: 'contador' }, g.itens.length)),
+        g.pessoa !== SEM_RESPONSAVEL && g.pessoa !== TODO_MUNDO && h('button', { class: 'btn pequeno', type: 'button', onclick: () => formEnc(ctx, { pessoa: g.pessoa, frente: ui.frente }) }, icone('mais'))),
       h('div', { class: 'lista' }, g.itens.map((e) => cartaoEnc(ctx, e)))))
       : [vazio('Tudo em dia', 'Nenhum encaminhamento em aberto com esse filtro.')]));
   }

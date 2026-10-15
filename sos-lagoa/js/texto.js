@@ -7,7 +7,7 @@ const nomeFrente = (estado, id) => estado.frentes.find((f) => f.id === id)?.nome
 const limpaMarcador = (l) => l.replace(/^\s*[-•*·]+\s*/, '').trim();
 
 function linhaEnc(e, i, hoje, comQuem = true) {
-  const quem = comQuem ? ` — *${e.responsaveis.length ? e.responsaveis.join(', ') : SEM_RESPONSAVEL.toLowerCase()}*` : '';
+  const quem = comQuem ? ` — *${e.paraTodos ? 'todo mundo' : (e.responsaveis.length ? e.responsaveis.join(', ') : SEM_RESPONSAVEL.toLowerCase())}*` : '';
   const prazo = e.prazo ? ` · até ${dataCurta(e.prazo)}` : '';
   const alerta = situacaoPrazo(e, hoje) === 'atrasado' ? ' (atrasado)' : '';
   const status = e.status === 'feito' ? ' ✅' : e.status === 'fazendo' ? ' (em andamento)' : '';

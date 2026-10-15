@@ -60,9 +60,11 @@ export function cartaoEnc(ctx, enc, { origem = true } = {}) {
     h('button', { class: 'cartao-corpo', type: 'button', onclick: () => formEnc(ctx, { enc }) },
       h('span', { class: 'cartao-titulo' }, enc.texto),
       h('span', { class: 'selos' },
-        enc.responsaveis.length
-          ? enc.responsaveis.map((p) => h('span', { class: 'selo selo-pessoa' }, p))
-          : h('span', { class: 'selo selo-alerta' }, SEM_RESPONSAVEL),
+        enc.paraTodos
+          ? h('span', { class: 'selo selo-pessoa' }, 'Todo mundo')
+          : enc.responsaveis.length
+            ? enc.responsaveis.map((p) => h('span', { class: 'selo selo-pessoa' }, p))
+            : h('span', { class: 'selo selo-alerta' }, SEM_RESPONSAVEL),
         sit === 'atrasado' && h('span', { class: 'selo selo-atrasado' }, `Atrasado · ${dataCurta(enc.prazo)}`),
         sit === 'hoje' && h('span', { class: 'selo selo-hoje' }, 'Hoje'),
         (sit === 'semana' || sit === 'futuro' || (sit === 'feito' && enc.prazo)) && h('span', { class: 'selo' }, `Até ${dataCurta(enc.prazo)}`),

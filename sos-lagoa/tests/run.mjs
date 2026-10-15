@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { somarDias, diffDias, grade, dataCurta, dataLonga, relativo, hora, valida, deslocarMes } from '../js/datas.js';
 import {
   estadoInicial, normalizar, situacaoPrazo, porPessoa, numeros, filtrarEncaminhamentos, avancarStatus,
-  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, renomearPessoa, mesclarInicial, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
+  pendenciasParaRetomar, TODO_MUNDO, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, renomearPessoa, mesclarInicial, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
 } from '../js/logica.js';
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
@@ -368,6 +368,22 @@ test('atualizar dados iniciais: troca o que veio da lista, mantém o que a pesso
   assert.deepEqual(novo.pessoas, ['Joana', 'Kauê']); // 'Cauê' sumiu: foi renomeado, não duplicado
   // idempotente
   assert.deepEqual(mesclarInicial(novo, seed), novo);
+});
+
+test('tarefa "para todo mundo": vale para qualquer pessoa, tem grupo próprio e não conta como sem responsável', () => {
+  const e = base();
+  e.encaminhamentos.push({ id: 'todos', texto: 'Levar água', responsaveis: [], prazo: '2026-10-16', status: 'fazer', frente: '', origem: '', criadoEm: HOJE, feitoEm: '', paraTodos: true });
+  assert.ok(filtrarEncaminhamentos(e, { pessoa: 'Bia' }).some((x) => x.id === 'todos'));        // aparece para qualquer pessoa
+  assert.ok(filtrarEncaminhamentos(e, { pessoa: 'Zé' }).some((x) => x.id === 'todos'));
+  assert.ok(!filtrarEncaminhamentos(e, { pessoa: SEM_RESPONSAVEL }).some((x) => x.id === 'todos')); // não é "sem responsável"
+  assert.equal(numeros(e, HOJE).semDono, 1);                                                      // só a 'c' original
+  const g = porPessoa(e, HOJE).map((x) => x.pessoa);
+  assert.deepEqual(g.slice(0, 3), [SEM_RESPONSAVEL, TODO_MUNDO, 'Ana']);                         // grupos especiais primeiro
+  assert.match(resumoPendencias(e, HOJE), /\*Todo mundo\*\n1\. Levar água · até sex, 16 out/);
+  assert.match(resumoEvento({ ...e, eventos: [{ ...e.eventos[0], id: 'x' }] }, e.eventos[0], HOJE), /tarefa a — \*Ana\*/);
+  const n = normalizar(e);
+  assert.equal(n.encaminhamentos.find((x) => x.id === 'todos').paraTodos, true);
+  assert.equal(n.encaminhamentos.find((x) => x.id === 'a').paraTodos, undefined);
 });
 
 test('renomear pessoa: troca em todos os lugares sem duplicar', () => {
