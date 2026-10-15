@@ -1,8 +1,8 @@
 // Tela inicial: o que vem aí e o que precisa de atenção.
 import { h, icone, gaivotas, toast } from '../ui.js';
 import { dataLonga, hora, relativo, somarDias } from '../datas.js';
-import { proximosEventos, numeros, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, exemplos } from '../logica.js';
-import { cartaoEvento, cartaoEnc, secao, seloFrente } from '../componentes.js';
+import { proximosEventos, proximoCompromisso, filtrarIdeias, numeros, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, exemplos } from '../logica.js';
+import { cartaoEvento, cartaoEnc, cartaoIdeia, secao, seloFrente } from '../componentes.js';
 import { formEvento } from '../formularios.js';
 
 export function renderInicio(ctx) {
@@ -15,7 +15,7 @@ export function renderInicio(ctx) {
   const raiz = h('div', { class: 'tela' });
 
   // ----- destaque: próximo compromisso -----
-  const prox = proximos[0];
+  const prox = proximoCompromisso(estado, hoje);
   const hero = h('section', { class: 'hero', 'aria-label': 'Próximo compromisso' }, h('div', { class: 'hero-sol', 'aria-hidden': 'true' }), gaivotas());
   if (prox) {
     hero.append(h('div', { class: 'hero-texto' },
@@ -23,7 +23,7 @@ export function renderInicio(ctx) {
       h('h1', {}, prox.titulo),
       h('p', { class: 'hero-quando' }, h('strong', {}, relativo(prox.data, hoje)), ` · ${dataLonga(prox.data)}${prox.hora ? ` · ${hora(prox.hora)}` : ''}`),
       prox.local && h('p', { class: 'hero-local' }, icone('local'), prox.local),
-      h('div', { class: 'selos' }, seloFrente(estado, prox.frente)),
+      h('div', { class: 'selos' }, prox.destaque && h('span', { class: 'selo' }, '⭐ Destaque'), seloFrente(estado, prox.frente)),
       h('a', { class: 'btn claro', href: `#/evento/${prox.id}` }, 'Abrir pauta e encaminhamentos')));
   } else {
     hero.append(h('div', { class: 'hero-texto' },
@@ -78,6 +78,13 @@ export function renderInicio(ctx) {
       raiz.append(secao('Precisam de atenção', h('div', { class: 'lista' }, atencao.slice(0, 4).map((e) => cartaoEnc(ctx, e))),
         { contagem: atencao.length, acao: atencao.length > 4 ? h('a', { class: 'link', href: '#/tarefas' }, 'Ver todos') : null }));
     }
+  }
+
+  // ----- ideias na mesa -----
+  const ideias = filtrarIdeias(estado, { grupo: 'mesa' });
+  if (ideias.length) {
+    raiz.append(secao('Ideias na mesa', h('div', { class: 'lista' }, ideias.slice(0, 3).map((i) => cartaoIdeia(ctx, i))),
+      { contagem: ideias.length, acao: h('a', { class: 'link', href: '#/ideias' }, ideias.length > 3 ? 'Ver todas' : 'Abrir') }));
   }
 
   // ----- próximos 7 dias -----

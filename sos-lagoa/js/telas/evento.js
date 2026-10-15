@@ -2,8 +2,8 @@
 import { h, icone, copiar, baixar, toast, seletorPessoas, linkWhatsapp } from '../ui.js';
 import { dataLonga, hora, relativo } from '../datas.js';
 import { TIPOS, garantirPessoas, ordenarEncaminhamentos, pendenciasParaRetomar, proximaReuniao } from '../logica.js';
-import { cartaoEnc, seloFrente, frenteDe, secao, vazio } from '../componentes.js';
-import { formEvento, formEnc } from '../formularios.js';
+import { cartaoEnc, cartaoIdeia, seloFrente, frenteDe, secao, vazio } from '../componentes.js';
+import { formEvento, formEnc, formIdeia } from '../formularios.js';
 import { resumoEvento } from '../texto.js';
 import { gerarICS } from '../ics.js';
 
@@ -40,7 +40,7 @@ export function renderEvento(ctx, id) {
   raiz.append(h('a', { class: 'voltar', href: reuniao ? '#/reunioes' : '#/calendario' }, icone('esq'), reuniao ? 'Reuniões' : 'Calendário'));
 
   raiz.append(h('section', { class: 'evento-cab', style: `--cor:${frente?.cor || 'var(--azul-claro)'}` },
-    h('div', { class: 'selos' }, h('span', { class: 'selo' }, TIPOS[ev.tipo].nome), seloFrente(estado, ev.frente), ev.exemplo && h('span', { class: 'selo selo-exemplo' }, 'exemplo')),
+    h('div', { class: 'selos' }, ev.destaque && h('span', { class: 'selo selo-destaque' }, '⭐ Destaque'), ev.aConfirmar && h('span', { class: 'selo selo-confirmar' }, 'A confirmar'), h('span', { class: 'selo' }, TIPOS[ev.tipo].nome), seloFrente(estado, ev.frente), ev.exemplo && h('span', { class: 'selo selo-exemplo' }, 'exemplo')),
     h('h1', {}, ev.titulo),
     h('p', { class: 'evento-quando' }, h('span', { class: 'capitalizar' }, dataLonga(ev.data)), ev.hora && ` · ${hora(ev.hora)}`, ' · ', h('strong', {}, relativo(ev.data, hoje))),
     ev.local && h('p', { class: 'evento-local' }, icone('local'), ev.local),
@@ -74,6 +74,15 @@ export function renderEvento(ctx, id) {
   {
     contagem: encs.length || null,
     acao: h('button', { class: 'btn primario pequeno', type: 'button', onclick: () => formEnc(ctx, { origem: ev.id, frente: ev.frente }) }, icone('mais'), 'Novo'),
+  }));
+
+  const ideias = estado.ideias.filter((i) => i.origem === ev.id);
+  raiz.append(secao('Ideias e possibilidades', ideias.length
+    ? h('div', { class: 'lista' }, ideias.map((i) => cartaoIdeia(ctx, i)))
+    : h('p', { class: 'vazio-linha' }, 'Algo surgiu e ainda não virou tarefa? Guarde aqui.'),
+  {
+    contagem: ideias.length || null,
+    acao: h('button', { class: 'btn pequeno', type: 'button', onclick: () => formIdeia(ctx, { origem: ev.id, frente: ev.frente }) }, icone('mais'), 'Nova ideia'),
   }));
 
   if (reuniao) {

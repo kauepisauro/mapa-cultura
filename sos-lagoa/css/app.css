@@ -87,7 +87,7 @@ button { cursor: pointer; }
 
 .menu {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
   padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
   background: color-mix(in srgb, var(--cartao) 94%, transparent);
   backdrop-filter: blur(14px);
@@ -96,7 +96,7 @@ button { cursor: pointer; }
 .menu a {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
   min-height: 52px; border-radius: 12px; text-decoration: none; color: var(--texto-3);
-  font-size: 11.5px; font-weight: 700;
+  font-size: 11px; font-weight: 700; letter-spacing: -.01em;
 }
 .menu a[aria-current] { color: var(--texto); background: color-mix(in srgb, var(--sol) 20%, transparent); }
 .menu a[aria-current] .ico { color: var(--sol-claro); }
@@ -186,6 +186,9 @@ main { display: block; max-width: 820px; margin: 0 auto; padding: 18px 16px calc
 
 .segmentado { display: inline-flex; gap: 4px; padding: 4px; border-radius: 14px; background: var(--cartao-2); border: 1px solid var(--linha); max-width: 100%; }
 .segmentado button { min-height: 38px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: var(--texto-2); font-weight: 700; font-size: 14.5px; white-space: nowrap; }
+.segmentado.cheio { display: flex; width: 100%; }
+.segmentado.cheio button { flex: 1; padding: 0 6px; }
+.segmentado.cheio .contador { margin-left: 5px; }
 .segmentado button.on { background: var(--azul); color: #fff; }
 
 /* ---------- cartões e listas ---------- */
@@ -314,6 +317,21 @@ main { display: block; max-width: 820px; margin: 0 auto; padding: 18px 16px calc
 .evento-cab .linha-botoes { display: grid; grid-template-columns: 1fr 1fr; }
 .evento-cab .linha-botoes .btn.primario { grid-column: 1 / -1; min-height: 50px; font-size: 17px; }
 @media (min-width: 700px) { .evento-cab .linha-botoes { display: flex; } .evento-cab .linha-botoes .btn.primario { min-height: 44px; font-size: 16px; } }
+.selo-destaque { background: color-mix(in srgb, var(--ouro) 22%, transparent); border-color: var(--ouro); color: var(--texto); }
+.selo-confirmar { border-style: dashed; border-color: var(--ouro); color: var(--ouro); background: transparent; }
+.cartao-evento.destaque { background: color-mix(in srgb, var(--ouro) 9%, var(--cartao)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ouro) 55%, transparent); }
+.cartao-evento.aconfirmar { border-style: dashed; border-left-style: solid; }
+.dia.destaque b::after { content: "★"; color: var(--ouro); font-size: 10px; margin-left: 2px; vertical-align: top; }
+.dia.sel.destaque b::after { color: #ffe27a; }
+.pontos i.vazio { background: transparent; border: 2px solid var(--cor); box-shadow: none; }
+.checks { display: flex; flex-direction: column; gap: 10px; }
+.check { display: flex; align-items: flex-start; gap: 12px; padding: 12px; border-radius: 12px; border: 1px solid var(--linha); background: var(--cartao-2); }
+.check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--sol); }
+.check span { display: flex; flex-direction: column; } .check small { color: var(--texto-2); font-size: 13.5px; }
+.cartao-ideia { display: flex; align-items: flex-start; gap: 12px; width: 100%; text-align: left; padding: 12px; border-radius: var(--raio); background: var(--cartao); border: 1px dashed color-mix(in srgb, var(--cor) 70%, var(--linha)); border-left: 5px solid var(--cor); }
+.cartao-ideia.st-arquivada { opacity: .65; }
+.ideia-ico { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: color-mix(in srgb, var(--ouro) 20%, transparent); color: var(--ouro); }
+.ideia-notas { color: var(--texto-2); font-size: 14.5px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .salvo { min-height: 1.2em; font-size: 13px; color: var(--agua-claro); }
 
 /* ---------- encaminhamentos ---------- */
@@ -364,6 +382,7 @@ textarea.campo-input, .campo-texto { resize: vertical; line-height: 1.45; }
 .opcao-ico { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px; background: var(--sol); color: #fff; }
 .opcao-grande:nth-child(2) .opcao-ico { background: var(--azul); }
 .opcao-grande:nth-child(3) .opcao-ico { background: var(--agua); color: #04201c; }
+.opcao-grande:nth-child(4) .opcao-ico { background: var(--ouro); color: #1a1500; }
 
 dialog.folha {
   width: min(100%, 580px); max-width: 100%; max-height: 92dvh; margin: auto auto 0; padding: 0; border: 0;

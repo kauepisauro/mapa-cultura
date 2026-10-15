@@ -24,6 +24,7 @@ const ICONES = {
   alerta: SVG('<path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.5v.1"/>'),
   zap: SVG('<path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/>'),
   x: SVG('<path d="M6 6l12 12M18 6L6 18"/>'),
+  ideia: SVG('<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0012 3z"/>'),
 };
 
 export function icone(nome) {

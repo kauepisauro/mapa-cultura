@@ -10,6 +10,7 @@ import { renderCalendario } from './telas/calendario.js';
 import { renderReunioes } from './telas/reunioes.js';
 import { renderEvento } from './telas/evento.js';
 import { renderTarefas } from './telas/tarefas.js';
+import { renderIdeias } from './telas/ideias.js';
 import { renderFrentes, renderFrente } from './telas/frentes.js';
 import { renderAjustes } from './telas/ajustes.js';
 
@@ -26,6 +27,7 @@ const ctx = {
     calendario: { vista: 'mes', frente: '', ano: 0, mes: 0, sel: '' },
     reunioes: { frente: '' },
     tarefas: { pessoa: '', frente: '', vista: 'quadro', col: 'fazer', somenteAtrasados: false },
+    ideias: { frente: '', grupo: 'mesa' },
   },
   hoje: () => hojeISO(),
   eu: () => store.pref.ler(CONFIG.chaveEu) || '',
@@ -65,6 +67,7 @@ function rota() {
     case 'calendario': return { nav: 'calendario', titulo: 'Calendário de luta', tela: () => renderCalendario(ctx) };
     case 'reunioes': return { nav: 'reunioes', titulo: 'Reuniões', tela: () => renderReunioes(ctx) };
     case 'tarefas': return { nav: 'tarefas', titulo: 'Encaminhamentos', tela: () => renderTarefas(ctx) };
+    case 'ideias': return { nav: 'ideias', titulo: 'Ideias', tela: () => renderIdeias(ctx) };
     case 'frentes': return { nav: 'frentes', titulo: 'Frentes', tela: () => renderFrentes(ctx) };
     case 'ajustes': return { nav: 'ajustes', titulo: 'Ajustes', tela: () => renderAjustes(ctx) };
     case 'evento': {
@@ -92,7 +95,7 @@ function render() {
 }
 
 // ícones do menu
-const ICONES_NAV = { inicio: 'casa', calendario: 'calendario', reunioes: 'pessoas', tarefas: 'lista', frentes: 'frente', ajustes: 'engrenagem' };
+const ICONES_NAV = { inicio: 'casa', calendario: 'calendario', reunioes: 'pessoas', tarefas: 'lista', ideias: 'ideia', frentes: 'frente', ajustes: 'engrenagem' };
 document.querySelectorAll('[data-nav]').forEach((a) => a.prepend(icone(ICONES_NAV[a.dataset.nav])));
 document.querySelector('#fab').append(icone('mais'));
 document.querySelector('#fab').addEventListener('click', () => {
@@ -110,11 +113,24 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) rend
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); instalador = e; if (location.hash === '#/ajustes') render(); });
 render();
 
-// primeira vez: pergunta o nome (uma vez só)
-if (!store.pref.ler(CONFIG.chaveBoasVindas)) {
-  store.pref.gravar(CONFIG.chaveBoasVindas, '1');
-  if (!ctx.eu()) setTimeout(() => ctx.pedirNome(), 600);
+// Primeira abertura neste aparelho: carrega os dados iniciais do movimento (data/inicial.json), uma vez só.
+// Depois disso, tudo é do aparelho; "Apagar tudo" não recarrega.
+async function semear() {
+  if (store.temDadosSalvos || store.pref.ler(CONFIG.chaveSemeado)) return;
+  store.pref.gravar(CONFIG.chaveSemeado, '1');
+  try {
+    const r = await fetch('data/inicial.json');
+    if (r.ok) store.importar(await r.text());
+  } catch { /* sem internet na 1ª vez: abre vazio, dá para carregar exemplos ou restaurar backup */ }
 }
+
+// primeira vez: carrega dados iniciais e pergunta o nome (uma vez só)
+semear().then(() => {
+  if (!store.pref.ler(CONFIG.chaveBoasVindas)) {
+    store.pref.gravar(CONFIG.chaveBoasVindas, '1');
+    if (!ctx.eu()) setTimeout(() => ctx.pedirNome(), 600);
+  }
+});
 
 // funciona sem internet + aviso de nova versão
 if ('serviceWorker' in navigator) {

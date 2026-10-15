@@ -2,13 +2,14 @@
 // IMPORTANTE: `versao` precisa ser igual a VERSAO em sw.js (o teste confere).
 // Sempre que publicar uma mudança, suba as duas juntas (formato AAAA-MM-DD.N).
 export const CONFIG = {
-  versao: '2026-10-15.1',
+  versao: '2026-10-15.2',
   nome: 'SOS Lagoa',
   lema: 'Movimento popular em defesa da Lagoa da Conceição',
   chaveDados: 'soslagoa:dados:v1',
   chaveEu: 'soslagoa:eu',
   chaveTema: 'soslagoa:tema',
   chaveBoasVindas: 'soslagoa:boasvindas',
+  chaveSemeado: 'soslagoa:semeado',
 };
 
 // Cores tiradas da logo (azul-noite, sol vermelho, verde-água, dourado) + apoio.

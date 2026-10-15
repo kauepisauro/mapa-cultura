@@ -33,14 +33,14 @@ export function renderCalendario(ctx) {
       dias.map(({ iso, doMes }) => {
         const evs = eventosDoDia(estado, iso, filtro);
         const d = parse(iso);
-        const cores = evs.slice(0, 4).map((e) => frenteDe(estado, e.frente)?.cor || 'var(--azul-claro)');
+        const pts = evs.slice(0, 4).map((e) => ({ cor: frenteDe(estado, e.frente)?.cor || 'var(--azul-claro)', vazio: !!e.aConfirmar }));
         return h('button', {
           type: 'button', role: 'gridcell',
-          class: `dia${doMes ? '' : ' fora'}${iso === hoje ? ' hoje' : ''}${iso === ui.sel ? ' sel' : ''}${evs.length ? ' tem' : ''}`,
+          class: `dia${doMes ? '' : ' fora'}${iso === hoje ? ' hoje' : ''}${iso === ui.sel ? ' sel' : ''}${evs.length ? ' tem' : ''}${evs.some((e) => e.destaque) ? ' destaque' : ''}`,
           'aria-label': `${dataLonga(iso)}${evs.length ? `, ${evs.length} compromisso${evs.length > 1 ? 's' : ''}` : ''}`,
           'aria-pressed': String(iso === ui.sel),
           onclick: () => { ui.sel = iso; if (!doMes) Object.assign(ui, { ano: d.getFullYear(), mes: d.getMonth() }); ctx.render(); },
-        }, h('b', {}, d.getDate()), h('span', { class: 'pontos' }, cores.map((c) => h('i', { style: `--cor:${c}` })), evs.length > 4 && h('em', {}, '+')));
+        }, h('b', {}, d.getDate()), h('span', { class: 'pontos' }, pts.map((p) => h('i', { class: p.vazio ? 'vazio' : null, style: `--cor:${p.cor}` })), evs.length > 4 && h('em', {}, '+')));
       }));
     const doDia = eventosDoDia(estado, ui.sel, filtro);
     raiz.append(h('section', { class: 'cartao calendario' }, nav, grid));

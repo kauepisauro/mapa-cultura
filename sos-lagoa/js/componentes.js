@@ -2,7 +2,8 @@
 import { h, icone, toast } from './ui.js';
 import { dataCurta, relativo, hora, parse, MESES_CURTOS } from './datas.js';
 import { TIPOS, STATUS, SEM_RESPONSAVEL, situacaoPrazo, avancarStatus, contagemDoEvento } from './logica.js';
-import { formEnc } from './formularios.js';
+import { formEnc, formIdeia } from './formularios.js';
+import { IDEIA_STATUS } from './logica.js';
 
 export const frenteDe = (estado, id) => estado.frentes.find((f) => f.id === id);
 
@@ -16,14 +17,15 @@ export function cartaoEvento(ctx, ev, { mostrarContagem = true } = {}) {
   const d = parse(ev.data);
   const c = contagemDoEvento(ctx.estado, ev.id);
   const frente = frenteDe(ctx.estado, ev.frente);
-  return h('a', { class: `cartao-evento${ev.data === hoje ? ' hoje' : ''}${ev.data < hoje ? ' passado' : ''}`, href: `#/evento/${ev.id}`, style: `--cor:${frente?.cor || 'var(--azul-claro)'}` },
+  return h('a', { class: `cartao-evento${ev.data === hoje ? ' hoje' : ''}${ev.data < hoje ? ' passado' : ''}${ev.destaque ? ' destaque' : ''}${ev.aConfirmar ? ' aconfirmar' : ''}`, href: `#/evento/${ev.id}`, style: `--cor:${frente?.cor || 'var(--azul-claro)'}` },
     h('div', { class: 'data-bloco', 'aria-hidden': 'true' }, h('b', {}, d.getDate()), h('span', {}, MESES_CURTOS[d.getMonth()])),
     h('div', { class: 'cartao-corpo' },
       h('strong', { class: 'cartao-titulo' }, ev.titulo),
       h('div', { class: 'meta' },
         h('span', {}, `${dataCurta(ev.data)}${ev.hora ? ` · ${hora(ev.hora)}` : ''}`, ' · ', relativo(ev.data, hoje)),
         ev.local && h('span', { class: 'meta-icone' }, icone('local'), ev.local)),
-      h('div', { class: 'selos' }, ev.tipo !== 'reuniao' && h('span', { class: 'selo' }, TIPOS[ev.tipo].nome), seloFrente(ctx.estado, ev.frente),
+      h('div', { class: 'selos' }, ev.destaque && h('span', { class: 'selo selo-destaque' }, '⭐ Destaque'), ev.aConfirmar && h('span', { class: 'selo selo-confirmar' }, 'A confirmar'),
+        ev.tipo !== 'reuniao' && h('span', { class: 'selo' }, TIPOS[ev.tipo].nome), seloFrente(ctx.estado, ev.frente),
         ev.exemplo && h('span', { class: 'selo selo-exemplo' }, 'exemplo'))),
     mostrarContagem && c.total > 0 && h('div', { class: 'contagem', title: `${c.feitos} de ${c.total} encaminhamentos feitos` }, h('b', {}, `${c.feitos}/${c.total}`), h('span', {}, 'feitos')));
 }
@@ -65,6 +67,22 @@ export function cartaoEnc(ctx, enc, { origem = true } = {}) {
         seloFrente(estado, enc.frente),
         evOrigem && h('span', { class: 'selo selo-origem' }, `de: ${evOrigem.titulo}`),
         enc.exemplo && h('span', { class: 'selo selo-exemplo' }, 'exemplo'))));
+}
+
+export function cartaoIdeia(ctx, ideia) {
+  const { estado } = ctx;
+  const frente = frenteDe(estado, ideia.frente);
+  const origem = ideia.origem && estado.eventos.find((e) => e.id === ideia.origem);
+  return h('button', { class: `cartao-ideia st-${ideia.status}`, type: 'button', style: `--cor:${frente?.cor || 'var(--ouro)'}`, onclick: () => formIdeia(ctx, { ideia }) },
+    h('span', { class: 'ideia-ico', 'aria-hidden': 'true' }, icone('ideia')),
+    h('span', { class: 'cartao-corpo' },
+      h('span', { class: 'cartao-titulo' }, ideia.titulo),
+      ideia.notas && h('span', { class: 'ideia-notas' }, ideia.notas),
+      h('span', { class: 'selos' },
+        ideia.status !== 'nova' && h('span', { class: 'selo' }, IDEIA_STATUS[ideia.status].nome),
+        seloFrente(estado, ideia.frente),
+        ideia.interessados.length > 0 && h('span', { class: 'selo selo-pessoa' }, `Quer puxar: ${ideia.interessados.join(', ')}`),
+        origem && h('span', { class: 'selo selo-origem' }, `de: ${origem.titulo}`))));
 }
 
 export function chipsFrente(estado, ativa, aoMudar) {

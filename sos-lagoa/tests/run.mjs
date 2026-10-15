@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { somarDias, diffDias, grade, dataCurta, dataLonga, relativo, hora, valida, deslocarMes } from '../js/datas.js';
 import {
   estadoInicial, normalizar, situacaoPrazo, porPessoa, numeros, filtrarEncaminhamentos, avancarStatus,
-  pendenciasParaRetomar, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
+  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
 } from '../js/logica.js';
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
@@ -239,6 +239,81 @@ test('store: grava, recarrega, exporta/importa e recusa arquivo inválido sem pe
   ruim.atualizar((e) => e.pessoas.push('Zé'));
   assert.equal(ruim.salvamentoFalhou, true);
   assert.deepEqual(ruim.estado.pessoas, ['Zé']);
+});
+
+test('ideias: normaliza, filtra por grupo e frente, ordena da mais nova e limpa pessoa removida', () => {
+  const e = base();
+  e.ideias = [
+    { id: 'i1', titulo: 'A', notas: '', frente: e.frentes[0].id, origem: 'r1', status: 'nova', interessados: ['Ana'], criadoEm: '2026-10-10' },
+    { id: 'i2', titulo: 'B', notas: '', frente: '', origem: '', status: 'estudando', interessados: [], criadoEm: '2026-10-14' },
+    { id: 'i3', titulo: 'C', notas: '', frente: '', origem: '', status: 'virou', interessados: [], criadoEm: '2026-10-01' },
+    { id: 'i4', titulo: 'D', notas: '', frente: '', origem: '', status: 'arquivada', interessados: [], criadoEm: '' },
+  ];
+  assert.deepEqual(filtrarIdeias(e).map((x) => x.id), ['i2', 'i1']);
+  assert.deepEqual(filtrarIdeias(e, { grupo: 'virou' }).map((x) => x.id), ['i3']);
+  assert.deepEqual(filtrarIdeias(e, { grupo: 'arquivada' }).map((x) => x.id), ['i4']);
+  assert.deepEqual(filtrarIdeias(e, { frente: e.frentes[0].id }).map((x) => x.id), ['i1']);
+  const n = normalizar({ ...e, ideias: [...e.ideias, { id: 'i5', titulo: 'x', status: 'zzz', origem: 'fantasma', interessados: ['Zé'], criadoEm: 'ontem' }, null, { titulo: 'sem id' }] });
+  assert.equal(n.ideias.length, 5);
+  const i5 = n.ideias.find((x) => x.id === 'i5');
+  assert.equal(i5.status, 'nova'); assert.equal(i5.origem, ''); assert.equal(i5.criadoEm, '');
+  assert.ok(n.pessoas.includes('Zé'));
+  assert.deepEqual(normalizar({ eventos: [] }).ideias, []); // backup antigo, sem ideias
+  e.pessoas = ['Ana'];
+  removerPessoa(e, 'Ana');
+  assert.deepEqual(e.ideias[0].interessados, []);
+});
+
+test('"a confirmar" e destaque: normalizam, aparecem nos textos e no .ics', () => {
+  const e = base();
+  e.eventos[1] = { ...e.eventos[1], titulo: 'Piquenique', aConfirmar: true, destaque: true };
+  const n = normalizar(e);
+  assert.equal(n.eventos.find((x) => x.id === 'r2').aConfirmar, true);
+  assert.equal(n.eventos.find((x) => x.id === 'r1').aConfirmar, undefined);
+  assert.match(resumoAgenda(e, HOJE, 21), /⭐ Piquenique \(a confirmar\)/);
+  assert.match(resumoEvento(e, e.eventos[1], HOJE), /\*Piquenique\* _\(a confirmar\)_/);
+  const ics = gerarICS([e.eventos[1]], e);
+  assert.match(ics, /SUMMARY:SOS Lagoa · Piquenique \(a confirmar\)/);
+  assert.match(ics, /STATUS:TENTATIVE/);
+  assert.ok(!gerarICS([e.eventos[2]], e).includes('TENTATIVE'));
+});
+
+test('texto da reunião inclui as ideias que surgiram nela', () => {
+  const e = base();
+  e.ideias = [{ id: 'i1', titulo: 'Virar APA', notas: 'Mais proteção', frente: '', origem: 'r1', status: 'nova', interessados: [], criadoEm: HOJE }];
+  const t = resumoEvento(e, e.eventos[0], HOJE);
+  assert.match(t, /\*Ideias que surgiram\*\n• Virar APA — Mais proteção/);
+  assert.ok(!resumoEvento(e, e.eventos[1], HOJE).includes('Ideias que surgiram'));
+});
+
+test('compromisso em destaque: ignora "a confirmar" e reunião que já tem registro', () => {
+  const e = base();
+  e.eventos = [
+    { ...e.eventos[0], id: 'hoje-feita', data: HOJE, ata: 'já aconteceu' },
+    { ...e.eventos[0], id: 'talvez', data: '2026-10-16', aConfirmar: true },
+    { ...e.eventos[0], id: 'firme', tipo: 'ato', data: '2026-10-17' },
+  ];
+  assert.equal(proximoCompromisso(e, HOJE).id, 'firme');
+  assert.equal(proximoCompromisso({ ...e, eventos: [] }, HOJE), undefined);
+});
+
+test('dados iniciais do movimento: válidos, sem perda na normalização e com as datas ditadas', () => {
+  const bruto = JSON.parse(readFileSync(join(raiz, 'data/inicial.json'), 'utf8'));
+  const n = normalizar(bruto);
+  assert.equal(n.eventos.length, bruto.eventos.length);
+  assert.equal(n.encaminhamentos.length, bruto.encaminhamentos.length);
+  assert.equal(n.ideias.length, bruto.ideias.length);
+  assert.ok(n.encaminhamentos.every((x) => x.origem && x.frente)); // referências resolvem
+  assert.ok(n.ideias.every((x) => x.origem));
+  const por = (id) => n.eventos.find((x) => x.id === id);
+  assert.deepEqual([por('ev-ato-17out').data, por('ev-ato-17out').hora], ['2026-10-17', '09:00']);
+  assert.deepEqual([por('ev-cafezinho-20out').data, por('ev-cafezinho-20out').hora, por('ev-cafezinho-20out').destaque], ['2026-10-20', '15:00', true]);
+  assert.equal(por('ev-aniversario-31out').data, '2026-10-31');
+  assert.equal(por('ev-encontro-14dez').aConfirmar, true);
+  assert.equal(por('ev-ato-25jan').aConfirmar, true);
+  assert.ok(n.eventos.every((x) => !x.exemplo));
+  // tela inicial destaca o ato de sábado, não a reunião já registrada
+  assert.equal(proximoCompromisso(n, '2026-10-15').id, 'ev-ato-17out');
 });
 
 test('app: versão do service worker = config; todos os arquivos do app existem', () => {

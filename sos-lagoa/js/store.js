@@ -5,6 +5,7 @@ import { estadoInicial, normalizar } from './logica.js';
 
 export function criarStore(storage = globalThis.localStorage) {
   let estado;
+  let temDadosSalvos = false;
   const ouvintes = new Set();
   let falhou = false;
 
@@ -13,6 +14,7 @@ export function criarStore(storage = globalThis.localStorage) {
 
   try {
     const bruto = ler(CONFIG.chaveDados);
+    temDadosSalvos = bruto != null;
     estado = bruto ? normalizar(JSON.parse(bruto)) : estadoInicial();
   } catch {
     estado = estadoInicial();
@@ -23,6 +25,7 @@ export function criarStore(storage = globalThis.localStorage) {
   return {
     get estado() { return estado; },
     get salvamentoFalhou() { return falhou; },
+    get temDadosSalvos() { return temDadosSalvos; },
     // silencioso: grava sem redesenhar a tela (usado enquanto a pessoa digita).
     atualizar(fn, { silencioso = false } = {}) {
       fn(estado);

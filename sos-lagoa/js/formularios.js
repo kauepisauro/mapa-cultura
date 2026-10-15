@@ -2,7 +2,7 @@
 import { h, icone, folha, campo, seletorPessoas, confirmar, toast } from './ui.js';
 import { CORES_FRENTE } from './config.js';
 import { valida, somarDias } from './datas.js';
-import { TIPOS, STATUS, novoId, garantirPessoas } from './logica.js';
+import { TIPOS, STATUS, IDEIA_STATUS, novoId, garantirPessoas } from './logica.js';
 
 const opcoesFrente = (estado, atual) => [
   h('option', { value: '' }, '— nenhuma —'),
@@ -10,16 +10,18 @@ const opcoesFrente = (estado, atual) => [
 ];
 
 // ---------- evento / reunião ----------
-export function formEvento(ctx, { evento, dia, tipo, frente: frenteInicial = '' } = {}) {
+export function formEvento(ctx, { evento, dia, tipo, frente: frenteInicial = '', titulo: tituloInicial = '', notas: notasInicial = '', aConfirmar: aConfirmarInicial = false, aoSalvar } = {}) {
   const { estado } = ctx;
   const novo = !evento;
   let tipoAtual = evento?.tipo || tipo || 'reuniao';
-  const titulo = h('input', { class: 'campo-input', required: true, maxlength: '140', value: evento?.titulo || '', placeholder: 'Ex.: Reunião geral, Ato na ponte, Audiência…' });
+  const titulo = h('input', { class: 'campo-input', required: true, maxlength: '140', value: evento?.titulo || tituloInicial, placeholder: 'Ex.: Reunião geral, Ato na ponte, Audiência…' });
   const data = h('input', { class: 'campo-input', type: 'date', required: true, value: evento?.data || dia || ctx.hoje() });
   const horaEl = h('input', { class: 'campo-input', type: 'time', value: evento ? evento.hora : '19:00' });
   const local = h('input', { class: 'campo-input', maxlength: '200', value: evento?.local || '', placeholder: 'Onde vai ser?' });
   const frente = h('select', { class: 'campo-input' }, opcoesFrente(estado, evento ? evento.frente : frenteInicial));
-  const notas = h('textarea', { class: 'campo-input', rows: '3', maxlength: '4000', placeholder: 'O que a pessoa precisa saber? (ponto de encontro, o que levar…)' }, evento?.notas || '');
+  const notas = h('textarea', { class: 'campo-input', rows: '3', maxlength: '4000', placeholder: 'O que a pessoa precisa saber? (ponto de encontro, o que levar…)' }, evento?.notas || notasInicial);
+  const aConf = h('input', { type: 'checkbox', checked: evento ? !!evento.aConfirmar : aConfirmarInicial });
+  const dest = h('input', { type: 'checkbox', checked: !!evento?.destaque });
 
   const tipos = h('div', { class: 'chips', role: 'radiogroup', 'aria-label': 'Tipo' });
   const marcarTipo = (t) => {
@@ -35,12 +37,13 @@ export function formEvento(ctx, { evento, dia, tipo, frente: frenteInicial = '' 
     onsubmit: (e) => {
       e.preventDefault();
       if (!valida(data.value)) { toast('Escolha uma data válida.'); return; }
-      const campos = { titulo: titulo.value.trim() || TIPOS[tipoAtual].nome, tipo: tipoAtual, data: data.value, hora: horaEl.value, local: local.value.trim(), frente: frente.value, notas: notas.value.trim() };
+      const campos = { titulo: titulo.value.trim() || TIPOS[tipoAtual].nome, tipo: tipoAtual, data: data.value, hora: horaEl.value, local: local.value.trim(), frente: frente.value, notas: notas.value.trim(), aConfirmar: aConf.checked, destaque: dest.checked };
       let id = evento?.id;
       ctx.store.atualizar((s) => {
         if (novo) { id = novoId(); s.eventos.push({ id, ...campos, pauta: '', presentes: [], ata: '' }); } else Object.assign(s.eventos.find((x) => x.id === id), campos);
       });
       fechar();
+      aoSalvar?.(id);
       if (novo) ctx.ir(`#/evento/${id}`);
       toast(novo ? 'Adicionado ao calendário.' : 'Salvo.');
     },
@@ -51,6 +54,9 @@ export function formEvento(ctx, { evento, dia, tipo, frente: frenteInicial = '' 
   campo('Local', local),
   campo('Frente', frente),
   campo(tipoAtual === 'reuniao' ? 'Observações' : 'Detalhes', notas),
+  h('div', { class: 'checks' },
+    h('label', { class: 'check' }, aConf, h('span', {}, h('strong', {}, 'Ainda a confirmar'), h('small', {}, 'Aparece no calendário como possibilidade, com marcação diferente.'))),
+    h('label', { class: 'check' }, dest, h('span', {}, h('strong', {}, '⭐ Destaque'), h('small', {}, 'Chama atenção no calendário (data especial).')))),
   h('div', { class: 'linha-botoes' },
     !novo && h('button', { class: 'btn perigo-suave', type: 'button', onclick: async () => {
       if (!(await confirmar('Apagar do calendário?', `“${evento.titulo}” será apagado. Os encaminhamentos dele continuam existindo, só perdem o vínculo.`))) return;
@@ -63,10 +69,10 @@ export function formEvento(ctx, { evento, dia, tipo, frente: frenteInicial = '' 
 }
 
 // ---------- encaminhamento ----------
-export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pessoa = '' } = {}) {
+export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pessoa = '', texto: textoInicial = '', aoSalvar } = {}) {
   const { estado } = ctx;
   const novo = !enc;
-  const texto = h('textarea', { class: 'campo-input', rows: '3', required: true, maxlength: '600', placeholder: 'O que precisa ser feito? Ex.: Imprimir 200 cartazes' }, enc?.texto || '');
+  const texto = h('textarea', { class: 'campo-input', rows: '3', required: true, maxlength: '600', placeholder: 'O que precisa ser feito? Ex.: Imprimir 200 cartazes' }, enc?.texto || textoInicial);
   const quem = seletorPessoas(estado.pessoas, enc ? enc.responsaveis : (pessoa ? [pessoa] : []), { rotulo: 'Quem vai fazer?' });
   const prazo = h('input', { class: 'campo-input', type: 'date', value: enc?.prazo || '' });
   const frente = h('select', { class: 'campo-input' }, opcoesFrente(estado, enc ? enc.frente : frenteInicial));
@@ -95,6 +101,7 @@ export function formEnc(ctx, { enc, origem = '', frente: frenteInicial = '', pes
       }
     });
     toast(novo ? 'Encaminhamento adicionado.' : 'Salvo.');
+    aoSalvar?.();
     return true;
   };
 
@@ -174,6 +181,66 @@ export function menuNovo(ctx, { dia = '', frente = '' } = {}) {
     return h('div', { class: 'pilha' },
       opcao('pessoas', 'Reunião', 'Data, pauta, quem veio e encaminhamentos', () => formEvento(ctx, { tipo: 'reuniao', dia, frente })),
       opcao('calendario', 'Ato, audiência ou outra data', 'Entra no calendário de luta', () => formEvento(ctx, { tipo: 'ato', dia, frente })),
-      opcao('lista', 'Encaminhamento', 'Uma tarefa: o quê, quem e até quando', () => formEnc(ctx, { frente })));
+      opcao('lista', 'Encaminhamento', 'Uma tarefa: o quê, quem e até quando', () => formEnc(ctx, { frente })),
+      opcao('ideia', 'Ideia ou possibilidade', 'Algo que surgiu e ainda não virou ação', () => formIdeia(ctx, { frente })));
   });
+}
+
+// ---------- ideia ----------
+export function formIdeia(ctx, { ideia, origem = '', frente: frenteInicial = '' } = {}) {
+  const { estado } = ctx;
+  const novo = !ideia;
+  const titulo = h('input', { class: 'campo-input', required: true, maxlength: '160', value: ideia?.titulo || '', placeholder: 'Ex.: Aplicativo de monitoramento da barragem' });
+  const notas = h('textarea', { class: 'campo-input', rows: '4', maxlength: '2000', placeholder: 'Por que é boa? O que já se sabe? Quem falou dela?' }, ideia?.notas || '');
+  const frente = h('select', { class: 'campo-input' }, opcoesFrente(estado, ideia ? ideia.frente : frenteInicial));
+  const quem = seletorPessoas(estado.pessoas, ideia?.interessados || [], { rotulo: 'Quem quer puxar ou ajudar?', vazio: 'Ninguém marcou ainda.' });
+  let status = ideia?.status || 'nova';
+  const botoes = h('div', { class: 'chips', role: 'radiogroup', 'aria-label': 'Situação' });
+  const marcar = (s) => { status = s; [...botoes.children].forEach((b) => { b.classList.toggle('on', b.dataset.s === s); b.setAttribute('aria-checked', String(b.dataset.s === s)); }); };
+  Object.entries(IDEIA_STATUS).forEach(([s, { nome }]) => botoes.append(h('button', { type: 'button', class: 'chip', 'data-s': s, role: 'radio', onclick: () => marcar(s) }, nome)));
+  marcar(status);
+  const origemEv = (ideia ? ideia.origem : origem) && estado.eventos.find((e) => e.id === (ideia ? ideia.origem : origem));
+
+  // grava os campos atuais (usado ao salvar e antes de converter)
+  const gravar = () => {
+    const interessados = quem.valor();
+    let id = ideia?.id;
+    ctx.store.atualizar((s) => {
+      garantirPessoas(s, interessados);
+      const campos = { titulo: titulo.value.trim() || 'Ideia sem título', notas: notas.value.trim(), frente: frente.value, interessados, status };
+      if (novo) { id = novoId(); s.ideias.push({ id, ...campos, origem, criadoEm: ctx.hoje() }); } else Object.assign(s.ideias.find((x) => x.id === id), campos);
+    });
+    return id;
+  };
+  const virou = (id) => () => ctx.store.atualizar((s) => { s.ideias.find((x) => x.id === id).status = 'virou'; }, { silencioso: false });
+
+  folha(novo ? 'Nova ideia' : 'Ideia', (fechar) => h('form', {
+    class: 'pilha',
+    onsubmit: (e) => { e.preventDefault(); gravar(); fechar(); toast('Ideia guardada.'); },
+  },
+  origemEv && h('p', { class: 'dica' }, `Surgiu em: ${origemEv.titulo}`),
+  campo('A ideia', titulo),
+  campo('Detalhes', notas),
+  campo('Frente', frente),
+  quem.el,
+  !novo && h('div', { class: 'campo' }, h('span', { class: 'campo-rotulo' }, 'Situação'), botoes),
+  !novo && h('div', { class: 'campo' },
+    h('span', { class: 'campo-rotulo' }, 'Transformar em…'),
+    h('div', { class: 'linha-botoes' },
+      h('button', { class: 'btn', type: 'button', onclick: () => {
+        const id = gravar(); fechar();
+        formEnc(ctx, { texto: titulo.value.trim(), frente: frente.value, origem: ideia.origem, pessoa: quem.valor()[0] || '', aoSalvar: virou(id) });
+      } }, icone('lista'), 'Encaminhamento'),
+      h('button', { class: 'btn', type: 'button', onclick: () => {
+        const id = gravar(); fechar();
+        formEvento(ctx, { tipo: 'outro', titulo: titulo.value.trim(), notas: notas.value.trim(), frente: frente.value, aConfirmar: true, aoSalvar: virou(id) });
+      } }, icone('calendario'), 'Data no calendário'))),
+  h('div', { class: 'linha-botoes' },
+    !novo && h('button', { class: 'btn perigo-suave', type: 'button', onclick: async () => {
+      if (!(await confirmar('Apagar ideia?', `“${ideia.titulo}”`))) return;
+      ctx.store.atualizar((s) => { s.ideias = s.ideias.filter((x) => x.id !== ideia.id); });
+      fechar();
+      toast('Apagada.');
+    } }, icone('lixeira'), 'Apagar'),
+    h('button', { class: 'btn primario grande', type: 'submit' }, 'Salvar'))));
 }

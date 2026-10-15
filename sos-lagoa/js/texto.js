@@ -18,7 +18,7 @@ export function resumoEvento(estado, ev, hoje) {
   const L = [];
   const frente = nomeFrente(estado, ev.frente);
   L.push(`*${TIPOS[ev.tipo].nome.toUpperCase()}${frente ? ` · ${frente}` : ''}*`);
-  L.push(`*${ev.titulo}*`);
+  L.push(`*${ev.titulo}*${ev.aConfirmar ? ' _(a confirmar)_' : ''}`);
   L.push(`📅 ${dataLonga(ev.data)}${ev.hora ? ` às ${hora(ev.hora)}` : ''}`);
   if (ev.local) L.push(`📍 ${ev.local}`);
   const pauta = (ev.pauta || '').split('\n').map(limpaMarcador).filter(Boolean);
@@ -28,6 +28,8 @@ export function resumoEvento(estado, ev, hoje) {
   if (ev.ata.trim()) L.push('', '*Registro*', ev.ata.trim());
   const encs = ordenarEncaminhamentos(estado.encaminhamentos.filter((e) => e.origem === ev.id), hoje);
   if (encs.length) L.push('', '*Encaminhamentos*', ...encs.map((e, i) => linhaEnc(e, i + 1, hoje)));
+  const ideias = estado.ideias.filter((i) => i.origem === ev.id);
+  if (ideias.length) L.push('', '*Ideias que surgiram*', ...ideias.map((i) => `• ${i.titulo}${i.notas.trim() ? ` — ${i.notas.trim()}` : ''}`));
   L.push('', RODAPE);
   return L.join('\n');
 }
@@ -49,7 +51,7 @@ export function resumoAgenda(estado, hoje, dias = 21) {
   const L = [`*Calendário de luta · próximos ${dias} dias*`, ''];
   for (const e of evs) {
     const frente = nomeFrente(estado, e.frente);
-    L.push(`📅 *${dataCurta(e.data)}${e.hora ? ` · ${hora(e.hora)}` : ''}* — ${e.titulo}${frente ? ` (${frente})` : ''}${e.local ? `\n      📍 ${e.local}` : ''}`);
+    L.push(`📅 *${dataCurta(e.data)}${e.hora ? ` · ${hora(e.hora)}` : ''}* — ${e.destaque ? '⭐ ' : ''}${e.titulo}${e.aConfirmar ? ' (a confirmar)' : ''}${frente ? ` (${frente})` : ''}${e.local ? `\n      📍 ${e.local}` : ''}`);
   }
   L.push('', RODAPE);
   return L.join('\n');

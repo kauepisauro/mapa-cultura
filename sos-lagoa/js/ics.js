@@ -39,7 +39,8 @@ export function gerarICS(eventos, estado, agora = new Date()) {
     L.push('BEGIN:VEVENT', `UID:${ev.id}@soslagoa`, `DTSTAMP:${utcAgora(agora)}`);
     if (ev.hora) L.push(`DTSTART:${dia(ev.data)}T${ev.hora.replace(':', '')}00`, `DTEND:${fim(ev)}`);
     else L.push(`DTSTART;VALUE=DATE:${dia(ev.data)}`, `DTEND;VALUE=DATE:${dia(somarDias(ev.data, 1))}`);
-    L.push(`SUMMARY:${esc(`SOS Lagoa · ${ev.titulo}`)}`);
+    L.push(`SUMMARY:${esc(`SOS Lagoa · ${ev.titulo}${ev.aConfirmar ? ' (a confirmar)' : ''}`)}`);
+    if (ev.aConfirmar) L.push('STATUS:TENTATIVE');
     if (ev.local) L.push(`LOCATION:${esc(ev.local)}`);
     if (desc) L.push(`DESCRIPTION:${esc(desc)}`);
     L.push('END:VEVENT');

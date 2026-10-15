@@ -16,6 +16,13 @@ export const STATUS = {
   feito: { nome: 'Feito', proximo: 'fazer' },
 };
 
+export const IDEIA_STATUS = {
+  nova: { nome: 'Nova' },
+  estudando: { nome: 'Em estudo' },
+  virou: { nome: 'Virou ação' },
+  arquivada: { nome: 'Arquivada' },
+};
+
 export const SEM_RESPONSAVEL = 'Sem responsável';
 
 export const novoId = () =>
@@ -36,6 +43,7 @@ export function estadoInicial() {
     pessoas: [],
     eventos: [],
     encaminhamentos: [],
+    ideias: [],
   };
 }
 
@@ -62,6 +70,8 @@ export function normalizar(bruto) {
     hora: /^\d{2}:\d{2}$/.test(x.hora || '') ? x.hora : '',
     local: texto(x.local, 200), frente: frenteOk(x.frente), notas: texto(x.notas),
     pauta: texto(x.pauta), presentes: nomes(x.presentes), ata: texto(x.ata, 20000),
+    ...(x.aConfirmar ? { aConfirmar: true } : {}),
+    ...(x.destaque ? { destaque: true } : {}),
     ...(x.exemplo ? { exemplo: true } : {}),
   }));
   const idsEvento = new Set(eventos.map((x) => x.id));
@@ -73,6 +83,12 @@ export function normalizar(bruto) {
     criadoEm: texto(x.criadoEm, 30), feitoEm: valida(x.feitoEm) ? x.feitoEm : '',
     ...(x.exemplo ? { exemplo: true } : {}),
   }));
+  const ideias = lista(bruto.ideias).filter((x) => x && x.id).map((x) => ({
+    id: texto(x.id, 40), titulo: texto(x.titulo, 160) || 'Ideia sem título', notas: texto(x.notas, 2000),
+    frente: frenteOk(x.frente), origem: idsEvento.has(x.origem) ? x.origem : '',
+    status: IDEIA_STATUS[x.status] ? x.status : 'nova', interessados: nomes(x.interessados),
+    criadoEm: valida(x.criadoEm) ? x.criadoEm : '',
+  }));
   const pessoas = nomes(bruto.pessoas);
   // Quem aparece em encaminhamentos/presenças entra na lista de pessoas.
   const conhecidas = new Set(pessoas);
@@ -80,8 +96,9 @@ export function normalizar(bruto) {
   encaminhamentos.forEach((e) => e.responsaveis.forEach(incluir));
   eventos.forEach((e) => e.presentes.forEach(incluir));
   frentes.forEach((f) => f.coordenacao.forEach(incluir));
+  ideias.forEach((i) => i.interessados.forEach(incluir));
   pessoas.sort((a, b) => a.localeCompare(b, 'pt-BR'));
-  return { versao: 1, frentes, pessoas, eventos, encaminhamentos };
+  return { versao: 1, frentes, pessoas, eventos, encaminhamentos, ideias };
 }
 
 // ---------- eventos ----------
@@ -97,6 +114,9 @@ export const eventosDoDia = (estado, dia, filtro = {}) => filtrarEventos(estado,
 export const proximosEventos = (estado, hoje, filtro = {}) => filtrarEventos(estado, filtro).filter((e) => e.data >= hoje);
 
 export const eventosPassados = (estado, hoje, filtro = {}) => filtrarEventos(estado, filtro).filter((e) => e.data < hoje).reverse();
+
+// Compromisso em destaque na tela inicial: o próximo firme (ignora "a confirmar" e reunião que já tem registro).
+export const proximoCompromisso = (estado, hoje) => proximosEventos(estado, hoje).find((e) => !e.aConfirmar && !(e.tipo === 'reuniao' && e.ata.trim()));
 
 export function proximaReuniao(ev, dias = 7) {
   return { id: novoId(), titulo: ev.titulo, tipo: ev.tipo, data: somarDias(ev.data, dias), hora: ev.hora, local: ev.local, frente: ev.frente, notas: '', pauta: '', presentes: [], ata: '' };
@@ -171,6 +191,15 @@ export function removerPessoa(estado, nome) {
   estado.encaminhamentos.forEach((e) => { e.responsaveis = e.responsaveis.filter((p) => p !== nome); });
   estado.eventos.forEach((e) => { e.presentes = e.presentes.filter((p) => p !== nome); });
   estado.frentes.forEach((f) => { f.coordenacao = f.coordenacao.filter((p) => p !== nome); });
+  estado.ideias.forEach((i) => { i.interessados = i.interessados.filter((p) => p !== nome); });
+}
+
+// ---------- ideias ----------
+// grupo: 'mesa' (novas e em estudo) | 'virou' | 'arquivada'
+export function filtrarIdeias(estado, { frente = '', grupo = 'mesa' } = {}) {
+  const ok = grupo === 'mesa' ? ['nova', 'estudando'] : [grupo];
+  return estado.ideias.filter((i) => (!frente || i.frente === frente) && ok.includes(i.status))
+    .sort((a, b) => (b.criadoEm || '').localeCompare(a.criadoEm || ''));
 }
 
 export function garantirPessoas(estado, lista_) {

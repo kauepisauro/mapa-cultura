@@ -1,6 +1,6 @@
 // Service worker do SOS Lagoa: abre sem internet e atualiza com aviso.
 // IMPORTANTE: VERSAO precisa ser igual a CONFIG.versao (js/config.js). O teste confere.
-const VERSAO = '2026-10-15.1';
+const VERSAO = '2026-10-15.2';
 const SHELL = `soslagoa-shell-${VERSAO}`;
 
 const ARQUIVOS = [
@@ -8,7 +8,7 @@ const ARQUIVOS = [
   'js/main.js', 'js/config.js', 'js/datas.js', 'js/logica.js', 'js/texto.js', 'js/ics.js', 'js/store.js', 'js/ui.js',
   'js/componentes.js', 'js/formularios.js',
   'js/telas/inicio.js', 'js/telas/calendario.js', 'js/telas/reunioes.js', 'js/telas/evento.js',
-  'js/telas/tarefas.js', 'js/telas/frentes.js', 'js/telas/ajustes.js',
+  'js/telas/tarefas.js', 'js/telas/ideias.js', 'js/telas/frentes.js', 'js/telas/ajustes.js', 'data/inicial.json',
   'icons/logo.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png',
 ];
 
