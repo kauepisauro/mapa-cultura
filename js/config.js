@@ -3,7 +3,7 @@
 //  Tudo o que você precisa ajustar para publicar está neste arquivo.
 // ─────────────────────────────────────────────────────────────
 export const CONFIG = {
-  versao: '2026-10-15.12', // aparece no rodapé do painel; ajuda a conferir o que está publicado
+  versao: '2026-10-15.13', // aparece no rodapé do painel; ajuda a conferir o que está publicado
   nome: 'Mapa Vivo Florianópolis',
   projeto: 'Cartografia Líquen',
   subtitulo: 'culturas da Grande Florianópolis',
@@ -37,7 +37,7 @@ export const CONFIG = {
 
 
   // Território-piloto (aparece como uma "mancha" no mapa). Use null para ocultar.
-  territorioPiloto: { nome: 'Território-piloto · Lagoa da Conceição', centro: [-27.6045, -48.4655], raioM: 2700 },
+  territorioPiloto: null,
 
   // ── Conteúdo ──
   licenca: 'CC BY-SA 4.0',
