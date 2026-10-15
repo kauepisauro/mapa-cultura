@@ -5,7 +5,7 @@ Plataforma do movimento popular **SOS Lagoa** (em defesa da Lagoa da Conceição
 Site estático instalável (PWA): HTML/CSS/JS puro, sem build e sem servidor. Cores tiradas da logo do movimento.
 
 Testar no computador: `python3 -m http.server` nesta pasta e abrir <http://localhost:8000/>.
-Publicar: veja `PUBLICAR.md`.
+Publicado em https://sos-lagoa.web.app (Firebase Hosting; roteiro em `PUBLICAR-FIREBASE.md`). Outras opções: `PUBLICAR.md`.
 
 ## Como funciona
 - **Reunião** → pauta, quem veio, registro e encaminhamentos. **Enviar no WhatsApp** monta o resumo pronto.
