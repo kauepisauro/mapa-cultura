@@ -3,7 +3,9 @@ import { CONFIG } from './config.js';
 import { criarStore } from './store.js';
 import { hojeISO } from './datas.js';
 import { garantirPessoas, mesclarInicial } from './logica.js';
-import { h, icone, folha, campo, toast } from './ui.js';
+import { h, icone, folha, campo, toast, confirmar } from './ui.js';
+import { FIREBASE } from './firebase-config.js';
+import { iniciarSync, CODIGO_VALIDO } from './sync.js';
 import { menuNovo } from './formularios.js';
 import { renderInicio } from './telas/inicio.js';
 import { renderCalendario } from './telas/calendario.js';
@@ -157,12 +159,70 @@ ctx.atualizarInicial = async () => {
   oferecerAtualizacao(seed, { manual: true });
 };
 
+// ---- grupo em tempo real (Firestore) ----
+// Quem entra no grupo passa a ver e editar os mesmos dados de todo mundo. O código do grupo fica só no aparelho.
+let sync = null;
+ctx.syncEstado = 'desligado';
+ctx.grupo = () => store.pref.ler(CONFIG.chaveGrupo) || '';
+ctx.linkConvite = () => `${location.origin}${location.pathname}?g=${ctx.grupo()}`;
+const ROTULO_SYNC = { conectando: 'Conectando…', online: 'Ao vivo', offline: 'Sem conexão', erro: 'Sem acesso' };
+
+function mostrarEstado(estado, detalhe = '') {
+  ctx.syncEstado = estado;
+  ctx.syncDetalhe = detalhe;
+  if (estado === 'recusado') { sync = null; store.pref.gravar(CONFIG.chaveGrupo, ''); ctx.syncEstado = 'desligado'; }
+  const el = document.getElementById('sync-estado');
+  el.hidden = !ctx.grupo();
+  el.dataset.estado = ctx.syncEstado;
+  el.textContent = ROTULO_SYNC[ctx.syncEstado] || '';
+  if (location.hash === '#/ajustes') render();
+}
+
+async function ligarSync() {
+  if (!ctx.grupo() || sync) return;
+  mostrarEstado('conectando');
+  sync = await iniciarSync({
+    store, config: FIREBASE, codigo: ctx.grupo(), quem: ctx.eu, aoEstado: mostrarEstado,
+    confirmarNovo: () => confirmar('Criar um grupo novo?', 'Esse código ainda não tem dados. Se você digitou errado, cancele e confira o código com quem te passou. Se este é o primeiro aparelho, tudo o que está aqui vira o começo do grupo.', 'Criar grupo'),
+  });
+  if (!sync) mostrarEstado('erro', 'modulo');
+}
+
+ctx.entrarNoGrupo = async (codigo) => {
+  const c = String(codigo || '').trim().toLowerCase();
+  if (!CODIGO_VALIDO.test(c)) { toast('Código inválido: use só letras e números, 16 ou mais.'); return false; }
+  store.pref.gravar(CONFIG.chaveGrupo, c);
+  await ligarSync();
+  render();
+  return true;
+};
+
+ctx.sairDoGrupo = () => {
+  sync?.parar();
+  sync = null;
+  store.pref.gravar(CONFIG.chaveGrupo, '');
+  mostrarEstado('desligado');
+  toast('Você saiu do grupo neste aparelho. Os dados continuam aqui, sem sincronizar.');
+  render();
+};
+
+// link de convite: ...?g=CODIGO  (guarda o código e tira da barra de endereço)
+(() => {
+  const g = new URLSearchParams(location.search).get('g');
+  if (!g) return;
+  if (CODIGO_VALIDO.test(g)) store.pref.gravar(CONFIG.chaveGrupo, g.toLowerCase());
+  history.replaceState(null, '', `${location.pathname}${location.hash}`);
+})();
+mostrarEstado('desligado');
+
 // primeira vez: carrega dados iniciais e pergunta o nome (uma vez só); nas seguintes, confere se há edição nova
+// (em grupo, os dados vêm do grupo: não se aplica a lista inicial por cima)
 semear().then(() => {
   if (!store.pref.ler(CONFIG.chaveBoasVindas)) {
     store.pref.gravar(CONFIG.chaveBoasVindas, '1');
     if (!ctx.eu()) setTimeout(() => ctx.pedirNome(), 600);
-  } else verificarAtualizacao();
+  } else if (!ctx.grupo()) verificarAtualizacao();
+  ligarSync();
 });
 
 // funciona sem internet; versão nova do app entra sozinha (recarrega uma vez)

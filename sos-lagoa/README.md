@@ -16,13 +16,14 @@ Publicar: veja `PUBLICAR.md`.
 - **Frentes** → os GTs (Comunicação, Técnico, Cultura, Mobilização). Nome, cor, descrição e quem puxa são editáveis.
 - Tudo tem o ícone de lápis para editar direto, sem abrir outra tela.
 
+## Grupo em tempo real
+Veja `SINCRONIZACAO.md`: todo mundo do grupo vê e edita os mesmos dados ao vivo (Firestore), por link de convite com um código secreto.
+
 ## Dados
 - `data/inicial.json` carrega **uma vez**, na primeira abertura em cada aparelho (reuniões e datas já combinadas).
   Editar o arquivo só afeta aparelhos novos. Se o site for público, esse arquivo também é.
-- Depois disso os dados ficam em `localStorage` **de cada aparelho** (não há banco compartilhado ainda). O compartilhamento
-  hoje é pelo texto de WhatsApp e pelo backup `.json` (Ajustes → Baixar/Restaurar).
-- Para todo mundo ver o mesmo em tempo real é preciso um banco online (um projeto novo e separado, em qualquer serviço gratuito).
-  Todo acesso a dados passa por `js/store.js`, então dá para plugar sem mexer nas telas.
+- Sem grupo, os dados ficam em `localStorage` **de cada aparelho** (compartilhar = texto de WhatsApp ou backup `.json`).
+  Entrando no grupo, o mesmo conteúdo sincroniza entre todos (`js/sync.js`).
 
 ## Ao publicar uma mudança
 Suba **juntos** `versao` em `js/config.js` e `VERSAO` em `sw.js` (formato `AAAA-MM-DD.N`); arquivo novo vai na lista

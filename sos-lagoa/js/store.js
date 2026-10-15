@@ -7,6 +7,8 @@ export function criarStore(storage = globalThis.localStorage) {
   let estado;
   let temDadosSalvos = false;
   const ouvintes = new Set();
+  const gravacoes = new Set(); // ouvem TODA gravação (inclusive a silenciosa): é o que alimenta a sincronização em grupo
+  let veioDoGrupo = false;
   let falhou = false;
 
   const ler = (chave) => { try { return storage.getItem(chave); } catch { return null; } };
@@ -20,7 +22,10 @@ export function criarStore(storage = globalThis.localStorage) {
     estado = estadoInicial();
   }
 
-  const salvar = () => { falhou = !gravar(CONFIG.chaveDados, JSON.stringify(estado)); };
+  const salvar = () => {
+    falhou = !gravar(CONFIG.chaveDados, JSON.stringify(estado));
+    if (!veioDoGrupo) gravacoes.forEach((f) => f());
+  };
 
   return {
     get estado() { return estado; },
@@ -33,6 +38,13 @@ export function criarStore(storage = globalThis.localStorage) {
       if (!silencioso) ouvintes.forEach((f) => f());
     },
     assinar(fn) { ouvintes.add(fn); return () => ouvintes.delete(fn); },
+    assinarGravacao(fn) { gravacoes.add(fn); return () => gravacoes.delete(fn); },
+    // Mudança recebida do grupo: grava e redesenha, mas não dispara o envio de volta.
+    aplicarRemoto(fn) {
+      veioDoGrupo = true;
+      try { fn(estado); salvar(); } finally { veioDoGrupo = false; }
+      ouvintes.forEach((f) => f());
+    },
     exportar() { return JSON.stringify({ ...estado, exportadoEm: new Date().toISOString() }, null, 2); },
     importar(texto) {
       estado = normalizar(JSON.parse(texto)); // lança erro se inválido; não mexe no estado atual

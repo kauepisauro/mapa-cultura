@@ -1,0 +1,9 @@
+Firebase JS SDK 10.14.1 (licença Apache-2.0, https://github.com/firebase/firebase-js-sdk), empacotado em um único arquivo
+só com o que o app usa (app + firestore). Fica dentro do app para funcionar offline e sem depender de CDN.
+
+Como regerar (precisa de Node):
+  npm install firebase@10.14.1 esbuild
+  entrada.js:
+    export { initializeApp, deleteApp } from 'firebase/app';
+    export { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, collection, doc, setDoc, onSnapshot, terminate } from 'firebase/firestore';
+  npx esbuild entrada.js --bundle --format=esm --platform=browser --minify --legal-comments=none --outfile=firebase.js

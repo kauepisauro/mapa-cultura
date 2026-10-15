@@ -13,6 +13,11 @@ não compartilha código, dados, banco, conta nem repositório com nenhum outro 
   dúvida vira “a confirmar” (`aConfirmar`), não data firme.
 - Não incluir atos de campanha eleitoral/partidária.
 
+## Grupo em tempo real
+- Firestore (projeto `sos-lagoa`). Leia `SINCRONIZACAO.md` antes de mexer em `js/sync*.js`, nas regras ou no esquema dos itens.
+- **Nunca** escreva o código do grupo no repositório. Itens novos precisam entrar em `COLECOES` (`js/sync-core.js`) e nas regras.
+- Teste ao vivo com um código de TESTE aleatório (`teste…`), nunca com o do grupo real; o Firestore não deixa apagar, então os documentos de teste ficam.
+
 ## Identidade
 - Nome: **Plataforma SOS Lagoa**. Cores da logo (azul-noite, sol vermelho, verde-água, dourado). Texto sóbrio, em português.
 - Termos: “GT” = grupo de trabalho (Comunicação, Técnico, Cultura, Mobilização); no código/telas ainda se chama “frente”.

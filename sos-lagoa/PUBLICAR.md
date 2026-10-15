@@ -15,6 +15,7 @@ de outro projeto, use uma **conta própria do movimento**.
 5. Em 1–2 minutos o link está no ar. Abra no celular e instale (Android: menu ⋮ → “Instalar app”; iPhone: Compartilhar → “Adicionar à Tela de Início”).
 
 ## Cuidados
+- O app usa o projeto Firebase `sos-lagoa` (`js/firebase-config.js`, dados públicos). O banco e o código do grupo não mudam ao trocar de endereço: quem abrir o link novo com `?g=CODIGO` entra no mesmo grupo.
 - **Os dados não migram entre endereços.** Quem usou outro link: em *Ajustes → Baixar backup* e, no novo, *Restaurar backup*.
 - `data/inicial.json` fica público no site. Só deixe ali o que pode ser público.
 - Para atualizar depois: edite/envie os arquivos pelo próprio GitHub (ou peça ajuda) e suba `versao`/`VERSAO` juntos.

@@ -11,6 +11,7 @@ import {
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
 import { criarStore } from '../js/store.js';
+import { estavel, hash, itensLocais, planejar, aplicarMudancas, docId, partirChave } from '../js/sync-core.js';
 import { CONFIG } from '../js/config.js';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
@@ -386,6 +387,138 @@ test('service worker: assume sozinho e lista inicial vem da rede', () => {
   const sw = readFileSync(join(raiz, 'sw.js'), 'utf8');
   assert.match(sw, /skipWaiting\(\)/);
   assert.match(sw, /inicial\.json/);
+});
+
+// ---------- sincronização em grupo (simulação de aparelhos com um "grupo" em memória) ----------
+function grupoFake() { return new Map(); } // chave -> {json} | {apagado:true}
+function aparelho(estado) { return { estado, base: new Map() }; }
+// manda mudanças locais para o grupo (o que o app faz depois de cada edição)
+function empurrar(dev, grupo) {
+  const p = planejar({ local: itensLocais(dev.estado), base: dev.base });
+  p.novaBase.forEach((v, k) => dev.base.set(k, v));
+  for (const { k, json } of p.enviar) grupo.set(k, json === null ? { apagado: true } : { json });
+}
+// recebe do grupo: 1ª vez olha tudo; depois só as chaves dadas (o que mudou)
+function puxar(dev, grupo, chaves) {
+  const p = planejar({ local: itensLocais(dev.estado), base: dev.base, remoto: grupo, chaves });
+  p.novaBase.forEach((v, k) => dev.base.set(k, v));
+  aplicarMudancas(dev.estado, p.aplicar);
+  for (const { k, json } of p.enviar) grupo.set(k, json === null ? { apagado: true } : { json });
+}
+const mini = (extra = {}) => normalizar({
+  frentes: [{ id: 'f1', nome: 'GT X', cor: '#3d78c4' }],
+  eventos: [{ id: 'e1', titulo: 'Ato', tipo: 'ato', data: '2026-10-17', local: 'Praia Mole' }],
+  encaminhamentos: [{ id: 't1', texto: 'Cartaz', responsaveis: ['Ana'], frente: 'f1' }],
+  ...extra,
+});
+const copia = (x) => JSON.parse(JSON.stringify(x));
+
+test('sync: estável e hash — mesmo item, mesmo texto, qualquer ordem de chaves', () => {
+  assert.equal(estavel({ b: 1, a: [2, { d: 1, c: 2 }] }), estavel({ a: [2, { c: 2, d: 1 }], b: 1 }));
+  assert.equal(hash('abc'), hash('abc'));
+  assert.notEqual(hash('abc'), hash('abd'));
+  assert.equal(docId('eventos/e 1/x'), 'eventos:e%201%2Fx');
+  assert.deepEqual(partirChave('pessoas/Ana/B'), { colecao: 'pessoas', id: 'Ana/B' });
+});
+
+test('sync: primeiro aparelho sobe tudo; segundo (com os mesmos dados iniciais) recebe sem sobrescrever o grupo', () => {
+  const grupo = grupoFake();
+  const a = aparelho(mini());
+  puxar(a, grupo); // 1ª conexão de A: grupo vazio, sobe tudo
+  assert.equal(grupo.size, 4); // frente + evento + tarefa + pessoa Ana
+  // A edita o local do ato
+  a.estado.eventos[0].local = 'Praia Mole (estacionamento)';
+  empurrar(a, grupo);
+  // B abre pela 1ª vez com os dados iniciais ORIGINAIS (local antigo) e entra no grupo
+  const b = aparelho(mini());
+  puxar(b, grupo);
+  assert.equal(b.estado.eventos[0].local, 'Praia Mole (estacionamento)'); // o grupo vence
+  assert.equal(JSON.parse(grupo.get('eventos/e1').json).local, 'Praia Mole (estacionamento)'); // e não foi sobrescrito
+});
+
+test('sync: edição de um aparece no outro; itens diferentes não se atrapalham', () => {
+  const grupo = grupoFake();
+  const a = aparelho(mini()); puxar(a, grupo);
+  const b = aparelho(mini()); puxar(b, grupo);
+  a.estado.eventos[0].titulo = 'Ato na Praia Mole';            // A mexe no evento
+  b.estado.encaminhamentos[0].status = 'feito';                  // B mexe na tarefa, ao mesmo tempo
+  empurrar(a, grupo); empurrar(b, grupo);
+  puxar(a, grupo, new Set(grupo.keys())); puxar(b, grupo, new Set(grupo.keys()));
+  for (const d of [a, b]) {
+    assert.equal(d.estado.eventos[0].titulo, 'Ato na Praia Mole');
+    assert.equal(d.estado.encaminhamentos[0].status, 'feito');
+  }
+});
+
+test('sync: novo item criado por um aparece no outro; apagar também (e não ressuscita)', () => {
+  const grupo = grupoFake();
+  const a = aparelho(mini()); puxar(a, grupo);
+  const b = aparelho(mini()); puxar(b, grupo);
+  a.estado.ideias.push(normalizar({ eventos: [], ideias: [{ id: 'i1', titulo: 'APA' }] }).ideias[0]);
+  empurrar(a, grupo); puxar(b, grupo, new Set(grupo.keys()));
+  assert.deepEqual(b.estado.ideias.map((i) => i.id), ['i1']);
+  // B apaga a reunião; A recebe e a reunião some lá também
+  b.estado.eventos = [];
+  empurrar(b, grupo);
+  assert.deepEqual(grupo.get('eventos/e1'), { apagado: true });
+  puxar(a, grupo, new Set(grupo.keys()));
+  assert.equal(a.estado.eventos.length, 0);
+  // um aparelho novo, que ainda tem o evento nos dados iniciais, NÃO traz a reunião de volta
+  const c = aparelho(mini()); puxar(c, grupo);
+  assert.equal(c.estado.eventos.length, 0);
+  assert.deepEqual(grupo.get('eventos/e1'), { apagado: true });
+});
+
+test('sync: conflito no MESMO item — o último a salvar vence, e todos terminam iguais', () => {
+  const grupo = grupoFake();
+  const a = aparelho(mini()); puxar(a, grupo);
+  const b = aparelho(mini()); puxar(b, grupo);
+  a.estado.eventos[0].local = 'Lagoa';
+  b.estado.eventos[0].local = 'Praia Mole II';
+  empurrar(a, grupo);            // A salva primeiro
+  puxar(b, grupo, new Set(grupo.keys())); // B recebe antes de salvar: o grupo vence (versão de A)
+  assert.equal(b.estado.eventos[0].local, 'Lagoa');
+  // agora B edita de novo, já em cima da versão certa, e salva por último
+  b.estado.eventos[0].local = 'Praia Mole II'; empurrar(b, grupo);
+  puxar(a, grupo, new Set(grupo.keys()));
+  assert.equal(a.estado.eventos[0].local, 'Praia Mole II');
+  assert.equal(b.estado.eventos[0].local, 'Praia Mole II');
+});
+
+test('sync: edição feita sem internet é enviada na volta, se o grupo não mexeu naquele item', () => {
+  const grupo = grupoFake();
+  const a = aparelho(mini()); puxar(a, grupo);
+  const b = aparelho(mini()); puxar(b, grupo);
+  // A fica offline e edita o evento; enquanto isso B edita OUTRO item
+  a.estado.eventos[0].hora = '08:30';
+  b.estado.encaminhamentos[0].status = 'fazendo'; empurrar(b, grupo);
+  // A volta: 1ª "olhada" no grupo inteiro (como no início da conexão)
+  puxar(a, grupo);
+  assert.equal(JSON.parse(grupo.get('eventos/e1').json).hora, '08:30');      // edição offline chegou ao grupo
+  assert.equal(a.estado.encaminhamentos[0].status, 'fazendo');                // e A recebeu a de B
+});
+
+test('sync: aplicar do grupo ignora lixo e coleções desconhecidas', () => {
+  const e = mini();
+  aplicarMudancas(e, [{ k: 'estranha/x', json: '{}' }, { k: 'eventos/zz', json: 'não é json' }, { k: 'eventos/ee', json: '"texto"' }, { k: 'pessoas/Zé', json: '{"nome":"Zé"}' }]);
+  assert.equal(e.eventos.length, 1);
+  assert.ok(e.pessoas.includes('Zé'));
+  aplicarMudancas(e, [{ k: 'pessoas/Zé', json: null }]);
+  assert.ok(!e.pessoas.includes('Zé'));
+});
+
+test('sync: store avisa gravações (inclusive silenciosas) e aplica remoto sem disparar o envio', () => {
+  const mem = new Map();
+  const st = criarStore({ getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, v) });
+  let grav = 0; let ui = 0;
+  st.assinarGravacao(() => grav++); st.assinar(() => ui++);
+  st.atualizar((e) => e.pessoas.push('Ana'), { silencioso: true });
+  assert.deepEqual([grav, ui], [1, 0]);   // digitação: grava e sincroniza, sem redesenhar
+  st.atualizar((e) => e.pessoas.push('Bia'));
+  assert.deepEqual([grav, ui], [2, 1]);
+  st.aplicarRemoto((e) => e.pessoas.push('Caio'));
+  assert.deepEqual([grav, ui], [2, 2]);   // veio do grupo: redesenha, mas não manda de volta
+  assert.ok(st.estado.pessoas.includes('Caio'));
 });
 
 test('app: versão do service worker = config; todos os arquivos do app existem', () => {

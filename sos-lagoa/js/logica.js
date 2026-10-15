@@ -30,14 +30,14 @@ export const novoId = () =>
 
 // GTs iniciais do movimento (editáveis, renomeáveis e apagáveis na tela Frentes).
 export function estadoInicial() {
-  const f = (nome, cor, descricao) => ({ id: novoId(), nome, cor, descricao, coordenacao: [] });
+  const f = (id, nome, cor, descricao) => ({ id, nome, cor, descricao, coordenacao: [] }); // ids fixos = mesmos do data/inicial.json (não duplica no grupo)
   return {
     versao: 1,
     frentes: [
-      f('GT de Comunicação', CORES_FRENTE[1], ''),
-      f('GT Técnico', CORES_FRENTE[2], ''),
-      f('GT de Cultura', CORES_FRENTE[3], ''),
-      f('GT de Mobilização', CORES_FRENTE[0], ''),
+      f('f-gt-comunicacao', 'GT de Comunicação', CORES_FRENTE[1], ''),
+      f('f-gt-tecnico', 'GT Técnico', CORES_FRENTE[2], ''),
+      f('f-gt-cultura', 'GT de Cultura', CORES_FRENTE[3], ''),
+      f('f-gt-mobilizacao', 'GT de Mobilização', CORES_FRENTE[0], ''),
     ],
     pessoas: [],
     eventos: [],

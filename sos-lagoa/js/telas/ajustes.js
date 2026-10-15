@@ -1,5 +1,5 @@
 // Ajustes: seu nome, pessoas, aparência e backup.
-import { h, icone, baixar, confirmar, toast } from '../ui.js';
+import { h, icone, baixar, confirmar, toast, copiar } from '../ui.js';
 import { CONFIG } from '../config.js';
 import { exemplos, removerPessoa, garantirPessoas } from '../logica.js';
 import { hojeISO } from '../datas.js';
@@ -14,6 +14,26 @@ export function renderAjustes(ctx) {
   raiz.append(bloco('Quem é você neste aparelho',
     h('p', { class: 'dica' }, 'Usado para mostrar “seus encaminhamentos” na tela inicial. Fica só neste aparelho.'),
     h('div', { class: 'linha-add' }, nome, h('button', { class: 'btn primario', type: 'button', onclick: () => { ctx.definirEu(nome.value.trim()); toast('Nome salvo.'); } }, 'Salvar'))));
+
+  // ----- grupo em tempo real -----
+  const grupo = ctx.grupo();
+  const codigoEl = h('input', { class: 'campo-input codigo', maxlength: '64', placeholder: 'Código do grupo', autocomplete: 'off', autocapitalize: 'off', 'aria-label': 'Código do grupo' });
+  const ROTULO = { desligado: 'Desligado', conectando: 'Conectando…', online: 'Ao vivo: tudo sincronizado', offline: 'Sem conexão: suas edições seguem salvas e sobem quando voltar a internet', erro: 'Sem acesso ao grupo. Confira o código ou a internet.' };
+  raiz.append(bloco('Grupo em tempo real',
+    grupo
+      ? [
+        h('p', {}, h('strong', {}, ROTULO[ctx.syncEstado] || ''), h('br'), h('span', { class: 'dica' }, `Código terminado em `, h('span', { class: 'codigo' }, grupo.slice(-4)))),
+        h('p', { class: 'dica' }, 'Tudo que alguém criar ou editar aparece para todos do grupo em poucos segundos. Quem tiver o link de convite entra no grupo: mande só para quem é do movimento.'),
+        h('div', { class: 'linha-botoes solta' },
+          h('button', { class: 'btn primario', type: 'button', onclick: () => copiar(ctx.linkConvite(), 'Link de convite copiado. Cole no grupo.') }, icone('copiar'), 'Copiar link de convite'),
+          h('button', { class: 'btn perigo-suave', type: 'button', onclick: async () => {
+            if (await confirmar('Sair do grupo?', 'Neste aparelho os dados continuam, mas deixam de sincronizar. Os outros aparelhos não são afetados.', 'Sair')) ctx.sairDoGrupo();
+          } }, 'Sair do grupo neste aparelho')),
+      ]
+      : [
+        h('p', { class: 'dica' }, 'Entre com o código do grupo (ou abra o link de convite) para ver e editar junto com todo mundo, em tempo real.'),
+        h('div', { class: 'linha-add' }, codigoEl, h('button', { class: 'btn primario', type: 'button', onclick: () => ctx.entrarNoGrupo(codigoEl.value) }, 'Entrar')),
+      ]));
 
   // ----- pessoas -----
   const novaPessoa = h('input', { class: 'campo-input', maxlength: '80', placeholder: 'Nome da pessoa', 'aria-label': 'Nova pessoa' });
@@ -51,14 +71,16 @@ export function renderAjustes(ctx) {
   } });
   const temExemplo = estado.eventos.some((e) => e.exemplo) || estado.encaminhamentos.some((e) => e.exemplo);
   raiz.append(bloco('Seus dados',
-    h('div', { class: 'aviso-caixa' }, h('strong', {}, 'Os dados ficam neste aparelho. '),
-      'Para o grupo todo ver, use “Enviar no WhatsApp” em cada reunião ou mande um backup. Quem recebe o backup pode restaurar no próprio aparelho.'),
+    grupo
+      ? h('div', { class: 'aviso-caixa' }, h('strong', {}, 'Os dados são do grupo. '), 'Apagar algo aqui apaga para todos. Por segurança, restaurar backup, carregar exemplos e apagar tudo ficam desligados enquanto você está no grupo.')
+      : h('div', { class: 'aviso-caixa' }, h('strong', {}, 'Os dados ficam neste aparelho. '),
+        'Para o grupo todo ver, entre no grupo em tempo real (acima) ou use “Enviar no WhatsApp” em cada reunião.'),
     h('div', { class: 'linha-botoes solta' },
       h('button', { class: 'btn', type: 'button', onclick: () => baixar(`backup-sos-lagoa-${hojeISO()}.json`, store.exportar(), 'application/json') }, icone('baixar'), 'Baixar backup'),
-      h('button', { class: 'btn', type: 'button', onclick: () => arquivo.click() }, icone('subir'), 'Restaurar backup'), arquivo),
-    h('div', { class: 'linha-botoes solta' },
+      !grupo && h('button', { class: 'btn', type: 'button', onclick: () => arquivo.click() }, icone('subir'), 'Restaurar backup'), arquivo),
+    !grupo && h('div', { class: 'linha-botoes solta' },
       h('button', { class: 'btn', type: 'button', onclick: () => ctx.atualizarInicial() }, icone('baixar'), 'Atualizar dados do movimento')),
-    h('div', { class: 'linha-botoes solta' },
+    !grupo && h('div', { class: 'linha-botoes solta' },
       !temExemplo && h('button', { class: 'btn', type: 'button', onclick: () => {
         store.atualizar((s) => { const ex = exemplos(hojeISO(), s); s.eventos.push(...ex.eventos); s.encaminhamentos.push(...ex.encaminhamentos); garantirPessoas(s, ex.pessoas); });
         toast('Exemplos carregados.');
