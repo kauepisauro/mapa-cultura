@@ -6,6 +6,7 @@ import { garantirPessoas, mesclarInicial } from './logica.js';
 import { h, icone, folha, campo, toast, confirmar } from './ui.js';
 import { FIREBASE } from './firebase-config.js';
 import { iniciarSync, CODIGO_VALIDO } from './sync.js';
+import { GRUPO_PADRAO } from './grupo-padrao.js';
 import { menuNovo } from './formularios.js';
 import { renderInicio } from './telas/inicio.js';
 import { renderCalendario } from './telas/calendario.js';
@@ -24,6 +25,9 @@ let ultimaRota = null;
 const ctx = {
   store,
   get estado() { return store.estado; },
+  syncEstado: 'desligado',
+  grupo: () => store.pref.ler(CONFIG.chaveGrupo) || '',
+  linkConvite: () => `${location.origin}${location.pathname}?g=${store.pref.ler(CONFIG.chaveGrupo) || ''}`,
   // estado de tela que sobrevive aos redesenhos (filtros, mês aberto…)
   ui: {
     calendario: { vista: 'mes', frente: '', ano: 0, mes: 0, sel: '' },
@@ -43,7 +47,7 @@ const ctx = {
   },
   pedirNome() {
     const nome = h('input', { class: 'campo-input', maxlength: '80', value: ctx.eu(), placeholder: 'Seu nome', required: true });
-    folha('Qual é o seu nome?', (fechar) => h('form', {
+    return folha('Qual é o seu nome?', (fechar) => h('form', {
       class: 'pilha',
       onsubmit: (e) => { e.preventDefault(); ctx.definirEu(nome.value.trim()); fechar(); toast(`Oi, ${nome.value.trim().split(' ')[0]}!`); },
     },
@@ -112,6 +116,20 @@ aplicarTema();
 store.assinar(render);
 window.addEventListener('hashchange', render);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); }); // virou o dia? atualiza
+// Entrada no grupo, ANTES de desenhar a primeira tela:
+// 1) link de convite ...?g=CODIGO (guarda o código e tira da barra de endereço);
+// 2) sem convite, usa o grupo padrão do site (se houver), a menos que a pessoa tenha saído de propósito.
+(() => {
+  const g = new URLSearchParams(location.search).get('g');
+  if (g) {
+    if (CODIGO_VALIDO.test(g)) { store.pref.gravar(CONFIG.chaveGrupo, g.toLowerCase()); store.pref.gravar(CONFIG.chaveSaiu, ''); }
+    history.replaceState(null, '', `${location.pathname}${location.hash}`);
+  }
+  if (!store.pref.ler(CONFIG.chaveGrupo) && CODIGO_VALIDO.test(GRUPO_PADRAO) && !store.pref.ler(CONFIG.chaveSaiu)) {
+    store.pref.gravar(CONFIG.chaveGrupo, GRUPO_PADRAO.toLowerCase());
+  }
+})();
+
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); instalador = e; if (location.hash === '#/ajustes') render(); });
 render();
 
@@ -162,9 +180,6 @@ ctx.atualizarInicial = async () => {
 // ---- grupo em tempo real (Firestore) ----
 // Quem entra no grupo passa a ver e editar os mesmos dados de todo mundo. O código do grupo fica só no aparelho.
 let sync = null;
-ctx.syncEstado = 'desligado';
-ctx.grupo = () => store.pref.ler(CONFIG.chaveGrupo) || '';
-ctx.linkConvite = () => `${location.origin}${location.pathname}?g=${ctx.grupo()}`;
 const ROTULO_SYNC = { conectando: 'Conectando…', online: 'Ao vivo', offline: 'Sem conexão', erro: 'Sem acesso', desligado: 'Só neste aparelho' };
 
 function mostrarEstado(estado, detalhe = '') {
@@ -189,39 +204,58 @@ async function ligarSync() {
 }
 
 ctx.entrarNoGrupo = async (codigo) => {
-  const c = String(codigo || '').trim().toLowerCase();
-  if (!CODIGO_VALIDO.test(c)) { toast('Código inválido: use só letras e números, 16 ou mais.'); return false; }
+  const bruto = String(codigo || '').trim();
+  const achado = bruto.match(/[?&]g=([a-z0-9]+)/i); // aceita o link de convite inteiro ou só o código
+  const c = (achado ? achado[1] : bruto).toLowerCase();
+  if (!CODIGO_VALIDO.test(c)) { toast('Código inválido: cole o link de convite ou o código (letras e números, 16 ou mais).'); return false; }
   store.pref.gravar(CONFIG.chaveGrupo, c);
+  store.pref.gravar(CONFIG.chaveSaiu, '');
   await ligarSync();
   render();
   return true;
 };
 
+// Pede o código do grupo. Sem isso o aparelho fica "Só neste aparelho" e ninguém mais vê o que a pessoa muda.
+ctx.pedirGrupo = () => {
+  const codigoEl = h('input', { class: 'campo-input codigo', placeholder: 'Cole aqui o link de convite ou o código', autocomplete: 'off', autocapitalize: 'off', 'aria-label': 'Link de convite ou código do grupo' });
+  return folha('Entrar no grupo do SOS Lagoa', (fechar) => h('form', {
+    class: 'pilha',
+    onsubmit: async (e) => { e.preventDefault(); if (await ctx.entrarNoGrupo(codigoEl.value)) { fechar(); toast('Conectado ao grupo.'); } },
+  },
+  h('p', {}, 'Sem entrar no grupo, o que você mudar fica só neste aparelho e ', h('strong', {}, 'ninguém mais vê'), '.'),
+  h('p', { class: 'dica' }, 'Cole o link de convite que você recebeu (o que tem “?g=…” no final) ou só o código do grupo.'),
+  campo('Link de convite ou código', codigoEl),
+  h('div', { class: 'linha-botoes' },
+    h('button', { class: 'btn', type: 'button', onclick: () => { try { sessionStorage.setItem('soslagoa:agora-nao-grupo', '1'); } catch { /* sem sessionStorage */ } fechar(); } }, 'Agora não'),
+    h('button', { class: 'btn primario grande', type: 'submit' }, 'Entrar no grupo'))));
+};
+
+function lembrarGrupo() {
+  if (ctx.grupo()) return;
+  try { if (sessionStorage.getItem('soslagoa:agora-nao-grupo')) return; } catch { /* segue e pergunta */ }
+  setTimeout(() => ctx.pedirGrupo(), 400);
+}
+
 ctx.sairDoGrupo = () => {
   sync?.parar();
   sync = null;
   store.pref.gravar(CONFIG.chaveGrupo, '');
+  store.pref.gravar(CONFIG.chaveSaiu, '1'); // saiu de propósito: não volta sozinho ao grupo padrão
   mostrarEstado('desligado');
   toast('Você saiu do grupo neste aparelho. Os dados continuam aqui, sem sincronizar.');
   render();
 };
 
-// link de convite: ...?g=CODIGO  (guarda o código e tira da barra de endereço)
-(() => {
-  const g = new URLSearchParams(location.search).get('g');
-  if (!g) return;
-  if (CODIGO_VALIDO.test(g)) store.pref.gravar(CONFIG.chaveGrupo, g.toLowerCase());
-  history.replaceState(null, '', `${location.pathname}${location.hash}`);
-})();
-mostrarEstado('desligado');
+mostrarEstado(ctx.grupo() ? 'conectando' : 'desligado');
 
 // primeira vez: carrega dados iniciais e pergunta o nome (uma vez só); nas seguintes, confere se há edição nova
 // (em grupo, os dados vêm do grupo: não se aplica a lista inicial por cima)
 semear().then(() => {
   if (!store.pref.ler(CONFIG.chaveBoasVindas)) {
     store.pref.gravar(CONFIG.chaveBoasVindas, '1');
-    if (!ctx.eu()) setTimeout(() => ctx.pedirNome(), 600);
-  } else if (!ctx.grupo()) verificarAtualizacao();
+    if (!ctx.eu()) setTimeout(() => ctx.pedirNome().addEventListener('close', lembrarGrupo), 600);
+    else lembrarGrupo();
+  } else lembrarGrupo(); // sem grupo, pede o código em toda abertura (até a pessoa entrar)
   ligarSync();
 });
 

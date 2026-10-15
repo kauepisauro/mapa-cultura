@@ -565,6 +565,16 @@ test('sync: store avisa gravações (inclusive silenciosas) e aplica remoto sem 
   assert.ok(st.estado.pessoas.includes('Caio'));
 });
 
+test('segurança: o código do grupo NUNCA fica escrito no repositório (grupo-padrao.js vazio) e não aparece em nenhum arquivo', () => {
+  const g = readFileSync(join(raiz, 'js/grupo-padrao.js'), 'utf8');
+  assert.match(g, /export const GRUPO_PADRAO = '';/);
+  // nenhum "código de grupo" (20+ letras/números) colado em arquivos de código
+  for (const f of ['js/main.js', 'js/sync.js', 'js/firebase-config.js', 'data/inicial.json', 'README.md', 'SINCRONIZACAO.md', 'PUBLICAR-FIREBASE.md', 'CLAUDE.md']) {
+    const t = readFileSync(join(raiz, f), 'utf8');
+    assert.ok(!/[?&]g=[a-z0-9]{16,}/i.test(t), `${f} tem um link de convite com código`);
+  }
+});
+
 test('app: versão do service worker = config; todos os arquivos do app existem', () => {
   const sw = readFileSync(join(raiz, 'sw.js'), 'utf8');
   assert.equal(sw.match(/const VERSAO = '([^']+)'/)[1], CONFIG.versao);

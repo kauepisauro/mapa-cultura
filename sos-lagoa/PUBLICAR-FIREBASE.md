@@ -9,7 +9,8 @@ Pré-requisito da sessão (rede do ambiente): liberar `auth.firebase.tools`, `fi
 1. Em uma pasta de trabalho (fora do repositório): `npm install firebase-tools@13.29.1`.
 2. `firebase login --no-localhost` -> abre um link; o dono autoriza e COLA o código. (Autorização só deste ambiente;
    revogável em https://myaccount.google.com/permissions, procurar "Firebase CLI".)
-3. Na pasta `sos-lagoa/`: `firebase deploy --only hosting --project sos-lagoa`.
+3. Na pasta `sos-lagoa/`: `./publicar.sh CODIGO_DO_GRUPO` (escreve o código em `js/grupo-padrao.js` só para publicar e depois zera o arquivo).
+   O código atual do grupo também pode ser lido do site no ar: `curl https://sos-lagoa.web.app/js/grupo-padrao.js`.
 4. Conferir https://sos-lagoa.web.app e o convite `https://sos-lagoa.web.app/?g=CODIGO` (código só com o dono; nunca no repositório).
 5. (Pendente) Tirar o app do repositório do Mapa Vivo (branch publicada `claude/great-albattani-kxi1un`): apagar a pasta `sos-lagoa/`,
    voltar `package.json` para `"test": "node --test tests/run.mjs"` e remover a seção "SOS Lagoa" do `CLAUDE.md` da raiz.

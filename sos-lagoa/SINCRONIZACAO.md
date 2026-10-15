@@ -12,6 +12,13 @@ Funciona sem internet: as edições ficam salvas no aparelho e sobem quando a co
 - `js/sync-core.js` decide o que enviar/receber comparando três versões de cada item (local, grupo e a última igual ao grupo);
   `js/sync.js` liga isso ao Firebase. O SDK vem empacotado em `vendor/firebase/` (ver `LEIA-ME.txt` lá).
 
+## Entrada automática (sem digitar código)
+O site publicado já leva o código do grupo embutido (`js/grupo-padrao.js`, escrito só na hora de publicar com `./publicar.sh`;
+no GitHub o arquivo fica **vazio**). Quem abre o endereço do site entra direto no grupo, sem digitar nada. Quem sai de propósito
+(Ajustes → Sair do grupo) não volta sozinho. O link de convite `…/?g=CODIGO` continua funcionando e prevalece sobre o padrão.
+**Consequência:** qualquer pessoa que souber o endereço do site vê e edita tudo. Mande o endereço só para quem é do movimento.
+Para voltar a exigir código, publique com o arquivo vazio.
+
 ## Segurança
 - O **código do grupo** é o segredo: quem não o conhece não consegue ler nem escrever (as regras só liberam o caminho com o código
   e proíbem listar os grupos). **Nunca coloque o código no repositório ou no site.** Cada aparelho guarda o código só em `localStorage`,

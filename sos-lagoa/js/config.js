@@ -2,7 +2,7 @@
 // IMPORTANTE: `versao` precisa ser igual a VERSAO em sw.js (o teste confere).
 // Sempre que publicar uma mudança, suba as duas juntas (formato AAAA-MM-DD.N).
 export const CONFIG = {
-  versao: '2026-10-15.9',
+  versao: '2026-10-15.11',
   nome: 'Plataforma SOS Lagoa',
   lema: 'Movimento popular em defesa da Lagoa da Conceição',
   chaveDados: 'soslagoa:dados:v1',
@@ -11,6 +11,7 @@ export const CONFIG = {
   chaveBoasVindas: 'soslagoa:boasvindas',
   chaveSemeado: 'soslagoa:semeado', // edição de data/inicial.json já aplicada neste aparelho
   chaveEdicaoRecusada: 'soslagoa:edicao-recusada',
+  chaveSaiu: 'soslagoa:saiu-do-grupo', // a pessoa saiu de propósito: não entrar de novo sozinho
   chaveGrupo: 'soslagoa:grupo', // código do grupo em tempo real (fica só neste aparelho; nunca no código do site)
 };
 

@@ -15,7 +15,7 @@ não compartilha código, dados, banco, conta nem repositório com nenhum outro 
 
 ## Grupo em tempo real
 - Firestore (projeto `sos-lagoa`). Leia `SINCRONIZACAO.md` antes de mexer em `js/sync*.js`, nas regras ou no esquema dos itens.
-- **Nunca** escreva o código do grupo no repositório. Itens novos precisam entrar em `COLECOES` (`js/sync-core.js`) e nas regras.
+- **Nunca** escreva o código do grupo no repositório: `js/grupo-padrao.js` fica vazio no Git e só é preenchido por `./publicar.sh CODIGO` na hora de publicar (o teste confere). Itens novos precisam entrar em `COLECOES` (`js/sync-core.js`) e nas regras.
 - Teste ao vivo com um código de TESTE aleatório (`teste…`), nunca com o do grupo real; o Firestore não deixa apagar, então os documentos de teste ficam.
 
 ## Identidade

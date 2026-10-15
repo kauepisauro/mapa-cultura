@@ -33,6 +33,13 @@ export function renderInicio(ctx) {
   }
   raiz.append(hero);
 
+  // Aviso forte enquanto o aparelho não está no grupo: o que se muda aqui não chega aos outros.
+  if (!ctx.grupo()) {
+    raiz.append(h('section', { class: 'aviso-caixa aviso-grupo' },
+      h('span', {}, h('strong', {}, 'Só neste aparelho. '), 'O que você mudar aqui não aparece para os outros.'),
+      h('button', { class: 'btn primario pequeno', type: 'button', onclick: () => ctx.pedirGrupo() }, 'Entrar no grupo')));
+  }
+
   // ----- começo de tudo: guia rápido -----
   if (vazioTotal) {
     raiz.append(h('section', { class: 'cartao guia' },
@@ -60,11 +67,11 @@ export function renderInicio(ctx) {
         meus.length ? h('div', { class: 'lista' }, meus.slice(0, 5).map((e) => cartaoEnc(ctx, e))) : h('p', { class: 'vazio-linha' }, 'Nada em aberto no seu nome.'),
         { contagem: meus.length || null, acao: meus.length > 5 ? h('a', { class: 'link', href: '#/tarefas', onclick: () => Object.assign(ctx.ui.tarefas, { pessoa: eu, frente: '' }) }, 'Ver todos') : null }));
     }
-    // Prazos e pendências de QUALQUER pessoa: atrasadas, para hoje ou até 7 dias, ou sem responsável.
+    // Encaminhamentos de QUALQUER pessoa: para todo mundo, atrasados, para hoje ou até 7 dias, ou sem responsável.
     // (O que é "seu" já aparece acima, então não repete.)
     const meusIds = new Set(eu ? filtrarEncaminhamentos(estado, { pessoa: eu, status: 'aberto' }).map((e) => e.id) : []);
     const emFoco = ordenarEncaminhamentos(estado.encaminhamentos.filter((e) => e.status !== 'feito' && !meusIds.has(e.id)
-      && (['atrasado', 'hoje', 'semana'].includes(situacaoPrazo(e, hoje)) || semResponsavel(e))), hoje);
+      && (e.paraTodos || ['atrasado', 'hoje', 'semana'].includes(situacaoPrazo(e, hoje)) || semResponsavel(e))), hoje);
     if (emFoco.length) {
       raiz.append(secao('Encaminhamentos', h('div', { class: 'lista' }, emFoco.slice(0, 6).map((e) => cartaoEnc(ctx, e))),
         { contagem: emFoco.length, acao: h('a', { class: 'link', href: '#/tarefas' }, emFoco.length > 6 ? 'Ver todos' : 'Abrir') }));

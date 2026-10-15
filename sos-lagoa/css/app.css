@@ -408,6 +408,7 @@ dialog.folha::backdrop { background: rgba(3, 8, 12, .72); backdrop-filter: blur(
 .bloco h2 { font-size: 18px; font-weight: 800; }
 .aviso-caixa { padding: 12px 14px; border-radius: 12px; background: color-mix(in srgb, var(--ouro) 12%, transparent); border: 1px solid color-mix(in srgb, var(--ouro) 45%, transparent); }
 .aviso-caixa.erro { background: color-mix(in srgb, var(--sol) 14%, transparent); border-color: var(--sol); }
+.aviso-grupo { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .rodape-app { text-align: center; color: var(--texto-3); font-size: 13px; padding: 8px 0; }
 
 .toast { position: fixed; left: 50%; bottom: calc(var(--tab-h) + 96px + env(safe-area-inset-bottom)); z-index: 200; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
