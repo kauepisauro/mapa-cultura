@@ -1,10 +1,10 @@
 // ─────────────────────────────────────────────────────────────
-//  Configuração do Cartografia Líquen
+//  Configuração do Mapa Vivo Florianópolis (Cartografia Líquen)
 //  Tudo o que você precisa ajustar para publicar está neste arquivo.
 // ─────────────────────────────────────────────────────────────
 export const CONFIG = {
-  versao: '2026-10-15.11', // aparece no rodapé do painel; ajuda a conferir o que está publicado
-  nome: 'Mapa cultural vivo',
+  versao: '2026-10-15.12', // aparece no rodapé do painel; ajuda a conferir o que está publicado
+  nome: 'Mapa Vivo Florianópolis',
   projeto: 'Cartografia Líquen',
   subtitulo: 'culturas da Grande Florianópolis',
 
@@ -14,7 +14,9 @@ export const CONFIG = {
   supabaseUrl: '',
   supabaseAnonKey: '',
 
-  // ── Curadoria: para onde vão os envios quando o banco não está configurado ──
+  // ── Contato público (Sobre/rodapé) e curadoria (envios quando o banco não está configurado) ──
+  contatoEmail: '', // ex.: 'contato@seudominio.org' (aparece em Sobre → Contato)
+  contatoWhatsapp: '', // ex.: '5548999999999'
   curadoriaWhatsapp: '', // ex.: '5548999999999'
   curadoriaEmail: '', // ex.: 'contato@seudominio.org'
   instagram: 'zona.liquen',

@@ -126,7 +126,7 @@ async function reduzir(file, max = 960) {
 }
 
 function resumoWhats(tipo, d) {
-  const linhas = [`*Nova colaboração — Mapa cultural vivo* (${tipo})`];
+  const linhas = [`*Nova colaboração — Mapa Vivo Florianópolis* (${tipo})`];
   for (const [k, v] of Object.entries(d)) {
     if (v == null || v === '' || k === 'foto' || k.startsWith('_') || k === 'tem_autorizacao') continue;
     linhas.push(`${k}: ${Array.isArray(v) ? v.join(', ') : v}`);
@@ -307,7 +307,7 @@ export function iniciarContribuir(ctx) {
 
   function canais(texto) {
     const w = CONFIG.curadoriaWhatsapp ? linkWhatsapp(CONFIG.curadoriaWhatsapp, texto) : '';
-    const m = CONFIG.curadoriaEmail ? `mailto:${CONFIG.curadoriaEmail}?subject=${encodeURIComponent('Colaboração — Mapa cultural vivo')}&body=${encodeURIComponent(texto)}` : '';
+    const m = CONFIG.curadoriaEmail ? `mailto:${CONFIG.curadoriaEmail}?subject=${encodeURIComponent('Colaboração — Mapa Vivo Florianópolis')}&body=${encodeURIComponent(texto)}` : '';
     return `${w ? `<a class="btn btn--terra" href="${esc(w)}" target="_blank" rel="noopener">${I.whats} Enviar por WhatsApp</a>` : ''}${m ? `<a class="btn" href="${esc(m)}">Enviar por e-mail</a>` : ''}`;
   }
 
@@ -325,7 +325,7 @@ export function iniciarContribuir(ctx) {
         <button class="btn" type="button" id="mais">Cadastrar outro</button>
         <button class="btn" type="button" id="convidar">Convidar outro coletivo</button></div></div>`, { tipos: false });
     dlg.querySelector('#mais').onclick = () => { pontoInicial = ''; desenhar(); };
-    dlg.querySelector('#convidar').onclick = () => ctx.compartilhar(`${location.origin}${location.pathname}#/colaborar`, 'Cadastre seu coletivo, ateliê ou evento no Cartografia Líquen');
+    dlg.querySelector('#convidar').onclick = () => ctx.compartilhar(`${location.origin}${location.pathname}#/colaborar`, 'Cadastre seu coletivo, ateliê ou evento no Mapa Vivo Florianópolis');
     dlg.querySelector('.dlg__corpo').scrollTop = 0;
   }
 

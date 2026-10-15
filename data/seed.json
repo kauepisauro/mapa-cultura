@@ -668,6 +668,21 @@
    ],
    "fonte": "https://floripa.com/a-cidade/cultura/ponte-de-palavras-tudo-sobre-o-encontro-literario-de-florianopolis/",
    "horario": "Consulte a programação da Casa. Localização aproximada no Centro"
+  },
+  {
+   "id": "ticen",
+   "nome": "Terminal Integrado do Centro (TICEN)",
+   "categoria": "social",
+   "lat": -27.5988,
+   "lng": -48.5535,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Terminal de ônibus do Centro, ponto tradicional de concentração de atos e marchas de movimentos sociais em Florianópolis.",
+   "tags": [
+    "atos",
+    "movimentos sociais",
+    "Centro"
+   ]
   }
  ],
  "eventos": [
@@ -1179,6 +1194,30 @@
     6,
     0
    ]
+  },
+  {
+   "id": "consciencia-negra-2026",
+   "ponto_id": "beira-mar-continental",
+   "titulo": "Dia da Consciência Negra (feriado nacional) · atos e programação a confirmar",
+   "categoria": "social",
+   "data": "2026-11-20",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "20 de novembro, Dia Nacional de Zumbi e da Consciência Negra, é feriado nacional. Em anos anteriores, Florianópolis teve semana de atividades, caminhada, rodas de capoeira, oficinas e feira de afroempreendedores (uma das edições na Beira-Mar Continental). A programação de 2026 ainda não foi divulgada.",
+   "fonte": "https://floripa.com/eventos/dia-da-consciencia-negra-programacao-especial-em-florianopolis/",
+   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores."
+  },
+  {
+   "id": "violencia-mulher-2026",
+   "ponto_id": "ticen",
+   "titulo": "Dia de luta pelo fim da violência contra as mulheres (25/11) · atos a confirmar",
+   "categoria": "social",
+   "data": "2026-11-25",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "25 de novembro é o Dia Internacional pela Eliminação da Violência contra as Mulheres. Em anos anteriores, o movimento feminista 8M SC fez ato em frente ao TICEN a partir do meio-dia e marcha às 18h, com orientação jurídica. Em 2026, Santa Catarina já registrou mais de 9,5 mil casos de violência contra a mulher até setembro.",
+   "fonte": "https://catarinas.info/21-dias-pelo-fim-da-violencia-as-mulheres-mobiliza-florianopolis/",
+   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores; confira com o 8M SC."
   }
  ]
 }

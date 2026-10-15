@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Mapa cultural vivo — Cartografia Líquen</title>
+  <title>Mapa Vivo Florianópolis</title>
   <meta name="description" content="Capoeira, ateliês, samba, rap, festas, movimentos sociais e cultura popular da Grande Florianópolis num só mapa colaborativo — com agenda de eventos.">
   <meta name="theme-color" content="#E8E3D1">
-  <meta property="og:title" content="Mapa cultural vivo — Cartografia Líquen">
+  <meta property="og:title" content="Mapa Vivo Florianópolis">
   <meta property="og:description" content="Descubra e divulgue a cultura da Ilha e da região: lugares, coletivos e eventos num mapa feito por quem faz a cena.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="icons/icon-512.png">
@@ -15,9 +15,9 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Mapa vivo">
+  <meta name="apple-mobile-web-app-title" content="Mapa Vivo">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="application-name" content="Mapa vivo">
+  <meta name="application-name" content="Mapa Vivo">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400..800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -58,10 +58,10 @@
         <div class="marca__deco" id="deco" aria-hidden="true"></div>
         <div class="marca__logo" id="logo"></div>
         <div class="marca__txt">
-          <h1 class="marca__nome">Mapa cultural vivo</h1>
-          <span class="marca__pre">Cartografia Líquen</span>
+          <h1 class="marca__nome">Mapa Vivo</h1>
+          <span class="marca__pre">Florianópolis</span>
         </div>
-        <button class="btn-redondo" id="btn-sobre" aria-label="Sobre o projeto" title="Sobre">?</button>
+        <button class="btn-redondo" id="btn-sobre" aria-label="Sobre o projeto e contato" title="Sobre e contato">?</button>
         <p class="marca__sub">culturas da Grande Florianópolis</p>
       </header>
 
@@ -100,7 +100,7 @@
 
       <footer class="rodape">
         <p>Conteúdo colaborativo sob <a id="lic" target="_blank" rel="noopener"></a>. Mapa © OpenStreetMap.</p>
-        <p>Acompanhe: <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a></p>
+        <p>Mapa Vivo Florianópolis · uma realização Cartografia Líquen · <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a> · <a href="#/contato">contato</a></p>
         <p id="rodape-modo"></p>
       </footer>
     </div>
@@ -129,12 +129,12 @@
 
 <dialog id="dlg-sobre" class="dlg dlg--sobre" aria-labelledby="sobre-t">
   <div class="dlg__cab">
-    <h2 id="sobre-t">O que é o <em>Mapa cultural vivo</em>?</h2>
+    <h2 id="sobre-t">O que é o <em>Mapa Vivo</em>?</h2>
     <button class="btn-redondo" data-fechar aria-label="Fechar">×</button>
   </div>
   <div class="dlg__corpo prosa">
-    <p class="lead">O Mapa cultural vivo, projeto do Cartografia Líquen, é um mapa público e gratuito das culturas da Grande Florianópolis — a Ilha, São José, Palhoça, Biguaçu e arredores: lugares, coletivos, artistas e manifestações — da roda de capoeira ao ateliê, do rap ao Boi de Mamão, do samba aos movimentos sociais.</p>
-    <h3>Por que Cartografia Líquen?</h3>
+    <p class="lead">O Mapa Vivo Florianópolis, projeto da Cartografia Líquen, é um mapa público e gratuito das culturas da Grande Florianópolis — a Ilha, São José, Palhoça, Biguaçu e arredores: lugares, coletivos, artistas e manifestações — da roda de capoeira ao ateliê, do rap ao Boi de Mamão, do samba aos movimentos sociais.</p>
+    <h3>Por que “líquen”?</h3>
     <p>O líquen é um organismo que só existe na simbiose entre um fungo e uma alga. Cultura também é assim: uma rede de interdependências. Cada ponto do mapa ganha sentido pelas relações com os outros — por isso o botão <strong>rede</strong> liga os pontos entre si.</p>
     <h3>Como funciona</h3>
     <ol>
@@ -147,7 +147,14 @@
     <h3>Seus dados e seu conteúdo</h3>
     <p>Só publicamos o que o coletivo autoriza. Contatos privados ficam apenas com a curadoria. O conteúdo é publicado sob <a id="lic2" target="_blank" rel="noopener"></a>, preservando os direitos de autores e comunidades. É um bem comum feito pela própria cena.</p>
     <p class="credito" id="creditos" hidden></p>
-    <p class="credito">Divulgação e novidades: <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a> no Instagram.</p>
+    <h3 id="contato">Contato</h3>
+    <div class="contato">
+      <p><span class="contato__rot">Realização</span><b>Cartografia Líquen</b></p>
+      <p><span class="contato__rot">Instagram</span><a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a></p>
+      <p id="contato-email" hidden><span class="contato__rot">E-mail</span><a></a></p>
+      <p id="contato-whats" hidden><span class="contato__rot">WhatsApp</span><a target="_blank" rel="noopener">Enviar mensagem</a></p>
+      <p class="contato__nota">Correções e pedidos de inclusão: use “Sugerir correção” na ficha de cada lugar ou o botão Colaborar.</p>
+    </div>
     <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar data-abrir-colab>Quero colaborar</button><button class="btn" data-acao="instalar" id="sobre-instalar" hidden>Instalar o app</button></div>
   </div>
 </dialog>
@@ -163,7 +170,7 @@
       <li>Toque em <b>Compartilhar</b> <span class="ico-ios" aria-hidden="true">⬆︎</span> (na barra de baixo ou de cima).</li>
       <li>Escolha <b>Adicionar à Tela de Início</b> e toque em <b>Adicionar</b>.</li>
     </ol>
-    <p>O ícone do Mapa vivo aparece junto dos seus apps, abre em tela cheia e funciona mesmo sem internet.</p>
+    <p>O ícone do Mapa Vivo aparece junto dos seus apps, abre em tela cheia e funciona mesmo sem internet.</p>
     <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar>Entendi</button></div>
   </div>
 </dialog>

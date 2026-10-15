@@ -1,27 +1,86 @@
 {
   "id": "./",
-  "name": "Mapa cultural vivo — Cartografia Líquen",
-  "short_name": "Mapa vivo",
-  "description": "Lugares, coletivos e eventos culturais da Grande Florianópolis num mapa colaborativo, com agenda do que acontece hoje.",
+  "name": "Mapa Vivo Florianópolis",
+  "short_name": "Mapa Vivo",
+  "description": "Mapa Vivo Florianópolis: lugares, coletivos e eventos culturais da Grande Florianópolis num mapa colaborativo, com agenda do que acontece hoje. Uma realização Cartografia Líquen.",
   "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "any",
   "background_color": "#E8E3D1",
   "theme_color": "#E8E3D1",
-  "categories": ["travel", "lifestyle", "entertainment", "social"],
+  "categories": [
+    "travel",
+    "lifestyle",
+    "entertainment",
+    "social"
+  ],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ],
   "shortcuts": [
-    { "name": "Acontece hoje", "short_name": "Hoje", "url": "./#/hoje", "icons": [{ "src": "icons/atalho-hoje.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Agenda", "url": "./#/agenda", "icons": [{ "src": "icons/atalho-agenda.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Colaborar", "url": "./#/colaborar", "icons": [{ "src": "icons/atalho-colaborar.png", "sizes": "96x96", "type": "image/png" }] }
+    {
+      "name": "Acontece hoje",
+      "short_name": "Hoje",
+      "url": "./#/hoje",
+      "icons": [
+        {
+          "src": "icons/atalho-hoje.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Agenda",
+      "url": "./#/agenda",
+      "icons": [
+        {
+          "src": "icons/atalho-agenda.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Colaborar",
+      "url": "./#/colaborar",
+      "icons": [
+        {
+          "src": "icons/atalho-colaborar.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }

@@ -1,4 +1,4 @@
-# Mapa cultural vivo — Cartografia Líquen (guia para editar)
+# Mapa Vivo Florianópolis — Cartografia Líquen (guia para editar)
 
 Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no GitHub Pages pela branch
 `claude/great-albattani-kxi1un` (workflow `.github/workflows/pages.yml`). Todo push publica.
@@ -16,10 +16,10 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
 - Repetições: `nao`, `diaria`, `dias_uteis`, `dias_semana` (+ `dias_semana: [0..6]`), `semanal`, `quinzenal`,
   `mensal`, `mensal_semana`. Sem `inicio` = dia todo. Exposições de vários dias aparecem em “Em cartaz”.
 - Pode podar eventos que já passaram.
-- **Neutralidade:** não incluir atos de campanha eleitoral/partidária (projeto cultural público, possível verba de edital).
+- **Neutralidade:** não incluir atos de campanha eleitoral/partidária (projeto cultural público, possível verba de edital). Atos de movimentos sociais não partidários entram, com fonte.
 
 ## Tom e estética (decisões do autor)
-- Nome: **“Mapa cultural vivo”** com **“Cartografia Líquen”** abaixo. Recorte: Grande Florianópolis; piloto: Lagoa.
+- Nome: **“Mapa Vivo Florianópolis”** (cabeçalho: “Mapa Vivo” + “Florianópolis”). “Cartografia Líquen” é a realizadora, citada em Sobre → Contato e no rodapé. Recorte: Grande Florianópolis; piloto: Lagoa.
 - Texto sóbrio: nada de gírias “descoladas” (“rolê”, “rola hoje”, “galera”) nem emojis em avisos. Usar “Acontece hoje”, “eventos”.
 - Estética “herbário de líquens”: papel osso, nanquim fino, rótulos em mono (DM Mono), títulos em serifa
   (Instrument Serif — o autor ainda pode trocar a fonte), cores de líquen. Nada infantil/“adesivo”.

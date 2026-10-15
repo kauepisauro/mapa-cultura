@@ -460,3 +460,10 @@ img, svg { display: block; max-width: 100%; }
 #app.em-app .ctl { top: calc(12px + env(safe-area-inset-top)); }
 #app.em-app .ver-mapa { top: calc(14px + env(safe-area-inset-top)); }
 @media (min-width: 761px) { #app.em-app .painel { top: calc(18px + env(safe-area-inset-top)); } }
+
+.contato { display: grid; gap: 8px; margin: 6px 0 4px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper-3); }
+.contato p { margin: 0; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.contato__rot { min-width: 84px; font: 500 10.5px/1.4 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+.contato a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: var(--lichen-d); text-underline-offset: 3px; }
+.contato__nota { font-size: 13px; color: var(--ink-2); margin-top: 4px !important; }
+.prosa a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: var(--lichen-d); text-underline-offset: 3px; }

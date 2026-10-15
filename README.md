@@ -1,4 +1,4 @@
-# Mapa cultural vivo — Cartografia Líquen
+# Mapa Vivo Florianópolis — Cartografia Líquen
 
 Mapa colaborativo e gratuito de lugares, coletivos e eventos culturais: **capoeira, ateliês, artes visuais,
 festas, rap/hip-hop, samba, movimentos sociais, cultura popular, teatro, música, foto/cinema, espaços e memória**.

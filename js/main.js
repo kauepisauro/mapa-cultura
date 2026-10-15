@@ -1,4 +1,4 @@
-// Cartografia Líquen — orquestração: estado, filtros, rotas, painel, mapa.
+// Mapa Vivo Florianópolis (Cartografia Líquen) — orquestração: estado, filtros, rotas, painel, mapa.
 import { CONFIG } from './config.js';
 import { CATEGORIAS, cat } from './categorias.js';
 import { carregar, meusEventosPendentes, meusPontosPendentes } from './store.js';
@@ -272,7 +272,7 @@ function compartilharEvento(key) {
   if (!o) return;
   const l = S.porId.get(o.lugarId);
   const quando = `${rotuloDia(o.data, hojeISO())}, ${dataCurta(o.data)}${o.inicio ? ` às ${hora(o.inicio)}` : ''}`;
-  const texto = `${o.titulo}\n${quando} · ${l.nome}${l.bairro ? ` (${l.bairro})` : ''}\nVi no Mapa cultural vivo:`;
+  const texto = `${o.titulo}\n${quando} · ${l.nome}${l.bairro ? ` (${l.bairro})` : ''}\nVi no Mapa Vivo Florianópolis:`;
   const url = `${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`;
   if (navigator.share) compartilhar(url, texto);
   else window.open(`https://wa.me/?text=${encodeURIComponent(`${texto} ${url}`)}`, '_blank', 'noopener');
@@ -292,7 +292,7 @@ const acoes = {
   'fechar-det': () => fecharDetalhe(),
   ics: (t) => baixarICS(t.dataset.key),
   chamar: (t) => compartilharEvento(t.dataset.key),
-  compartilhar(t) { const l = S.porId.get(t.dataset.id); compartilhar(`${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`, `${l.nome} — ${cat(l.categoria).nome} na Grande Florianópolis. Vi no Mapa cultural vivo:`); },
+  compartilhar(t) { const l = S.porId.get(t.dataset.id); compartilhar(`${baseUrl()}#/ponto/${encodeURIComponent(l.id)}`, `${l.nome} — ${cat(l.categoria).nome} na Grande Florianópolis. Vi no Mapa Vivo Florianópolis:`); },
   video(t) {
     const { tipo, id } = t.dataset;
     const src = tipo === 'youtube'
@@ -332,7 +332,7 @@ function rota() {
   if (a === 'agenda' && S.aba !== 'agenda') setAba('agenda', { empurrar: false });
   else if (a !== 'agenda' && a !== 'hoje' && S.aba === 'agenda' && !a) setAba('explorar', { empurrar: false });
   if (a === 'colaborar') contrib.abrir();
-  if (a === 'sobre') $('#dlg-sobre').showModal();
+  if (a === 'sobre' || a === 'contato') { $('#dlg-sobre').dataset.tema = S.tema; $('#dlg-sobre').showModal(); if (a === 'contato') $('#contato').scrollIntoView(); }
 }
 addEventListener('popstate', rota);
 
@@ -354,7 +354,7 @@ async function instalarApp() {
     pedidoInstalar.prompt();
     const { outcome } = await pedidoInstalar.userChoice.catch(() => ({}));
     pedidoInstalar = null;
-    if (outcome === 'accepted') toast('Pronto! O Mapa vivo está na sua tela inicial.');
+    if (outcome === 'accepted') toast('Pronto! O Mapa Vivo está na sua tela inicial.');
     atualizarInstalar();
   } else if (ehIOS()) {
     $('#dlg-instalar').dataset.tema = S.tema;
@@ -396,6 +396,8 @@ async function iniciar() {
   $('#deco').innerHTML = colonia(190, 120, 11);
   $('#lic').textContent = CONFIG.licenca; $('#lic').href = CONFIG.licencaUrl;
   $('#lic2').textContent = CONFIG.licenca; $('#lic2').href = CONFIG.licencaUrl;
+  if (CONFIG.contatoEmail) { const p = $('#contato-email'); p.hidden = false; p.querySelector('a').textContent = CONFIG.contatoEmail; p.querySelector('a').href = `mailto:${CONFIG.contatoEmail}`; }
+  if (CONFIG.contatoWhatsapp) { const p = $('#contato-whats'); p.hidden = false; p.querySelector('a').href = `https://wa.me/${CONFIG.contatoWhatsapp.replace(/\D/g, '')}`; }
   if (CONFIG.mostrarCreditosEdital) {
     const c = $('#creditos');
     c.hidden = false;
