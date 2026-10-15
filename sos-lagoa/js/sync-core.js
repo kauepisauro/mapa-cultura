@@ -36,6 +36,14 @@ export const partirChave = (k) => {
   return { colecao: k.slice(0, i), id: k.slice(i + 1) };
 };
 
+// Resumo (hash) de cada item da lista inicial do movimento. Serve de "base" na 1ª vez que um aparelho entra no grupo:
+// se o item deste aparelho difere da lista inicial, foi editado aqui (e é preservado quando o grupo ainda tem a versão original).
+export function baseInicial(estadoInicial) {
+  const m = new Map();
+  itensLocais(estadoInicial).forEach((json, k) => m.set(k, hash(json)));
+  return m;
+}
+
 // local: Map chave->json | base: Map chave->hash ('T' = apagado no grupo) | remoto: Map chave->{json}|{apagado}
 // chaves: opcional, restringe as chaves avaliadas. Devolve o que aplicar aqui, o que enviar e a nova base.
 export function planejar({ local, base, remoto = new Map(), chaves }) {

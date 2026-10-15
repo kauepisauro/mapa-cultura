@@ -11,7 +11,7 @@ import {
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
 import { criarStore } from '../js/store.js';
-import { estavel, hash, itensLocais, planejar, aplicarMudancas, docId, partirChave } from '../js/sync-core.js';
+import { estavel, hash, itensLocais, planejar, aplicarMudancas, docId, partirChave, baseInicial } from '../js/sync-core.js';
 import { CONFIG } from '../js/config.js';
 
 const aqui = dirname(fileURLToPath(import.meta.url));
@@ -512,6 +512,34 @@ test('sync: edição feita sem internet é enviada na volta, se o grupo não mex
   puxar(a, grupo);
   assert.equal(JSON.parse(grupo.get('eventos/e1').json).hora, '08:30');      // edição offline chegou ao grupo
   assert.equal(a.estado.encaminhamentos[0].status, 'fazendo');                // e A recebeu a de B
+});
+
+test('sync: ao entrar no grupo, o que a pessoa editou ANTES (em relação à lista inicial) não é sobrescrito', () => {
+  const inicial = mini();
+  const baseSeed = baseInicial(inicial);
+  const grupo = grupoFake();
+  puxar(aparelho(copia(inicial)), grupo); // grupo criado a partir da lista inicial (como o do movimento)
+
+  // Ana editou o evento e criou uma tarefa sem estar no grupo; agora entra
+  const ana = aparelho(copia(inicial)); ana.base = new Map(baseSeed);
+  ana.estado.eventos[0].local = 'Lagoa (editado antes de entrar)';
+  ana.estado.encaminhamentos.push(normalizar({ eventos: [], encaminhamentos: [{ id: 'nova', texto: 'Minha tarefa' }] }).encaminhamentos[0]);
+  puxar(ana, grupo);
+  assert.equal(JSON.parse(grupo.get('eventos/e1').json).local, 'Lagoa (editado antes de entrar)'); // a edição dela subiu
+  assert.ok(grupo.has('encaminhamentos/nova'));                                                         // e a tarefa nova também
+
+  // Bia entra sem ter editado nada: recebe o que a Ana fez
+  const bia = aparelho(copia(inicial)); bia.base = new Map(baseSeed);
+  puxar(bia, grupo);
+  assert.equal(bia.estado.eventos[0].local, 'Lagoa (editado antes de entrar)');
+  assert.ok(bia.estado.encaminhamentos.some((t) => t.id === 'nova'));
+
+  // Carla também editou o MESMO item antes de entrar, mas o grupo já tem a versão da Ana: o grupo vence (sem apagar o do grupo)
+  const carla = aparelho(copia(inicial)); carla.base = new Map(baseSeed);
+  carla.estado.eventos[0].local = 'Outro lugar';
+  puxar(carla, grupo);
+  assert.equal(carla.estado.eventos[0].local, 'Lagoa (editado antes de entrar)');
+  assert.equal(JSON.parse(grupo.get('eventos/e1').json).local, 'Lagoa (editado antes de entrar)');
 });
 
 test('sync: aplicar do grupo ignora lixo e coleções desconhecidas', () => {

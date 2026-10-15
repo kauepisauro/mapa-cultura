@@ -165,14 +165,14 @@ let sync = null;
 ctx.syncEstado = 'desligado';
 ctx.grupo = () => store.pref.ler(CONFIG.chaveGrupo) || '';
 ctx.linkConvite = () => `${location.origin}${location.pathname}?g=${ctx.grupo()}`;
-const ROTULO_SYNC = { conectando: 'Conectando…', online: 'Ao vivo', offline: 'Sem conexão', erro: 'Sem acesso' };
+const ROTULO_SYNC = { conectando: 'Conectando…', online: 'Ao vivo', offline: 'Sem conexão', erro: 'Sem acesso', desligado: 'Só neste aparelho' };
 
 function mostrarEstado(estado, detalhe = '') {
   ctx.syncEstado = estado;
   ctx.syncDetalhe = detalhe;
   if (estado === 'recusado') { sync = null; store.pref.gravar(CONFIG.chaveGrupo, ''); ctx.syncEstado = 'desligado'; }
   const el = document.getElementById('sync-estado');
-  el.hidden = !ctx.grupo();
+  el.hidden = false; // sempre visível: sem grupo mostra "Só neste aparelho" (o que se muda aqui não chega aos outros)
   el.dataset.estado = ctx.syncEstado;
   el.textContent = ROTULO_SYNC[ctx.syncEstado] || '';
   if (location.hash === '#/ajustes') render();

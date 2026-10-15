@@ -2,7 +2,7 @@
 // IMPORTANTE: `versao` precisa ser igual a VERSAO em sw.js (o teste confere).
 // Sempre que publicar uma mudança, suba as duas juntas (formato AAAA-MM-DD.N).
 export const CONFIG = {
-  versao: '2026-10-15.8',
+  versao: '2026-10-15.9',
   nome: 'Plataforma SOS Lagoa',
   lema: 'Movimento popular em defesa da Lagoa da Conceição',
   chaveDados: 'soslagoa:dados:v1',

@@ -85,7 +85,7 @@ button { cursor: pointer; }
 .sync { margin-left: auto; margin-right: 6px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--linha); background: var(--cartao-2); color: var(--texto-2); font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .sync::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--texto-3); }
 .sync[data-estado="online"]::before { background: var(--agua); box-shadow: 0 0 8px var(--agua); }
-.sync[data-estado="offline"]::before { background: var(--ouro); }
+.sync[data-estado="offline"]::before, .sync[data-estado="desligado"]::before { background: var(--ouro); }
 .sync[data-estado="erro"]::before { background: var(--sol); }
 .codigo { font-family: ui-monospace, Menlo, Consolas, monospace; letter-spacing: .08em; }
 .topo-ajustes { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: var(--texto-2); text-decoration: none; }

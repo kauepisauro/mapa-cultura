@@ -1,6 +1,6 @@
 // Sincronização em grupo, em tempo real, pelo Firestore. A lógica de decisão está em sync-core.js (testada à parte).
 // Cada item vira um documento em grupos/{codigo}/itens; o código do grupo é o "segredo" (quem não tem, não entra).
-import { estavel, hash, itensLocais, planejar, aplicarMudancas, docId, partirChave } from './sync-core.js';
+import { estavel, hash, itensLocais, planejar, aplicarMudancas, docId, partirChave, baseInicial } from './sync-core.js';
 import { normalizar } from './logica.js';
 
 export const CODIGO_VALIDO = /^[a-z0-9]{16,64}$/i;
@@ -16,6 +16,14 @@ export async function iniciarSync({ store, config, codigo, quem = () => '', aoEs
   let base = new Map();
   try { base = new Map(JSON.parse(store.pref.ler(chaveBase) || '[]')); } catch { base = new Map(); }
   const salvarBase = () => store.pref.gravar(chaveBase, JSON.stringify([...base]));
+  // Na 1ª entrada ainda não há "base" guardada: usamos a lista inicial como referência. Assim, o que a pessoa editou
+  // ANTES de entrar no grupo não é sobrescrito pela versão original que está lá.
+  let baseSeed = new Map();
+  try {
+    const r = await fetch('data/inicial.json', { cache: 'no-cache' });
+    if (r.ok) baseSeed = baseInicial(normalizar(await r.json()));
+  } catch { baseSeed = new Map(); }
+  const baseEfetiva = () => { const b = new Map(baseSeed); base.forEach((v, k) => b.set(k, v)); return b; };
 
   const app = fb.initializeApp(config, `grupo-${Date.now()}`);
   let db;
@@ -67,7 +75,7 @@ export async function iniciarSync({ store, config, codigo, quem = () => '', aoEs
     if (!pronto || parado) return;
     clearTimeout(timerLocal);
     timerLocal = setTimeout(() => {
-      const plano = planejar({ local: itensLocais(store.estado), base });
+      const plano = planejar({ local: itensLocais(store.estado), base: baseEfetiva() });
       guardar(plano);
       if (plano.enviar.length) enfileirar(plano.enviar);
     }, 250);
@@ -105,7 +113,7 @@ export async function iniciarSync({ store, config, codigo, quem = () => '', aoEs
     if (primeiro) snap.docs.forEach(lerDoc); // 1ª vez: o grupo inteiro
     else snap.docChanges().forEach((c) => lerDoc(c.doc)); // depois: só o que mudou
 
-    const plano = planejar({ local: itensLocais(store.estado), base, remoto, chaves: primeiro ? undefined : new Set(remoto.keys()) });
+    const plano = planejar({ local: itensLocais(store.estado), base: baseEfetiva(), remoto, chaves: primeiro ? undefined : new Set(remoto.keys()) });
     guardar(plano);
     if (plano.aplicar.length) store.aplicarRemoto((e) => { aplicarMudancas(e, plano.aplicar); Object.assign(e, normalizar(e)); });
     if (plano.enviar.length) enfileirar(plano.enviar);
