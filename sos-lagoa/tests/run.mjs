@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { somarDias, diffDias, grade, dataCurta, dataLonga, relativo, hora, valida, deslocarMes } from '../js/datas.js';
 import {
   estadoInicial, normalizar, situacaoPrazo, porPessoa, numeros, filtrarEncaminhamentos, avancarStatus,
-  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, mesclarInicial, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
+  pendenciasParaRetomar, proximoCompromisso, filtrarIdeias, proximosEventos, eventosPassados, proximaReuniao, removerPessoa, renomearPessoa, mesclarInicial, exemplos, SEM_RESPONSAVEL, ordenarEncaminhamentos,
 } from '../js/logica.js';
 import { resumoEvento, resumoPendencias, resumoAgenda } from '../js/texto.js';
 import { gerarICS } from '../js/ics.js';
@@ -321,7 +321,8 @@ test('GTs do movimento: os quatro, em ordem, nos dados padrão e nos dados inici
   assert.deepEqual(estadoInicial().frentes.map((f) => f.nome), nomes);
   const seed = normalizar(JSON.parse(readFileSync(join(raiz, 'data/inicial.json'), 'utf8')));
   assert.deepEqual(seed.frentes.map((f) => f.nome), nomes);
-  assert.equal(seed.encaminhamentos[0].frente, seed.frentes[0].id); // GT de Comunicação → Cauê
+  assert.equal(seed.encaminhamentos[0].frente, seed.frentes[0].id); // GT de Comunicação → Kauê
+  assert.deepEqual(seed.encaminhamentos[0].responsaveis, ['Kauê']);
   assert.equal(seed.eventos.find((x) => x.id === 'ev-ato-17out').local, 'Praia Mole');
 });
 
@@ -357,14 +358,28 @@ test('atualizar dados iniciais: troca o que veio da lista, mantém o que a pesso
   // tarefa da lista: texto novo, mas continua "feito"; a tarefa criada pela pessoa continua, sem a frente apagada
   const gt = novo.encaminhamentos.find((e) => e.id === 'enc-gt-comunicacao');
   assert.deepEqual([gt.status, gt.feitoEm, gt.frente === novo.frentes[0].id], ['feito', '2026-10-16', true]);
+  assert.deepEqual(gt.responsaveis, ['Kauê']); // nome corrigido na lista inicial (era Cauê)
   assert.equal(novo.encaminhamentos.find((e) => e.id === 'meu-enc').frente, '');
   // ideias: andamento e "quem topa" ficam; ideia própria continua
   const apa = novo.ideias.find((i) => i.id === 'id-apa');
   assert.deepEqual([apa.status, apa.interessados], ['estudando', ['Joana']]);
   assert.ok(ids(novo.ideias).includes('minha-ideia') && ids(novo.ideias).includes('id-monitoramento'));
-  assert.deepEqual(novo.pessoas, ['Cauê', 'Joana']);
+  assert.deepEqual(novo.pessoas, ['Joana', 'Kauê']); // 'Cauê' sumiu: foi renomeado, não duplicado
   // idempotente
   assert.deepEqual(mesclarInicial(novo, seed), novo);
+});
+
+test('renomear pessoa: troca em todos os lugares sem duplicar', () => {
+  const e = base();
+  e.pessoas = ['Ana', 'Ani']; e.eventos[0].presentes = ['Ana', 'Ani']; e.frentes[0].coordenacao = ['Ana'];
+  e.ideias = [{ id: 'i', titulo: 'x', notas: '', frente: '', origem: '', status: 'nova', interessados: ['Ana'], criadoEm: '' }];
+  renomearPessoa(e, 'Ana', 'Ani');
+  assert.deepEqual(e.pessoas, ['Ani']);
+  assert.deepEqual(e.eventos[0].presentes, ['Ani']);
+  assert.deepEqual(e.frentes[0].coordenacao, ['Ani']);
+  assert.deepEqual(e.ideias[0].interessados, ['Ani']);
+  assert.deepEqual(e.encaminhamentos.find((x) => x.id === 'a').responsaveis, ['Ani']);
+  assert.deepEqual(e.encaminhamentos.find((x) => x.id === 'b').responsaveis, ['Bia', 'Ani']);
 });
 
 test('service worker: assume sozinho e lista inicial vem da rede', () => {

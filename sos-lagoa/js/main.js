@@ -135,6 +135,8 @@ function oferecerAtualizacao(seed, { manual = false } = {}) {
     h('div', { class: 'linha-botoes' },
       h('button', { class: 'btn', type: 'button', onclick: () => { store.pref.gravar(CONFIG.chaveEdicaoRecusada, String(seed.edicao || 0)); fechar(); } }, 'Agora não'),
       h('button', { class: 'btn primario grande', type: 'button', onclick: () => {
+        const novoNome = (seed.renomear || {})[ctx.eu()]; // "quem sou eu" deste aparelho acompanha a troca de nome
+        if (novoNome) store.pref.gravar(CONFIG.chaveEu, novoNome);
         store.atualizar((e) => Object.assign(e, mesclarInicial(e, seed)));
         store.pref.gravar(CONFIG.chaveSemeado, String(seed.edicao || 1));
         fechar();

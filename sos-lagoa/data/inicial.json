@@ -1,5 +1,5 @@
 {
-  "edicao": 2,
+  "edicao": 3,
   "remover": [
     "f-comunicacao",
     "f-juridico",
@@ -39,7 +39,7 @@
     }
   ],
   "pessoas": [
-    "Cauê"
+    "Kauê"
   ],
   "eventos": [
     {
@@ -129,7 +129,7 @@
       "id": "enc-gt-comunicacao",
       "texto": "GT de Comunicação (detalhar o que precisa ser feito)",
       "responsaveis": [
-        "Cauê"
+        "Kauê"
       ],
       "prazo": "",
       "status": "fazer",
@@ -160,5 +160,8 @@
       "interessados": [],
       "criadoEm": "2026-10-15"
     }
-  ]
+  ],
+  "renomear": {
+    "Cauê": "Kauê"
+  }
 }

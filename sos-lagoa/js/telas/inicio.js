@@ -1,7 +1,7 @@
 // Tela inicial: o que vem aí e o que precisa de atenção.
 import { h, icone, gaivotas, toast } from '../ui.js';
 import { dataLonga, hora, relativo, somarDias } from '../datas.js';
-import { proximosEventos, proximoCompromisso, filtrarIdeias, numeros, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, exemplos } from '../logica.js';
+import { proximosEventos, proximoCompromisso, filtrarIdeias, filtrarEncaminhamentos, ordenarEncaminhamentos, situacaoPrazo, exemplos } from '../logica.js';
 import { cartaoEvento, cartaoEnc, cartaoIdeia, secao, seloFrente } from '../componentes.js';
 import { formEvento } from '../formularios.js';
 
@@ -10,7 +10,6 @@ export function renderInicio(ctx) {
   const hoje = ctx.hoje();
   const eu = ctx.eu();
   const proximos = proximosEventos(estado, hoje);
-  const n = numeros(estado, hoje);
   const vazioTotal = !estado.eventos.length && !estado.encaminhamentos.length;
   const raiz = h('div', { class: 'tela' });
 
@@ -51,14 +50,6 @@ export function renderInicio(ctx) {
         });
         toast('Exemplos carregados. Remova quando quiser em Ajustes.');
       } }, 'Ver com dados de exemplo')));
-  } else {
-    // ----- números -----
-    const ir = (filtro) => () => { Object.assign(ctx.ui.tarefas, { pessoa: '', frente: '', ...filtro }); };
-    const tile = (valor, rotulo, classe, filtro) => h('a', { class: `tile ${classe}`, href: '#/tarefas', onclick: ir(filtro) }, h('b', {}, valor), h('span', {}, rotulo));
-    raiz.append(h('div', { class: 'tiles' },
-      tile(n.abertos, 'em aberto', '', {}),
-      tile(n.atrasados, 'atrasados', n.atrasados ? 'alerta' : '', { somenteAtrasados: true }),
-      tile(n.semDono, 'sem responsável', n.semDono ? 'aviso' : '', { pessoa: 'Sem responsável' })));
   }
 
   // ----- pra você / atenção -----

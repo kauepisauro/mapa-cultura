@@ -206,6 +206,8 @@ const MANTER = {
 export function mesclarInicial(estado, seedBruto) {
   const seed = normalizar(seedBruto);
   const remover = new Set(lista(seedBruto.remover));
+  estado = structuredClone(estado);
+  for (const [de, para] of Object.entries(seedBruto.renomear || {})) renomearPessoa(estado, de, para);
   const novo = { versao: 1, pessoas: [...estado.pessoas, ...seed.pessoas] };
   for (const [chave, manter] of Object.entries(MANTER)) {
     const locais = new Map(estado[chave].map((x) => [x.id, x]));
@@ -225,6 +227,16 @@ export function filtrarIdeias(estado, { frente = '', grupo = 'mesa' } = {}) {
   const ok = grupo === 'mesa' ? ['nova', 'estudando'] : [grupo];
   return estado.ideias.filter((i) => (!frente || i.frente === frente) && ok.includes(i.status))
     .sort((a, b) => (b.criadoEm || '').localeCompare(a.criadoEm || ''));
+}
+
+// Troca um nome em todos os lugares (pessoas, responsáveis, presenças, coordenação, quem topa).
+export function renomearPessoa(estado, de, para) {
+  const troca = (l) => [...new Set(l.map((p) => (p === de ? para : p)))];
+  estado.pessoas = troca(estado.pessoas).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  estado.encaminhamentos.forEach((e) => { e.responsaveis = troca(e.responsaveis); });
+  estado.eventos.forEach((e) => { e.presentes = troca(e.presentes); });
+  estado.frentes.forEach((f) => { f.coordenacao = troca(f.coordenacao); });
+  estado.ideias.forEach((i) => { i.interessados = troca(i.interessados); });
 }
 
 export function garantirPessoas(estado, lista_) {
