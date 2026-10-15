@@ -23,7 +23,10 @@ export function expandir(eventos, de, ate) {
       if (ev.data >= de && ev.data <= ate) poe(ev, ev.data);
       continue;
     }
-    if (rep === 'diaria' || rep === 'dias_uteis') {
+    if (rep === 'dias_semana') {
+      const dias = new Set((ev.dias_semana || []).map(Number));
+      for (let d = ev.data < de ? de : ev.data; d <= limite; d = addDias(d, 1)) if (dias.has(diaSemana(d))) poe(ev, d);
+    } else if (rep === 'diaria' || rep === 'dias_uteis') {
       for (let d = ev.data < de ? de : ev.data; d <= limite; d = addDias(d, 1)) {
         const dow = diaSemana(d);
         if (rep === 'diaria' || (dow >= 1 && dow <= 5)) poe(ev, d);

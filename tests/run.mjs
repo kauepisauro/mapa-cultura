@@ -149,3 +149,11 @@ test('vídeo: reconhece YouTube, Vimeo e arquivo', () => {
   assert.equal(parseVideo('https://exemplo.com/pagina'), null);
   assert.equal(parseVideo(''), null);
 });
+
+test('recorrência: dias da semana personalizados (terça a sábado)', () => {
+  const ev = { id: 'g', data: '2026-10-15', inicio: '13:30', repete: 'dias_semana', dias_semana: [2, 3, 4, 5, 6], repete_ate: '2026-10-21' };
+  assert.deepEqual(expandir([ev], '2026-10-15', '2026-12-31').map((o) => o.data), ['2026-10-15', '2026-10-16', '2026-10-17', '2026-10-20', '2026-10-21']);
+  assert.equal(recorrenciaTexto(ev), 'De terça a sábado');
+  assert.equal(recorrenciaTexto({ ...ev, dias_semana: [1, 3, 5] }), 'segunda, quarta e sexta');
+  assert.match(gerarICS({ ...ev, key: 'k', titulo: 'x' }), /BYDAY=TU,WE,TH,FR,SA/);
+});

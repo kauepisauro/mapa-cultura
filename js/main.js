@@ -417,7 +417,7 @@ async function iniciar() {
   }
   S.carregou = true;
   $('#ctl-rede').setAttribute('aria-pressed', 'true');
-  $('#rodape-modo').textContent = `${S.modo === 'demo' ? (S.pontosPub.some((p) => p.exemplo) ? 'Modo demonstração: itens marcados “exemplo” são fictícios. ' : 'Eventos pesquisados em 06/10/2026; confira a fonte antes de ir. ') : ''}v${CONFIG.versao}`;
+  $('#rodape-modo').textContent = `${S.modo === 'demo' ? (S.pontosPub.some((p) => p.exemplo) ? 'Modo demonstração: itens marcados “exemplo” são fictícios. ' : 'Eventos pesquisados em 15/10/2026; confira a fonte antes de ir. ') : ''}v${CONFIG.versao}`;
   derivar();
   S.ajustar = true;
   render();

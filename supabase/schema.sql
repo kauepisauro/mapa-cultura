@@ -49,7 +49,8 @@ create table if not exists public.eventos (
   data            date not null,
   inicio          text check (inicio ~ '^[0-2][0-9]:[0-5][0-9]$'),
   fim             text check (fim ~ '^[0-2][0-9]:[0-5][0-9]$'),
-  repete          text not null default 'nao' check (repete in ('nao','diaria','dias_uteis','semanal','quinzenal','mensal','mensal_semana')),
+  repete          text not null default 'nao' check (repete in ('nao','diaria','dias_uteis','dias_semana','semanal','quinzenal','mensal','mensal_semana')),
+  dias_semana     smallint[] check (cardinality(dias_semana) <= 7),   -- 0=domingo … 6=sábado (repete = 'dias_semana')
   repete_ate      date,
   preco           text check (char_length(preco) <= 60),
   link            text check (char_length(link) <= 300),
@@ -101,7 +102,7 @@ grant insert (nome, categoria, descricao, lat, lng, aprox, bairro, endereco, hor
               site, foto, foto_mini, foto_alt, foto_credito, video, tags, contato_privado, tem_autorizacao) on public.pontos to anon;
 
 grant select (id, criado_em, ponto_id, titulo, categoria, descricao, data, inicio, fim, repete, repete_ate,
-              preco, link, fonte, confirmar, lat, lng, local_nome, foto, foto_alt, foto_credito, status) on public.eventos to anon;
+              preco, link, fonte, confirmar, dias_semana, lat, lng, local_nome, foto, foto_alt, foto_credito, status) on public.eventos to anon;
 grant insert (ponto_id, titulo, categoria, descricao, data, inicio, fim, repete, repete_ate, preco, link,
               lat, lng, local_nome, foto, foto_alt, foto_credito, contato_privado, tem_autorizacao) on public.eventos to anon;
 

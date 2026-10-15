@@ -49,6 +49,10 @@ export const CATEGORIAS = [
     icone: svg('<path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/>'),
   },
   {
+    id: 'literatura', nome: 'Literatura & Poesia', cor: '#5C6BA6', desc: 'Encontros literários, saraus, slams, livrarias',
+    icone: svg('<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5Z"/><path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20"/><path d="M9 7h7"/>'),
+  },
+  {
     id: 'espaco', nome: 'Espaços & Memória', cor: '#66756E', desc: 'Museus, centros, praças, bibliotecas',
     icone: svg('<path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>'),
   },

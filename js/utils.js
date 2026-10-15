@@ -101,6 +101,12 @@ export function recorrenciaTexto(ev) {
   const dia = DIAS_LONGOS[diaSemana(ev.data)];
   const plural = `${dia}s`;
   switch (ev.repete) {
+    case 'dias_semana': {
+      const ds = [...new Set((ev.dias_semana || []).map(Number))].sort((a, b) => a - b);
+      const nome = (n) => DIAS_LONGOS[n];
+      if (ds.length >= 3 && ds[ds.length - 1] - ds[0] === ds.length - 1) return `De ${nome(ds[0])} a ${nome(ds[ds.length - 1])}`;
+      return ds.map(nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+    }
     case 'diaria': return 'Todos os dias';
     case 'dias_uteis': return 'De segunda a sexta';
     case 'mensal_semana': {
@@ -178,6 +184,7 @@ export function gerarICS(oc, { local = '', url = '' } = {}) {
   const rrule = {
     diaria: 'FREQ=DAILY',
     dias_uteis: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
+    dias_semana: `FREQ=WEEKLY;BYDAY=${[...(oc.dias_semana || [])].map((n) => BYDAY[Number(n)]).join(',')}`,
     semanal: 'FREQ=WEEKLY',
     quinzenal: 'FREQ=WEEKLY;INTERVAL=2',
     mensal: 'FREQ=MONTHLY',
