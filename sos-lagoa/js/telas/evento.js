@@ -41,7 +41,8 @@ export function renderEvento(ctx, id) {
 
   raiz.append(h('section', { class: 'evento-cab', style: `--cor:${frente?.cor || 'var(--azul-claro)'}` },
     h('div', { class: 'selos' }, ev.destaque && h('span', { class: 'selo selo-destaque' }, '⭐ Destaque'), ev.aConfirmar && h('span', { class: 'selo selo-confirmar' }, 'A confirmar'), h('span', { class: 'selo' }, TIPOS[ev.tipo].nome), seloFrente(estado, ev.frente), ev.exemplo && h('span', { class: 'selo selo-exemplo' }, 'exemplo')),
-    h('h1', {}, ev.titulo),
+    h('div', { class: 'titulo-editavel' }, h('h1', {}, ev.titulo),
+      h('button', { class: 'btn-icone btn-editar', type: 'button', 'aria-label': 'Editar nome, dia, horário e local', onclick: () => formEvento(ctx, { evento: ev }) }, icone('editar'))),
     h('p', { class: 'evento-quando' }, h('span', { class: 'capitalizar' }, dataLonga(ev.data)), ev.hora && ` · ${hora(ev.hora)}`, ' · ', h('strong', {}, relativo(ev.data, hoje))),
     ev.local && h('p', { class: 'evento-local' }, icone('local'), ev.local),
     ev.notas && h('p', { class: 'evento-notas' }, ev.notas),

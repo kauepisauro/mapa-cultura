@@ -28,17 +28,16 @@ export const SEM_RESPONSAVEL = 'Sem responsável';
 export const novoId = () =>
   (globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`).slice(0, 12);
 
-// Frentes iniciais são SUGESTÕES genéricas — o movimento edita/renomeia/apaga como quiser.
+// GTs iniciais do movimento (editáveis, renomeáveis e apagáveis na tela Frentes).
 export function estadoInicial() {
   const f = (nome, cor, descricao) => ({ id: novoId(), nome, cor, descricao, coordenacao: [] });
   return {
     versao: 1,
     frentes: [
-      f('Comunicação', CORES_FRENTE[1], 'Redes, imprensa, cartazes e boletins.'),
-      f('Jurídico', CORES_FRENTE[3], 'Ações, audiências, prazos e documentos.'),
-      f('Mobilização', CORES_FRENTE[0], 'Atos, panfletagem, rodas de conversa nos bairros.'),
-      f('Pesquisa e dados', CORES_FRENTE[2], 'Laudos, monitoramento, levantamentos.'),
-      f('Articulação', CORES_FRENTE[5], 'Outras entidades, poder público, imprensa.'),
+      f('GT de Comunicação', CORES_FRENTE[1], ''),
+      f('GT Técnico', CORES_FRENTE[2], ''),
+      f('GT de Cultura', CORES_FRENTE[3], ''),
+      f('GT de Mobilização', CORES_FRENTE[0], ''),
     ],
     pessoas: [],
     eventos: [],
@@ -223,8 +222,8 @@ export function exemplos(hoje, estado) {
     presentes: ['Ana (exemplo)', 'Bruno (exemplo)'], ata: 'Exemplo de registro: decidimos fazer um ato e dividir as tarefas entre as frentes.',
   });
   const proxima = ev('Reunião geral (exemplo)', 'reuniao', 2, '19:00', 'Local a definir', '', { pauta: 'Retomar os encaminhamentos da última reunião' });
-  const ato = ev('Ato (exemplo)', 'ato', 9, '09:00', 'Local a definir', fr('Mobilização'));
-  const aud = ev('Audiência (exemplo)', 'audiencia', 14, '14:00', '', fr('Jurídico'));
+  const ato = ev('Ato (exemplo)', 'ato', 9, '09:00', 'Local a definir', fr('GT de Mobilização'));
+  const aud = ev('Audiência (exemplo)', 'audiencia', 14, '14:00', '', fr('GT Técnico'));
   const enc = (texto, quem, prazoDias, status, origem, frente) => ({
     id: novoId(), texto, responsaveis: quem, prazo: prazoDias == null ? '' : somarDias(hoje, prazoDias), status,
     frente, origem, criadoEm: hoje, feitoEm: status === 'feito' ? hoje : '', exemplo: true,
@@ -232,9 +231,9 @@ export function exemplos(hoje, estado) {
   return {
     eventos: [passada, proxima, ato, aud],
     encaminhamentos: [
-      enc('Fazer o cartaz do ato (exemplo)', ['Ana (exemplo)'], -1, 'fazendo', passada.id, fr('Comunicação')),
-      enc('Pedir autorização para o som (exemplo)', ['Bruno (exemplo)'], 3, 'fazer', passada.id, fr('Mobilização')),
-      enc('Conferir o prazo no processo (exemplo)', [], 5, 'fazer', passada.id, fr('Jurídico')),
+      enc('Fazer o cartaz do ato (exemplo)', ['Ana (exemplo)'], -1, 'fazendo', passada.id, fr('GT de Comunicação')),
+      enc('Pedir autorização para o som (exemplo)', ['Bruno (exemplo)'], 3, 'fazer', passada.id, fr('GT de Mobilização')),
+      enc('Conferir o prazo no processo (exemplo)', [], 5, 'fazer', passada.id, fr('GT Técnico')),
       enc('Reservar o espaço da reunião (exemplo)', ['Ana (exemplo)', 'Bruno (exemplo)'], null, 'feito', passada.id, ''),
     ],
     pessoas: ['Ana (exemplo)', 'Bruno (exemplo)'],

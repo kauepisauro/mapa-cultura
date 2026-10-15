@@ -1,60 +1,156 @@
 {
   "versao": 1,
   "frentes": [
-    { "id": "f-comunicacao", "nome": "Comunicação", "cor": "#3d78c4", "descricao": "Redes, imprensa, cartazes e boletins.", "coordenacao": [] },
-    { "id": "f-juridico", "nome": "Jurídico", "cor": "#e0bb3a", "descricao": "Ações, audiências, prazos e documentos.", "coordenacao": [] },
-    { "id": "f-mobilizacao", "nome": "Mobilização", "cor": "#e5262b", "descricao": "Atos, panfletagem, rodas de conversa nos bairros.", "coordenacao": [] },
-    { "id": "f-pesquisa", "nome": "Pesquisa e dados", "cor": "#3fb5a6", "descricao": "Laudos, monitoramento, levantamentos.", "coordenacao": [] },
-    { "id": "f-articulacao", "nome": "Articulação", "cor": "#9b7bd6", "descricao": "Outras entidades, poder público, imprensa.", "coordenacao": [] }
+    {
+      "id": "f-gt-comunicacao",
+      "nome": "GT de Comunicação",
+      "cor": "#3d78c4",
+      "descricao": "",
+      "coordenacao": []
+    },
+    {
+      "id": "f-gt-tecnico",
+      "nome": "GT Técnico",
+      "cor": "#3fb5a6",
+      "descricao": "",
+      "coordenacao": []
+    },
+    {
+      "id": "f-gt-cultura",
+      "nome": "GT de Cultura",
+      "cor": "#e0bb3a",
+      "descricao": "",
+      "coordenacao": []
+    },
+    {
+      "id": "f-gt-mobilizacao",
+      "nome": "GT de Mobilização",
+      "cor": "#e5262b",
+      "descricao": "",
+      "coordenacao": []
+    }
   ],
-  "pessoas": ["Cauê"],
+  "pessoas": [
+    "Cauê"
+  ],
   "eventos": [
     {
-      "id": "ev-reuniao-ultima", "titulo": "Última reunião", "tipo": "reuniao", "data": "2026-10-15", "hora": "", "local": "", "frente": "",
+      "id": "ev-reuniao-ultima",
+      "titulo": "Última reunião",
+      "tipo": "reuniao",
+      "data": "2026-10-15",
+      "hora": "",
+      "local": "",
+      "frente": "",
       "notas": "",
-      "pauta": "", "presentes": [],
-      "ata": "Definido: ato no sábado (17/10), às 9h, contra a privatização. Cafezinho do SOS na praça na terça (20/10), às 15h, com o pessoal do jornalismo da UFSC, que também vai filmar. Aniversário do SOS Lagoa em 31/10, no Engenho.\nEm discussão (a confirmar): encontro dos movimentos na Ponta das Almas em 14/12 e ato ou evento cultural-político em 25/01.\nIdeias levantadas: aplicativo de monitoramento dos riscos da barragem e transformar a Lagoa em APA."
+      "pauta": "",
+      "presentes": [],
+      "ata": "Definido: ato no sábado (17/10), às 9h, na Praia Mole, contra a privatização. Cafezinho do SOS na praça na terça (20/10), às 15h, com o pessoal do jornalismo da UFSC, que também vai filmar. Aniversário do SOS Lagoa em 31/10, no Engenho.\nEm discussão (a confirmar): encontro dos movimentos na Ponta das Almas em 14/12 e ato ou evento cultural-político em 25/01.\nIdeias levantadas: aplicativo de monitoramento dos riscos da barragem e transformar a Lagoa em APA."
     },
     {
-      "id": "ev-ato-17out", "titulo": "Ato contra a privatização", "tipo": "ato", "data": "2026-10-17", "hora": "09:00", "local": "Local a confirmar", "frente": "",
-      "notas": "Combinado na última reunião.", "pauta": "", "presentes": [], "ata": ""
+      "id": "ev-ato-17out",
+      "titulo": "Ato contra a privatização",
+      "tipo": "ato",
+      "data": "2026-10-17",
+      "hora": "09:00",
+      "local": "Praia Mole",
+      "frente": "",
+      "notas": "Combinado na última reunião.",
+      "pauta": "",
+      "presentes": [],
+      "ata": ""
     },
     {
-      "id": "ev-cafezinho-20out", "titulo": "Cafezinho do SOS na praça", "tipo": "outro", "data": "2026-10-20", "hora": "15:00", "local": "Praça (local exato a confirmar)", "frente": "",
+      "id": "ev-cafezinho-20out",
+      "titulo": "Cafezinho do SOS na praça",
+      "tipo": "outro",
+      "data": "2026-10-20",
+      "hora": "15:00",
+      "local": "Praça (local exato a confirmar)",
+      "frente": "",
       "notas": "Conversa com o pessoal da comunidade, com a presença do jornalismo da UFSC, que vai filmar.",
-      "pauta": "", "presentes": [], "ata": "", "destaque": true
+      "pauta": "",
+      "presentes": [],
+      "ata": "",
+      "destaque": true
     },
     {
-      "id": "ev-aniversario-31out", "titulo": "Aniversário do SOS Lagoa", "tipo": "outro", "data": "2026-10-31", "hora": "", "local": "Engenho", "frente": "",
-      "notas": "Horário a definir.", "pauta": "", "presentes": [], "ata": ""
+      "id": "ev-aniversario-31out",
+      "titulo": "Aniversário do SOS Lagoa",
+      "tipo": "outro",
+      "data": "2026-10-31",
+      "hora": "",
+      "local": "Engenho",
+      "frente": "",
+      "notas": "Horário a definir.",
+      "pauta": "",
+      "presentes": [],
+      "ata": ""
     },
     {
-      "id": "ev-encontro-14dez", "titulo": "Encontro dos movimentos na Ponta das Almas", "tipo": "outro", "data": "2026-12-14", "hora": "", "local": "Ponta das Almas", "frente": "",
+      "id": "ev-encontro-14dez",
+      "titulo": "Encontro dos movimentos na Ponta das Almas",
+      "tipo": "outro",
+      "data": "2026-12-14",
+      "hora": "",
+      "local": "Ponta das Almas",
+      "frente": "",
       "notas": "Ideia: convocar movimentos e coletivos para se organizar e organizar a luta, com falas e um piquenique coletivo. Convidar quem fale sobre o Sobanxandaki, a ancestralidade, nossas lutas e pautas.",
-      "pauta": "", "presentes": [], "ata": "", "aConfirmar": true
+      "pauta": "",
+      "presentes": [],
+      "ata": "",
+      "aConfirmar": true
     },
     {
-      "id": "ev-ato-25jan", "titulo": "Ato ou evento cultural-político", "tipo": "ato", "data": "2027-01-25", "hora": "", "local": "", "frente": "",
+      "id": "ev-ato-25jan",
+      "titulo": "Ato ou evento cultural-político",
+      "tipo": "ato",
+      "data": "2027-01-25",
+      "hora": "",
+      "local": "",
+      "frente": "",
       "notas": "Se houver quórum: manifestação (ato). Se não: grande evento cultural e político na Praça da Lagoa.",
-      "pauta": "", "presentes": [], "ata": "", "aConfirmar": true
+      "pauta": "",
+      "presentes": [],
+      "ata": "",
+      "aConfirmar": true
     }
   ],
   "encaminhamentos": [
     {
-      "id": "enc-gt-comunicacao", "texto": "GT de Comunicação (detalhar o que precisa ser feito)", "responsaveis": ["Cauê"], "prazo": "", "status": "fazer",
-      "frente": "f-comunicacao", "origem": "ev-reuniao-ultima", "criadoEm": "2026-10-15", "feitoEm": ""
+      "id": "enc-gt-comunicacao",
+      "texto": "GT de Comunicação (detalhar o que precisa ser feito)",
+      "responsaveis": [
+        "Cauê"
+      ],
+      "prazo": "",
+      "status": "fazer",
+      "frente": "f-gt-comunicacao",
+      "origem": "ev-reuniao-ultima",
+      "criadoEm": "2026-10-15",
+      "feitoEm": ""
     }
   ],
   "ideias": [
     {
-      "id": "id-monitoramento", "titulo": "Aplicativo de monitoramento dos riscos de rompimento da barragem",
+      "id": "id-monitoramento",
+      "titulo": "Aplicativo de monitoramento dos riscos de rompimento da barragem",
       "notas": "Já existia a ideia de monitoramento, mas ela ainda não está acontecendo.",
-      "frente": "", "origem": "ev-reuniao-ultima", "status": "nova", "interessados": [], "criadoEm": "2026-10-15"
+      "frente": "",
+      "origem": "ev-reuniao-ultima",
+      "status": "nova",
+      "interessados": [],
+      "criadoEm": "2026-10-15"
     },
     {
-      "id": "id-apa", "titulo": "Transformar a Lagoa em APA (Área de Proteção Ambiental)",
+      "id": "id-apa",
+      "titulo": "Transformar a Lagoa em APA (Área de Proteção Ambiental)",
       "notas": "Argumento levantado na reunião: por ser marinha, teria mais proteção.",
-      "frente": "", "origem": "ev-reuniao-ultima", "status": "nova", "interessados": [], "criadoEm": "2026-10-15"
+      "frente": "",
+      "origem": "ev-reuniao-ultima",
+      "status": "nova",
+      "interessados": [],
+      "criadoEm": "2026-10-15"
     }
   ]
 }

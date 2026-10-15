@@ -190,7 +190,7 @@ test('texto do WhatsApp: pendências por pessoa e agenda', () => {
   assert.ok(!p.includes('tarefa d'));
   assert.match(resumoPendencias({ ...e, encaminhamentos: [] }, HOJE), /Nada pendente/);
   const a = resumoAgenda(e, HOJE, 21);
-  assert.match(a, /\*sáb, 17 out · 19h\* — r2 \(Comunicação\)/);
+  assert.match(a, /\*sáb, 17 out · 19h\* — r2 \(GT de Comunicação\)/);
   assert.match(a, /\*dom, 25 out · 9h\* — ato/);
   assert.match(resumoAgenda(e, HOJE, 1), /Nenhum compromisso/);
 });
@@ -205,7 +205,7 @@ test('ICS: evento com hora, dia todo, escape e dobra de linhas', () => {
   assert.match(ics, /DTEND:20261011T010000\r\n/); // passa da meia-noite
   assert.match(ics, /SUMMARY:SOS Lagoa · Reunião\\, geral\\; com vírgula/);
   assert.match(ics, /DTSTAMP:20261015T120000Z/);
-  assert.match(ics, /DESCRIPTION:Frente: Comunicação\\n\\nPauta:\\num\\ndois/);
+  assert.match(ics, /DESCRIPTION:Frente: GT de Comunicação\\n\\nPauta:\\num\\ndois/);
   e.eventos[1].titulo = 'x'.repeat(200);
   const longo = gerarICS([e.eventos[1]], e);
   assert.ok(longo.split('\r\n').every((l) => new TextEncoder().encode(l).length <= 75));
@@ -218,7 +218,7 @@ test('store: grava, recarrega, exporta/importa e recusa arquivo inválido sem pe
   const mem = new Map();
   const storage = { getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, v) };
   const s = criarStore(storage);
-  assert.equal(s.estado.frentes.length, 5);
+  assert.equal(s.estado.frentes.length, 4);
   let avisos = 0;
   s.assinar(() => avisos++);
   s.atualizar((e) => e.pessoas.push('Ana'));
@@ -314,6 +314,15 @@ test('dados iniciais do movimento: válidos, sem perda na normalização e com a
   assert.ok(n.eventos.every((x) => !x.exemplo));
   // tela inicial destaca o ato de sábado, não a reunião já registrada
   assert.equal(proximoCompromisso(n, '2026-10-15').id, 'ev-ato-17out');
+});
+
+test('GTs do movimento: os quatro, em ordem, nos dados padrão e nos dados iniciais', () => {
+  const nomes = ['GT de Comunicação', 'GT Técnico', 'GT de Cultura', 'GT de Mobilização'];
+  assert.deepEqual(estadoInicial().frentes.map((f) => f.nome), nomes);
+  const seed = normalizar(JSON.parse(readFileSync(join(raiz, 'data/inicial.json'), 'utf8')));
+  assert.deepEqual(seed.frentes.map((f) => f.nome), nomes);
+  assert.equal(seed.encaminhamentos[0].frente, seed.frentes[0].id); // GT de Comunicação → Cauê
+  assert.equal(seed.eventos.find((x) => x.id === 'ev-ato-17out').local, 'Praia Mole');
 });
 
 test('app: versão do service worker = config; todos os arquivos do app existem', () => {

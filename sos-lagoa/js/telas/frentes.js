@@ -19,14 +19,16 @@ export function renderFrentes(ctx) {
     const abertos = filtrarEncaminhamentos(estado, { frente: f.id, status: 'aberto' });
     const atrasados = abertos.filter((e) => situacaoPrazo(e, hoje) === 'atrasado').length;
     const prox = proximosEventos(estado, hoje, { frente: f.id });
-    return h('a', { class: 'cartao frente-cartao', href: `#/frente/${f.id}`, style: `--cor:${f.cor}` },
-      h('strong', { class: 'frente-nome' }, f.nome),
-      f.descricao && h('p', {}, f.descricao),
-      f.coordenacao.length > 0 && h('div', { class: 'selos' }, f.coordenacao.map((p) => h('span', { class: 'selo selo-pessoa' }, p))),
-      h('div', { class: 'frente-numeros' },
-        h('span', {}, h('b', {}, abertos.length), ' em aberto'),
-        atrasados > 0 && h('span', { class: 'alerta-texto' }, h('b', {}, atrasados), ' atrasado', atrasados > 1 ? 's' : ''),
-        h('span', {}, h('b', {}, prox.length), ' no calendário')));
+    return h('div', { class: 'cartao frente-cartao', style: `--cor:${f.cor}` },
+      h('a', { class: 'frente-link', href: `#/frente/${f.id}` },
+        h('strong', { class: 'frente-nome' }, f.nome),
+        f.descricao && h('p', {}, f.descricao),
+        f.coordenacao.length > 0 && h('div', { class: 'selos' }, f.coordenacao.map((p) => h('span', { class: 'selo selo-pessoa' }, p))),
+        h('div', { class: 'frente-numeros' },
+          h('span', {}, h('b', {}, abertos.length), ' em aberto'),
+          atrasados > 0 && h('span', { class: 'alerta-texto' }, h('b', {}, atrasados), ' atrasado', atrasados > 1 ? 's' : ''),
+          h('span', {}, h('b', {}, prox.length), ' no calendário'))),
+      h('button', { class: 'btn-icone btn-editar', type: 'button', 'aria-label': `Editar: ${f.nome}`, onclick: () => formFrente(ctx, { frente: f }) }, icone('editar')));
   })));
   return raiz;
 }
