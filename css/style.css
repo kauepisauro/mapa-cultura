@@ -441,3 +441,22 @@ img, svg { display: block; max-width: 100%; }
   .painel { transition: height 0.38s cubic-bezier(0.2, 0.9, 0.25, 1); }
 }
 @media (min-width: 761px) { .ver-mapa { display: none; } }
+
+/* ── app (PWA) ── */
+.instalar { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 10px; margin: 12px 14px 0; padding: 10px 8px 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper-3); }
+.instalar img { border-radius: 9px; }
+.instalar p { margin: 0; line-height: 1.25; font-size: 13px; }
+.instalar p b { display: block; font: 400 18px/1.1 var(--f-display); }
+.instalar p span { color: var(--ink-2); font-size: 12px; }
+.instalar .btn { padding: 8px 14px; font-size: 13px; }
+.instalar__x { width: 28px; height: 28px; border: 0; background: none; font-size: 20px; line-height: 1; color: var(--ink-2); }
+.nova-versao { position: absolute; z-index: 3100; left: 50%; top: calc(14px + env(safe-area-inset-top)); transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; border-radius: 999px; background: var(--paper-3); border: 1px solid var(--line); box-shadow: var(--sombra); font-size: 13.5px; white-space: nowrap; }
+.nova-versao .btn { padding: 8px 14px; font-size: 13px; }
+.passos { counter-reset: p; list-style: none; padding: 0; margin: 4px 0 14px; }
+.passos li { counter-increment: p; position: relative; padding: 10px 0 10px 44px; border-bottom: 1px solid var(--line-2); }
+.passos li::before { content: counter(p); position: absolute; left: 0; top: 8px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--paper); font: 400 17px/1 var(--f-display); }
+.ico-ios { display: inline-grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; }
+/* aberto como app: respeita entalhe/ilha do celular */
+#app.em-app .ctl { top: calc(12px + env(safe-area-inset-top)); }
+#app.em-app .ver-mapa { top: calc(14px + env(safe-area-inset-top)); }
+@media (min-width: 761px) { #app.em-app .painel { top: calc(18px + env(safe-area-inset-top)); } }

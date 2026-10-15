@@ -157,3 +157,12 @@ test('recorrência: dias da semana personalizados (terça a sábado)', () => {
   assert.equal(recorrenciaTexto({ ...ev, dias_semana: [1, 3, 5] }), 'segunda, quarta e sexta');
   assert.match(gerarICS({ ...ev, key: 'k', titulo: 'x' }), /BYDAY=TU,WE,TH,FR,SA/);
 });
+
+test('app: versão do service worker igual à do site', async () => {
+  const fs = await import('node:fs');
+  const cfg = fs.readFileSync(new URL('../js/config.js', import.meta.url), 'utf8').match(/versao:\s*'([^']+)'/)[1];
+  const sw = fs.readFileSync(new URL('../sw.js', import.meta.url), 'utf8').match(/const VERSAO = '([^']+)'/)[1];
+  assert.equal(sw, cfg, 'atualize VERSAO em sw.js junto com CONFIG.versao');
+  const arquivos = [...fs.readFileSync(new URL('../sw.js', import.meta.url), 'utf8').matchAll(/'((?:js|css|vendor|icons|data)\/[^']+)'/g)].map((m) => m[1]);
+  for (const a of arquivos) assert.ok(fs.existsSync(new URL(`../${a}`, import.meta.url)), `arquivo do app não existe: ${a}`);
+});

@@ -307,6 +307,8 @@ const acoes = {
     t.replaceWith(f);
   },
   colab: () => contrib.abrir(),
+  instalar: () => instalarApp(),
+  'instalar-fechar'() { $('#instalar').hidden = true; try { localStorage.setItem('liquen:instalar-fechado', String(Date.now())); } catch { /* ok */ } },
   'add-evento': (t) => contrib.abrir({ tipo: 'evento', pontoId: t.dataset.id }),
   corrigir: (t) => contrib.abrirSugestao(S.porId.get(t.dataset.id), 'correcao'),
   reivindicar: (t) => contrib.abrirSugestao(S.porId.get(t.dataset.id), 'reivindicar'),
@@ -318,6 +320,7 @@ document.addEventListener('click', (e) => {
   const abrirColab = e.target.closest('[data-abrir-colab]');
   if (abrirColab) setTimeout(() => contrib.abrir(), 60);
   if (e.target.closest('#dlg-sobre [data-fechar]')) $('#dlg-sobre').close();
+  if (e.target.closest('#dlg-instalar [data-fechar]')) $('#dlg-instalar').close();
 });
 
 // ───────── rotas ─────────
@@ -325,12 +328,64 @@ function rota() {
   const [a, b] = location.hash.replace(/^#\/?/, '').split('/');
   if (a === 'ponto' && b) { abrirDetalhe(decodeURIComponent(b), { empurrar: false }); return; }
   if (!el.detalhe.hidden) fecharDetalhe({ empurrar: false });
+  if (a === 'hoje') { S.soHoje = true; if (S.aba !== 'explorar') setAba('explorar', { empurrar: false }); else render(); }
   if (a === 'agenda' && S.aba !== 'agenda') setAba('agenda', { empurrar: false });
-  else if (a !== 'agenda' && S.aba === 'agenda' && !a) setAba('explorar', { empurrar: false });
+  else if (a !== 'agenda' && a !== 'hoje' && S.aba === 'agenda' && !a) setAba('explorar', { empurrar: false });
   if (a === 'colaborar') contrib.abrir();
   if (a === 'sobre') $('#dlg-sobre').showModal();
 }
 addEventListener('popstate', rota);
+
+// ───────── app (PWA): instalação, offline e atualização ─────────
+let pedidoInstalar = null;
+const emApp = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const ehIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.userAgent.includes('Macintosh') && 'ontouchend' in document);
+
+function atualizarInstalar() {
+  const pode = !emApp() && (pedidoInstalar || ehIOS());
+  let fechado = 0;
+  try { fechado = Number(localStorage.getItem('liquen:instalar-fechado') || 0); } catch { /* ok */ }
+  const recente = Date.now() - fechado < 21 * 86400000;
+  $('#instalar').hidden = !(pode && mobile.matches && !recente);
+  $('#sobre-instalar').hidden = !pode;
+}
+async function instalarApp() {
+  if (pedidoInstalar) {
+    pedidoInstalar.prompt();
+    const { outcome } = await pedidoInstalar.userChoice.catch(() => ({}));
+    pedidoInstalar = null;
+    if (outcome === 'accepted') toast('Pronto! O Mapa vivo está na sua tela inicial.');
+    atualizarInstalar();
+  } else if (ehIOS()) {
+    $('#dlg-instalar').dataset.tema = S.tema;
+    $('#dlg-instalar').showModal();
+  } else {
+    toast('No menu do navegador, escolha “Instalar app” ou “Adicionar à tela inicial”.');
+  }
+}
+addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pedidoInstalar = e; atualizarInstalar(); });
+addEventListener('appinstalled', () => { pedidoInstalar = null; atualizarInstalar(); });
+addEventListener('offline', () => toast('Você está sem internet. Mostrando os dados salvos no aparelho.'));
+addEventListener('online', () => { toast('Conexão de volta.'); derivar(); render(); });
+
+function registrarApp() {
+  if (!('serviceWorker' in navigator) || !(location.protocol === 'https:' || location.hostname === 'localhost')) return;
+  const avisar = (sw) => {
+    const box = $('#nova-versao');
+    box.hidden = false;
+    $('#nova-versao-ok').onclick = () => { sw.postMessage('atualizar'); box.hidden = true; };
+  };
+  navigator.serviceWorker.register('sw.js').then((reg) => {
+    if (reg.waiting && navigator.serviceWorker.controller) avisar(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+      const novo = reg.installing;
+      novo?.addEventListener('statechange', () => { if (novo.state === 'installed' && navigator.serviceWorker.controller) avisar(novo); });
+    });
+    setInterval(() => reg.update().catch(() => {}), 30 * 60000);
+  }).catch((err) => console.warn('[liquen] app offline indisponível:', err));
+  let recarregando = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (!recarregando) { recarregando = true; location.reload(); } });
+}
 
 // ───────── inicialização ─────────
 let mapa;
@@ -368,6 +423,9 @@ async function iniciar() {
   setTema(t);
 
   ligarSheet();
+  atualizarInstalar();
+  registrarApp();
+  if (emApp()) el.app.classList.add('em-app');
   setSheet(mobile.matches ? 'peek' : 'half');
 
   // controles

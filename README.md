@@ -74,6 +74,17 @@ Nome, contatos da curadoria (WhatsApp/e-mail para o modo demo), limites e centro
 licença e créditos do edital (`mostrarCreditosEdital: true` só depois de contemplado).
 Categorias e cores: `js/categorias.js` (basta adicionar um item).
 
+## App no celular
+
+O site é um **app instalável (PWA)**, grátis e sem loja:
+- **Android (Chrome):** aparece a faixa “Use como app” → *Instalar* (ou menu ⋮ → *Instalar app*).
+- **iPhone (Safari):** *Compartilhar* → *Adicionar à Tela de Início* (o próprio site mostra as instruções).
+- Abre em tela cheia, **funciona sem internet** com os últimos dados e o mapa já visto, e avisa quando há versão nova.
+- Atalhos ao segurar o ícone: *Acontece hoje*, *Agenda*, *Colaborar* (`#/hoje`, `#/agenda`, `#/colaborar`).
+
+A cada publicação, atualize **juntos** `versao` em `js/config.js` e `VERSAO` em `sw.js` (o `npm test` acusa se ficarem diferentes).
+Para publicar na **Play Store** (opcional), dá para empacotar este mesmo app como TWA (conta de desenvolvedor Google: US$ 25, uma vez).
+
 ## Fotos e vídeos
 
 **Fotos** (ex.: ensaio fotográfico do projeto):

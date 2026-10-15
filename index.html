@@ -12,7 +12,12 @@
   <meta property="og:image" content="icons/icon-512.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mapa vivo">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="Mapa vivo">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400..800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -59,6 +64,13 @@
         <button class="btn-redondo" id="btn-sobre" aria-label="Sobre o projeto" title="Sobre">?</button>
         <p class="marca__sub">culturas da Grande Florianópolis</p>
       </header>
+
+      <div class="instalar" id="instalar" hidden>
+        <img src="icons/icon-192.png" alt="" width="34" height="34">
+        <p><b>Use como app</b><span>Abre direto da tela inicial e funciona sem internet.</span></p>
+        <button class="btn btn--cheio" data-acao="instalar">Instalar</button>
+        <button class="instalar__x" data-acao="instalar-fechar" aria-label="Agora não">×</button>
+      </div>
 
       <section class="hoje" id="hoje" aria-labelledby="hoje-t">
         <div class="hoje__topo">
@@ -107,6 +119,10 @@
   </button>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="nova-versao" class="nova-versao" role="status" hidden>
+    <span>Há uma versão nova do mapa.</span>
+    <button class="btn btn--cheio" id="nova-versao-ok">Atualizar</button>
+  </div>
 </div>
 
 <dialog id="dlg-colaborar" class="dlg" aria-labelledby="colab-t"></dialog>
@@ -132,7 +148,23 @@
     <p>Só publicamos o que o coletivo autoriza. Contatos privados ficam apenas com a curadoria. O conteúdo é publicado sob <a id="lic2" target="_blank" rel="noopener"></a>, preservando os direitos de autores e comunidades. É um bem comum feito pela própria cena.</p>
     <p class="credito" id="creditos" hidden></p>
     <p class="credito">Divulgação e novidades: <a href="https://instagram.com/zona.liquen" target="_blank" rel="noopener">@zona.liquen</a> no Instagram.</p>
-    <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar data-abrir-colab>Quero colaborar</button></div>
+    <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar data-abrir-colab>Quero colaborar</button><button class="btn" data-acao="instalar" id="sobre-instalar" hidden>Instalar o app</button></div>
+  </div>
+</dialog>
+
+<dialog id="dlg-instalar" class="dlg dlg--instalar" aria-labelledby="instalar-t">
+  <div class="dlg__cab">
+    <h2 id="instalar-t">Instalar no <em>iPhone</em></h2>
+    <button class="btn-redondo" data-fechar aria-label="Fechar">×</button>
+  </div>
+  <div class="dlg__corpo prosa">
+    <ol class="passos">
+      <li>Abra este site no <b>Safari</b>.</li>
+      <li>Toque em <b>Compartilhar</b> <span class="ico-ios" aria-hidden="true">⬆︎</span> (na barra de baixo ou de cima).</li>
+      <li>Escolha <b>Adicionar à Tela de Início</b> e toque em <b>Adicionar</b>.</li>
+    </ol>
+    <p>O ícone do Mapa vivo aparece junto dos seus apps, abre em tela cheia e funciona mesmo sem internet.</p>
+    <div class="dlg__acoes"><button class="btn btn--cheio" data-fechar>Entendi</button></div>
   </div>
 </dialog>
 
