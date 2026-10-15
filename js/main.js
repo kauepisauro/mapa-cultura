@@ -14,7 +14,7 @@ const mobile = window.matchMedia('(max-width: 760px)');
 
 const S = {
   pontosPub: [], eventosPub: [], pontos: [], lugares: [], porId: new Map(), ocorr: [], porKey: new Map(), idx: new Map(),
-  modo: 'demo', aba: 'explorar', cats: new Set(), busca: '', janela: '7d', gratis: false,
+  modo: 'demo', aba: 'explorar', cats: new Set(), busca: '', janela: '7d', gratis: false, soHoje: false,
   sel: null, eu: null, tema: 'dia', sheet: 'peek', vis: 176, ultimoEnvio: null, carregou: false,
 };
 
@@ -69,7 +69,7 @@ function proximoPorLugar() {
 
 function ocorrenciasFiltradas() {
   const hoje = hojeISO();
-  const [de, ate] = janela(S.janela, hoje);
+  const [de, ate] = janela(S.soHoje ? 'hoje' : S.janela, hoje);
   const q = norm(S.busca);
   return S.ocorr.filter((o) => {
     const st = status(o);
@@ -97,8 +97,7 @@ function render() {
   const prox = proximoPorLugar();
   const q = norm(S.busca);
 
-  setHTML(el.chips, chipsHTML(S.cats));
-  setHTML(el.janelas, janelasHTML(S.janela, S.gratis));
+  setHTML(el.janelas, janelasHTML(S.soHoje ? 'hoje' : S.janela, S.gratis));
   el.janelas.hidden = S.aba !== 'agenda';
 
   // "Acontece hoje"
@@ -112,14 +111,16 @@ function render() {
   let itensMapa;
   let html;
   const evFiltrados = ocorrenciasFiltradas();
-  const lugaresFiltrados = S.lugares.filter((l) => !l.virtual && casaCat(l.categoria) && (!q || S.idx.get(l.id)?.includes(q)));
+  const lugaresFiltrados = S.lugares.filter((l) => !l.virtual && casaCat(l.categoria) && (!S.soHoje || aoVivo.has(l.id)) && (!q || S.idx.get(l.id)?.includes(q)));
+  const nHoje = S.lugares.filter((l) => !l.virtual && aoVivo.has(l.id) && casaCat(l.categoria)).length;
+  setHTML(el.chips, chipsHTML(S.cats, S.soHoje, nHoje));
 
   if (S.aba === 'explorar') {
     const dist = (l) => (S.eu ? distanciaKm(S.eu, l) : null);
     const ord = [...lugaresFiltrados].sort((a, b) => (S.eu ? dist(a) - dist(b) : (aoVivo.has(b.id) - aoVivo.has(a.id)) || a.nome.localeCompare(b.nome, 'pt-BR')));
     html = ord.length
       ? ord.map((l, i) => { const p = prox.get(l.id); return cardLugar(l, { prox: p ? proxTexto(p.o, p.st, hoje) : '', dist: dist(l), i }); }).join('')
-      : vazioHTML('Nada por aqui… ainda', q || S.cats.size ? 'Tente outra busca ou limpe os filtros. E se o lugar existe e não está no mapa, cadastre!' : 'Seja a primeira pessoa a colocar um ponto no mapa.');
+      : vazioHTML(S.soHoje ? 'Nada marcado para hoje' : 'Nada por aqui… ainda', S.soHoje ? 'Nenhum evento de hoje com estes filtros. Tire “Só hoje” para ver todos os lugares, ou divulgue um evento.' : q || S.cats.size ? 'Tente outra busca ou limpe os filtros. E se o lugar existe e não está no mapa, cadastre!' : 'Seja a primeira pessoa a colocar um ponto no mapa.');
     itensMapa = ord;
   } else {
     // exposições/mostras de vários dias entram uma vez só, em "Em cartaz"
@@ -193,11 +194,12 @@ function aplicarSheet(vis) {
   el.painel.classList.toggle('is-peek', vis < 260);
   el.painel.classList.toggle('is-cheio', vis > innerHeight * 0.8);
   el.fab.classList.toggle('is-oculto', mobile.matches && vis > innerHeight * 0.7);
+  $('#ver-mapa').hidden = !(mobile.matches && vis > innerHeight * 0.7);
 }
 function setSheet(estado) {
   S.sheet = estado;
   aplicarSheet(SNAP[estado]());
-  mapa?.setPadding(mobile.matches ? 0 : 460, mobile.matches ? SNAP[estado]() : 0);
+  mapa?.setPadding(mobile.matches || el.app.classList.contains('sem-painel') ? 0 : 460, mobile.matches ? SNAP[estado]() : 0);
 }
 function ligarSheet() {
   const alca = $('#alca');
@@ -224,7 +226,7 @@ function ligarSheet() {
   alca.addEventListener('pointercancel', fim);
   // tocar no cabeçalho (peek) expande
   $('.marca').addEventListener('click', () => { if (mobile.matches && S.sheet === 'peek') setSheet('half'); });
-  $('#busca').addEventListener('focus', () => { if (mobile.matches && S.sheet !== 'full') setSheet('full'); });
+  $('#busca').addEventListener('focus', () => { if (mobile.matches && S.sheet === 'peek') setSheet('half'); });
   addEventListener('resize', () => setSheet(S.sheet));
   mobile.addEventListener('change', () => setSheet(S.sheet));
 }
@@ -279,11 +281,12 @@ function compartilharEvento(key) {
 const acoes = {
   chip(t) {
     const id = t.dataset.id;
-    if (!id) S.cats.clear(); else if (S.cats.has(id)) S.cats.delete(id); else S.cats.add(id);
+    if (!id) { S.cats.clear(); S.soHoje = false; } else if (S.cats.has(id)) S.cats.delete(id); else S.cats.add(id);
     S.ajustar = true;
     render();
   },
-  janela(t) { S.janela = t.dataset.id; S.ajustar = true; render(); },
+  janela(t) { S.janela = t.dataset.id; S.soHoje = false; S.ajustar = true; render(); },
+  'so-hoje'() { S.soHoje = !S.soHoje; S.ajustar = true; render(); },
   gratis() { S.gratis = !S.gratis; render(); },
   sel(t) { const id = t.dataset.id; if (id) abrirDetalhe(id); },
   'fechar-det': () => fecharDetalhe(),
@@ -386,8 +389,16 @@ async function iniciar() {
     } catch (err) { toast(err.message); }
   };
   el.fab.onclick = () => contrib.abrir();
+  $('#ver-mapa').onclick = () => setSheet('peek');
+  $('#ctl-painel').onclick = (e) => {
+    const oculto = el.app.classList.toggle('sem-painel');
+    e.currentTarget.setAttribute('aria-pressed', String(oculto));
+    e.currentTarget.setAttribute('aria-label', oculto ? 'Mostrar o painel de lugares e agenda' : 'Esconder o painel e ver só o mapa');
+    mapa.setPadding(oculto || mobile.matches ? 0 : 460, mobile.matches ? S.vis : 0);
+    setTimeout(() => mapa.invalidar(), 320);
+  };
   $('#btn-sobre').onclick = () => { $('#dlg-sobre').dataset.tema = S.tema; $('#dlg-sobre').showModal(); };
-  $('#hoje-ver').onclick = () => { S.janela = 'hoje'; setAba('agenda'); };
+  $('#hoje-ver').onclick = () => { S.janela = 'hoje'; S.soHoje = false; setAba('agenda'); };
   document.querySelectorAll('.abas [role=tab]').forEach((b) => b.addEventListener('click', () => setAba(b.dataset.aba)));
   $('#chips-mais').onclick = (e) => {
     const fechado = el.chips.classList.toggle('is-fechado');

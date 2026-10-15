@@ -27,9 +27,10 @@ export const imgCapa = (item, mini = false) =>
 
 const selos = (l) => `${l.exemplo ? '<span class="selo">exemplo</span>' : ''}${l.pendente ? '<span class="selo selo--pend">em análise</span>' : ''}`;
 
-export function chipsHTML(ativos) {
-  const todos = `<button class="chip chip--todos" data-acao="chip" data-id="" aria-pressed="${ativos.size === 0}">Todos</button>`;
-  return todos + CATEGORIAS.map((c) => `<button class="chip" style="--c:${c.cor}" data-acao="chip" data-id="${c.id}" aria-pressed="${ativos.has(c.id)}" title="${esc(c.desc)}">${icone(c.id, 16)}${esc(c.nome)}</button>`).join('');
+export function chipsHTML(ativos, soHoje = false, nHoje = 0) {
+  const todos = `<button class="chip chip--todos" data-acao="chip" data-id="" aria-pressed="${ativos.size === 0 && !soHoje}">Todos</button>`;
+  const hoje = `<button class="chip chip--hoje" data-acao="so-hoje" aria-pressed="${soHoje}" title="Mostrar só o que acontece hoje"><i class="chip__dot"></i>Só hoje<small>${nHoje}</small></button>`;
+  return todos + hoje + CATEGORIAS.map((c) => `<button class="chip" style="--c:${c.cor}" data-acao="chip" data-id="${c.id}" aria-pressed="${ativos.has(c.id)}" title="${esc(c.desc)}">${icone(c.id, 16)}${esc(c.nome)}</button>`).join('');
 }
 
 export function janelasHTML(atual, gratis) {

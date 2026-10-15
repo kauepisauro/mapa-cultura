@@ -421,3 +421,23 @@ img, svg { display: block; max-width: 100%; }
 .video__capa:hover .video__play { transform: scale(1.08); }
 .video__play svg { margin-left: 3px; }
 .video figcaption { margin-top: 7px; font: 400 11px/1.5 var(--f-mono); color: var(--ink-2); }
+
+/* chip "Só hoje" */
+.chip--hoje { --c: var(--ochre); border-color: color-mix(in srgb, var(--ochre) 70%, transparent); }
+.chip__dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--ochre); flex: none; }
+.chip__dot::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1.3px solid var(--ochre); animation: onda 2.2s ease-out infinite; }
+.chip--hoje small { font: 500 10.5px/1 var(--f-mono); opacity: 0.85; }
+.chip--hoje[aria-pressed='true'] { background: var(--ochre); border-color: var(--ochre); color: #1c2a22; }
+.chip--hoje[aria-pressed='true'] .chip__dot { background: #1c2a22; }
+.chip--hoje[aria-pressed='true'] .chip__dot::after { border-color: #1c2a22; }
+
+/* esconder o painel (computador) e botão "Ver mapa" (celular) */
+.painel { transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.25, 1), opacity 0.25s; }
+#app.sem-painel .painel { transform: translateX(calc(-100% - 40px)); opacity: 0; pointer-events: none; }
+#app.sem-painel .leaflet-control-attribution { margin-left: 0; }
+.ver-mapa { position: absolute; z-index: 960; top: 14px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px; background: var(--ink); color: var(--paper); border: 0; box-shadow: var(--sombra); font: 600 14px/1 var(--f-ui); }
+@media (max-width: 760px) {
+  #ctl-painel { display: none; }
+  .painel { transition: height 0.38s cubic-bezier(0.2, 0.9, 0.25, 1); }
+}
+@media (min-width: 761px) { .ver-mapa { display: none; } }
