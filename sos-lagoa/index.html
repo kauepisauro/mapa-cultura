@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SOS Lagoa · Organização do movimento</title>
+  <meta name="description" content="Calendário de luta, reuniões e encaminhamentos do SOS Lagoa — movimento popular em defesa da Lagoa da Conceição.">
+  <meta name="theme-color" content="#070b0e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="pular" href="#app">Ir para o conteúdo</a>
+  <div class="shell">
+    <aside class="lateral">
+      <header class="topo">
+        <a class="marca" href="#/" aria-label="SOS Lagoa — início">
+          <img class="logo" src="icons/logo.png" width="48" height="48" alt="">
+          <span class="marca-texto"><b>SOS Lagoa</b><small>Movimento popular</small></span>
+        </a>
+        <a class="topo-ajustes" href="#/ajustes" data-nav="ajustes" aria-label="Ajustes"></a>
+      </header>
+      <nav class="menu" aria-label="Principal">
+        <a href="#/" data-nav="inicio"><span>Início</span></a>
+        <a href="#/calendario" data-nav="calendario"><span>Calendário</span></a>
+        <a href="#/reunioes" data-nav="reunioes"><span>Reuniões</span></a>
+        <a href="#/tarefas" data-nav="tarefas"><span>Tarefas</span></a>
+        <a href="#/frentes" data-nav="frentes"><span>Frentes</span></a>
+      </nav>
+    </aside>
+    <main id="app" tabindex="-1">
+      <noscript><p class="aviso-caixa">Este app precisa de JavaScript ligado no navegador.</p></noscript>
+    </main>
+  </div>
+  <button id="fab" class="fab" type="button" aria-label="Novo: reunião, evento ou encaminhamento"></button>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
