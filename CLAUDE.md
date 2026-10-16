@@ -32,11 +32,3 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
   sem pausa (planilha Google) — decisão do autor. Sem banco, roda em modo demonstração.
 - Fotos (tools/otimizar_foto.py, crédito + descrição obrigatórios, autorização de imagem) e vídeos (YouTube/Vimeo).
 - Domínio próprio (refazer QR codes e cartaz em `divulgacao/` se mudar o endereço).
-
-## Painel pessoal (`pessoal/`) — separado do Mapa
-App só do autor: perícias (prospecção → pra rolar → rolando → pra receber → recebido), mestrado e artes, com
-próxima ação, datas, agenda e meta. PWA próprio (`pessoal/sw.js`, escopo `pessoal/`).
-- **Dados nunca entram no repositório**: ficam no `localStorage` do aparelho; backup/restauração por arquivo `.json`.
-  Não commitar backups nem dados reais de clientes/processos. Só exemplos marcados `exemplo: true`.
-- Ao mudar o painel, suba juntos `VERSAO` em `pessoal/js/app.js` e `pessoal/sw.js`; arquivos novos entram em `ARQUIVOS` do sw.
-- Lógica pura em `pessoal/js/logica.js`, testada em `tests/pessoal.mjs` (`npm test`).
