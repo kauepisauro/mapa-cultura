@@ -29,6 +29,19 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
   Plano B automático para raster OSM (`CONFIG.tiles`). O território-piloto não aparece no mapa (`territorioPiloto: null`).
 - O mapa não vende nem faz propaganda pessoal; divulgação vai pelo Instagram @zona.liquen.
 
+## Compromissos do edital (proposta “Cartografia Líquen — Mapa Vivo das Culturas de Florianópolis”, FCC/PNAB, Meu Primeiro Projeto nº 25/2026)
+- Metas: ≥ 40 pontos publicados; 60–80 fotos autorais (Olivia/Kauê); 1 oficina na Lagoa (Arreda Boi) com ~20 pessoas;
+  ≥ 30 contribuições pelo formulário público com curadoria; site no ar ≥ 12 meses em domínio próprio;
+  100% das imagens com descrição alternativa e vídeos legendados; licença Creative Commons.
+- Anuência: a proposta diz que lugares/coletivos mapeados autorizam nome, imagem e informações (modelo Anexo XI).
+  Fichas com anuência recebida → `"anuencia": true`. Não publicar fotos sem autorização.
+- Créditos obrigatórios (ligar `mostrarCreditosEdital` quando o recurso for liberado): Governo do Estado de SC, FCC,
+  Política Nacional Aldir Blanc, logos do Manual de Marcas; posts marcam @fcc.cultura e entram na Agenda PNAB.
+- Indicadores do relatório: nº de pontos, contribuições recebidas/aprovadas, participantes da oficina, acessos, alcance.
+- A proposta citava uMap/OpenStreetMap; o site usa dados OpenStreetMap com ferramentas abertas (Leaflet/MapLibre) —
+  explicar a troca no relatório. Execução até 31/12/2027; despesas só dentro da vigência.
+- Nunca publicar CPF, RG ou telefone pessoal da equipe (estão no PDF da proposta).
+
 ## Pendências conhecidas
 - Banco de colaborações: Supabase (`supabase/schema.sql`, keep-alive em `manter-banco-ativo.yml`) ou alternativa
   sem pausa (planilha Google) — decisão do autor. Sem banco, roda em modo demonstração.
