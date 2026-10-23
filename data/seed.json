@@ -1,5 +1,5 @@
 {
- "_aviso": "Eventos pesquisados em 06 e 15/10/2026 e movimentos populares em 23/10/2026, cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
+ "_aviso": "Eventos pesquisados em 06 e 15/10/2026 e movimentos populares, capoeira, rap, LGBTQIA+, samba, artes e cultura popular em 23/10/2026, cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
  "pontos": [
   {
    "id": "arreda-boi",
@@ -929,6 +929,1163 @@
     "agroecologia"
    ],
    "fonte": "https://repositorio.ufsc.br/xmlui/handle/123456789/173998"
+  },
+  {
+   "id": "barca-dos-livros",
+   "nome": "Biblioteca Comunitária Barca dos Livros",
+   "categoria": "literatura",
+   "lat": -27.6008,
+   "lng": -48.4706,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição",
+   "endereco": "Rua Senador Ivo D'Aquino, Lagoa da Conceição",
+   "descricao": "Biblioteca comunitária mantida pela Sociedade Amantes da Leitura, na Lagoa desde 2007, com acervo voltado à literatura infantil e juvenil. Realiza saraus literários, oficinas, contação de histórias e lançamentos de livros.",
+   "participar": "Empréstimo com carteirinha de sócio.",
+   "site": "https://barcadoslivros.org",
+   "tags": [
+    "biblioteca comunitária",
+    "sarau",
+    "contação de histórias",
+    "lagoa"
+   ],
+   "fonte": "https://www.guiadasemana.com.br/florianopolis/arte/estabelecimento/biblioteca-barca-dos-livros",
+   "confirmar": "Ficha de 2012; endereço, horário e programação atuais não confirmados."
+  },
+  {
+   "id": "ccea-biblioteca-seu-teco",
+   "nome": "Centro Cultural Escrava Anastácia · Biblioteca Seu Teco",
+   "categoria": "literatura",
+   "lat": -27.5835,
+   "lng": -48.5835,
+   "aprox": true,
+   "bairro": "Balneário (Estreito)",
+   "endereco": "Rua Prefeito Tolentino de Carvalho, 01, Balneário",
+   "descricao": "O Centro Cultural Escrava Anastácia abriga desde novembro de 2023 a Biblioteca João Ferreira de Souza (Seu Teco), dedicada à literatura afro-brasileira e antirracista, com cerca de mil livros de autoria negra. O acervo pode ser emprestado por moradores da Grande Florianópolis.",
+   "tags": [
+    "biblioteca",
+    "literatura negra",
+    "antirracismo",
+    "continente"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=7007847",
+   "confirmar": "Horário de atendimento ao público não informado na fonte."
+  },
+  {
+   "id": "bilica-campeche",
+   "nome": "BILICA · Biblioteca Livre do Campeche",
+   "categoria": "literatura",
+   "lat": -27.672,
+   "lng": -48.484,
+   "aprox": true,
+   "bairro": "Campeche",
+   "endereco": "Avenida Campeche, 2157",
+   "descricao": "Biblioteca comunitária mantida por moradores do Campeche, com histórico de oficinas de teatro infantil e contação de histórias em parceria com a UFSC.",
+   "tags": [
+    "biblioteca comunitária",
+    "campeche"
+   ],
+   "fonte": "https://periodicos.ufsc.br/index.php/extensio/article/view/1807-0221.2010v7n9p59",
+   "confirmar": "Fonte de 2010; verificar se segue em funcionamento e em que horários."
+  },
+  {
+   "id": "helena-fretta",
+   "nome": "Helena Fretta Galeria de Arte",
+   "categoria": "arte",
+   "lat": -27.5928,
+   "lng": -48.5487,
+   "aprox": true,
+   "bairro": "Centro",
+   "endereco": "Rua Presidente Coutinho, 532, Centro",
+   "descricao": "Galeria no Centro com mostras de arte catarinense. Sedia a Arte Foto Florianópolis, mostra anual de fotografia catarinense (11ª edição entre agosto e setembro de 2026).",
+   "horario": "Segunda a sexta, 10h às 18h30; sábado, 10h às 13h (horário informado em 2026)",
+   "site": "https://helenafretta.com.br",
+   "tags": [
+    "galeria",
+    "fotografia",
+    "arte catarinense"
+   ],
+   "fonte": "https://www.riotimesonline.com/?p=705411"
+  },
+  {
+   "id": "a-galeria-primavera",
+   "nome": "A.Galeria · Passeio Primavera",
+   "categoria": "arte",
+   "lat": -27.5555,
+   "lng": -48.4995,
+   "aprox": true,
+   "bairro": "Saco Grande (SC-401)",
+   "endereco": "Passeio Primavera, 7º andar, Rodovia SC-401",
+   "descricao": "Galeria de arte contemporânea de 300 m², com jardim de esculturas e ateliê, aberta em dezembro de 2024 pelo Instituto Pedra Branca, com direção artística de Marc Pottier. Prevê quatro exposições por ano.",
+   "horario": "Terça a sábado, 13h às 19h; domingos e feriados, 13h às 17h",
+   "tags": [
+    "galeria",
+    "arte contemporânea",
+    "esculturas"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=7362625"
+  },
+  {
+   "id": "cais-escola-artes",
+   "nome": "CAIS Escola de Artes",
+   "categoria": "atelie",
+   "lat": -27.6075,
+   "lng": -48.516,
+   "aprox": true,
+   "bairro": "Pantanal",
+   "descricao": "Escola de artes visuais aberta em 2026 por Kamilla Nunes e Aline Natureza (CAIS Editora), com cursos de desenho, pintura, aquarela, história da arte e curadoria para crianças, jovens e adultos, além de ateliê compartilhado para artistas e estudantes.",
+   "participar": "Cursos e ateliê compartilhado com vagas limitadas; inscrições pelos canais da escola.",
+   "tags": [
+    "escola livre de arte",
+    "ateliê compartilhado",
+    "artes visuais"
+   ],
+   "fonte": "https://acontecendoaqui.com.br/?p=252848",
+   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Pantanal)."
+  },
+  {
+   "id": "lanterna-magica-ribeirao",
+   "nome": "Coletivo Lanterna Mágica · Cine Lanterna Mágica",
+   "categoria": "audiovisual",
+   "lat": -27.7225,
+   "lng": -48.5615,
+   "aprox": true,
+   "bairro": "Freguesia do Ribeirão da Ilha",
+   "descricao": "Coletivo criado em 2021 que mantém um cineclube gratuito no Ribeirão da Ilha, com sessões seguidas de conversa com realizadores. Organiza também o Festival Lanterna Mágica de Cinema, dedicado a filmes catarinenses dirigidos por mulheres, na Praça Hermínio Silva.",
+   "tags": [
+    "cineclube",
+    "cinema catarinense",
+    "sul da ilha"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=7368339",
+   "confirmar": "Programação e datas das sessões em 2026 não encontradas."
+  },
+  {
+   "id": "theatro-adolpho-mello",
+   "nome": "Theatro Adolpho Mello",
+   "categoria": "teatro",
+   "lat": -27.615,
+   "lng": -48.629,
+   "aprox": true,
+   "bairro": "Centro Histórico de São José",
+   "descricao": "Inaugurado em 7 de setembro de 1856, é considerado o mais antigo espaço de espetáculos de Santa Catarina. Recebe espetáculos de teatro e dança e abriga atividades de ensino de arte, sob gestão da Fundação Municipal de Cultura de São José.",
+   "tags": [
+    "teatro",
+    "patrimônio",
+    "são josé"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=2577342",
+   "confirmar": "Fonte de 2021; programação e horários atuais não confirmados."
+  },
+  {
+   "id": "instituto-collaco-paulo",
+   "nome": "Instituto Collaço Paulo",
+   "categoria": "arte",
+   "lat": -27.596,
+   "lng": -48.55,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Instituto de arte que integra o roteiro de exposições gratuitas da cidade; em 2026 recebe uma das três mostras do centenário de Hassis, em cartaz até 31 de outubro.",
+   "tags": [
+    "acervo",
+    "arte catarinense",
+    "exposição"
+   ],
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/10-exposicoes-arte-gratuitas-florianopolis-outubro-2026/",
+   "confirmar": "Endereço e horário de visitação não informados na fonte; bairro estimado."
+  },
+  {
+   "id": "kazabaka",
+   "nome": "Kaza das Artes KazaBaka",
+   "categoria": "teatro",
+   "lat": -27.5935,
+   "lng": -48.5895,
+   "aprox": true,
+   "bairro": "Estreito",
+   "descricao": "Sede da KazaBaka Cia. de Teatro, na parte continental de Florianópolis, onde a companhia apresenta seus espetáculos.",
+   "tags": [
+    "companhia de teatro",
+    "sede",
+    "continente"
+   ],
+   "fonte": "https://acontecendoaqui.com.br/colunas/de-floripa-que-horror-a-circuito-mundial-rock-na-agenda-da-semana/",
+   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Estreito)."
+  },
+  {
+   "id": "museu-victor-meirelles",
+   "nome": "Museu Victor Meirelles",
+   "categoria": "arte",
+   "lat": -27.5978,
+   "lng": -48.5498,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Museu federal (Ibram) instalado na casa natal do pintor Victor Meirelles. Abre convocatórias para exposições de curta duração; a de 2026 teve como tema Arte e Política.",
+   "site": "https://museuvictormeirelles.museus.gov.br",
+   "tags": [
+    "museu",
+    "pintura",
+    "exposições"
+   ],
+   "fonte": "https://museuvictormeirelles.museus.gov.br/wp-content/uploads/2025/12/Convocatoria-EXPOSICOES-CURTA-DURACAO-MVM-2026_FINAL-1.pdf",
+   "confirmar": "Horário de visitação não verificado nesta pesquisa."
+  },
+  {
+   "id": "atelie-casa-das-ideias",
+   "nome": "Ateliê Casa das Ideias",
+   "categoria": "atelie",
+   "lat": -27.655,
+   "lng": -48.485,
+   "aprox": true,
+   "bairro": "Fazenda do Rio Tavares",
+   "descricao": "Ateliê aberto à visitação, com atuação em artes visuais, literatura, música, teatro, dança, performance e audiovisual.",
+   "tags": [
+    "ateliê aberto",
+    "sul da ilha"
+   ],
+   "fonte": "https://magicpin.com/brazil/Fazenda-Do-Rio-Tavares/Fazenda-Do-Rio-Tavares/Other/Ateliê-Casa-Das-Ideias/store/2a3029b",
+   "confirmar": "Fonte é um diretório sem data; verificar se o ateliê segue aberto e em que horários."
+  },
+  {
+   "id": "letraria-livros",
+   "nome": "Letraria Livros",
+   "categoria": "literatura",
+   "lat": -27.646,
+   "lng": -48.483,
+   "aprox": true,
+   "bairro": "Rio Tavares",
+   "descricao": "Livraria que, com a Caseira Editora, organizou em 2023 uma Feira de Publicações Independentes gratuita no MULTI Open Shopping, no Rio Tavares.",
+   "tags": [
+    "livraria independente",
+    "publicação independente",
+    "feira gráfica"
+   ],
+   "fonte": "https://acontecendoaqui.com.br/?p=164029",
+   "confirmar": "Fonte de 2023; endereço da livraria e novas edições da feira não confirmados."
+  },
+  {
+   "id": "capoeira-udesc-cefid-ubuntu",
+   "nome": "Ubuntu Capoeirar · Udesc Cefid",
+   "categoria": "capoeira",
+   "lat": -27.5985,
+   "lng": -48.578,
+   "aprox": true,
+   "bairro": "Coqueiros",
+   "endereco": "Udesc Cefid (Sala de Artes Marciais e Ginásio 2)",
+   "descricao": "Projeto de extensão da Udesc Cefid, ligado ao Laplaf, com aulas gratuitas de capoeira angola em parceria com a Associação Cultural Catarinense Capoeira Angola Palmares (Acccap), sob supervisão do Mestre Polegar. Aberto à comunidade acadêmica e ao público a partir de 12 anos, sem exigência de experiência.",
+   "horario": "Segundas e quartas, 12h30–13h30 (Sala de Artes Marciais); sextas, 12h30–13h30 (Ginásio 2)",
+   "participar": "Gratuito, a partir de 12 anos. Inscrição no próprio local das aulas.",
+   "tags": [
+    "capoeira angola",
+    "aula gratuita",
+    "universidade",
+    "projeto de extensão"
+   ],
+   "fonte": "https://www.udesc.br/noticia/projeto_de_capoeira_da_udesc_cefid_inicia_aulas_gratuitas_de_2026_em_9_de_marco"
+  },
+  {
+   "id": "capoeira-palmares-amora-ratones",
+   "nome": "Capoeira Angola Palmares · Amora Ratones",
+   "categoria": "capoeira",
+   "lat": -27.518,
+   "lng": -48.484,
+   "aprox": true,
+   "bairro": "Ratones",
+   "endereco": "Sede da Amora (Associação de Moradores de Ratones), Estrada Intendente Antônio Damasco, 3790",
+   "descricao": "Aulas gratuitas de capoeira angola na sede da associação de moradores de Ratones, em parceria entre o Laplaf/Udesc Cefid, a Amora e a Acccap, sob supervisão do Mestre Polegar, que ensina capoeira em Florianópolis desde 1997.",
+   "horario": "Terças e quintas: 17h30 (crianças) e 18h30 (adultos)",
+   "participar": "Gratuito. Na época da divulgação, contato pelo Instagram do grupo ou pelo Laplaf/Udesc Cefid.",
+   "instagram": "@palmares.mestrepolegar",
+   "tags": [
+    "capoeira angola",
+    "aula gratuita",
+    "crianças",
+    "associação de moradores"
+   ],
+   "fonte": "https://www.udesc.br/cead/noticia/udesc_cefid_tem_vagas_para_aulas_de_capoeira_em_dois_bairros_de_florianopolis",
+   "confirmar": "Horário divulgado em 2024; confirme com o grupo se as aulas seguem em Ratones."
+  },
+  {
+   "id": "capoeira-da-ilha-ufsc",
+   "nome": "Capoeira da Ilha · UFSC",
+   "categoria": "capoeira",
+   "lat": -27.6025,
+   "lng": -48.522,
+   "aprox": true,
+   "bairro": "Trindade",
+   "endereco": "Ginásio de Alumínio do CDS, Campus Trindade da UFSC",
+   "descricao": "Projeto de extensão da UFSC dedicado à capoeira angola, com movimentação do Grupo Capoeira Angola Palmares, fundamentos de roda e história da capoeira, ministrado pelo Mestre Polegar. O Ginásio de Alumínio também recebe o encontro anual do grupo Palmares.",
+   "horario": "Segundas, quartas e sextas (horário não informado na fonte)",
+   "participar": "Vagas gratuitas, inscrições ao longo do ano. Contato: projetocapoeiradailha@gmail.com.",
+   "tags": [
+    "capoeira angola",
+    "aula gratuita",
+    "universidade",
+    "projeto de extensão"
+   ],
+   "fonte": "https://noticias.ufsc.br/tags/capoeira-da-ilha/",
+   "confirmar": "Notícias de anos anteriores, sem horário; confirme pelo e-mail do projeto se as aulas seguem."
+  },
+  {
+   "id": "capoeira-ifsc-continente",
+   "nome": "Capoeira e danças populares · IFSC Florianópolis-Continente",
+   "categoria": "capoeira",
+   "lat": -27.595,
+   "lng": -48.575,
+   "aprox": true,
+   "bairro": "Coqueiros",
+   "endereco": "Câmpus Florianópolis-Continente do IFSC",
+   "descricao": "Aulas gratuitas de capoeira e de danças populares do litoral catarinense e do Nordeste, conduzidas pela Mestra Jô Capoeira, do Grupo Capoeira Angola Palmares. Projeto de extensão do Neabi (Núcleo de Estudos Afro-Brasileiros e Indígenas) do câmpus, aberto à comunidade.",
+   "horario": "Quintas, 18h15",
+   "participar": "Gratuito, sem inscrição prévia: basta ir ao câmpus. Contato: neabi.cte@ifsc.edu.br.",
+   "tags": [
+    "capoeira angola",
+    "aula gratuita",
+    "danças populares",
+    "mestra",
+    "cultura afro-brasileira"
+   ],
+   "fonte": "https://www.ifsc.edu.br/web/noticias/w/campus-florianopolis-continente-oferece-aulas-gratuitas-de-capoeira-e-dancas-populares"
+  },
+  {
+   "id": "capoeira-balaio-rio-tavares",
+   "nome": "Grupo Balaio de Capoeira · Mestre Habibis",
+   "categoria": "capoeira",
+   "lat": -27.645,
+   "lng": -48.483,
+   "aprox": true,
+   "bairro": "Rio Tavares",
+   "endereco": "Conselho Comunitário do Rio Tavares",
+   "descricao": "Aulas e rodas de capoeira conduzidas pelo Mestre Habibis no Conselho Comunitário do Rio Tavares, para todas as idades. O grupo participa do Festival de Primavera de Capoeira, com atividades no Sul da Ilha e na Pracinha da Lagoa.",
+   "participar": "Aulas para todas as idades; horários divulgados no Instagram do grupo.",
+   "instagram": "@balaiocapoeiramestrehabibis",
+   "tags": [
+    "capoeira",
+    "aulas",
+    "roda",
+    "Sul da Ilha"
+   ],
+   "fonte": "https://suldefloripa.com.br/sul-da-ilha-recebe-o-xv-festival-de-primavera-de-capoeira-em-floripa/",
+   "confirmar": "Informação de reportagem de 2024, sem dias e horários; confirme no Instagram do grupo."
+  },
+  {
+   "id": "capoeira-awa-nzambi",
+   "nome": "Awá · Casa nZambi de Capoeira Angola",
+   "categoria": "capoeira",
+   "lat": -27.77,
+   "lng": -48.515,
+   "aprox": true,
+   "bairro": "Costa de Dentro · Pântano do Sul",
+   "endereco": "Estrada Rozália Paulina Ferreira, 2455, Costa de Dentro, Armação do Pântano do Sul",
+   "descricao": "Espaço cultural do grupo nZambi de Capoeira Angola, coordenado pela Mestra Elma, com treinos, rodas semanais, grupos de estudo e encontros anuais de capoeiristas. Também desenvolve trabalho educativo com escolas públicas da região e oficinas de agrofloresta e bioconstrução.",
+   "participar": "Aberto à comunidade. Contato pelo telefone (48) 98802-3100 ou pela página do grupo no Facebook.",
+   "tags": [
+    "capoeira angola",
+    "mestra",
+    "roda",
+    "Sul da Ilha",
+    "educação antirracista"
+   ],
+   "fonte": "http://culturaviva.gov.br/espaco/17577/",
+   "confirmar": "Cadastro público sem dia e horário da roda semanal; confirme com o grupo antes de ir."
+  },
+  {
+   "id": "capoeira-amocan-canasvieiras",
+   "nome": "Capoeira da AMOCAN · GCAB Capoeira",
+   "categoria": "capoeira",
+   "lat": -27.431,
+   "lng": -48.462,
+   "aprox": true,
+   "bairro": "Canasvieiras",
+   "endereco": "Sede da Associação dos Moradores de Canasvieiras (AMOCAN)",
+   "descricao": "Turma de capoeira da associação de moradores de Canasvieiras, ligada ao GCAB Capoeira e conduzida pelo Mestrando China e pelo Professor Ligeiro, com cerca de 30 participantes entre adultos e crianças. Em outubro de 2026 sediou o 3º Auê Florianópolis, pelos 35 anos do GCAB.",
+   "tags": [
+    "capoeira",
+    "associação de moradores",
+    "crianças",
+    "Norte da Ilha"
+   ],
+   "fonte": "https://informefloripa.com/capoeira-da-amocan-celebra-tradicao-e-reune-mestres-de-diferentes-estados-em-florianopolis/",
+   "confirmar": "A fonte não informa dias e horários dos treinos; confirme com a AMOCAN."
+  },
+  {
+   "id": "capoeira-cazua-potecas",
+   "nome": "Associação Cultural Esportiva Cazuá",
+   "categoria": "capoeira",
+   "lat": -27.579,
+   "lng": -48.65,
+   "aprox": true,
+   "bairro": "Potecas · São José",
+   "endereco": "Rua Angelim Rosa, 136, Potecas, São José",
+   "descricao": "Associação comunitária que mantém treinos de capoeira desde janeiro de 2023, com turmas para várias idades e níveis, incluindo iniciantes e pessoas com necessidades específicas. Surgiu em parceria com o Grupo Muzenza.",
+   "participar": "Contribuição mensal de R$ 50 (para o aluguel da sala), segundo documento da Alesc. Contato: (48) 99949-3437 ou cazua.acec@gmail.com.",
+   "tags": [
+    "capoeira",
+    "associação comunitária",
+    "Muzenza",
+    "São José"
+   ],
+   "fonte": "https://portalelegis.alesc.sc.gov.br/documentos/XgqlJ",
+   "confirmar": "Valores e contato vêm de documento legislativo, sem horários de treino; confirme com a associação."
+  },
+  {
+   "id": "capoeira-ile-pinheira",
+   "nome": "Ilê da Capoeira · Praia da Pinheira",
+   "categoria": "capoeira",
+   "lat": -27.865,
+   "lng": -48.595,
+   "aprox": true,
+   "bairro": "Pinheira · Palhoça",
+   "descricao": "Centro cultural de capoeira em atividade desde 2021 na região da Baixada do Maciambu, base catarinense de um grupo sediado em Porto Alegre. É supervisionado pelos mestres Tamanduá e Chinês e gerido pelo instrutor Raka.",
+   "tags": [
+    "capoeira",
+    "centro cultural",
+    "Palhoça"
+   ],
+   "fonte": "https://mapa.cultura.gov.br/espaco/101872/",
+   "confirmar": "Cadastro no Mapa da Cultura sem endereço nem horários; confirme com o grupo."
+  },
+  {
+   "id": "capoeira-na-escola-biguacu",
+   "nome": "Projeto Capoeira na Escola · Biguaçu",
+   "categoria": "capoeira",
+   "lat": -27.4945,
+   "lng": -48.6555,
+   "aprox": true,
+   "bairro": "Centro · Biguaçu",
+   "endereco": "Praça Central de Biguaçu (com chuva, Centro Cultural Casarão Born)",
+   "descricao": "A Associação Cultural Capoeira na Escola (ACCAES), conduzida pelos mestres Tuti e Corcel, atua em Biguaçu desde 1996 com crianças, jovens e adultos em escolas e comunidades. Reconhecida como ponto de cultura, mantém roda mensal aberta na Praça Central e organiza a Semana Afro-Biguaçuense.",
+   "horario": "Roda mensal: em geral no 1º sábado do mês, às 16h",
+   "participar": "Inscrições para as aulas, segundo o projeto, pela Secretaria de Cultura de Biguaçu.",
+   "site": "http://www.capoeiranaescola.org.br/",
+   "tags": [
+    "capoeira",
+    "projeto social",
+    "ponto de cultura",
+    "roda de rua",
+    "Biguaçu"
+   ],
+   "fonte": "http://www.capoeiranaescola.org.br/2024/05/",
+   "confirmar": "Últimos registros da roda mensal são de 2024; confirme data e horário com o projeto."
+  },
+  {
+   "id": "blues-velvet-bar",
+   "nome": "Blues Velvet Bar",
+   "categoria": "festa",
+   "lat": -27.5978,
+   "lng": -48.5537,
+   "aprox": true,
+   "bairro": "Centro",
+   "endereco": "R. Pedro Ivo, 147 - Centro, Florianópolis",
+   "descricao": "Bar do Centro associado ao público LGBTQIA+ há mais de 15 anos, com festas de discotecagem às sextas e sábados e noites de karaokê.",
+   "horario": "Sextas e sábados a partir das 22h (segundo guias)",
+   "tags": [
+    "LGBTQIA+",
+    "bar",
+    "discotecagem",
+    "karaokê"
+   ],
+   "fonte": "https://www.nsctotal.com.br/noticias/guia-lista-bares-e-roles-lgbtqia-em-florianopolis-confira",
+   "confirmar": "Guias de 2022–2024 divergem sobre endereço (R. Pedro Ivo, 147 ou R. Trajano, 341) e horários; um agregador (Wanderlog) marca como fechado. Confirme se segue aberto."
+  },
+  {
+   "id": "mada-bar",
+   "nome": "Madá Bar (antigo Madalena Bar)",
+   "categoria": "festa",
+   "lat": -27.596,
+   "lng": -48.55,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Bar de dois andares no Centro, citado em guias como espaço seguro para o público LGBTQIA+, com sócias lésbicas. Recebe festas de música eletrônica, como a Undrsystem Showcase (2025).",
+   "tags": [
+    "LGBTQIA+",
+    "bar",
+    "lésbicas"
+   ],
+   "fonte": "https://www.nsctotal.com.br/noticias/guia-lista-bares-e-roles-lgbtqia-em-florianopolis-confira",
+   "confirmar": "Endereço não confirmado (um guia cita R. Tiradentes, 233, mesmo endereço atribuído a outro bar). Nome atual 'Madá Bar' segundo https://shotgun.live/pt-br/events/undrsystem-showcase-005."
+  },
+  {
+   "id": "jivago-social-club",
+   "nome": "Jivago Social Club",
+   "categoria": "festa",
+   "lat": -27.592,
+   "lng": -48.553,
+   "aprox": true,
+   "bairro": "Centro",
+   "endereco": "Rua Dep. Leoberto Leal, 116 - Centro, Florianópolis",
+   "descricao": "Casa noturna gay no Centro, ativa há mais de uma década segundo guias de viagem, com música variada e público jovem nos fins de semana.",
+   "tags": [
+    "LGBTQIA+",
+    "casa noturna"
+   ],
+   "fonte": "https://www.travelgay.tw/florianopolis-gay-bars",
+   "confirmar": "Fonte é guia de viagem sem data; confirme funcionamento e horários."
+  },
+  {
+   "id": "franz-cabaret",
+   "nome": "Franz Cabaret",
+   "categoria": "teatro",
+   "lat": -27.5975,
+   "lng": -48.5515,
+   "aprox": true,
+   "bairro": "Centro",
+   "endereco": "R. Cristóvão Nunes Pires, 84 - Centro, Florianópolis",
+   "descricao": "Cabaré no Centro que combina restaurante, espetáculos e festas; recebe montagens com artistas drag, como o espetáculo Drag On Broadway.",
+   "site": "https://www.franzcabaret.com",
+   "tags": [
+    "LGBTQIA+",
+    "drag",
+    "cabaré",
+    "espetáculo"
+   ],
+   "fonte": "https://www.gayout.com/south-america/brazil/florianopolis/bars/franz-cabaret",
+   "confirmar": "Programação variável; confira a agenda no site da casa."
+  },
+  {
+   "id": "bar-opium",
+   "nome": "Bar Opium",
+   "categoria": "festa",
+   "lat": -27.5965,
+   "lng": -48.554,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Bar LGBTQIA+ com shows de humor, drag queens e burlesco; já sediou batalhas de drag.",
+   "tags": [
+    "LGBTQIA+",
+    "drag",
+    "burlesco"
+   ],
+   "fonte": "https://floripa.lgbt/vida-noturna/baladas-lgbt-florianopolis/",
+   "confirmar": "Endereço não confirmado (um guia cita R. Trajano, 341, mas a mesma numeração aparece para outro bar). Confirme local e horários."
+  },
+  {
+   "id": "bar-do-deca",
+   "nome": "Bar do Deca",
+   "categoria": "festa",
+   "lat": -27.6035,
+   "lng": -48.433,
+   "aprox": true,
+   "bairro": "Praia Mole",
+   "descricao": "Bar de praia na Praia Mole, conhecido há décadas como ponto de encontro LGBTQIA+ na temporada de verão.",
+   "tags": [
+    "LGBTQIA+",
+    "praia",
+    "bar"
+   ],
+   "fonte": "https://floripa.lgbt/vida-noturna/baladas-lgbt-florianopolis/",
+   "confirmar": "Funcionamento sazonal; horários não informados na fonte."
+  },
+  {
+   "id": "undr-porao",
+   "nome": "UNDR Porão",
+   "categoria": "festa",
+   "lat": -27.594,
+   "lng": -48.547,
+   "aprox": true,
+   "bairro": "Centro",
+   "endereco": "Alameda Adolfo Konder, 1007 - Florianópolis",
+   "descricao": "Casa de festas de música eletrônica listada entre as baladas LGBT+ da cidade; seus eventos declaram que pessoas LGBTfóbicas, racistas ou machistas não são bem-vindas.",
+   "tags": [
+    "LGBTQIA+",
+    "música eletrônica"
+   ],
+   "fonte": "https://www.sympla.com.br/evento/bagunca/2206463",
+   "confirmar": "Bairro e coordenadas aproximados a partir do endereço do Sympla; datas futuras não encontradas."
+  },
+  {
+   "id": "glitch-liminal",
+   "nome": "Glitch Liminal",
+   "categoria": "festa",
+   "lat": -27.5955,
+   "lng": -48.549,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Festa de música eletrônica no Centro voltada ao público LGBTQIA+, divulgada no Resident Advisor.",
+   "tags": [
+    "LGBTQIA+",
+    "música eletrônica",
+    "festa"
+   ],
+   "fonte": "https://ra.co/events/2054331",
+   "confirmar": "Local exato e próximas datas não encontrados."
+  },
+  {
+   "id": "sapateco-campeche",
+   "nome": "Sapateco",
+   "categoria": "festa",
+   "lat": -27.674,
+   "lng": -48.488,
+   "aprox": true,
+   "bairro": "Campeche",
+   "descricao": "Bar no Campeche indicado pelo Floripa.LGBT entre os espaços LGBTI+ para o Dia do Orgulho de 2025, quando fez karaokê com palco aberto.",
+   "tags": [
+    "LGBTQIA+",
+    "bar",
+    "karaokê"
+   ],
+   "fonte": "https://floripa.lgbt/agenda-de-eventos/baladas-e-festas/veja-onde-comemorar-o-dia-do-orgulho-lgbti-em-florianopolis-em-2025/",
+   "confirmar": "Endereço e programação regular não informados na fonte."
+  },
+  {
+   "id": "adeh",
+   "nome": "ADEH — Associação em Defesa dos Direitos Humanos com Enfoque na Sexualidade",
+   "categoria": "social",
+   "lat": -27.596,
+   "lng": -48.549,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Associação que atende travestis e pessoas trans em Florianópolis desde 2000, com encaminhamentos jurídicos e socioassistenciais, prevenção ao HIV e articulação com o poder público. Coproduz o Festival Transforma de cinema da diversidade.",
+   "tags": [
+    "LGBTQIA+",
+    "pessoas trans",
+    "direitos humanos",
+    "associação"
+   ],
+   "fonte": "https://catarinas.info/florianopolis-lgbt-friendly-para-quem/",
+   "confirmar": "A sede funcionou até 2019 em sala do Governo do Estado no Centro; sede e horários atuais não confirmados. Contate a associação antes de ir."
+  },
+  {
+   "id": "casa-das-feiticeiras",
+   "nome": "Casa das Feiticeiras (ballroom)",
+   "categoria": "festa",
+   "lat": -27.601,
+   "lng": -48.519,
+   "aprox": true,
+   "bairro": "Trindade",
+   "descricao": "Primeira casa de vogue do Sul do Brasil, criada em 2018 por Will Mário e Ednei Brito; parte da cena ballroom da Grande Florianópolis, com Casa das Duras, Casa Índigo e House of Felines, que acolhe sobretudo pessoas trans.",
+   "horario": "Treinos abertos de vogue às segundas (conduzidos por transmasculines) e às terças (Casa das Feiticeiras e Casa Índigo), segundo reportagem",
+   "tags": [
+    "LGBTQIA+",
+    "ballroom",
+    "vogue",
+    "pessoas trans"
+   ],
+   "fonte": "https://catarinas.info/cena-ballroom-de-florianopolis-impulsiona-arte-e-acolhimento-para-pessoas-trans/",
+   "confirmar": "Os treinos no 'Varandão' são citados por reportagem do Zero/UFSC (https://medium.com/zeroufsc/cultura-ballroom-ganha-espa%C3%A7o-na-capital-catarinense-dc9573e8de69), sem data recente; local e dias atuais não confirmados."
+  },
+  {
+   "id": "gozze-ufsc",
+   "nome": "Gozze — Coletivo de Luta pela Diversidade Sexual (UFSC)",
+   "categoria": "social",
+   "lat": -27.6,
+   "lng": -48.5195,
+   "aprox": true,
+   "bairro": "Trindade",
+   "descricao": "Coletivo LGBT da UFSC que atua na articulação social e cultural e promove debates sobre diversidade sexual na universidade.",
+   "tags": [
+    "LGBTQIA+",
+    "universidade",
+    "coletivo"
+   ],
+   "fonte": "https://diversifica.paginas.ufsc.br/files/2021/06/CARTILHA-SOBRE-TROTE.pdf",
+   "confirmar": "Fonte de 2021; atividade atual do coletivo não confirmada."
+  },
+  {
+   "id": "festival-transforma",
+   "nome": "Festival Transforma — Cinema da Diversidade",
+   "categoria": "audiovisual",
+   "lat": -27.5838,
+   "lng": -48.5047,
+   "aprox": true,
+   "bairro": "Itacorubi",
+   "endereco": "CEART/UDESC - Itacorubi, Florianópolis",
+   "descricao": "Festival internacional de cinema LGBTQIAPN+ de Santa Catarina, realizado desde 2018 pela BAPHO Cultural com a ADEH. A 6ª edição (7 a 18 de dezembro de 2024) exibiu mais de 80 filmes no CEART/UDESC, com entrada gratuita.",
+   "instagram": "@transformafest",
+   "site": "https://www.festivaltransforma.com.br",
+   "tags": [
+    "LGBTQIA+",
+    "cinema",
+    "festival"
+   ],
+   "fonte": "https://www.udesc.br/noticia/festival_transforma_recebe_inscricoes_para_apresentacoes_artisticas__exposicoes_e_feiras",
+   "confirmar": "O perfil @transformafest anuncia a 7ª edição em 2026 no CEART/UDESC, mas as datas não foram encontradas."
+  },
+  {
+   "id": "pop-gay-centro",
+   "nome": "Pop Gay — Largo da Alfândega",
+   "categoria": "festa",
+   "lat": -27.597,
+   "lng": -48.552,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Bloco e concurso de drag queens e beauty queens realizado há mais de 30 anos na segunda-feira de Carnaval, no Centro. A edição de 2026 teve show gratuito de Gloria Groove.",
+   "tags": [
+    "LGBTQIA+",
+    "carnaval",
+    "drag",
+    "concurso"
+   ],
+   "fonte": "https://www.nsctotal.com.br/cotidiano/simbolo-de-diversidade-no-carnaval-de-florianopolis-pop-gay-espera-receber-50-mil-folioes-em-2026",
+   "confirmar": "Em 2026 as fontes citam Largo da Alfândega, Arena Central e entorno do Mercado Público; o local exato varia por ano."
+  },
+  {
+   "id": "conselho-boi-mamao",
+   "nome": "Conselho de Boi de Mamão de Florianópolis",
+   "categoria": "popular",
+   "lat": -27.508,
+   "lng": -48.5185,
+   "aprox": true,
+   "bairro": "Santo Antônio de Lisboa (sede estatutária)",
+   "descricao": "Associação criada em 2018 para promover, organizar e difundir o Boi de Mamão em Florianópolis, reunindo os grupos da brincadeira na cidade. Em 2021 organizou uma apresentação transmitida ao vivo com representantes de todos os bois de Florianópolis.",
+   "instagram": "@conselhoboimamaoflorianopolis",
+   "tags": [
+    "boi de mamão",
+    "cultura açoriana",
+    "folclore"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=2674290",
+   "confirmar": "Fonte de 2021; a lista atual de grupos e a agenda não foram verificadas."
+  },
+  {
+   "id": "alivanta-meu-boi",
+   "nome": "Grupo de Boi de Mamão Alivanta Meu Boi",
+   "categoria": "popular",
+   "lat": -27.436,
+   "lng": -48.395,
+   "aprox": true,
+   "bairro": "Ingleses do Rio Vermelho",
+   "descricao": "Grupo de Boi de Mamão do bairro Ingleses, formado por cerca de 15 crianças da comunidade, de 5 a 14 anos. Existe desde 1995 e recebeu em 2000 o prêmio Amigo do Turismo do governo estadual.",
+   "tags": [
+    "boi de mamão",
+    "infância",
+    "folclore"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=6179174",
+   "confirmar": "Fonte sem data recente; confirme se o grupo segue ativo e onde se apresenta."
+  },
+  {
+   "id": "engenhos-sertao-ribeirao",
+   "nome": "Engenhos de farinha do Sertão do Ribeirão",
+   "categoria": "popular",
+   "lat": -27.724,
+   "lng": -48.542,
+   "aprox": true,
+   "bairro": "Sertão do Ribeirão (Sertão do Peri)",
+   "descricao": "Comunidade rural entre o Ribeirão da Ilha e o Pântano do Sul onde a tradição dos engenhos de farinha de mandioca segue viva, como no engenho do Maurici, em que a farinha ainda é feita de forma artesanal. Os engenhos de farinha foram declarados patrimônio cultural imaterial de Santa Catarina em 2024.",
+   "tags": [
+    "engenho de farinha",
+    "farinhada",
+    "cultura açoriana",
+    "patrimônio imaterial"
+   ],
+   "fonte": "https://www.gov.br/iphan/pt-br/centrais-de-conteudo/publicacoes/revista-do-patrimonio/41a-revista-do-patrimonio/rp41_12_ensaio-visual_artur-rosa.pdf/@@display-file/file",
+   "confirmar": "Não há calendário público de farinhadas ou visitas; combine antes com a comunidade."
+  },
+  {
+   "id": "engenho-andrade",
+   "nome": "Casarão Engenho dos Andrade",
+   "categoria": "popular",
+   "lat": -27.506,
+   "lng": -48.517,
+   "aprox": true,
+   "bairro": "Santo Antônio de Lisboa",
+   "descricao": "Casarão rústico de estilo açoriano datado de 1860, preservado pela própria família, que guarda equipamentos de fabricação de farinha de mandioca, açúcar mascavo e aguardente de cana. Fica no caminho da Rua Caminho dos Açores.",
+   "horario": "Visita com autorização",
+   "tags": [
+    "engenho de farinha",
+    "cultura açoriana",
+    "patrimônio"
+   ],
+   "fonte": "https://quantocustaviajar.com/blog/santo-antonio-de-lisboa/",
+   "confirmar": "Fonte de blog de viagem; o local pode estar fechado e a entrada depende de autorização da família."
+  },
+  {
+   "id": "engenho-costa-lagoa",
+   "nome": "Antigo Engenho de Farinha da Costa da Lagoa",
+   "categoria": "popular",
+   "lat": -27.556,
+   "lng": -48.482,
+   "aprox": true,
+   "bairro": "Costa da Lagoa",
+   "descricao": "Engenho tradicional que preserva o método antigo de produção de farinha de mandioca, no percurso a pé pela Costa da Lagoa, comunidade acessível por trilha ou barco.",
+   "tags": [
+    "engenho de farinha",
+    "trilha",
+    "cultura açoriana"
+   ],
+   "fonte": "https://www.civitatis.com/pt/florianopolis/trilha-costa-lagoa-passeio-barco/",
+   "confirmar": "Fonte de roteiro turístico; confirme se o engenho está aberto e se ainda produz farinha."
+  },
+  {
+   "id": "rendeiras-sambaqui",
+   "nome": "Associação do Bairro de Sambaqui · renda de bilro",
+   "categoria": "popular",
+   "lat": -27.489,
+   "lng": -48.528,
+   "aprox": true,
+   "bairro": "Sambaqui",
+   "endereco": "Rodovia Rafael da Rocha Pires, 2990",
+   "descricao": "Associação de bairro que mantém aulas de renda de bilro ministradas por rendeiras do Sambaqui, abertas a aprendizes de várias idades, além de um curso de bordado tradicional.",
+   "horario": "Aulas de renda de bilro de terça a sábado, a partir das 14h (relatório de 2025)",
+   "tags": [
+    "renda de bilro",
+    "rendeiras",
+    "cultura açoriana",
+    "oficina"
+   ],
+   "fonte": "https://portalelegis.alesc.sc.gov.br/documentos/paqL6",
+   "confirmar": "Horário tirado do relatório de atividades de 2025; confirme com a associação."
+  },
+  {
+   "id": "maracatu-arrasta-ilha",
+   "nome": "Maracatu Arrasta Ilha",
+   "categoria": "samba",
+   "lat": -27.596,
+   "lng": -48.549,
+   "aprox": true,
+   "bairro": "Florianópolis",
+   "descricao": "Grupo de maracatu de baque virado com mais de duas décadas de atuação em Florianópolis, com trabalho de formação, pesquisa, cortejo, percussão, dança e intercâmbio com nações de Pernambuco. Abriu o ARVO Festival 2026 ao lado da Rainha Marivalda, do Maracatu Nação Estrela Brilhante do Recife.",
+   "tags": [
+    "maracatu",
+    "baque virado",
+    "cultura afro-brasileira",
+    "percussão"
+   ],
+   "fonte": "https://billboard.com.br/arvo-2026-arrasta-ilha-rainha-marivalda/",
+   "confirmar": "A fonte não informa local de ensaio nem sede; posição no mapa é apenas indicativa."
+  },
+  {
+   "id": "tekoa-itanhaem",
+   "nome": "Tekoá Itanhaém · Aldeia Morro da Palha",
+   "categoria": "social",
+   "lat": -27.43,
+   "lng": -48.71,
+   "aprox": true,
+   "bairro": "Timbé, Biguaçu",
+   "descricao": "Terra Guarani de 216 hectares no interior de Biguaçu, na Estrada Geral do Timbé Norte, adquirida em programa de compensação da duplicação da BR-101. As famílias vivem principalmente da agricultura. Visitas são decididas pela comunidade.",
+   "tags": [
+    "guarani",
+    "território indígena",
+    "agricultura"
+   ],
+   "fonte": "https://repositorio.ufsc.br/handle/123456789/201177",
+   "confirmar": "Não é local de visitação aberta; qualquer visita depende de autorização da comunidade."
+  },
+  {
+   "id": "ti-massiambu",
+   "nome": "Terra Indígena Massiambu · Pira Rupa",
+   "categoria": "social",
+   "lat": -27.85,
+   "lng": -48.61,
+   "aprox": true,
+   "bairro": "Baixada do Massiambu, Palhoça",
+   "descricao": "Terra Guarani Mbya na Baixada do Massiambu, vizinha de Morro dos Cavalos, com escola indígena Kaa Kupé. Em decisão judicial, a Justiça Federal invalidou trecho do Plano Diretor de Palhoça sobreposto à terra por falta de consulta às comunidades. Visitas são decididas pela comunidade.",
+   "tags": [
+    "guarani",
+    "território indígena",
+    "demarcação"
+   ],
+   "fonte": "https://www.lex.com.br/justica-federal-invalida-macrozona-turistica-sobreposta-a-terras-indigenas-em-palhoca/",
+   "confirmar": "Não é local de visitação aberta; qualquer visita depende de autorização da comunidade."
+  },
+  {
+   "id": "ti-cambirela",
+   "nome": "Terra Indígena Cambirela",
+   "categoria": "social",
+   "lat": -27.74,
+   "lng": -48.66,
+   "aprox": true,
+   "bairro": "Palhoça",
+   "descricao": "Terra ocupada por Guarani Mbya em Palhoça, ainda em fase de estudos para demarcação, junto com Massiambu e Ygua Porã (Biguaçu). Visitas são decididas pela comunidade.",
+   "tags": [
+    "guarani",
+    "território indígena",
+    "demarcação"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=2462339",
+   "confirmar": "Localização aproximada e fonte sem data recente; visitas dependem de autorização da comunidade."
+  },
+  {
+   "id": "pesca-pantano-sul",
+   "nome": "Pântano do Sul · pesca artesanal",
+   "categoria": "popular",
+   "lat": -27.781,
+   "lng": -48.509,
+   "aprox": true,
+   "bairro": "Pântano do Sul",
+   "descricao": "Comunidade de pesca artesanal no sul da Ilha, praticada há gerações. Na safra da tainha de 2024 a praia liderou o ranking de capturas em Florianópolis, com mais de 7 mil tainhas registradas até a parcial divulgada.",
+   "tags": [
+    "pesca artesanal",
+    "tainha",
+    "ranchos de pesca",
+    "cultura açoriana"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=7163108"
+  },
+  {
+   "id": "senhor-dos-passos",
+   "nome": "Irmandade do Senhor dos Passos · Capela Menino Deus",
+   "categoria": "popular",
+   "lat": -27.5925,
+   "lng": -48.5535,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Irmandade ligada ao Imperial Hospital de Caridade que organiza a Procissão do Senhor Jesus dos Passos, realizada desde 1766, quinze dias antes da Páscoa, com encerramento na Capela Menino Deus.",
+   "tags": [
+    "procissão",
+    "festa religiosa",
+    "patrimônio"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=6800467"
+  },
+  {
+   "id": "feira-jardim-botanico",
+   "nome": "Feira agroecológica do Jardim Botânico",
+   "categoria": "social",
+   "lat": -27.586,
+   "lng": -48.51,
+   "aprox": true,
+   "bairro": "Itacorubi",
+   "descricao": "Feira de produtos orgânicos aos sábados no Jardim Botânico de Florianópolis, com o grupo Flor do Fruto Agroecologia.",
+   "horario": "Sábados, 13h às 17h (2023)",
+   "tags": [
+    "agroecologia",
+    "orgânicos",
+    "feira"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=6768099",
+   "confirmar": "Fonte de março de 2023; confirme se a feira continua e o horário atual."
+  },
+  {
+   "id": "batalha-central",
+   "nome": "Batalha da Central",
+   "categoria": "rap",
+   "lat": -27.671,
+   "lng": -48.486,
+   "aprox": true,
+   "bairro": "Campeche",
+   "endereco": "Avenida Pequeno Príncipe, 2134 · Campeche",
+   "descricao": "Batalha de rima semanal no Campeche, uma das mais antigas do sul da Ilha. Aparece no circuito de batalhas de Florianópolis ligado ao Duelo Estadual de MCs de 2026.",
+   "horario": "Terças, 20h (confirme antes de ir)",
+   "instagram": "@batalhadacentral",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "sul da Ilha"
+   ],
+   "fonte": "https://www.instagram.com/batalhadacentral/",
+   "confirmar": "Dia, horário e endereço vêm da descrição do perfil no Instagram; data da última atualização não verificada."
+  },
+  {
+   "id": "batalha-trinda",
+   "nome": "Batalha da Trinda",
+   "categoria": "rap",
+   "lat": -27.588,
+   "lng": -48.525,
+   "aprox": true,
+   "bairro": "Trindade",
+   "endereco": "Junto à pista de skate Trinda Time's, Praça Jornalista Gustavo de Lacerda",
+   "descricao": "Batalha de MCs realizada perto do bar e da pista de skate Trinda Time's, fundada por Digobeatz. Ligada ao Setorial de Hip Hop do Conselho Municipal de Cultura de Florianópolis.",
+   "horario": "Domingos, à noite (confirme antes de ir)",
+   "instagram": "@batalhadatrinda",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "skate"
+   ],
+   "fonte": "https://observafloripa.com.br/entry/1963?def=1",
+   "confirmar": "Fontes divergem sobre o horário (19h ou 20h); data de atualização da ficha não informada."
+  },
+  {
+   "id": "batalha-armacao",
+   "nome": "Batalha da Armação",
+   "categoria": "rap",
+   "lat": -27.7495,
+   "lng": -48.5065,
+   "aprox": true,
+   "bairro": "Armação do Pântano do Sul",
+   "descricao": "Batalha de rima do sul da Ilha, citada entre as batalhas semanais de Florianópolis e no circuito local do Duelo Estadual de MCs de 2026.",
+   "horario": "Sextas, 20h (confirme antes de ir)",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "sul da Ilha"
+   ],
+   "fonte": "https://medium.com/tudix/podcast-fala-memo-b3c552dc3496",
+   "confirmar": "Dia e horário vêm de fonte anterior a 2025; local exato não informado."
+  },
+  {
+   "id": "batalha-santinho",
+   "nome": "Batalha do Santinho",
+   "categoria": "rap",
+   "lat": -27.463,
+   "lng": -48.3795,
+   "aprox": true,
+   "bairro": "Santinho",
+   "descricao": "Batalha de rima do norte da Ilha, listada entre as batalhas que compõem o circuito de Florianópolis no Duelo Estadual de MCs de 2026.",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "norte da Ilha"
+   ],
+   "fonte": "https://barracorap.com.br/noticia/rimadores-de-santa-catarina-e-o-caminho-rumo-ao-duelo-nacional-de-mcs",
+   "confirmar": "Local exato e horário não informados; artigo antigo do Estopim Coletivo indicava segundas-feiras."
+  },
+  {
+   "id": "batalha-lagoa",
+   "nome": "Batalha da Lagoa",
+   "categoria": "rap",
+   "lat": -27.604,
+   "lng": -48.468,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Batalha de rima listada entre as que compõem o circuito de Florianópolis no Duelo Estadual de MCs de 2026, ao lado de Central, Armação, Trinda, Alfândega e Santinho.",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "freestyle",
+    "Lagoa"
+   ],
+   "fonte": "https://barracorap.com.br/noticia/rimadores-de-santa-catarina-e-o-caminho-rumo-ao-duelo-nacional-de-mcs",
+   "confirmar": "A fonte só cita o nome; local exato, dia e horário não informados (supõe-se Lagoa da Conceição)."
+  },
+  {
+   "id": "batalha-das-mina",
+   "nome": "Batalha das Mina",
+   "categoria": "rap",
+   "lat": -27.5968,
+   "lng": -48.5525,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Batalha de rima só de mulheres MCs, criada em Florianópolis em 2016: a mestre de cerimônias pede um tema à plateia e duas MCs rimam sobre ele. Tema de dissertação na UFSC sobre o rap como território de lutas.",
+   "horario": "Sábados, 17h30 (dado de 2016)",
+   "tags": [
+    "batalha de rima",
+    "hip-hop",
+    "mulheres no rap"
+   ],
+   "fonte": "https://cotidiano.sites.ufsc.br/batalha-das-minas-abre-espaco-para-mulheres-rappers-em-florianopolis/",
+   "confirmar": "Fonte de 2016 (Terminal Antigo do Centro); depois o coletivo mudou de local. Verifique se continua ativa."
+  },
+  {
+   "id": "hip-hop-de-raiz",
+   "nome": "Hip Hop de Raiz · Bar DeRaiz",
+   "categoria": "rap",
+   "lat": -27.602,
+   "lng": -48.47,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Festa de hip-hop de longa duração, com DJ Glazer como residente, que dá espaço aos quatro elementos do hip-hop e recebe shows de rap nacionais e locais. Também saiu como bloco de carnaval.",
+   "site": "https://www.facebook.com/hiphopderaiz/",
+   "tags": [
+    "festa",
+    "rap",
+    "DJ",
+    "shows"
+   ],
+   "fonte": "https://www.bocadaforte.com.br/agenda/festa-hip-hop-de-raiz-faz-edicao-especial-dedicada-ao-rap-de-floripa",
+   "confirmar": "Dia (quintas) e local vêm de fontes de 2020 a 2022; endereço do bar não informado."
+  },
+  {
+   "id": "coletivo-gruve-se",
+   "nome": "Coletivo Gruve-se",
+   "categoria": "rap",
+   "lat": -27.5885,
+   "lng": -48.531,
+   "aprox": true,
+   "bairro": "Morro da Penitenciária · Trindade",
+   "endereco": "Final da Rua Nova (referência: R. João da Cruz Meira, 224)",
+   "descricao": "Coletivo de danças urbanas do Morro da Penitenciária, coordenado por Duda Movimenta, que promove oficinas gratuitas e a Batalha Gruve-se, em formato open style (4ª edição em agosto de 2026). Projeto contemplado pelo Prêmio Elisabete Anderle 2025.",
+   "tags": [
+    "breaking",
+    "danças urbanas",
+    "batalha de dança",
+    "oficinas"
+   ],
+   "fonte": "https://ndmais.com.br/cultura/comunidade-de-florianopolis-recebe-oficinas-gratuitas-de-danca-e-batalha-de-hip-hop/",
+   "confirmar": "Não há próximas datas divulgadas; acompanhe o coletivo."
+  },
+  {
+   "id": "slam-estrela-dalva",
+   "nome": "Slam Estrela D'Alva",
+   "categoria": "literatura",
+   "lat": -27.6015,
+   "lng": -48.5205,
+   "aprox": true,
+   "bairro": "Trindade (UFSC)",
+   "descricao": "Competição de poesia falada de tema livre organizada pelo PET Letras da UFSC desde 2022, com edições geralmente mensais. Integra o circuito estadual de slams.",
+   "instagram": "@slamestreladalva",
+   "site": "https://petletras.paginas.ufsc.br/pet-eventos/slam-estrela-dalva/",
+   "tags": [
+    "slam",
+    "poesia falada",
+    "UFSC"
+   ],
+   "fonte": "https://noticias.ufsc.br/2023/08/slam-estrela-dalva-promove-edicao-especial-de-poesia-falada/",
+   "confirmar": "Fontes mais recentes são de 2023; datas das próximas edições não informadas."
+  },
+  {
+   "id": "slam-cruz-e-sousa",
+   "nome": "Slam Cruz e Sousa",
+   "categoria": "literatura",
+   "lat": -27.5995,
+   "lng": -48.518,
+   "aprox": true,
+   "bairro": "Florianópolis",
+   "descricao": "Batalha de poesia falada que acontece em Florianópolis desde o início de 2022, voltada à realidade da população negra e periférica. Leva o nome do poeta Cruz e Sousa, nascido em Desterro.",
+   "instagram": "@slamcruzesousa",
+   "tags": [
+    "slam",
+    "poesia falada",
+    "cultura negra"
+   ],
+   "fonte": "https://novembronegro.ufsc.br/event/oficina-de-slam-slam-cruz-e-sousa/",
+   "confirmar": "A fonte (2023) não informa onde ocorrem as edições regulares; ponto marcado na UFSC, onde o coletivo deu oficina."
+  },
+  {
+   "id": "murais-street-art-tour",
+   "nome": "Murais do Festival Street Art Tour",
+   "categoria": "arte",
+   "lat": -27.596,
+   "lng": -48.549,
+   "aprox": true,
+   "bairro": "Centro Histórico e outros bairros",
+   "descricao": "A 3ª edição do Festival Street Art Tour (setembro de 2026) deixou mais de 20 novos murais de arte de rua na cidade, no Centro, Largo da Alfândega, Estreito, Córrego Grande e UFSC, com artistas de Santa Catarina, de outros estados e de países lusófonos.",
+   "tags": [
+    "grafite",
+    "muralismo",
+    "arte urbana"
+   ],
+   "fonte": "https://floripamanha.org/2026/09/festival-street-art-tour-entrega-mais-de-20-novos-murais-de-arte-de-rua-em-florianopolis/",
+   "confirmar": "Murais espalhados por vários bairros; ponto marca o Centro Histórico."
+  },
+  {
+   "id": "protegidos-da-princesa",
+   "nome": "Os Protegidos da Princesa · escola de samba",
+   "categoria": "samba",
+   "lat": -27.588,
+   "lng": -48.507,
+   "aprox": true,
+   "bairro": "Itacorubi",
+   "endereco": "Rua Coronel Luiz Caldeira, s/n, Itacorubi",
+   "descricao": "Escola de samba fundada em 18 de outubro de 1948, ligada às origens no Morro do Mocotó; o nome homenageia a princesa Isabel. É uma das escolas mais vezes campeãs do Carnaval de Florianópolis e desfila no Carnaval 2027.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "cultura negra"
+   ],
+   "fonte": "https://portalelegis.alesc.sc.gov.br/documentos/NpX96",
+   "confirmar": "Endereço vem do cadastro da escola em documento de 2024; a sede de ensaios pode ser outra. Confirme datas de ensaio nas redes da escola."
+  },
+  {
+   "id": "embaixada-copa-lord",
+   "nome": "Embaixada Copa Lord · escola de samba",
+   "categoria": "samba",
+   "lat": -27.5905,
+   "lng": -48.542,
+   "aprox": true,
+   "bairro": "Monte Serrat (Maciço do Morro da Cruz)",
+   "descricao": "Sociedade Recreativa Cultural e Samba Embaixada Copa Lord, fundada em 1955 e nascida na comunidade de Nossa Senhora do Mont Serrat, no Morro da Cruz. Um de seus fundadores, Nego Quirido, dá nome à passarela do samba da cidade.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Maciço do Morro da Cruz"
+   ],
+   "fonte": "https://anppom.org.br/anais/anaiscongresso_anppom_2007/etnomusicologia/etnom_ADSilva.pdf",
+   "confirmar": "Localização pela comunidade de origem, não pelo endereço da quadra. Confirme local e datas de ensaio nas redes da escola."
   }
  ],
  "eventos": [
@@ -1464,6 +2621,405 @@
    "descricao": "25 de novembro é o Dia Internacional pela Eliminação da Violência contra as Mulheres. Em anos anteriores, o movimento feminista 8M SC fez ato em frente ao TICEN a partir do meio-dia e marcha às 18h, com orientação jurídica. Em 2026, Santa Catarina já registrou mais de 9,5 mil casos de violência contra a mulher até setembro.",
    "fonte": "https://catarinas.info/21-dias-pelo-fim-da-violencia-as-mulheres-mobiliza-florianopolis/",
    "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores; confira com o 8M SC."
+  },
+  {
+   "id": "kazabaka-desejo-espartilho-1",
+   "ponto_id": "kazabaka",
+   "titulo": "O Desejo é um Espartilho que Aperta · KazaBaka Cia. de Teatro",
+   "categoria": "teatro",
+   "data": "2026-10-23",
+   "inicio": "20:00",
+   "repete": "nao",
+   "descricao": "Espetáculo da KazaBaka Cia. de Teatro em sua sede, a Kaza das Artes, no Estreito.",
+   "fonte": "https://acontecendoaqui.com.br/colunas/de-floripa-que-horror-a-circuito-mundial-rock-na-agenda-da-semana/",
+   "confirmar": "Valor do ingresso não informado na fonte."
+  },
+  {
+   "id": "kazabaka-desejo-espartilho-2",
+   "ponto_id": "kazabaka",
+   "titulo": "O Desejo é um Espartilho que Aperta · KazaBaka Cia. de Teatro",
+   "categoria": "teatro",
+   "data": "2026-10-24",
+   "inicio": "19:30",
+   "repete": "nao",
+   "descricao": "Segunda apresentação do espetáculo da KazaBaka Cia. de Teatro na Kaza das Artes, no Estreito.",
+   "fonte": "https://acontecendoaqui.com.br/colunas/de-floripa-que-horror-a-circuito-mundial-rock-na-agenda-da-semana/",
+   "confirmar": "Valor do ingresso não informado na fonte."
+  },
+  {
+   "id": "danca-em-transito-2026",
+   "ponto_id": "ufsc",
+   "titulo": "Dança em Trânsito 2026 · apresentações no Teatro Carmen Fossari",
+   "categoria": "teatro",
+   "data": "2026-10-23",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Duas apresentações de dança do projeto Dança em Trânsito no Teatro Carmen Fossari (Igrejinha da UFSC), além de atividade formativa na Cenarium Escola de Dança.",
+   "fonte": "https://floripa.com/eventos/danca-em-transito-2026/",
+   "confirmar": "Horários das apresentações não informados na fonte."
+  },
+  {
+   "id": "aulas-capoeira-udesc-cefid",
+   "ponto_id": "capoeira-udesc-cefid-ubuntu",
+   "titulo": "Aulas gratuitas de capoeira angola · Udesc Cefid",
+   "categoria": "capoeira",
+   "data": "2026-10-23",
+   "inicio": "12:30",
+   "fim": "13:30",
+   "repete": "dias_semana",
+   "dias_semana": [
+    1,
+    3,
+    5
+   ],
+   "preco": "Grátis",
+   "descricao": "Aulas do projeto Ubuntu Capoeirar, a partir de 12 anos, sem experiência prévia. Segundas e quartas na Sala de Artes Marciais; sextas no Ginásio 2.",
+   "fonte": "https://agorafloripa.com.br/em-florianopolis-aulas-gratuitas-de-capoeira-estao-abertas-para-pessoas-a-partir-dos-12-anos",
+   "confirmar": "Segue o calendário acadêmico da Udesc; confirme se há aula em feriados e no recesso de fim de ano."
+  },
+  {
+   "id": "aulas-capoeira-amora-ratones",
+   "ponto_id": "capoeira-palmares-amora-ratones",
+   "titulo": "Aulas gratuitas de capoeira angola · Ratones",
+   "categoria": "capoeira",
+   "data": "2026-10-27",
+   "inicio": "18:30",
+   "repete": "dias_semana",
+   "dias_semana": [
+    2,
+    4
+   ],
+   "preco": "Grátis",
+   "descricao": "Turma de adultos às 18h30; a turma de crianças começa às 17h30. Na sede da Amora, Estrada Intendente Antônio Damasco, 3790.",
+   "fonte": "https://www.udesc.br/cead/noticia/udesc_cefid_tem_vagas_para_aulas_de_capoeira_em_dois_bairros_de_florianopolis",
+   "confirmar": "Horário divulgado em 2024; confirme com o grupo antes de ir."
+  },
+  {
+   "id": "aulas-capoeira-ifsc-continente",
+   "ponto_id": "capoeira-ifsc-continente",
+   "titulo": "Capoeira e danças populares com Mestra Jô · IFSC Continente",
+   "categoria": "capoeira",
+   "data": "2026-10-29",
+   "inicio": "18:15",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Aulas abertas à comunidade, sem inscrição prévia, conduzidas pela Mestra Jô Capoeira (Grupo Capoeira Angola Palmares).",
+   "fonte": "https://www.ifsc.edu.br/web/noticias/w/campus-florianopolis-continente-oferece-aulas-gratuitas-de-capoeira-e-dancas-populares",
+   "confirmar": "Horário divulgado em maio de 2026; confirme se segue no segundo semestre e no recesso de fim de ano."
+  },
+  {
+   "id": "roda-mensal-capoeira-biguacu",
+   "ponto_id": "capoeira-na-escola-biguacu",
+   "titulo": "Roda mensal do Projeto Capoeira na Escola",
+   "categoria": "capoeira",
+   "data": "2026-11-07",
+   "inicio": "16:00",
+   "repete": "mensal_semana",
+   "preco": "Grátis",
+   "descricao": "Roda aberta na Praça Central de Biguaçu; com chuva, passa para o Centro Cultural Casarão Born, na mesma praça.",
+   "fonte": "http://www.capoeiranaescola.org.br/2024/05/",
+   "confirmar": "Padrão (1º sábado, 16h) visto em anúncios de 2023 e 2024, com mudanças eventuais de data; confirme com o projeto."
+  },
+  {
+   "id": "pop-gay-2027",
+   "ponto_id": "pop-gay-centro",
+   "titulo": "Pop Gay 2027 — concurso de drag queens e beauty queens",
+   "categoria": "festa",
+   "data": "2027-02-08",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Bloco e concurso tradicional de drag queens e beauty queens da segunda-feira de Carnaval, no Centro. A programação anunciada para 2027 traz show de Luísa Sonza na Arena Central.",
+   "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
+   "confirmar": "Horário e local exato na Arena Central ainda não divulgados."
+  },
+  {
+   "id": "navegantes-2027",
+   "ponto_id": "centrinho-lagoa",
+   "titulo": "Procissão marítima de Nossa Senhora dos Navegantes",
+   "categoria": "popular",
+   "data": "2027-01-31",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Procissão de barcos em homenagem a Nossa Senhora dos Navegantes, com saídas em vários pontos do litoral, como Lagoa da Conceição e Praia dos Ingleses. Em 2026 reuniu centenas de embarcações.",
+   "fonte": "https://portaldeperiodicos.marinha.mil.br/index.php/mardosul/article/download/8681/7997",
+   "confirmar": "Data de 2027 não divulgada; em 2026 foi no domingo 1º/2 e em 2025 no dia 2/2. Data indicada é estimativa (domingo antes de 2/2)."
+  },
+  {
+   "id": "senhor-passos-2027",
+   "ponto_id": "senhor-dos-passos",
+   "titulo": "Procissão do Senhor Jesus dos Passos",
+   "categoria": "popular",
+   "data": "2027-03-13",
+   "repete": "diaria",
+   "repete_ate": "2027-03-14",
+   "preco": "Grátis",
+   "descricao": "Procissão realizada desde 1766 pelas ruas do Centro, quinze dias antes da Páscoa, uma das mais antigas tradições religiosas da cidade.",
+   "fonte": "https://www.nsctotal.com.br/?p=6800467",
+   "confirmar": "Data estimada pela regra dos 15 dias antes da Páscoa (28/3/2027); programação oficial ainda não divulgada."
+  },
+  {
+   "id": "bilro-sambaqui",
+   "ponto_id": "rendeiras-sambaqui",
+   "titulo": "Aulas de renda de bilro com rendeiras do Sambaqui",
+   "categoria": "popular",
+   "data": "2026-10-27",
+   "inicio": "14:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "repete_ate": "2027-03-31",
+   "descricao": "Aulas de renda de bilro ministradas por rendeiras do bairro na sede da associação, abertas a aprendizes de várias idades.",
+   "fonte": "https://portalelegis.alesc.sc.gov.br/documentos/paqL6",
+   "confirmar": "Horário do relatório de 2025; confirme dias, vagas e eventual custo com a associação."
+  },
+  {
+   "id": "feira-jb-sabado",
+   "ponto_id": "feira-jardim-botanico",
+   "titulo": "Feira de orgânicos no Jardim Botânico",
+   "categoria": "social",
+   "data": "2026-10-24",
+   "inicio": "13:00",
+   "fim": "17:00",
+   "repete": "semanal",
+   "repete_ate": "2027-03-31",
+   "preco": "Grátis",
+   "descricao": "Feira de produtos orgânicos e agroecológicos aos sábados no Jardim Botânico de Florianópolis.",
+   "fonte": "https://www.nsctotal.com.br/?p=6768099",
+   "confirmar": "Fonte de 2023; confirme se a feira segue ativa antes de ir."
+  },
+  {
+   "id": "batalha-central-semanal",
+   "ponto_id": "batalha-central",
+   "titulo": "Batalha da Central",
+   "categoria": "rap",
+   "data": "2026-10-27",
+   "inicio": "20:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Batalha de rima semanal no Campeche.",
+   "fonte": "https://www.instagram.com/batalhadacentral/",
+   "confirmar": "Horário da descrição do perfil no Instagram; confirme antes de ir. Gratuidade não informada pela fonte."
+  },
+  {
+   "id": "batalha-trinda-semanal",
+   "ponto_id": "batalha-trinda",
+   "titulo": "Batalha da Trinda",
+   "categoria": "rap",
+   "data": "2026-10-25",
+   "inicio": "19:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Batalha de MCs aos domingos junto à pista de skate Trinda Time's.",
+   "fonte": "https://observafloripa.com.br/entry/1963?def=1",
+   "confirmar": "Fontes divergem entre 19h e 20h. Gratuidade não informada pela fonte."
+  },
+  {
+   "id": "batalha-armacao-semanal",
+   "ponto_id": "batalha-armacao",
+   "titulo": "Batalha da Armação",
+   "categoria": "rap",
+   "data": "2026-10-23",
+   "inicio": "20:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Batalha de rima semanal no sul da Ilha.",
+   "fonte": "https://medium.com/tudix/podcast-fala-memo-b3c552dc3496",
+   "confirmar": "Dia e horário de fonte anterior a 2025; local exato não informado."
+  },
+  {
+   "id": "hip-hop-de-raiz-quinta",
+   "ponto_id": "hip-hop-de-raiz",
+   "titulo": "Festa Hip Hop de Raiz",
+   "categoria": "rap",
+   "data": "2026-10-29",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Festa de hip-hop com DJ residente e shows de rap, no Bar DeRaiz.",
+   "fonte": "https://www.bocadaforte.com.br/agenda/festa-hip-hop-de-raiz-faz-edicao-especial-dedicada-ao-rap-de-floripa",
+   "confirmar": "Periodicidade semanal às quintas vem de fontes de 2020 a 2022; confira a programação da festa."
+  },
+  {
+   "id": "choro-mulheril-sabados",
+   "ponto_id": "bugio-centro",
+   "titulo": "Roda de Choro Mulheril",
+   "categoria": "samba",
+   "data": "2026-10-24",
+   "inicio": "14:00",
+   "fim": "16:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Roda de choro formada por mulheres instrumentistas, na rua, em frente ao Bugio Centro (Rua Victor Meirelles, 112). Aberta ao público. Instagram do grupo: @rodadechoromulheril.",
+   "fonte": "https://jornaltrindade.com.br/festival-choro-mulheril-abre-inscricoes/",
+   "confirmar": "Reportagens mais antigas indicam início às 13h. Confirme o horário no Instagram do grupo."
+  },
+  {
+   "id": "volta-praca-2027-1",
+   "ponto_id": "praca-xv",
+   "titulo": "Volta à Praça · Nação Guarany e Unidos da Coloninha",
+   "categoria": "samba",
+   "data": "2027-01-05",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Primeira noite do Volta à Praça, que leva as escolas de samba ao Centro antes do Carnaval 2027. Duas apresentações, às 20h e às 22h.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "As reportagens divergem em alguns detalhes do calendário. Confirme com a LIESF."
+  },
+  {
+   "id": "volta-praca-2027-2",
+   "ponto_id": "praca-xv",
+   "titulo": "Volta à Praça · Dascuia e União da Ilha da Magia",
+   "categoria": "samba",
+   "data": "2027-01-06",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Segunda noite do Volta à Praça, com as escolas de samba apresentando-se no Centro antes do Carnaval 2027. Duas apresentações, às 20h e às 22h.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "As reportagens divergem em alguns detalhes do calendário. Confirme com a LIESF."
+  },
+  {
+   "id": "volta-praca-2027-3",
+   "ponto_id": "praca-xv",
+   "titulo": "Volta à Praça · Jardim das Palmeiras e Império Vermelho e Branco",
+   "categoria": "samba",
+   "data": "2027-01-07",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Terceira noite do Volta à Praça, com as escolas de samba apresentando-se no Centro antes do Carnaval 2027. Duas apresentações, às 20h e às 22h.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "As reportagens divergem em alguns detalhes do calendário. Confirme com a LIESF."
+  },
+  {
+   "id": "volta-praca-2027-4",
+   "ponto_id": "praca-xv",
+   "titulo": "Volta à Praça · Os Protegidos da Princesa e Embaixada Copa Lord",
+   "categoria": "samba",
+   "data": "2027-01-08",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Quarta noite do Volta à Praça, com as escolas de samba apresentando-se no Centro antes do Carnaval 2027. Duas apresentações, às 20h e às 22h.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "As reportagens divergem em alguns detalhes do calendário. Confirme com a LIESF."
+  },
+  {
+   "id": "volta-praca-2027-5",
+   "ponto_id": "praca-xv",
+   "titulo": "Volta à Praça · Acadêmicos do Sul da Ilha e Consulado",
+   "categoria": "samba",
+   "data": "2027-01-09",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Última noite do Volta à Praça, com as escolas de samba apresentando-se no Centro antes do Carnaval 2027. Duas apresentações, às 20h e às 22h.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "As reportagens divergem em alguns detalhes do calendário. Confirme com a LIESF."
+  },
+  {
+   "id": "ensaios-tecnicos-2027",
+   "ponto_id": "passarela-nego-quirido",
+   "titulo": "Ensaios técnicos das escolas de samba (Carnaval 2027)",
+   "categoria": "samba",
+   "data": "2027-01-16",
+   "repete": "semanal",
+   "repete_ate": "2027-01-30",
+   "descricao": "Ensaios técnicos das escolas de samba na Passarela Nego Quirido, nos sábados 16, 23 e 30 de janeiro de 2027, como preparação para os desfiles.",
+   "fonte": "https://upiara.com.br/colunistas/pontecultural/carnaval-2027-ja-tem-calendario-definido-confira-os-proximos-passos-das-escolas-de-samba-de-florianopolis/",
+   "confirmar": "Horários, ordem das escolas e entrada ainda não divulgados. Confirme com a LIESF."
+  },
+  {
+   "id": "berbigao-boca-2027",
+   "ponto_id": "largo-alfandega",
+   "titulo": "Berbigão do Boca · abertura do Carnaval 2027",
+   "categoria": "samba",
+   "data": "2027-01-29",
+   "inicio": "12:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Abertura oficial do Carnaval de Florianópolis com o Berbigão do Boca, bloco criado em 1992 e reconhecido como patrimônio cultural imaterial da cidade. Concentração no Largo da Alfândega.",
+   "fonte": "https://www.nsctotal.com.br/cotidiano/carnaval-2027-em-florianopolis-tera-luisa-sonza-kevin-o-chris-e-shows-gratuitos",
+   "confirmar": "Programação do Carnaval 2027 anunciada com antecedência; confirme horário e local perto da data."
+  },
+  {
+   "id": "baile-60-2027",
+   "ponto_id": "largo-alfandega",
+   "titulo": "Baile dos 60+ · Carnaval 2027",
+   "categoria": "festa",
+   "data": "2027-02-03",
+   "inicio": "14:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Baile de Carnaval para pessoas com 60 anos ou mais, no Largo da Alfândega, dentro da programação oficial do Carnaval 2027.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/carnaval-2027-florianopolis-atracoes-luisa-sonza-kevin-o-chris-dazaranha/",
+   "confirmar": "Programação do Carnaval 2027 anunciada com antecedência; confirme horário e local perto da data."
+  },
+  {
+   "id": "marchinhas-2027",
+   "ponto_id": "largo-alfandega",
+   "titulo": "Concurso de Marchinhas · Carnaval 2027",
+   "categoria": "samba",
+   "data": "2027-02-03",
+   "inicio": "18:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Concurso de marchinhas de Carnaval no Largo da Alfândega, na programação oficial do Carnaval 2027.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/carnaval-2027-florianopolis-atracoes-luisa-sonza-kevin-o-chris-dazaranha/",
+   "confirmar": "Programação do Carnaval 2027 anunciada com antecedência; confirme horário e local perto da data."
+  },
+  {
+   "id": "bloco-sujos-2027",
+   "ponto_id": "praca-xv",
+   "titulo": "Bloco dos Sujos · Carnaval 2027",
+   "categoria": "samba",
+   "data": "2027-02-06",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Bloco de rua mais tradicional do sábado de Carnaval no Centro. Na Arena Central, apresentações de Dazaranha, Japa NK e Kamisa 10.",
+   "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados. O bloco costuma concentrar-se entre a Praça XV e o Largo da Alfândega."
+  },
+  {
+   "id": "bloco-uni-2027",
+   "ponto_id": "praca-xv",
+   "titulo": "Bloco do Uni · Carnaval 2027",
+   "categoria": "festa",
+   "data": "2027-02-07",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Bloco de domingo de Carnaval na Arena Central, no Centro, com MC IG e Kevin O Chris.",
+   "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados."
+  },
+  {
+   "id": "bloco-inimigos-fim-2027",
+   "ponto_id": "praca-xv",
+   "titulo": "Bloco Inimigos do Fim · Carnaval 2027",
+   "categoria": "festa",
+   "data": "2027-02-09",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Bloco da terça-feira de Carnaval na Arena Central, no Centro, com DJ Liu e Victor Lou.",
+   "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados."
+  },
+  {
+   "id": "desfile-campeas-2027",
+   "ponto_id": "passarela-nego-quirido",
+   "titulo": "Desfile das Campeãs · Carnaval 2027",
+   "categoria": "samba",
+   "data": "2027-02-09",
+   "repete": "nao",
+   "preco": "Consulte a LIESF",
+   "descricao": "Desfile das escolas de samba mais bem colocadas no Carnaval 2027, na terça-feira, depois da apuração de 8 de fevereiro.",
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "confirmar": "Horário ainda não divulgado."
   }
  ]
 }
