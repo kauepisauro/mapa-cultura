@@ -110,7 +110,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
   const c = cat(l.categoria);
   const info = [];
   const onde = [l.endereco, l.bairro].filter(Boolean).join(' · ');
-  if (onde || l.aprox) info.push(`<div>${I.pin}<span>${esc(onde || 'Grande Florianópolis')}${dist != null ? ` <b>· ${esc(kmTexto(dist))} de você</b>` : ''}${l.aprox ? '<br><small>Localização aproximada</small>' : ''}</span></div>`);
+  if (onde || l.aprox) info.push(`<div>${I.pin}<span>${esc(onde || 'Grande Florianópolis')}${dist != null ? ` <b>· ${esc(kmTexto(dist))} de você</b>` : ''}${l.aprox ? '<br><small>Marcado no bairro, não é o endereço exato</small>' : ''}</span></div>`);
   if (l.horario) info.push(`<div>${I.relogio}<span>${esc(l.horario)}</span></div>`);
   if (l.instagram) info.push(`<div>${I.insta}<a href="${esc(linkInstagram(l.instagram))}" target="_blank" rel="noopener">${esc(String(l.instagram).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '@').replace(/\/$/, ''))}</a></div>`);
   if (l.whatsapp && linkWhatsapp(l.whatsapp)) info.push(`<div>${I.whats}<a href="${esc(linkWhatsapp(l.whatsapp, `Oi! Vi vocês no Mapa Vivo Florianópolis (${l.nome}).`))}" target="_blank" rel="noopener">Chamar no WhatsApp</a></div>`);
@@ -149,6 +149,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
       <p class="detalhe__onde">${esc(l.bairro || 'Grande Florianópolis')}</p>
       ${avisos.join('')}
       ${l.descricao ? `<p class="desc">${esc(l.descricao)}</p>` : ''}
+      ${l.participar ? `<div class="secao"><h3>Como participar</h3></div><p class="desc">${esc(l.participar)}</p>` : ''}
       ${l.tags?.length ? `<div class="tags">${l.tags.map((t) => `<span>${esc(t)}</span>`).join('')}</div>` : ''}
       <div class="info">${info.join('')}</div>
       <div class="acoes">

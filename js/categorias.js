@@ -29,7 +29,7 @@ export const CATEGORIAS = [
     icone: svg('<ellipse cx="12" cy="7.5" rx="8" ry="3"/><path d="M4 7.5v9c0 1.7 3.6 3 8 3s8-1.3 8-3v-9"/><path d="m7.5 10.5 2 7M12 10.8v7.5M16.5 10.5l-2 7"/>'),
   },
   {
-    id: 'social', nome: 'Movimentos sociais', cor: '#2F5F8A', desc: 'Coletivos, ocupações, associações',
+    id: 'social', nome: 'Movimentos sociais', cor: '#2F5F8A', desc: 'Movimentos populares, coletivos, ocupações, associações de bairro',
     icone: svg('<path d="M3 10v4a1 1 0 0 0 1 1h3l8 4V5L7 9H4a1 1 0 0 0-1 1Z"/><path d="M18.5 9a4 4 0 0 1 0 6"/><path d="m7 15 1.2 5h2.3l-1-3.6"/>'),
   },
   {

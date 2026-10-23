@@ -1,5 +1,5 @@
 {
- "_aviso": "Eventos pesquisados em 06 e 15/10/2026, cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
+ "_aviso": "Eventos pesquisados em 06 e 15/10/2026 e movimentos populares em 23/10/2026, cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
  "pontos": [
   {
    "id": "arreda-boi",
@@ -683,6 +683,252 @@
     "movimentos sociais",
     "Centro"
    ]
+  },
+  {
+   "id": "forum-macico",
+   "nome": "Fórum das Comunidades do Maciço do Morro da Cruz",
+   "categoria": "social",
+   "lat": -27.5928,
+   "lng": -48.5388,
+   "bairro": "Maciço do Morro da Cruz · Centro",
+   "aprox": true,
+   "descricao": "Articulação das associações e conselhos comunitários das cerca de 18 comunidades do Maciço Central (Monte Serrat, Morro do Mocotó, Serrinha, Caieira, entre outras). Organiza-se em comissões temáticas, como educação e meio ambiente, e construiu com a UFSC um plano comunitário de urbanização e preservação do morro.",
+   "participar": "O caminho é pela associação de moradores ou conselho comunitário da sua comunidade no Maciço, que leva as demandas ao Fórum. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "associação de moradores",
+    "direito à cidade",
+    "Maciço Central"
+   ],
+   "fonte": "https://periodicos.ufsc.br/index.php/extensio/article/view/1432"
+  },
+  {
+   "id": "revolucao-baldinhos",
+   "nome": "Revolução dos Baldinhos",
+   "categoria": "social",
+   "lat": -27.5886,
+   "lng": -48.6028,
+   "bairro": "Chico Mendes · Monte Cristo",
+   "aprox": true,
+   "descricao": "Gestão comunitária de resíduos orgânicos criada em 2008 por moradoras da comunidade Chico Mendes, depois de um surto de ratos e mortes por leptospirose. As famílias separam o lixo orgânico em baldinhos, levam a pontos de entrega e recebem composto para hortas. Conduzida por jovens da comunidade, com apoio do Cepagro; referência nacional em compostagem comunitária.",
+   "participar": "Moradores do Monte Cristo podem aderir com um baldinho e entregar nos pontos de coleta da comunidade. Visitas e oficinas de escolas e grupos de fora se combinam com a equipe. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "compostagem",
+    "agroecologia urbana",
+    "hortas",
+    "juventude"
+   ],
+   "fonte": "https://www.vaticannews.va/en/church/news/2022-11/bucket-revolution-project-recovering-organic-waste-in-brazil.html"
+  },
+  {
+   "id": "ocupacao-marielle",
+   "nome": "Comunidade Marielle Franco",
+   "categoria": "social",
+   "lat": -27.6082,
+   "lng": -48.5318,
+   "bairro": "Serrinha · Maciço do Morro da Cruz",
+   "aprox": true,
+   "descricao": "Ocupação urbana de moradia na encosta do Maciço, entre a Serrinha e o Alto da Caieira, com cerca de 250 casas autoconstruídas. As primeiras moradias são de 2008; a coordenação de moradores se formou em 2018 e as mulheres têm papel central na luta por moradia e permanência.",
+   "participar": "É território de moradia, não ponto de visita. Apoio e parcerias (assessoria técnica, jurídica, doações, atividades com crianças) se combinam com a coordenação de moradores. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "moradia",
+    "ocupação",
+    "mulheres",
+    "autoconstrução"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/udesc/id_cpmenu/15666/ESPA_O__LUGAR_E_TERRIT_RIO_EM_UMA_OCUPA__O_URBANA_EM_FLORIAN_POLIS_16632668720087_15666.pdf"
+  },
+  {
+   "id": "ocupacao-contestado",
+   "nome": "Comunidade do Contestado",
+   "categoria": "social",
+   "lat": -27.5835,
+   "lng": -48.6545,
+   "bairro": "Jardim Zanellato · São José",
+   "aprox": true,
+   "descricao": "Ocupação urbana iniciada em 2012 por famílias trabalhadoras sem moradia, no centenário da Guerra do Contestado, de onde vem o nome. Marcou a retomada das lutas organizadas por terra urbana na Grande Florianópolis.",
+   "participar": "É território de moradia. Apoio e parcerias se combinam com a coordenação da comunidade. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "moradia",
+    "ocupação",
+    "São José"
+   ],
+   "fonte": "https://periodicos.ufsc.br/index.php/revistacfh/article/view/2178-4582.2015v49n2p224"
+  },
+  {
+   "id": "ponta-do-coral",
+   "nome": "Movimento Ponta do Coral 100% Pública",
+   "categoria": "social",
+   "lat": -27.5803,
+   "lng": -48.5356,
+   "bairro": "Agronômica · Beira-Mar Norte",
+   "aprox": true,
+   "descricao": "Movimento de moradores que defende a Ponta do Coral como área pública, verde e de lazer, contra empreendimentos hoteleiros e marinas na Baía Norte. Propôs o Parque Cultural das 3 Pontas. No local há também um território pesqueiro reconhecido, de cerca de 75 famílias de pesca artesanal.",
+   "participar": "Acompanhe as convocações do movimento para encontros e atos sobre a Ponta do Coral e a Baía Norte. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "espaço público",
+    "Baía Norte",
+    "pesca artesanal",
+    "meio ambiente"
+   ],
+   "fonte": "https://sul21.com.br/?p=298342"
+  },
+  {
+   "id": "campeche-qualidade-vida",
+   "nome": "Movimento Campeche Qualidade de Vida",
+   "categoria": "social",
+   "lat": -27.6772,
+   "lng": -48.4866,
+   "bairro": "Campeche",
+   "aprox": true,
+   "descricao": "Movimento comunitário da planície do Campeche que, desde os anos 1990, discute o crescimento do bairro. Organizou seminários e oficinas itinerantes que resultaram no Plano Comunitário para a Planície do Campeche, entregue à Câmara em 2000. Referência em planejamento urbano feito pela comunidade.",
+   "participar": "Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "plano diretor",
+    "planejamento comunitário",
+    "sul da Ilha"
+   ],
+   "fonte": "https://periodicos.ufsc.br/index.php/katalysis/article/view/6489"
+  },
+  {
+   "id": "pescadores-campeche",
+   "nome": "Pesca artesanal da tainha no Campeche",
+   "categoria": "popular",
+   "lat": -27.6826,
+   "lng": -48.4785,
+   "bairro": "Campeche",
+   "aprox": true,
+   "descricao": "Ranchos e arrasto de praia da tainha, registrados como patrimônio cultural de Santa Catarina com apoio da Associação dos Pescadores Artesanais do Campeche. A safra vai de maio a julho; os vigias ficam no morro e as canoas saem quando o cardume aparece.",
+   "participar": "Na safra, respeite a área dos ranchos e a orientação dos pescadores durante o cerco. Pesquisas e registros se combinam com a associação.",
+   "tags": [
+    "tainha",
+    "pesca artesanal",
+    "patrimônio",
+    "ranchos"
+   ],
+   "fonte": "https://observagastronomia.fecomercio-sc.com.br/wp-content/uploads/2021/05/Registro-da-Pesca-Artesanal-da-Tainha-no-Campeche1-compactado.pdf"
+  },
+  {
+   "id": "pop-rua-sc",
+   "nome": "Movimento da População em Situação de Rua · SC",
+   "categoria": "social",
+   "lat": -27.5949,
+   "lng": -48.5496,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Núcleo catarinense do Movimento Nacional da População em Situação de Rua, que reivindica moradia, trabalho e políticas públicas. No 19 de agosto, Dia Nacional de Luta da População em Situação de Rua, realiza atos no Centro de Florianópolis em memória do Massacre da Sé (2004).",
+   "participar": "Contato e apoio pelos canais do movimento; doações e voluntariado com orientação de quem vive a rua. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "população de rua",
+    "moradia",
+    "direitos"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=2557259"
+  },
+  {
+   "id": "tarifa-zero-floripa",
+   "nome": "Movimento Passe Livre e luta pela Tarifa Zero",
+   "categoria": "social",
+   "lat": -27.5968,
+   "lng": -48.5528,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Florianópolis é berço do Movimento Passe Livre: a Revolta da Catraca (2004 e 2005) barrou aumentos de tarifa e conquistou o passe livre estudantil. Movimentos sociais seguem fazendo atos no Centro contra reajustes e por um plano de tarifa zero no transporte coletivo.",
+   "participar": "Os atos costumam sair do Centro (Largo da Alfândega, TICEN) e são chamados pelas redes dos coletivos de transporte. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "transporte público",
+    "tarifa zero",
+    "juventude",
+    "Revolta da Catraca"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=6695035"
+  },
+  {
+   "id": "frente-feminista-8m",
+   "nome": "Frente Feminista 8M de Santa Catarina",
+   "categoria": "social",
+   "lat": -27.596,
+   "lng": -48.5512,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Frente de coletivos e movimentos de mulheres que organiza a jornada e a marcha do 8 de março em Florianópolis. Em 2023 a marcha homenageou Antonieta de Barros, primeira deputada negra do estado.",
+   "participar": "A convocação para a jornada e a marcha sai semanas antes de março, pelas redes dos coletivos que compõem a frente. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "feminismo",
+    "8 de março",
+    "mulheres"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=6788987"
+  },
+  {
+   "id": "mnu-sc",
+   "nome": "Movimento Negro Unificado · Santa Catarina",
+   "categoria": "social",
+   "lat": -27.5991,
+   "lng": -48.5478,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Seção catarinense do MNU, organização de enfrentamento ao racismo e pela emancipação e autonomia da população negra, ativa no estado há quase três décadas. Atua em Florianópolis ao lado de grupos como o Núcleo de Estudos Negros (NEN) e a UNEGRO.",
+   "participar": "Sem sede fixa informada; o ponto marca a atuação no Centro. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "antirracismo",
+    "movimento negro",
+    "memória negra"
+   ],
+   "fonte": "https://www.fundobrasil.org.br/projeto/movimento-negro-unificado-de-santa-catarina"
+  },
+  {
+   "id": "tekoa-mbiguacu",
+   "nome": "Tekoa Yynn Moroti Wherá · Aldeia M'Biguaçu",
+   "categoria": "social",
+   "lat": -27.4605,
+   "lng": -48.633,
+   "bairro": "São Miguel · Biguaçu",
+   "aprox": true,
+   "descricao": "Aldeia Guarani Mbya em Biguaçu, na Grande Florianópolis. A escola indígena é vista pela comunidade como uma segunda casa de reza, que fortalece a cultura e a organização social; a dança Tchondaro é uma das práticas tradicionais da aldeia.",
+   "participar": "Visitas, atividades e parcerias são decididas pela comunidade: combine antes com as lideranças e respeite as orientações delas.",
+   "tags": [
+    "Guarani",
+    "território indígena",
+    "cultura indígena",
+    "educação"
+   ],
+   "fonte": "https://repositorio.ufsc.br/handle/123456789/89100"
+  },
+  {
+   "id": "amola-lagoa",
+   "nome": "Associação dos Moradores da Lagoa da Conceição (Amola)",
+   "categoria": "social",
+   "lat": -27.5992,
+   "lng": -48.4722,
+   "bairro": "Lagoa da Conceição",
+   "aprox": true,
+   "descricao": "Associação de moradores que acompanha a situação ambiental da Lagoa, cobra providências sobre o esgoto e mantém canal aberto com a Casan para relatar problemas. Integra, ao lado de associações da Costa da Lagoa e do Canto dos Araçás, a representação da comunidade na gestão da Lagoa.",
+   "participar": "Moradores da Lagoa podem se associar e levar demandas à associação. Confira nos canais do próprio movimento antes de ir; a atuação pode ter mudado desde a fonte.",
+   "tags": [
+    "associação de moradores",
+    "Lagoa",
+    "meio ambiente",
+    "saneamento"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=7849430"
+  },
+  {
+   "id": "comuna-amarildo",
+   "nome": "Comuna Amarildo de Souza",
+   "categoria": "social",
+   "lat": -27.696,
+   "lng": -48.824,
+   "bairro": "Águas Mornas",
+   "aprox": true,
+   "descricao": "Nascida da Ocupação Amarildo, que em dezembro de 2013 reuniu centenas de famílias da periferia da Grande Florianópolis sob o lema “Terra, Trabalho e Teto”, ligada ao projeto de Reforma Agrária Popular do MST. Parte das famílias seguiu para uma área em Águas Mornas, a cerca de 40 km da capital.",
+   "participar": "Situação atual não confirmada: procure o MST de Santa Catarina antes de ir.",
+   "tags": [
+    "MST",
+    "reforma agrária",
+    "moradia",
+    "agroecologia"
+   ],
+   "fonte": "https://repositorio.ufsc.br/xmlui/handle/123456789/173998"
   }
  ],
  "eventos": [

@@ -25,7 +25,7 @@ const blocoMapa = (titulo = 'Onde fica?') => `<div class="campo" data-bloco-mapa
   <div class="mini-mapa" id="mini-mapa" aria-label="Mapa para marcar o local: clique ou arraste o pino"></div>
   <div class="mini-mapa__acoes">
     <button type="button" class="btn" id="geo-eu">${I.pin} Usar minha localização</button>
-    <label class="pill" style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" name="aprox" style="accent-color:var(--lichen-d)"> localização aproximada</label>
+    <label class="pill" style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" name="aprox" style="accent-color:var(--lichen-d)"> marcar só o bairro (sem endereço exato)</label>
   </div>
   <small class="dica" id="geo-info">Toque no mapa ou arraste o pino até o lugar certo.</small>
   <input type="hidden" name="lat"><input type="hidden" name="lng">
@@ -62,13 +62,14 @@ const blocoFinal = (tipo) => `
 const camposPonto = () => `
   ${campo(`Nome do lugar ou coletivo ${obrig}`, '<input type="text" id="nome" name="nome" required maxlength="120" placeholder="Ex.: Grupo de Capoeira Mar Aberto">', '', 'nome')}
   ${catRadios()}
-  ${campo(`Conte um pouco ${obrig}`, '<textarea id="descricao" name="descricao" required minlength="10" maxlength="800" placeholder="O que é, quem faz, para quem é, o que rola por lá…"></textarea>', '', 'descricao')}
+  ${campo(`Conte um pouco ${obrig}`, '<textarea id="descricao" name="descricao" required minlength="10" maxlength="800" placeholder="O que é, quem faz, para quem é, o que acontece por lá…"></textarea>', '', 'descricao')}
   ${blocoMapa()}
   <div class="linha">
     ${campo('Bairro ou cidade', `<input type="text" id="bairro" name="bairro" list="bairros" maxlength="80" placeholder="Ex.: Lagoa da Conceição, Kobrasol (São José)"><datalist id="bairros">${BAIRROS.map((b) => `<option value="${esc(b)}">`).join('')}</datalist>`, '', 'bairro')}
     ${campo('Endereço', '<input type="text" id="endereco" name="endereco" maxlength="200" placeholder="Rua, número, referência">', '', 'endereco')}
   </div>
-  ${campo('Quando funciona / quando rola', '<input type="text" id="horario" name="horario" maxlength="200" placeholder="Ex.: Quintas e sábados, 19h">', 'Eventos com data específica você cadastra na aba “Evento”.', 'horario')}
+  ${campo('Quando funciona', '<input type="text" id="horario" name="horario" maxlength="200" placeholder="Ex.: Quintas e sábados, 19h">', 'Eventos com data específica você cadastra na aba “Evento”.', 'horario')}
+  ${campo('Como participar', '<textarea id="participar" name="participar" maxlength="500" placeholder="Para coletivos e movimentos: como chegar junto, se há reuniões abertas, por onde entrar em contato"></textarea>', '', 'participar')}
   <div class="linha">
     ${campo('Instagram', '<input type="text" id="instagram" name="instagram" maxlength="200" placeholder="@seuperfil">', '', 'instagram')}
     ${campo('WhatsApp', `<input type="tel" id="whatsapp" name="whatsapp" maxlength="30" placeholder="${DDD}" inputmode="tel">`, '', 'whatsapp')}
@@ -279,7 +280,7 @@ export function iniciarContribuir(ctx) {
     if (tipo === 'ponto') {
       dados = {
         nome: v('nome'), categoria: v('categoria'), descricao: v('descricao'), lat, lng, aprox: fd.get('aprox') === 'on',
-        bairro: v('bairro'), endereco: v('endereco'), horario: v('horario'), instagram: v('instagram'), whatsapp: v('whatsapp'), site: v('site'),
+        bairro: v('bairro'), endereco: v('endereco'), horario: v('horario'), participar: v('participar'), instagram: v('instagram'), whatsapp: v('whatsapp'), site: v('site'),
         tags: v('tags').split(',').map((t) => t.trim().slice(0, 30)).filter(Boolean).slice(0, 8),
         foto: v('foto'), foto_alt: v('foto_alt'), foto_credito: v('foto_credito'), video: v('video'), contato_privado: v('contato_privado'), tem_autorizacao: true, _ninho: v('empresa'),
       };

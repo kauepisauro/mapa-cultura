@@ -12,7 +12,9 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
 ## Dados (`data/seed.json`)
 - Só lugares/eventos **reais, com `fonte`** (link). Nada inventado; exemplos de teste usam `"exemplo": true`.
 - Dia/horário incompleto ou de fonte antiga → campo `confirmar` com o motivo (aparece “confirme antes de ir”).
-- Coordenadas incertas → `"aprox": true`.
+- Coordenadas incertas → `"aprox": true` (a ficha mostra “marcado no bairro, não é o endereço exato”).
+- Movimentos/coletivos: marcar no bairro (nunca casa de liderança), campo `participar` = como se juntar; ocupações
+  são território de moradia, não ponto de visita. Contatos (@, WhatsApp) só se a fonte publicar.
 - Repetições: `nao`, `diaria`, `dias_uteis`, `dias_semana` (+ `dias_semana: [0..6]`), `semanal`, `quinzenal`,
   `mensal`, `mensal_semana`. Sem `inicio` = dia todo. Exposições de vários dias aparecem em “Em cartaz”.
 - Pode podar eventos que já passaram.

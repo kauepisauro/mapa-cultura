@@ -1,6 +1,6 @@
 // Service worker do Mapa Vivo Florianópolis: funciona sem internet, abre rápido e atualiza com aviso.
 // IMPORTANTE: VERSAO precisa ser igual a CONFIG.versao (js/config.js). O teste `npm test` confere.
-const VERSAO = '2026-10-15.14';
+const VERSAO = '2026-10-23.1';
 const SHELL = `shell-${VERSAO}`;
 const DADOS = 'dados-v1';
 const TILES = 'tiles-v1';

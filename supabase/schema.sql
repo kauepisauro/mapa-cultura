@@ -22,6 +22,7 @@ create table if not exists public.pontos (
   bairro          text check (char_length(bairro) <= 80),
   endereco        text check (char_length(endereco) <= 200),
   horario         text check (char_length(horario) <= 200),
+  participar      text check (char_length(participar) <= 500),  -- como se juntar ao coletivo/movimento
   instagram       text check (char_length(instagram) <= 200),
   whatsapp        text check (char_length(whatsapp) <= 30),
   site            text check (char_length(site) <= 300),
@@ -77,6 +78,9 @@ create table if not exists public.sugestoes (
 );
 
 -- ── Segurança (RLS) ─────────────────────────────────────────────────
+-- bancos criados antes desta coluna existir
+alter table public.pontos add column if not exists participar text check (char_length(participar) <= 500);
+
 alter table public.pontos    enable row level security;
 alter table public.eventos   enable row level security;
 alter table public.sugestoes enable row level security;
@@ -96,9 +100,9 @@ create policy "publico envia sugestoes" on public.sugestoes for insert to anon w
 -- ── Permissões por coluna: o público NÃO enxerga contato_privado/status ──
 revoke all on public.pontos, public.eventos, public.sugestoes from anon, authenticated;
 
-grant select (id, criado_em, nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario,
+grant select (id, criado_em, nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario, participar,
               instagram, whatsapp, site, fonte, foto, foto_mini, foto_alt, foto_credito, video, video_titulo, video_credito, tags, status) on public.pontos to anon;
-grant insert (nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario, instagram, whatsapp,
+grant insert (nome, categoria, descricao, lat, lng, aprox, bairro, endereco, horario, participar, instagram, whatsapp,
               site, foto, foto_mini, foto_alt, foto_credito, video, tags, contato_privado, tem_autorizacao) on public.pontos to anon;
 
 grant select (id, criado_em, ponto_id, titulo, categoria, descricao, data, inicio, fim, repete, repete_ate,
