@@ -5,10 +5,10 @@
    "id": "arreda-boi",
    "nome": "Associação Cultural Arreda Boi",
    "categoria": "popular",
-   "lat": -27.6032,
-   "lng": -48.4655,
-   "bairro": "Lagoa da Conceição",
-   "descricao": "Espaço cultural, teatro e escola da Lagoa da Conceição, casa do Boi de Mamão e da cultura popular de matriz açoriana. O grupo nasceu em 1994, na comunidade da Barra da Lagoa, reunindo gerações em torno do Boi de Mamão. Parceiro do Cartografia Líquen.",
+   "lat": -27.5748,
+   "lng": -48.4302,
+   "bairro": "Barra da Lagoa",
+   "descricao": "Associação de cultura popular da Barra da Lagoa, casa do Boi de Mamão e da cultura de matriz açoriana, com teatro e escola. Nasceu em 1994 na comunidade da Barra, reunindo gerações em torno do Boi de Mamão. Parceira do Cartografia Líquen.",
    "aprox": true,
    "tags": [
     "boi de mamão",
@@ -17,7 +17,9 @@
     "cultura açoriana"
    ],
    "site": "arredaboi.org.br",
-   "horario": "Consulte a programação com o grupo"
+   "horario": "Consulte a programação com o grupo",
+   "endereco": "Rua Altamiro Barcelos Dutra, 415 (endereço de cadastro)",
+   "fonte": "https://antigo.acif.org.br/wp-content/uploads/2015/11/festa-das-artes-e-culturas-populares-20-anos-do-arreda-boi.pdf"
   },
   {
    "id": "roda-capoeira-mercado",
@@ -604,7 +606,7 @@
   },
   {
    "id": "casa-odara",
-   "nome": "Casa Odara · Quilombo Urbano Cultural",
+   "nome": "Casa Odara · Quilombo Urbano Odara",
    "categoria": "samba",
    "lat": -27.5946,
    "lng": -48.5486,
@@ -615,7 +617,8 @@
     "samba",
     "cultura negra",
     "quilombo urbano",
-    "shows"
+    "shows",
+    "movimento negro"
    ],
    "horario": "Programação concentrada em sextas e sábados (confirme no Instagram ou no Sympla)",
    "fonte": "https://tocaonde.com.br/venues/131698-casa-odara-florianopolis"
@@ -2086,6 +2089,42 @@
    ],
    "fonte": "https://anppom.org.br/anais/anaiscongresso_anppom_2007/etnomusicologia/etnom_ADSilva.pdf",
    "confirmar": "Localização pela comunidade de origem, não pelo endereço da quadra. Confirme local e datas de ensaio nas redes da escola."
+  },
+  {
+   "id": "sos-lagoa",
+   "nome": "SOS Lagoa",
+   "categoria": "social",
+   "lat": -27.6021,
+   "lng": -48.4688,
+   "bairro": "Lagoa da Conceição",
+   "aprox": true,
+   "descricao": "Movimento popular em defesa da Lagoa da Conceição. Organiza atos contra a privatização de áreas públicas da região e debate a proteção da Lagoa, como a criação de uma Área de Proteção Ambiental e o monitoramento dos riscos da barragem.",
+   "participar": "Movimento aberto: quem quiser somar pode chegar às reuniões e aos atos. O trabalho se organiza em grupos de Comunicação, Técnico, Cultura e Mobilização.",
+   "tags": [
+    "Lagoa",
+    "meio ambiente",
+    "espaço público",
+    "movimento popular"
+   ]
+  },
+  {
+   "id": "instituto-arco-iris",
+   "nome": "Instituto Arco-Íris de Direitos Humanos",
+   "categoria": "social",
+   "lat": -27.5972,
+   "lng": -48.5505,
+   "bairro": "Centro",
+   "aprox": true,
+   "descricao": "Organização de direitos humanos com foco na população LGBTI+ em Florianópolis, que mantém um Centro de Convivência e Cultura no Centro, voltado a pessoas em situação de vulnerabilidade social.",
+   "participar": "Confira nos canais do instituto como apoiar e participar das atividades.",
+   "confirmar": "A fonte é um estudo acadêmico; confirme o endereço atual e os horários do Centro de Convivência.",
+   "tags": [
+    "LGBTQIA+",
+    "direitos humanos",
+    "acolhimento",
+    "cultura"
+   ],
+   "fonte": "https://repositorio.ufsc.br/handle/123456789/245878"
   }
  ],
  "eventos": [
