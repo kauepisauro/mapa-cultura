@@ -9,8 +9,12 @@ export const CATEGORIAS = [
     icone: svg('<path d="M4.5 20.5C3 11 9 4.5 19.5 3.5"/><path d="M4.5 20.5 19.5 3.5"/><circle cx="8.7" cy="15.5" r="3"/>'),
   },
   {
-    id: 'atelie', nome: 'Ateliês & Artesanato', cor: '#B4552F', desc: 'Cerâmica, renda, costura, feiras',
+    id: 'atelie', nome: 'Ateliês & Artesanato', cor: '#B4552F', desc: 'Cerâmica, renda, costura, ateliês abertos',
     icone: svg('<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2.1-1.1 1.6-2.2-.5-1.2.2-2.3 1.6-2.3H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5Z"/><circle cx="7.6" cy="11" r=".9"/><circle cx="10.2" cy="7.2" r=".9"/><circle cx="15" cy="7.6" r=".9"/>'),
+  },
+  {
+    id: 'feira', nome: 'Feiras', cor: '#5A7D3C', desc: 'Feiras de bairro, orgânicos, artesanato, antiguidades',
+    icone: svg('<path d="M3 9h18l-1.5-5h-15Z"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 11.5V20h14v-8.5"/><path d="M10 20v-4h4v4"/>'),
   },
   {
     id: 'arte', nome: 'Artes visuais', cor: '#7A5A86', desc: 'Galerias, murais, exposições',

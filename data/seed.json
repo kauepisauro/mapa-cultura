@@ -453,7 +453,7 @@
   {
    "id": "feira-lagoa",
    "nome": "Feira da Lagoa (AAFLA) · Praça Bento Silvério",
-   "categoria": "atelie",
+   "categoria": "feira",
    "lat": -27.6041,
    "lng": -48.466,
    "bairro": "Lagoa da Conceição",
@@ -470,7 +470,7 @@
   {
    "id": "feira-alfaias",
    "nome": "Feira das Alfaias · Santo Antônio de Lisboa",
-   "categoria": "atelie",
+   "categoria": "feira",
    "lat": -27.5122,
    "lng": -48.5163,
    "bairro": "Santo Antônio de Lisboa",
@@ -1833,7 +1833,7 @@
   {
    "id": "feira-jardim-botanico",
    "nome": "Feira agroecológica do Jardim Botânico",
-   "categoria": "social",
+   "categoria": "feira",
    "lat": -27.586,
    "lng": -48.51,
    "aprox": true,
@@ -2820,7 +2820,7 @@
    "id": "feira-jb-sabado",
    "ponto_id": "feira-jardim-botanico",
    "titulo": "Feira de orgânicos no Jardim Botânico",
-   "categoria": "social",
+   "categoria": "feira",
    "data": "2026-10-24",
    "inicio": "13:00",
    "fim": "17:00",
