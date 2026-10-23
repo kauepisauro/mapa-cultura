@@ -3,7 +3,7 @@
 //  Tudo o que você precisa ajustar para publicar está neste arquivo.
 // ─────────────────────────────────────────────────────────────
 export const CONFIG = {
-  versao: '2026-10-23.1', // aparece no rodapé do painel; ajuda a conferir o que está publicado
+  versao: '2026-10-23.2', // aparece no rodapé do painel; ajuda a conferir o que está publicado
   nome: 'Mapa Vivo Florianópolis',
   projeto: 'Cartografia Líquen',
   subtitulo: 'culturas da Grande Florianópolis',

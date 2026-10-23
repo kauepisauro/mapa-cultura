@@ -119,6 +119,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
 
   const avisos = [];
   if (l.pendente) avisos.push('<div class="aviso">⏳<span><b>Em análise pela curadoria.</b> Por enquanto só você vê este envio; ele aparece para todo mundo assim que for aprovado.</span></div>');
+  if (l.confirmar) avisos.push(`<div class="aviso">⚠<span><b>Confirme antes de ir.</b> ${esc(l.confirmar)}</span></div>`);
   if (l.exemplo) avisos.push('<div class="aviso">✎<span><b>Ficha de exemplo.</b> Serve para mostrar como o mapa funciona. Conhece um lugar assim de verdade? Cadastre!</span></div>');
 
   const evs = ocorr.slice(0, 6).map((o) => {
