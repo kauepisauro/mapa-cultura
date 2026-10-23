@@ -42,7 +42,7 @@ export function janelasHTML(atual, gratis) {
 /** Texto do "próximo evento" mostrado no card do lugar. */
 export function proxTexto(oc, status, hoje) {
   if (!oc) return '';
-  const quando = status === 'agora' ? 'Acontecendo agora' : `${rotuloDia(oc.data, hoje)}${oc.inicio ? ` ${hora(oc.inicio)}` : ''}`;
+  const quando = status === 'agora' && !oc.sem_horario ? 'Acontecendo agora' : `${rotuloDia(oc.data, hoje)}${oc.inicio ? ` ${hora(oc.inicio)}` : ''}`;
   return `${quando} · ${oc.titulo}`;
 }
 
@@ -71,7 +71,7 @@ export function cardEvento(oc, lugar, status, i = 0) {
   if (oc.pendente) tags.push('<span class="tag">em análise</span>');
   const onde = lugar ? `${esc(lugar.nome)}${lugar.bairro ? ` · ${esc(lugar.bairro)}` : ''}` : esc(oc.local_nome || '');
   return `<button class="ev" style="--c:${c.cor};animation-delay:${Math.min(i, 14) * 28}ms" data-acao="sel" data-id="${esc(lugar?.id || '')}" data-key="${esc(oc.key)}">
-    <div class="ev__hora"><b>${oc.inicio ? esc(hora(oc.inicio)) : 'dia'}</b><small>${oc.inicio ? (oc.fim ? `até ${esc(hora(oc.fim))}` : '') : 'todo'}</small></div>
+    <div class="ev__hora"><b>${oc.inicio ? esc(hora(oc.inicio)) : oc.sem_horario ? 'hora' : 'dia'}</b><small>${oc.inicio ? (oc.fim ? `até ${esc(hora(oc.fim))}` : '') : oc.sem_horario ? 'a confirmar' : 'todo'}</small></div>
     <div class="ev__corpo">
       <div class="ev__tit">${esc(oc.titulo)}</div>
       <div class="ev__loc">${onde}</div>
@@ -124,7 +124,7 @@ export function detalheHTML(l, { ocorr = [], vizinhos = [], dist = null, hoje, s
 
   const evs = ocorr.slice(0, 6).map((o) => {
     const n = dataNumero(o.data);
-    const quando = o.inicio ? `${hora(o.inicio)}${o.fim ? `–${hora(o.fim)}` : ''}` : 'Dia todo';
+    const quando = o.inicio ? `${hora(o.inicio)}${o.fim ? `–${hora(o.fim)}` : ''}` : o.sem_horario ? 'Horário a confirmar' : 'Dia todo';
     return `<div class="mini-ev">
       <div class="mini-ev__d"><b>${n.dia}</b><small>${esc(n.sem)} · ${esc(n.mes)}</small></div>
       <div class="mini-ev__t">${esc(o.titulo)}<span>${esc(quando)} · ${ehGratis(o) ? 'Grátis' : esc(o.preco)}${o.repete && o.repete !== 'nao' ? ` · ${esc(recorrenciaTexto(o))}` : ''}${statusDe(o) === 'agora' ? ' · <b>acontecendo agora</b>' : ''}</span>

@@ -1,5 +1,5 @@
 {
- "_aviso": "Eventos pesquisados em 06 e 15/10/2026 e movimentos populares, capoeira, rap, LGBTQIA+, samba, artes e cultura popular em 23/10/2026, cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
+ "_aviso": "Eventos pesquisados em 06 e 15/10/2026 e movimentos populares, capoeira, rap, LGBTQIA+, samba, artes e cultura popular em 23/10/2026 (feiras de bairro, escolas de samba e agenda até mar/2027 incluídas), cada um com a fonte. Itens com \"confirmar\" têm data/horário incompletos ou de fontes antigas: confirme antes de divulgar. Eventos recorrentes não são verificados semana a semana.",
  "pontos": [
   {
    "id": "arreda-boi",
@@ -2145,6 +2145,1223 @@
     "Sul da Ilha"
    ],
    "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/veja_a_programacao_das_feira_hortifruti_em_florianopolis/"
+  },
+  {
+   "id": "feira-largo-alfandega",
+   "nome": "Feira do Largo da Alfândega · Centro",
+   "categoria": "feira",
+   "lat": -27.5968,
+   "lng": -48.5507,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Largo da Alfândega",
+   "descricao": "Maior feira de hortifrúti da cidade, com bancas de frutas, verduras, queijos, mel e produtos coloniais no Largo da Alfândega.",
+   "horario": "Terças, quartas, sextas e sábados, de manhã",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/",
+   "confirmar": "Dias segundo guia de 2026; o horário (6h30–13h) vem de matéria sem ano identificado. Confirme antes de ir."
+  },
+  {
+   "id": "feira-cultiva-floripa",
+   "nome": "Feira orgânica Cultiva Floripa · Largo da Alfândega",
+   "categoria": "feira",
+   "lat": -27.5966,
+   "lng": -48.5511,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Largo da Alfândega (Praça da Alfândega)",
+   "descricao": "Feira de alimentos orgânicos do programa municipal Cultiva Floripa, no Largo da Alfândega.",
+   "horario": "Quartas e sábados, 7h–13h",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agricultura urbana"
+   ],
+   "fonte": "http://www.pmf.sc.gov.br/noticias/index.php?pagina=notpagina&noti=24492",
+   "confirmar": "Notícia da prefeitura sem data visível (outra fonte cita sábados, 7h–12h); confirme se a feira segue ativa e o horário."
+  },
+  {
+   "id": "ecofeira-lagoa",
+   "nome": "Ecofeira da Lagoa da Conceição · Praça Bento Silvério",
+   "categoria": "feira",
+   "lat": -27.6036,
+   "lng": -48.4668,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição · Florianópolis",
+   "endereco": "Praça Bento Silvério",
+   "descricao": "Feira de alimentos orgânicos nas manhãs de sábado na praça central da Lagoa. Diferente da feira de artesanato da AAFLA, que ocupa a praça à tarde.",
+   "horario": "Sábados, 6h–12h",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agroecologia"
+   ],
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/",
+   "confirmar": "O mesmo site cita domingo em outro artigo; confirme o dia antes de ir."
+  },
+  {
+   "id": "feira-organicos-santa-barbara",
+   "nome": "Orgânicos Santa Bárbara · Praça Celso Ramos",
+   "categoria": "feira",
+   "lat": -27.5842,
+   "lng": -48.5428,
+   "aprox": true,
+   "bairro": "Agronômica · Florianópolis",
+   "endereco": "Praça Celso Ramos, Av. Beira-Mar Norte",
+   "descricao": "Feira de produtos orgânicos às sextas pela manhã, na Praça Celso Ramos, junto à Beira-Mar Norte.",
+   "horario": "Sextas, 6h30–12h",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agricultura familiar"
+   ],
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/"
+  },
+  {
+   "id": "feira-organica-cca-ufsc",
+   "nome": "Feira orgânica do CCA/UFSC · Itacorubi",
+   "categoria": "feira",
+   "lat": -27.5833,
+   "lng": -48.5045,
+   "aprox": true,
+   "bairro": "Itacorubi · Florianópolis",
+   "endereco": "Hall do Centro de Ciências Agrárias da UFSC, Rod. Admar Gonzaga, 1346",
+   "descricao": "Feira de orgânicos no Centro de Ciências Agrárias da UFSC, com produtores de Biguaçu, Correia Pinto, Florianópolis e Santa Rosa de Lima.",
+   "horario": "Sextas, 7h30–12h",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agricultura familiar",
+    "universidade"
+   ],
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/"
+  },
+  {
+   "id": "feira-estreito-av-santa-catarina",
+   "nome": "Feira da Avenida Santa Catarina · Balneário do Estreito",
+   "categoria": "feira",
+   "lat": -27.5862,
+   "lng": -48.5795,
+   "aprox": true,
+   "bairro": "Balneário do Estreito · Florianópolis",
+   "endereco": "Avenida Santa Catarina",
+   "descricao": "Feira tradicional montada há mais de 50 anos perto da orla, com cerca de dez bancas de frutas, verduras, queijos, produtos coloniais e orgânicos, além de pastel com caldo de cana.",
+   "horario": "Quintas, 6h–12h (fonte antiga)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "tradição"
+   ],
+   "fonte": "https://ndmais.com.br/economia/e-dia-de-feira-e-elas-estao-por-toda-florianopolis-saiba-onde-encontra-las/",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; a reportagem de 2023 confirma a feira, mas não o dia. Confirme antes de ir."
+  },
+  {
+   "id": "feira-itaguacu",
+   "nome": "Feira de Itaguaçu",
+   "categoria": "feira",
+   "lat": -27.6085,
+   "lng": -48.5905,
+   "aprox": true,
+   "bairro": "Itaguaçu · Florianópolis",
+   "endereco": "Final da Avenida Desembargador Pedro Silva",
+   "descricao": "Feira de bairro de hortifrúti na região continental, no final da Avenida Desembargador Pedro Silva.",
+   "horario": "Terças, 6h–12h (fonte antiga)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.nsctotal.com.br/noticias/confira-os-enderecos-e-horarios-das-feiras-de-rua-na-regiao-continental-em-florianopolis",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; confirme se a feira continua."
+  },
+  {
+   "id": "feira-abraao",
+   "nome": "Feira do Abraão",
+   "categoria": "feira",
+   "lat": -27.6055,
+   "lng": -48.5835,
+   "aprox": true,
+   "bairro": "Abraão · Florianópolis",
+   "endereco": "Final da Rua João Meirelles",
+   "descricao": "Feira de bairro de hortifrúti na região continental, no final da Rua João Meirelles.",
+   "horario": "Quintas, 6h–12h (fonte antiga)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.nsctotal.com.br/noticias/confira-os-enderecos-e-horarios-das-feiras-de-rua-na-regiao-continental-em-florianopolis",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; confirme se a feira continua."
+  },
+  {
+   "id": "feira-estreito-max-de-souza",
+   "nome": "Feira da Avenida Max de Souza · Estreito",
+   "categoria": "feira",
+   "lat": -27.5935,
+   "lng": -48.5775,
+   "aprox": true,
+   "bairro": "Estreito · Florianópolis",
+   "endereco": "Av. Max de Souza",
+   "descricao": "Feira de bairro de sábado de manhã na região continental, listada pela prefeitura entre as feiras de bairro.",
+   "horario": "Sábados, 8h–12h",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário com base em dados da PMF/SUSP, sem data de atualização; ponto no mapa aproximado."
+  },
+  {
+   "id": "feira-parque-coqueiros",
+   "nome": "Feira do Parque de Coqueiros",
+   "categoria": "feira",
+   "lat": -27.604,
+   "lng": -48.576,
+   "aprox": true,
+   "bairro": "Coqueiros · Florianópolis",
+   "endereco": "Parque de Coqueiros, Av. Eng. Max de Souza",
+   "descricao": "Feira de domingo pela manhã no Parque de Coqueiros, listada entre as feiras de bairro da cidade.",
+   "horario": "Domingos, de manhã",
+   "tags": [
+    "feira",
+    "feira livre",
+    "parque"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Fonte informa só \"manhã\", sem horário exato e sem data de atualização; confirme antes de ir."
+  },
+  {
+   "id": "feira-santa-monica",
+   "nome": "Feira de Santa Mônica",
+   "categoria": "feira",
+   "lat": -27.5905,
+   "lng": -48.5095,
+   "aprox": true,
+   "bairro": "Santa Mônica · Florianópolis",
+   "descricao": "Feira de bairro semanal às quintas-feiras em Santa Mônica.",
+   "horario": "Quintas, 6h–14h",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Endereço exato não informado na fonte; diretório sem data de atualização."
+  },
+  {
+   "id": "feira-trindade-santos-dumont",
+   "nome": "Feira da Praça Santos Dumont · Trindade",
+   "categoria": "feira",
+   "lat": -27.5888,
+   "lng": -48.5222,
+   "aprox": true,
+   "bairro": "Trindade · Florianópolis",
+   "endereco": "Praça Santos Dumont",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios na Praça Santos Dumont, duas vezes por semana.",
+   "horario": "Quartas e sextas (horário não informado)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir."
+  },
+  {
+   "id": "feira-canto-da-lagoa",
+   "nome": "Feira do Canto da Lagoa",
+   "categoria": "feira",
+   "lat": -27.6075,
+   "lng": -48.4715,
+   "aprox": true,
+   "bairro": "Canto da Lagoa · Florianópolis",
+   "endereco": "Rua Laurindo Januário da Silveira, na quadra de tênis da entrada do LIC",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios às terças-feiras no Canto da Lagoa.",
+   "horario": "Terças (horário não informado)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir."
+  },
+  {
+   "id": "feira-porto-da-lagoa",
+   "nome": "Feira do Porto da Lagoa",
+   "categoria": "feira",
+   "lat": -27.6345,
+   "lng": -48.4705,
+   "aprox": true,
+   "bairro": "Porto da Lagoa · Florianópolis",
+   "endereco": "Rua Laurindo Januário da Silveira",
+   "descricao": "Feira de bairro às sextas-feiras no Porto da Lagoa, com apoio da associação de moradores (AMPOLA).",
+   "horario": "Sextas (horário não informado)",
+   "tags": [
+    "feira",
+    "feira livre",
+    "associação de moradores"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir."
+  },
+  {
+   "id": "feira-barra-da-lagoa",
+   "nome": "Feira da Barra da Lagoa",
+   "categoria": "feira",
+   "lat": -27.5745,
+   "lng": -48.429,
+   "aprox": true,
+   "bairro": "Barra da Lagoa · Florianópolis",
+   "endereco": "Rua Altamiro Barcellos Dutra / Rua Elesbão Ramos",
+   "descricao": "Feira de bairro de hortifrúti na Barra da Lagoa.",
+   "horario": "Quartas (horário não informado)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Fontes divergem (quarta na Rua Altamiro Barcellos Dutra ou quinta na Rua Laurindo José de Souza) e não há horário; confirme antes de ir."
+  },
+  {
+   "id": "feira-carianos",
+   "nome": "Feira de Carianos",
+   "categoria": "feira",
+   "lat": -27.6625,
+   "lng": -48.5405,
+   "aprox": true,
+   "bairro": "Carianos · Florianópolis",
+   "endereco": "Rua Jornalista Carlos Castello Branco",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios às quartas-feiras em Carianos.",
+   "horario": "Quartas (horário não informado)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Fontes citam dois endereços (Rua Jornalista Carlos Castello Branco e Ressacada) e não informam horário; confirme antes de ir."
+  },
+  {
+   "id": "feira-jurere-tradicional",
+   "nome": "Feira de Jurerê Tradicional (AMOJU)",
+   "categoria": "feira",
+   "lat": -27.4385,
+   "lng": -48.4985,
+   "aprox": true,
+   "bairro": "Jurerê · Florianópolis",
+   "descricao": "Feira de bairro às sextas-feiras organizada pela associação de moradores de Jurerê Tradicional (AMOJU).",
+   "horario": "Sextas (horário não informado)",
+   "tags": [
+    "feira",
+    "feira livre",
+    "associação de moradores"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir. Endereço não informado."
+  },
+  {
+   "id": "feira-organica-armacao",
+   "nome": "Feira orgânica da Armação",
+   "categoria": "feira",
+   "lat": -27.7455,
+   "lng": -48.5065,
+   "aprox": true,
+   "bairro": "Armação · Florianópolis",
+   "endereco": "Trevo de acesso à Armação",
+   "descricao": "Feira de produtos orgânicos aos sábados pela manhã, no trevo de acesso à Armação, no sul da Ilha.",
+   "horario": "Sábados, 7h–12h",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "sul da ilha"
+   ],
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário sem data de atualização; confirme antes de ir."
+  },
+  {
+   "id": "feira-ribeirao-bandeirante",
+   "nome": "Feira do Ribeirão da Ilha · Campo do Bandeirante",
+   "categoria": "feira",
+   "lat": -27.72,
+   "lng": -48.5615,
+   "aprox": true,
+   "bairro": "Ribeirão da Ilha · Florianópolis",
+   "endereco": "Rodovia Baldicero Filomeno, em frente ao Campo do Bandeirante",
+   "descricao": "Feira de bairro de hortifrúti no Ribeirão da Ilha, na rodovia Baldicero Filomeno.",
+   "horario": "Sábados (horário não informado; fonte de 2023)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://ndmais.com.br/economia/e-dia-de-feira-e-elas-estao-por-toda-florianopolis-saiba-onde-encontra-las/",
+   "confirmar": "Matéria de 2023 com dados da prefeitura; o dia (sábado) e o horário precisam ser confirmados."
+  },
+  {
+   "id": "feira-pantano-do-sul",
+   "nome": "Feira do Pântano do Sul",
+   "categoria": "feira",
+   "lat": -27.778,
+   "lng": -48.5085,
+   "aprox": true,
+   "bairro": "Pântano do Sul · Florianópolis",
+   "endereco": "Rodovia SC-406, no Conselho Comunitário do Pântano do Sul",
+   "descricao": "Feira de bairro de hortifrúti no Conselho Comunitário do Pântano do Sul.",
+   "horario": "Sábados (horário não informado; fonte de 2023)",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "feira livre"
+   ],
+   "fonte": "https://ndmais.com.br/economia/e-dia-de-feira-e-elas-estao-por-toda-florianopolis-saiba-onde-encontra-las/",
+   "confirmar": "Matéria de 2023 com dados da prefeitura; o dia (sábado) e o horário precisam ser confirmados."
+  },
+  {
+   "id": "feirarte-beira-mar",
+   "nome": "Feirarte · Beira-Mar Norte",
+   "categoria": "feira",
+   "lat": -27.587,
+   "lng": -48.5495,
+   "aprox": true,
+   "bairro": "Centro / Beira-Mar Norte · Florianópolis",
+   "endereco": "Praça Portugal, Av. Jornalista Rubens de Arruda Ramos",
+   "descricao": "Feira de artesanato na Praça Portugal, na Beira-Mar Norte, uma das feiras municipais de artesanato.",
+   "horario": "Inverno: sábados, domingos e feriados, 9h–21h. Verão: todos os dias, 9h–22h",
+   "tags": [
+    "feira",
+    "artesanato"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feirarte-catedral",
+   "nome": "Feirarte Catedral · Centro",
+   "categoria": "feira",
+   "lat": -27.5962,
+   "lng": -48.5492,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Largo da Catedral",
+   "descricao": "Feira de artesanato no Largo da Catedral, no Centro, aberta o ano inteiro em dias de semana.",
+   "horario": "Quartas, quintas e sextas, 8h30–17h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "centro histórico"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/"
+  },
+  {
+   "id": "feira-miramar",
+   "nome": "Feira Miramar · Praça Fernando Machado",
+   "categoria": "feira",
+   "lat": -27.5974,
+   "lng": -48.5487,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Praça Fernando Machado",
+   "descricao": "Feira de artesanato na Praça Fernando Machado, no Centro, aberta de segunda a sábado o ano inteiro.",
+   "horario": "Segunda a sábado, 8h–18h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "centro histórico"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/"
+  },
+  {
+   "id": "feira-da-maricota",
+   "nome": "Feira da Maricota · Av. Paulo Fontes",
+   "categoria": "feira",
+   "lat": -27.5985,
+   "lng": -48.553,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Av. Paulo Fontes, em frente ao TICEN",
+   "descricao": "Feira de artesanato em frente ao Terminal de Integração do Centro (TICEN).",
+   "horario": "Inverno: terça a sexta, 9h–18h. Verão: segunda a sábado, 9h–19h",
+   "tags": [
+    "feira",
+    "artesanato"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-guarapuvu-lagoa",
+   "nome": "Feira Guarapuvu · Praça Bento Silvério",
+   "categoria": "feira",
+   "lat": -27.6043,
+   "lng": -48.4655,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição · Florianópolis",
+   "endereco": "Praça Bento Silvério",
+   "descricao": "Feira de artesanato na praça central da Lagoa, que funciona ao lado da feira da AAFLA nos fins de semana.",
+   "horario": "Sábados e domingos, 14h–22h",
+   "tags": [
+    "feira",
+    "artesanato"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Outra fonte indica 15h–20h; confirme o horário antes de ir."
+  },
+  {
+   "id": "canasarte",
+   "nome": "Canasarte · Canasvieiras",
+   "categoria": "feira",
+   "lat": -27.4305,
+   "lng": -48.4585,
+   "aprox": true,
+   "bairro": "Canasvieiras · Florianópolis",
+   "endereco": "Ao lado da Panvel, Canasvieiras",
+   "descricao": "Feira de artesanato de Canasvieiras, que no verão passa a funcionar à noite.",
+   "horario": "Inverno: sextas e sábados, 10h–19h. Verão: quarta a sábado, 17h–23h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "norte da ilha"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-linear-ingleses",
+   "nome": "Feira Linear dos Ingleses · Praça Charles Bento",
+   "categoria": "feira",
+   "lat": -27.4365,
+   "lng": -48.3955,
+   "aprox": true,
+   "bairro": "Ingleses · Florianópolis",
+   "endereco": "Praça Charles Bento",
+   "descricao": "Feira de artesanato na Praça Charles Bento, nos Ingleses, com horário ampliado na temporada.",
+   "horario": "Inverno: quintas, sábados, domingos e feriados, 13h–20h. Verão: terça a domingo, 10h–22h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "norte da ilha"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-artesanato-jurere",
+   "nome": "Feira de artesanato de Jurerê",
+   "categoria": "feira",
+   "lat": -27.441,
+   "lng": -48.494,
+   "aprox": true,
+   "bairro": "Jurerê Internacional · Florianópolis",
+   "endereco": "Avenida Maurício Sirotski Sobrinho",
+   "descricao": "Feira de artesanato na avenida principal de Jurerê Internacional.",
+   "horario": "Inverno: sábados e domingos, 8h–16h. Verão: quinta a domingo, 8h–18h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "norte da ilha"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir. Programação da Maratona Cultural de 2026 cita outro endereço (Av. dos Búzios, 300) e horário (16h–22h)."
+  },
+  {
+   "id": "feira-afro-artesanal-rosario",
+   "nome": "Feira Afro Artesanal · Escadaria do Rosário",
+   "categoria": "feira",
+   "lat": -27.5958,
+   "lng": -48.5512,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Escadaria do Rosário",
+   "descricao": "Feira semanal de artesanato afro-brasileiro nas imediações da Escadaria do Rosário, no Centro.",
+   "horario": "Terças, 9h–19h (horário de inverno)",
+   "tags": [
+    "feira",
+    "artesanato",
+    "cultura afro-brasileira"
+   ],
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Guia de dezembro de 2025 só informa o horário de inverno; confirme antes de ir."
+  },
+  {
+   "id": "feira-da-freguesia-sao-jose",
+   "nome": "Feira da Freguesia · Centro Histórico de São José",
+   "categoria": "feira",
+   "lat": -27.615,
+   "lng": -48.628,
+   "aprox": true,
+   "bairro": "Centro Histórico · São José",
+   "endereco": "Praça Hercílio Luz e arredores",
+   "descricao": "Feira mensal da Prefeitura de São José no Centro Histórico, com artesanato, gastronomia e atrações culturais, realizada desde 2014.",
+   "horario": "2º domingo do mês, 10h–19h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "gastronomia",
+    "centro histórico"
+   ],
+   "fonte": "https://saojose.sc.gov.br/feira-da-freguesia-traz-edicao-especial-de-dia-das-criancas-a-sao-jose/107896/",
+   "confirmar": "Algumas edições mudam de domingo (ex.: Dia dos Pais); confirme a data no site da prefeitura."
+  },
+  {
+   "id": "feira-empreendedor-beira-mar-sj",
+   "nome": "Feira do Empreendedor · Beira-Mar de São José",
+   "categoria": "feira",
+   "lat": -27.5945,
+   "lng": -48.6135,
+   "aprox": true,
+   "bairro": "Beira-Mar · São José",
+   "endereco": "Bolsão da Escola de Oleiros, Av. Acioni Souza Filho",
+   "descricao": "Feira da Prefeitura de São José com cerca de 40 a 50 expositores locais de artesanato, gastronomia e produtos autorais, aos sábados na Beira-Mar.",
+   "horario": "Sábados, 10h–22h",
+   "tags": [
+    "feira",
+    "artesanato",
+    "gastronomia",
+    "economia criativa"
+   ],
+   "fonte": "https://saojose.sc.gov.br/empreendedorismo-e-lazer-movimentam-a-beira-mar-neste-sabado-28/96649/",
+   "confirmar": "Fonte mais recente é de março de 2026 e não deixa claro se a feira é semanal; pode ser cancelada com chuva. Confirme antes de ir."
+  },
+  {
+   "id": "paradigma-cine-arte",
+   "nome": "Paradigma Cine Arte",
+   "categoria": "audiovisual",
+   "lat": -27.5935,
+   "lng": -48.548,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Cinema de rua dedicado a filmes de arte e cinema autoral. Recebe anualmente o Festival de Cinema Francês do Brasil.",
+   "fonte": "https://floripa.com/a-cidade/cultura/festival-cinema-frances-florianopolis-2026/",
+   "tags": [
+    "cinema",
+    "cinema de arte"
+   ]
+  },
+  {
+   "id": "teatro-dionisio",
+   "nome": "Teatro Dionísio",
+   "categoria": "teatro",
+   "lat": -27.437,
+   "lng": -48.396,
+   "aprox": true,
+   "bairro": "Ingleses do Rio Vermelho",
+   "endereco": "Servidão Safira, 148 · Ingleses do Rio Vermelho · CEP 88058-095",
+   "descricao": "Espaço cultural com teatro de 384 lugares no Norte da Ilha.",
+   "fonte": "https://feverup.com/en/florianopolis/venue/teatro-dionisio",
+   "tags": [
+    "teatro",
+    "norte da ilha"
+   ]
+  },
+  {
+   "id": "alcateia-park-campeche",
+   "nome": "Alcateia Park · Campeche",
+   "categoria": "musica",
+   "lat": -27.68,
+   "lng": -48.49,
+   "aprox": true,
+   "bairro": "Campeche",
+   "descricao": "Área de eventos no Campeche, sede do Festival Saravá 2026.",
+   "fonte": "https://billboard.com.br/festival-sarava-2026-data-primeiras-atracoes/",
+   "tags": [
+    "festival",
+    "shows"
+   ]
+  },
+  {
+   "id": "life-club-floripa",
+   "nome": "Life Club Floripa",
+   "categoria": "musica",
+   "lat": -27.48,
+   "lng": -48.455,
+   "aprox": true,
+   "bairro": "Vargem Pequena",
+   "descricao": "Casa de shows na Vargem Pequena, Norte da Ilha.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/the-white-buffalo-life-club-floripa-novembro-2026/",
+   "tags": [
+    "shows"
+   ]
+  },
+  {
+   "id": "sitio-costa-de-dentro",
+   "nome": "Sítio Costa de Dentro · Pântano do Sul",
+   "categoria": "espaco",
+   "lat": -27.775,
+   "lng": -48.51,
+   "aprox": true,
+   "bairro": "Pântano do Sul",
+   "descricao": "Sítio na Costa de Dentro, no Pântano do Sul, que recebe a edição Ilha da Magia do Beltane Festival.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/beltane-festival-ilha-da-magia-pantano-do-sul-2026/",
+   "tags": [
+    "sul da ilha"
+   ]
+  },
+  {
+   "id": "iemanja-campeche",
+   "nome": "Celebração a Iemanjá · Praia do Campeche (Pequeno Príncipe)",
+   "categoria": "popular",
+   "lat": -27.671,
+   "lng": -48.475,
+   "aprox": true,
+   "bairro": "Campeche",
+   "descricao": "Ponto de chegada do cortejo a Iemanjá que sai do terreiro Ilê Axé Omi Olodo Tolá até a Praia do Pequeno Príncipe, onde são entregues as oferendas ao mar. A celebração foi registrada como patrimônio cultural imaterial de Florianópolis e está no calendário oficial do município desde 2021.",
+   "fonte": "https://ndmais.com.br/religiao/iemanja-celebracao-no-campeche-vira-patrimonio-cultural-em-florianopolis/",
+   "tags": [
+    "matriz africana",
+    "umbanda",
+    "candomblé",
+    "patrimônio imaterial"
+   ]
+  },
+  {
+   "id": "jardim-botanico",
+   "nome": "Jardim Botânico de Florianópolis",
+   "categoria": "espaco",
+   "lat": -27.5868,
+   "lng": -48.5093,
+   "aprox": true,
+   "bairro": "Itacorubi",
+   "descricao": "Parque público no Itacorubi, com áreas verdes, trilhas e espaço para feiras e festivais ao ar livre.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/haru-matsuri-2026-jardim-botanico-florianopolis/",
+   "tags": [
+    "parque",
+    "ar livre",
+    "festivais"
+   ]
+  },
+  {
+   "id": "cena-ballroom-grande-florianopolis",
+   "nome": "Cena ballroom da Grande Florianópolis (Casa das Duras, Casa Índigo, House of Felines, House of Blyndex)",
+   "categoria": "festa",
+   "lat": -27.596,
+   "lng": -48.549,
+   "aprox": true,
+   "bairro": "Centro (cena itinerante)",
+   "descricao": "Além da Casa das Feiticeiras, a cena ballroom local reúne casas como Casa das Duras, Casa Índigo, House of Felines e House of Blyndex, com treinos abertos em praças, kikis e balls, e é formada em grande parte por pessoas trans. Em 29/08/2026 a Casa Índigo realizou o kiki ball Icy Spicy no Brisa Bar.",
+   "tags": [
+    "ballroom",
+    "vogue",
+    "LGBTQIA+",
+    "trans",
+    "kiki"
+   ],
+   "fonte": "https://catarinas.info/cena-ballroom-de-florianopolis-impulsiona-arte-e-acolhimento-para-pessoas-trans/",
+   "confirmar": "Não há local fixo: dias e lugares dos treinos e próximas balls não foram encontrados em fonte pública; conferir nas redes das casas. Fonte do kiki Icy Spicy: https://www.sympla.com.br/evento/icy-spicy-kiki-ball/3515309"
+  },
+  {
+   "id": "baixo-centro-bar",
+   "nome": "Baixo Centro Bar · Kings com K (drag kings)",
+   "categoria": "festa",
+   "lat": -27.5985,
+   "lng": -48.553,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Bar no Centro que recebeu a noite Kings com K, dedicada a performances de drag kings, em domingo de setembro de 2026.",
+   "tags": [
+    "drag",
+    "drag king",
+    "LGBTQIA+"
+   ],
+   "fonte": "https://floripa.com/eventos/kings-com-k/",
+   "confirmar": "Endereço exato não informado na fonte; não está claro se a noite Kings com K é recorrente (edição encontrada: 20/09/2026)."
+  },
+  {
+   "id": "felabration-floripa",
+   "nome": "FELABRATION Floripa · Morro da Mariquinha",
+   "categoria": "festa",
+   "lat": -27.5993,
+   "lng": -48.544,
+   "aprox": true,
+   "bairro": "Morro da Mariquinha · Centro",
+   "descricao": "Festival de cultura pan-africana em homenagem a Fela Kuti, em sua 5ª edição em 2026, apresentado como o único no Brasil licenciado oficialmente pelo Felabration da Nigéria. A edição 2026 tem abertura com protagonismo de mulheres negras (Felapretas) no Bugio Centro, semana de formação (Feladucação, 26 a 30/10) e dias principais no Morro da Mariquinha.",
+   "site": "https://felabrationfloripa.net",
+   "tags": [
+    "cultura negra",
+    "afrobeat",
+    "pan-africanismo",
+    "música"
+   ],
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/felabration-floripa-2026-fela-kuti-morro-da-mariquinha/"
+  },
+  {
+   "id": "viva-feira-campeche",
+   "nome": "Viva Feira Campeche",
+   "categoria": "feira",
+   "lat": -27.675,
+   "lng": -48.485,
+   "aprox": true,
+   "bairro": "Campeche · Florianópolis",
+   "endereco": "Paróquia Nossa Senhora do Sagrado Coração, Campeche",
+   "descricao": "Feira semanal de sábado organizada como movimento comunitário de produtores e consumidores, com orgânicos e produtos artesanais. Em junho de 2026 realizou a 2ª Viva Feira Festiva, com roda de choro, oficina de pintura com pigmentos naturais e contação de histórias.",
+   "horario": "Sábados de manhã (a edição festiva de 27/06/2026 foi das 7h às 12h)",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agroecologia",
+    "artesanato",
+    "economia solidária"
+   ],
+   "fonte": "https://acontecendoaqui.com.br/eventos/campeche-sedia-2a-edicao-da-viva-feira-festiva-neste-sabado-27/",
+   "confirmar": "Horário semanal regular não informado na fonte (o 7h–12h é da edição festiva de junho de 2026); coordenadas aproximadas da paróquia."
+  },
+  {
+   "id": "feira-organica-ufsc",
+   "nome": "Feira de orgânicos da UFSC · Praça da Cidadania",
+   "categoria": "feira",
+   "lat": -27.6011,
+   "lng": -48.5197,
+   "aprox": true,
+   "bairro": "Trindade · Florianópolis",
+   "endereco": "Praça da Cidadania, em frente à Reitoria da UFSC",
+   "descricao": "Feira de produtos orgânicos e agroecológicos da agricultura familiar no campus da UFSC, descrita em artigo acadêmico como um dos principais espaços de venda direta da cidade, com cerca de 18 bancas.",
+   "horario": "Quartas-feiras, das 6h às 18h (segundo fonte antiga)",
+   "tags": [
+    "feira",
+    "orgânicos",
+    "agricultura familiar",
+    "economia solidária"
+   ],
+   "fonte": "https://periodicos.ufv.br/elo/article/download/1026/574/5318",
+   "confirmar": "Dia e horário de artigo de cerca de 2013–2014; confirmar se a feira segue às quartas e no mesmo local."
+  },
+  {
+   "id": "horta-muquem",
+   "nome": "Horta Comunitária do Muquém",
+   "categoria": "social",
+   "lat": -27.515,
+   "lng": -48.42,
+   "aprox": true,
+   "bairro": "São João do Rio Vermelho · Florianópolis",
+   "descricao": "Horta comunitária surgida em 2020 por mobilização dos moradores, em resposta à insegurança alimentar na pandemia. Cultiva alimentos em base agroecológica, distribui a produção e composta resíduos orgânicos, com trabalho em mutirões.",
+   "participar": "A horta funciona por mutirões comunitários; procure os organizadores para saber as datas.",
+   "tags": [
+    "horta comunitária",
+    "agroecologia",
+    "compostagem",
+    "mutirão"
+   ],
+   "fonte": "https://ojs.sites.ufsc.br/index.php/am/article/view/5376/4820",
+   "confirmar": "Fonte acadêmica sobre os primeiros anos da horta; situação atual, local exato e dias de mutirão não confirmados."
+  },
+  {
+   "id": "cepagro",
+   "nome": "Cepagro · Centro de Estudos e Promoção da Agricultura de Grupo",
+   "categoria": "social",
+   "lat": -27.585,
+   "lng": -48.505,
+   "aprox": true,
+   "bairro": "Itacorubi · Florianópolis",
+   "descricao": "Organização de agroecologia e agricultura urbana com sede no Itacorubi. Promoveu o ciclo gratuito de oficinas práticas “Saber na Prática”, sobre compostagem, horta agroecológica, plantas medicinais, produção de mudas e PANCs.",
+   "participar": "Contato informado na fonte: cepagro@cepagro.org.br.",
+   "tags": [
+    "agroecologia",
+    "agricultura urbana",
+    "oficinas",
+    "compostagem"
+   ],
+   "fonte": "https://cadernos.aba-agroecologia.org.br/cadernos/article/download/218/1879/3824",
+   "confirmar": "Oficinas descritas em artigo de 2018; agenda atual não confirmada. Endereço exato não consta no trecho consultado."
+  },
+  {
+   "id": "culturaberta-matura",
+   "nome": "Culturaberta · Matura",
+   "categoria": "social",
+   "lat": -27.675,
+   "lng": -48.49,
+   "aprox": true,
+   "bairro": "Campeche · Florianópolis",
+   "descricao": "Coletivo que oferece oficinas gratuitas de música, dança, circo, artes visuais, literatura e educação ambiental, em parceria com o espaço cultural Matura, no Campeche. Em 2023 anunciou 17 oficinas e quatro festivais abertos ao público.",
+   "tags": [
+    "oficinas gratuitas",
+    "centro cultural",
+    "circo",
+    "música",
+    "educação ambiental"
+   ],
+   "fonte": "https://acontecendoaqui.com.br/?p=161386",
+   "confirmar": "Programação de 2023; confirmar se o projeto segue ativo em 2026. Localização aproximada (bairro)."
+  },
+  {
+   "id": "casa-chico-mendes",
+   "nome": "Casa Chico Mendes · Comunidade Chico Mendes",
+   "categoria": "social",
+   "lat": -27.588,
+   "lng": -48.595,
+   "aprox": true,
+   "bairro": "Monte Cristo · Florianópolis",
+   "descricao": "ONG da comunidade Chico Mendes, no bairro Monte Cristo, parceira de projeto de extensão da UFSC que, desde 2002, desenvolve atividades artísticas e de psicologia ambiental com moradores.",
+   "tags": [
+    "centro comunitário",
+    "arte",
+    "extensão universitária",
+    "Continente"
+   ],
+   "fonte": "https://periodicos.ufsc.br/index.php/zeroseis/article/download/1980-4512.2011n24p57/18185/62668",
+   "confirmar": "Fonte de 2011; atividades atuais, endereço e horários da ONG não confirmados."
+  },
+  {
+   "id": "goj-ta-sa",
+   "nome": "Casa de Passagem Indígena e Ponto de Cultura Goj Tá Sá",
+   "categoria": "social",
+   "lat": -27.61,
+   "lng": -48.535,
+   "aprox": true,
+   "bairro": "Saco dos Limões · Florianópolis",
+   "endereco": "Antigo Terminal Integrado do Saco dos Limões (TISAC)",
+   "descricao": "Associação ligada principalmente a famílias Kaingang que vêm à capital vender artesanato, instalada no antigo TISAC. Funciona como casa de passagem e ponto de cultura, e já promoveu fins de semana de cultura Kaingang com artesanato, canto, dança e culinária. A prefeitura tem projeto para formalizar o espaço.",
+   "tags": [
+    "indígena",
+    "Kaingang",
+    "ponto de cultura",
+    "artesanato"
+   ],
+   "fonte": "https://tecendoredes.libertar.org/wp-content/uploads/2025/10/CARTA-DE-ESCLARECIMENTO-A-IMPRENSA-E-A-SOCIEDADE-SOBRE-A-CASA-DE-PASSAGEM-INDIGENA-E-PONTO-DE-CULTURA-GOJ-TA-SA.pdf",
+   "confirmar": "Situação do espaço em transição (obra da prefeitura prevista para 2026, segundo NSC: https://www.nsctotal.com.br/?p=7663600); confirmar se há atividades abertas ao público."
+  },
+  {
+   "id": "casa-artesanato-guarani-alfandega",
+   "nome": "Casa de artesanato Mbya Guarani · Largo da Alfândega",
+   "categoria": "atelie",
+   "lat": -27.5967,
+   "lng": -48.553,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "endereco": "Largo da Alfândega",
+   "descricao": "Ponto de venda de artesanato Mbya Guarani no Largo da Alfândega, incluído na programação do evento “Aldear o Centro”, que reuniu feira de artesanato e apresentações dos povos Guarani, Kaingang e Xokleng.",
+   "tags": [
+    "indígena",
+    "Guarani",
+    "artesanato"
+   ],
+   "fonte": "https://www.nsctotal.com.br/?p=2391291",
+   "confirmar": "Data da reportagem não identificada; confirmar se a casa segue funcionando e em que horários."
+  },
+  {
+   "id": "boi-mamao-pantanal",
+   "nome": "Associação Folclórica Boi de Mamão do Pantanal",
+   "categoria": "popular",
+   "lat": -27.61,
+   "lng": -48.515,
+   "aprox": true,
+   "bairro": "Pantanal · Florianópolis",
+   "descricao": "Grupo de boi de mamão do bairro Pantanal, um dos mais tradicionais da cidade, com a encenação da morte e ressurreição do boi e personagens como a Bernúncia, a Maricota e a Cabra. Apresentou-se na Maratona Cultural 2026 e no Encontro de Bois de Norte a Sul da Fundação Franklin Cascaes.",
+   "tags": [
+    "boi de mamão",
+    "cultura açoriana",
+    "folclore"
+   ],
+   "fonte": "https://www.nsctotal.com.br/cotidiano/os-bairros-com-atracoes-da-maratona-cultural-2026-em-florianopolis",
+   "confirmar": "Sede e agenda de apresentações não informadas; coordenadas aproximadas do bairro."
+  },
+  {
+   "id": "museu-casa-dos-acores",
+   "nome": "Museu Etnográfico Casa dos Açores",
+   "categoria": "popular",
+   "lat": -27.445,
+   "lng": -48.625,
+   "aprox": true,
+   "bairro": "São Miguel · Biguaçu",
+   "endereco": "Rod. Gov. Mário Covas (BR-101), s/n, São Miguel",
+   "descricao": "Museu da Fundação Catarinense de Cultura dedicado à memória luso-açoriana da Grande Florianópolis, num sobrado do conjunto histórico de São Miguel, junto à Igreja de São Miguel Arcanjo e ao aqueduto colonial. O acervo reúne arte sacra, instrumentos da pesca da baleia, réplicas de engenhos, renda e trajes populares.",
+   "tags": [
+    "cultura açoriana",
+    "museu",
+    "renda de bilro",
+    "engenho"
+   ],
+   "fonte": "https://revistas.rcaap.pt/thij/article/view/30109",
+   "confirmar": "Horário (terça a domingo, 8h às 17h) visto só em listagem de terceiros; confirmar com a Fundação Catarinense de Cultura. Endereço também de listagem de terceiros."
+  },
+  {
+   "id": "unidos-da-coloninha",
+   "nome": "Unidos da Coloninha · escola de samba",
+   "categoria": "samba",
+   "lat": -27.5935,
+   "lng": -48.5975,
+   "aprox": true,
+   "bairro": "Coloninha · Florianópolis (Continente)",
+   "descricao": "Sociedade Recreativa e Cultural Unidos da Coloninha, fundada em 1962 na comunidade da Coloninha, na parte continental de Florianópolis. Filiada à Liga das Escolas de Samba de Florianópolis (LIESF) e várias vezes campeã do Carnaval da cidade.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Continente"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pela comunidade, não pelo endereço da quadra. Em 2023 os ensaios eram no Estádio Orlando Scarpelli (Estreito): bateria às terças, ensaio geral às quintas e ensaios com atrações aos domingos (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme local e dias da temporada 2027 nas redes da escola."
+  },
+  {
+   "id": "consulado-escola-samba",
+   "nome": "Consulado · escola de samba",
+   "categoria": "samba",
+   "lat": -27.6085,
+   "lng": -48.533,
+   "aprox": true,
+   "bairro": "Caieira do Saco dos Limões · Florianópolis",
+   "descricao": "Grêmio Recreativo Escola de Samba Consulado, ligado à comunidade da Caieira do Saco dos Limões. Foi a campeã do Carnaval 2026 de Florianópolis.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Saco dos Limões"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pela comunidade, não pelo endereço da quadra. Em 2023 os ensaios gerais eram às terças, quintas e sábados na “Arena Consulado” (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme local e dias da temporada 2027."
+  },
+  {
+   "id": "dascuia-escola-samba",
+   "nome": "Dascuia · escola de samba",
+   "categoria": "samba",
+   "lat": -27.5885,
+   "lng": -48.54,
+   "aprox": true,
+   "bairro": "Morro do Céu (Maciço do Morro da Cruz) · Florianópolis",
+   "descricao": "Escola de samba fundada em 2004 na comunidade do Morro do Céu, no Maciço do Morro da Cruz. Campeã do grupo de acesso em 2014, desfila no grupo principal da LIESF.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Maciço do Morro da Cruz"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pela comunidade, não por endereço de sede. Em 2023 os ensaios eram às quintas e domingos na Passarela Nego Quirido, no Centro (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+  },
+  {
+   "id": "nacao-guarany",
+   "nome": "Nação Guarany · escola de samba",
+   "categoria": "samba",
+   "lat": -27.642,
+   "lng": -48.672,
+   "aprox": true,
+   "bairro": "Caminho Novo · Palhoça",
+   "descricao": "Escola de samba fundada em 2009 no bairro Caminho Novo, em Palhoça, filiada à LIESF e participante dos desfiles de Florianópolis. Para o Carnaval 2027 escolheu samba-enredo em homenagem ao povo Tupinambá.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Palhoça"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pelo bairro. Em 2019 os ensaios eram às terças e quintas, às 19h30, no ginásio do bairro Caminho Novo (ND+, https://ndmais.com.br/cultura/conheca-o-trabalho-das-escolas-de-samba-de-florianopolis-durante-o-ano/). Informação antiga; confirme nas redes da escola."
+  },
+  {
+   "id": "jardim-das-palmeiras-escola-samba",
+   "nome": "Jardim das Palmeiras · escola de samba",
+   "categoria": "samba",
+   "lat": -27.58,
+   "lng": -48.653,
+   "aprox": true,
+   "bairro": "Jardim das Palmeiras / Forquilhinha · São José",
+   "descricao": "Escola de samba fundada em 2005 na comunidade Jardim das Palmeiras, na Forquilhinha, em São José. Filiada à LIESF, desfila no Carnaval de Florianópolis.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "São José"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pela comunidade; a fonte não informa endereço de quadra nem dias de ensaio. Confirme nas redes da escola."
+  },
+  {
+   "id": "imperio-vermelho-e-branco",
+   "nome": "Império Vermelho e Branco · escola de samba",
+   "categoria": "samba",
+   "lat": -27.6075,
+   "lng": -48.5165,
+   "aprox": true,
+   "bairro": "Pantanal · Florianópolis",
+   "descricao": "Escola de samba fundada em 2012 no bairro Pantanal. Ficou em terceiro lugar no Carnaval 2026 de Florianópolis.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Pantanal"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às terças, 20h, no ginásio da escola Beatriz, no Pantanal (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+  },
+  {
+   "id": "uniao-ilha-da-magia",
+   "nome": "União da Ilha da Magia · escola de samba",
+   "categoria": "samba",
+   "lat": -27.603,
+   "lng": -48.469,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição · Florianópolis",
+   "descricao": "Escola de samba da Lagoa da Conceição, fundada em 2008. Campeã do Carnaval de Florianópolis em 2011, 2012 e 2023.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Lagoa da Conceição"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às sextas e domingos, 19h30, na Praça Bento Silvério (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+  },
+  {
+   "id": "academicos-sul-da-ilha",
+   "nome": "Acadêmicos do Sul da Ilha · escola de samba",
+   "categoria": "samba",
+   "lat": -27.693,
+   "lng": -48.56,
+   "aprox": true,
+   "bairro": "Tapera · Florianópolis",
+   "descricao": "Agremiação da Tapera, fundada em 2008 e escola de samba desde 2015. Ficou em quarto lugar no Carnaval 2026 de Florianópolis.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Sul da Ilha",
+    "Tapera"
+   ],
+   "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
+   "confirmar": "Localização pelo bairro. Em 2023 a bateria ensaiava às terças, 20h, no Conselho Comunitário da Tapera, e o ensaio geral era aos domingos, 20h, na Praça da Tapera (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+  },
+  {
+   "id": "imperatriz-grande-ilha",
+   "nome": "Imperatriz da Grande Ilha · agremiação carnavalesca",
+   "categoria": "samba",
+   "lat": -27.635,
+   "lng": -48.523,
+   "aprox": true,
+   "bairro": "Costeira do Pirajubaé · Florianópolis",
+   "descricao": "Sociedade Recreativa Cultural Imperatriz da Grande Ilha. Para 2027 apresenta o samba-enredo “O Itã de Oxóssi”, lançado com a coroação da corte na AMOCOP, na Costeira do Pirajubaé.",
+   "tags": [
+    "escola de samba",
+    "carnaval",
+    "Costeira do Pirajubaé"
+   ],
+   "fonte": "https://floripa.com/eventos/src-imperatriz-da-grande-ilha-coroacao-da-corte-e-lancamento-do-samba-enredo-2027/",
+   "confirmar": "Posição aproximada pela AMOCOP (Costeira do Pirajubaé), local do evento de lançamento; a fonte não informa sede ou quadra fixa."
+  },
+  {
+   "id": "floripa-blues-session",
+   "nome": "Floripa Blues Session · Tio Gether's",
+   "categoria": "musica",
+   "lat": -27.675,
+   "lng": -48.495,
+   "aprox": true,
+   "bairro": "Sul da Ilha · Florianópolis",
+   "descricao": "Jam session aberta a músicos, ativa desde outubro de 2024, que mistura blues, jazz, soul, R&B e MPB. Os encontros são às terças, no bar Tio Gether's, no Sul da Ilha.",
+   "horario": "Terças, 20h",
+   "participar": "Jam session: músicos podem se inscrever para tocar no encontro.",
+   "site": "https://preview2.bluessession.com.br/",
+   "tags": [
+    "blues",
+    "jazz",
+    "jam session",
+    "música ao vivo"
+   ],
+   "fonte": "https://preview2.bluessession.com.br/",
+   "confirmar": "A fonte diz apenas “Sul da Ilha”; endereço exato do Tio Gether's não informado (posição no mapa é indicativa). O site encontrado é uma versão de prévia."
+  },
+  {
+   "id": "pantai-chill-house",
+   "nome": "Pantai Chill House",
+   "categoria": "musica",
+   "lat": -27.6,
+   "lng": -48.472,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição · Florianópolis",
+   "descricao": "Casa com varanda envidraçada voltada para a Lagoa, com samba aos domingos (Samba da Castanheira) e o Forró da Lagoa, projeto coordenado pelo Quarteto Pé de Cabra, às sextas.",
+   "horario": "Samba aos domingos; forró às sextas",
+   "tags": [
+    "samba",
+    "forró",
+    "música ao vivo",
+    "Lagoa da Conceição"
+   ],
+   "fonte": "https://ndmais.com.br/turismo/11-lugares-para-curtir-roda-de-samba-em-florianopolis/",
+   "confirmar": "Programação de samba citada em reportagem de fim de 2024; a do forró vem de página do Festival Viva a Lagoa sem data atual (https://vivalagoaacif.org.br/evento/forro-da-lagoa-3/). Endereço exato não informado. Confirme dias e horários nas redes da casa."
+  },
+  {
+   "id": "o-araca-lagoa",
+   "nome": "O Araçá",
+   "categoria": "samba",
+   "lat": -27.602,
+   "lng": -48.47,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição · Florianópolis",
+   "descricao": "Bar na Lagoa da Conceição com programação fixa de samba aos domingos.",
+   "horario": "Domingos",
+   "tags": [
+    "samba",
+    "roda de samba",
+    "Lagoa da Conceição"
+   ],
+   "fonte": "https://ndmais.com.br/turismo/11-lugares-para-curtir-roda-de-samba-em-florianopolis/",
+   "confirmar": "Reportagem de fim de 2024, sem horário nem endereço. Confirme se a roda continua e o horário."
+  },
+  {
+   "id": "bar-do-noel",
+   "nome": "Bar do Noel (Canto do Noel)",
+   "categoria": "samba",
+   "lat": -27.598,
+   "lng": -48.55,
+   "aprox": true,
+   "bairro": "Centro · Florianópolis",
+   "descricao": "Bar do Centro com uma das rodas de samba mais conhecidas da cidade, de sexta a domingo; o público costuma ocupar a Travessa Ratcliff.",
+   "horario": "Sexta a domingo",
+   "tags": [
+    "samba",
+    "roda de samba",
+    "Centro"
+   ],
+   "fonte": "https://ndmais.com.br/turismo/11-lugares-para-curtir-roda-de-samba-em-florianopolis/",
+   "confirmar": "Reportagem de fim de 2024, sem horários. Posição pela Travessa Ratcliff; confirme horários antes de ir."
+  },
+  {
+   "id": "rancho-do-bastiao",
+   "nome": "Rancho do Bastião",
+   "categoria": "samba",
+   "lat": -27.507,
+   "lng": -48.519,
+   "aprox": true,
+   "bairro": "Santo Antônio de Lisboa · Florianópolis",
+   "descricao": "Espaço em Santo Antônio de Lisboa com roda de samba aos domingos, a partir das 19h30, e datas extras às sextas e sábados anunciadas nas redes. Em 2026 recebeu edições do “Samba de Domingo no Rancho”.",
+   "horario": "Domingos, a partir das 19h30",
+   "tags": [
+    "samba",
+    "roda de samba",
+    "Santo Antônio de Lisboa"
+   ],
+   "fonte": "https://floripa.com/o-que-fazer/guia-para-curtir-samba-pagode-e-chorinho-em-floripa/",
+   "confirmar": "Endereço exato não informado na fonte; posição indicativa no bairro."
+  },
+  {
+   "id": "borogodo-da-ilha",
+   "nome": "Borogodó da Ilha",
+   "categoria": "samba",
+   "lat": -27.596,
+   "lng": -48.548,
+   "aprox": true,
+   "bairro": "Florianópolis",
+   "endereco": "Praça Olívio Amorim",
+   "descricao": "Bar de samba com música ao vivo e músicos locais, na Praça Olívio Amorim.",
+   "horario": "Quinta a sábado, 17h à 1h30",
+   "tags": [
+    "samba",
+    "música ao vivo"
+   ],
+   "fonte": "https://floripa.com/o-que-fazer/guia-para-curtir-samba-pagode-e-chorinho-em-floripa/",
+   "confirmar": "A fonte não informa o bairro; o ponto no mapa é indicativo. Confirme localização e horários."
+  },
+  {
+   "id": "choro-ze-mane",
+   "nome": "Choro Zé Mané · roda de choro",
+   "categoria": "samba",
+   "lat": -27.603,
+   "lng": -48.58,
+   "aprox": true,
+   "bairro": "Coqueiros · Florianópolis",
+   "descricao": "Roda de choro em Coqueiros, listada às terças-feiras, às 20h.",
+   "horario": "Terças, 20h",
+   "tags": [
+    "choro",
+    "roda de choro",
+    "Continente"
+   ],
+   "fonte": "https://chorolab.com/rodas-de-choro/",
+   "confirmar": "Listagem sem data de atualização e sem endereço. Confirme se a roda continua, o local exato e o horário."
   }
  ],
  "eventos": [
@@ -2221,7 +3438,8 @@
    "repete": "nao",
    "preco": "Ingresso (ver site)",
    "descricao": "Abertura da 19ª Folianópolis, a micareta de Florianópolis, na Passarela Nego Quirido.",
-   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/"
+   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/",
+   "sem_horario": true
   },
   {
    "id": "folia-2",
@@ -2232,7 +3450,8 @@
    "repete": "nao",
    "preco": "Ingresso (ver site)",
    "descricao": "Segunda noite da 19ª Folianópolis, na Passarela Nego Quirido. A festa segue em 1º de novembro.",
-   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/"
+   "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/",
+   "sem_horario": true
   },
   {
    "id": "mane-nov",
@@ -2296,7 +3515,8 @@
    "preco": "Grátis",
    "descricao": "A Parada costuma acontecer no fim de novembro, com concentração ao meio-dia na cabeceira continental da Ponte Hercílio Luz e trios pela Beira-Mar Continental (edições de 2024 e 2025). Um calendário nacional traz 28/11/2026 como previsão; a organização ainda não confirmou.",
    "fonte": "https://floripa.lgbt/agenda-de-eventos/paradas-lgbti/",
-   "confirmar": "Data prevista em calendário nacional, sem confirmação da organização. Confira nas redes da Parada e no Floripa.LGBT antes de divulgar."
+   "confirmar": "Data prevista em calendário nacional, sem confirmação da organização. Confira nas redes da Parada e no Floripa.LGBT antes de divulgar.",
+   "sem_horario": true
   },
   {
    "id": "hassis-abertura",
@@ -2393,7 +3613,8 @@
    "repete": "nao",
    "preco": "Ingresso (consulte a LIESF)",
    "descricao": "Primeira noite dos desfiles do Carnaval de Florianópolis 2027 na Passarela Nego Quirido. A apuração acontece em 8/2.",
-   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/"
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "sem_horario": true
   },
   {
    "id": "carnaval-2",
@@ -2404,7 +3625,8 @@
    "repete": "nao",
    "preco": "Ingresso (consulte a LIESF)",
    "descricao": "Segunda noite dos desfiles, em que entra a campeã Consulado, na Passarela Nego Quirido.",
-   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/"
+   "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
+   "sem_horario": true
   },
   {
    "id": "vidal-curso",
@@ -2431,7 +3653,8 @@
    "preco": "Ingresso (ver Conecta SC)",
    "descricao": "Noite de trap e rap no Arena Opus, em São José.",
    "fonte": "https://conectasc.com.br/eventos-santa-catarina/categoria/cidades-catarinenses/sao-jose/",
-   "confirmar": "Horário não localizado. Confira com a bilheteria."
+   "confirmar": "Horário não localizado. Confira com a bilheteria.",
+   "sem_horario": true
   },
   {
    "id": "fresno",
@@ -2456,7 +3679,8 @@
    "preco": "Ingresso (ver Vibe Index)",
    "descricao": "Show de Armandinho, ícone do reggae feito em Florianópolis, com Vitor Kley.",
    "fonte": "https://www.vibeindex.com.br/events/florianopolis-sc",
-   "confirmar": "Horário não localizado. Confirme na bilheteria."
+   "confirmar": "Horário não localizado. Confirme na bilheteria.",
+   "sem_horario": true
   },
   {
    "id": "emicida",
@@ -2468,7 +3692,8 @@
    "preco": "Ingresso (ver Conecta SC)",
    "descricao": "Show de Emicida no Arena Opus, em São José.",
    "fonte": "https://conectasc.com.br/eventos-santa-catarina/categoria/cidades-catarinenses/sao-jose/",
-   "confirmar": "Horário não localizado. Confirme na bilheteria."
+   "confirmar": "Horário não localizado. Confirme na bilheteria.",
+   "sem_horario": true
   },
   {
    "id": "roxette",
@@ -2480,7 +3705,8 @@
    "preco": "Ingresso (ver Vibe Index)",
    "descricao": "Show tributo à banda Roxette no Teatro Ademir Rosa, no CIC.",
    "fonte": "https://www.vibeindex.com.br/events/florianopolis-sc",
-   "confirmar": "Listagem de agregador, sem horário. Confirme na bilheteria."
+   "confirmar": "Listagem de agregador, sem horário. Confirme na bilheteria.",
+   "sem_horario": true
   },
   {
    "id": "folia-3",
@@ -2492,7 +3718,8 @@
    "preco": "Ingresso (ver site)",
    "descricao": "Última noite da 19ª Folianópolis. Entre os nomes anunciados para a edição estão Claudia Leitte, Léo Santana, Bell Marques e Timbalada; a escalação de cada noite está no site do evento.",
    "fonte": "https://floripa.com/programe-se/folianopolis-2026-atracoes-datas-ingressos/",
-   "confirmar": "Atrações da noite 3 não localizadas. Confira o site do evento."
+   "confirmar": "Atrações da noite 3 não localizadas. Confira o site do evento.",
+   "sem_horario": true
   },
   {
    "id": "reveillon-norte",
@@ -2503,7 +3730,8 @@
    "repete": "nao",
    "preco": "Grátis",
    "descricao": "Festa gratuita da Prefeitura na Beira-Mar Norte, com show de Ana Castela e queima de fogos.",
-   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/reveillon-florianopolis-2027-ana-castela-sorriso-maroto/"
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/reveillon-florianopolis-2027-ana-castela-sorriso-maroto/",
+   "sem_horario": true
   },
   {
    "id": "reveillon-continental",
@@ -2514,7 +3742,8 @@
    "repete": "nao",
    "preco": "Grátis",
    "descricao": "Festa gratuita da Prefeitura na Beira-Mar Continental, com show do Sorriso Maroto. A cidade também promete a tradicional cascata de fogos na Ponte Hercílio Luz.",
-   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/reveillon-florianopolis-2027-ana-castela-sorriso-maroto/"
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/reveillon-florianopolis-2027-ana-castela-sorriso-maroto/",
+   "sem_horario": true
   },
   {
    "id": "flaca",
@@ -2667,7 +3896,8 @@
    "preco": "Grátis",
    "descricao": "20 de novembro, Dia Nacional de Zumbi e da Consciência Negra, é feriado nacional. Em anos anteriores, Florianópolis teve semana de atividades, caminhada, rodas de capoeira, oficinas e feira de afroempreendedores (uma das edições na Beira-Mar Continental). A programação de 2026 ainda não foi divulgada.",
    "fonte": "https://floripa.com/eventos/dia-da-consciencia-negra-programacao-especial-em-florianopolis/",
-   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores."
+   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores.",
+   "sem_horario": true
   },
   {
    "id": "violencia-mulher-2026",
@@ -2679,7 +3909,8 @@
    "preco": "Grátis",
    "descricao": "25 de novembro é o Dia Internacional pela Eliminação da Violência contra as Mulheres. Em anos anteriores, o movimento feminista 8M SC fez ato em frente ao TICEN a partir do meio-dia e marcha às 18h, com orientação jurídica. Em 2026, Santa Catarina já registrou mais de 9,5 mil casos de violência contra a mulher até setembro.",
    "fonte": "https://catarinas.info/21-dias-pelo-fim-da-violencia-as-mulheres-mobiliza-florianopolis/",
-   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores; confira com o 8M SC."
+   "confirmar": "Programação de 2026 não divulgada. Local e horários são de edições anteriores; confira com o 8M SC.",
+   "sem_horario": true
   },
   {
    "id": "kazabaka-desejo-espartilho-1",
@@ -2715,7 +3946,8 @@
    "preco": "Grátis",
    "descricao": "Duas apresentações de dança do projeto Dança em Trânsito no Teatro Carmen Fossari (Igrejinha da UFSC), além de atividade formativa na Cenarium Escola de Dança.",
    "fonte": "https://floripa.com/eventos/danca-em-transito-2026/",
-   "confirmar": "Horários das apresentações não informados na fonte."
+   "confirmar": "Horários das apresentações não informados na fonte.",
+   "sem_horario": true
   },
   {
    "id": "aulas-capoeira-udesc-cefid",
@@ -2789,7 +4021,8 @@
    "preco": "Grátis",
    "descricao": "Bloco e concurso tradicional de drag queens e beauty queens da segunda-feira de Carnaval, no Centro. A programação anunciada para 2027 traz show de Luísa Sonza na Arena Central.",
    "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
-   "confirmar": "Horário e local exato na Arena Central ainda não divulgados."
+   "confirmar": "Horário e local exato na Arena Central ainda não divulgados.",
+   "sem_horario": true
   },
   {
    "id": "navegantes-2027",
@@ -2801,7 +4034,8 @@
    "preco": "Grátis",
    "descricao": "Procissão de barcos em homenagem a Nossa Senhora dos Navegantes, com saídas em vários pontos do litoral, como Lagoa da Conceição e Praia dos Ingleses. Em 2026 reuniu centenas de embarcações.",
    "fonte": "https://portaldeperiodicos.marinha.mil.br/index.php/mardosul/article/download/8681/7997",
-   "confirmar": "Data de 2027 não divulgada; em 2026 foi no domingo 1º/2 e em 2025 no dia 2/2. Data indicada é estimativa (domingo antes de 2/2)."
+   "confirmar": "Data de 2027 não divulgada; em 2026 foi no domingo 1º/2 e em 2025 no dia 2/2. Data indicada é estimativa (domingo antes de 2/2).",
+   "sem_horario": true
   },
   {
    "id": "senhor-passos-2027",
@@ -2900,7 +4134,8 @@
    "preco": "Consulte",
    "descricao": "Festa de hip-hop com DJ residente e shows de rap, no Bar DeRaiz.",
    "fonte": "https://www.bocadaforte.com.br/agenda/festa-hip-hop-de-raiz-faz-edicao-especial-dedicada-ao-rap-de-floripa",
-   "confirmar": "Periodicidade semanal às quintas vem de fontes de 2020 a 2022; confira a programação da festa."
+   "confirmar": "Periodicidade semanal às quintas vem de fontes de 2020 a 2022; confira a programação da festa.",
+   "sem_horario": true
   },
   {
    "id": "choro-mulheril-sabados",
@@ -2991,7 +4226,8 @@
    "repete_ate": "2027-01-30",
    "descricao": "Ensaios técnicos das escolas de samba na Passarela Nego Quirido, nos sábados 16, 23 e 30 de janeiro de 2027, como preparação para os desfiles.",
    "fonte": "https://upiara.com.br/colunistas/pontecultural/carnaval-2027-ja-tem-calendario-definido-confira-os-proximos-passos-das-escolas-de-samba-de-florianopolis/",
-   "confirmar": "Horários, ordem das escolas e entrada ainda não divulgados. Confirme com a LIESF."
+   "confirmar": "Horários, ordem das escolas e entrada ainda não divulgados. Confirme com a LIESF.",
+   "sem_horario": true
   },
   {
    "id": "berbigao-boca-2027",
@@ -3042,7 +4278,8 @@
    "preco": "Grátis",
    "descricao": "Bloco de rua mais tradicional do sábado de Carnaval no Centro. Na Arena Central, apresentações de Dazaranha, Japa NK e Kamisa 10.",
    "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
-   "confirmar": "Horário e local exato da Arena Central ainda não divulgados. O bloco costuma concentrar-se entre a Praça XV e o Largo da Alfândega."
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados. O bloco costuma concentrar-se entre a Praça XV e o Largo da Alfândega.",
+   "sem_horario": true
   },
   {
    "id": "bloco-uni-2027",
@@ -3054,7 +4291,8 @@
    "preco": "Grátis",
    "descricao": "Bloco de domingo de Carnaval na Arena Central, no Centro, com MC IG e Kevin O Chris.",
    "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
-   "confirmar": "Horário e local exato da Arena Central ainda não divulgados."
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados.",
+   "sem_horario": true
   },
   {
    "id": "bloco-inimigos-fim-2027",
@@ -3066,7 +4304,8 @@
    "preco": "Grátis",
    "descricao": "Bloco da terça-feira de Carnaval na Arena Central, no Centro, com DJ Liu e Victor Lou.",
    "fonte": "https://agorafloripa.com.br/florianopolis-anuncia-o-carnaval-2027-com-luisa-sonza-dazaranha-e-kevin-o-chris",
-   "confirmar": "Horário e local exato da Arena Central ainda não divulgados."
+   "confirmar": "Horário e local exato da Arena Central ainda não divulgados.",
+   "sem_horario": true
   },
   {
    "id": "desfile-campeas-2027",
@@ -3078,7 +4317,8 @@
    "preco": "Consulte a LIESF",
    "descricao": "Desfile das escolas de samba mais bem colocadas no Carnaval 2027, na terça-feira, depois da apuração de 8 de fevereiro.",
    "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
-   "confirmar": "Horário ainda não divulgado."
+   "confirmar": "Horário ainda não divulgado.",
+   "sem_horario": true
   },
   {
    "id": "feira-igreja-de-pedra-sabado",
@@ -3090,7 +4330,809 @@
    "preco": "Grátis",
    "descricao": "Feira de bairro com hortifrúti, bolachas, frios e pastéis, ao lado da Igreja de Pedra.",
    "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/veja_a_programacao_das_feira_hortifruti_em_florianopolis/",
-   "confirmar": "Horário não informado na fonte; costuma ser pela manhã. Confirme antes de ir."
+   "confirmar": "Horário não informado na fonte. Confirme antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-largo-alfandega-recorrente",
+   "ponto_id": "feira-largo-alfandega",
+   "titulo": "Feira do Largo da Alfândega · Centro",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "06:30",
+   "fim": "13:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    2,
+    3,
+    5,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Maior feira de hortifrúti da cidade, com bancas de frutas, verduras, queijos, mel e produtos coloniais no Largo da Alfândega.",
+   "fonte": "https://www.nsctotal.com.br/?p=2479134",
+   "confirmar": "Dias segundo guia de 2026; o horário (6h30–13h) vem de matéria sem ano identificado. Confirme antes de ir."
+  },
+  {
+   "id": "feira-cultiva-floripa-recorrente",
+   "ponto_id": "feira-cultiva-floripa",
+   "titulo": "Feira orgânica Cultiva Floripa · Largo da Alfândega",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "07:00",
+   "fim": "13:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    3,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de alimentos orgânicos do programa municipal Cultiva Floripa, no Largo da Alfândega.",
+   "fonte": "http://www.pmf.sc.gov.br/noticias/index.php?pagina=notpagina&noti=24492",
+   "confirmar": "Notícia da prefeitura sem data visível (outra fonte cita sábados, 7h–12h); confirme se a feira segue ativa e o horário."
+  },
+  {
+   "id": "ecofeira-lagoa-recorrente",
+   "ponto_id": "ecofeira-lagoa",
+   "titulo": "Ecofeira da Lagoa da Conceição · Praça Bento Silvério",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "06:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de alimentos orgânicos nas manhãs de sábado na praça central da Lagoa. Diferente da feira de artesanato da AAFLA, que ocupa a praça à tarde.",
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/",
+   "confirmar": "O mesmo site cita domingo em outro artigo; confirme o dia antes de ir."
+  },
+  {
+   "id": "feira-organicos-santa-barbara-recorrente",
+   "ponto_id": "feira-organicos-santa-barbara",
+   "titulo": "Orgânicos Santa Bárbara · Praça Celso Ramos",
+   "categoria": "feira",
+   "data": "2026-10-30",
+   "inicio": "06:30",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de produtos orgânicos às sextas pela manhã, na Praça Celso Ramos, junto à Beira-Mar Norte.",
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/"
+  },
+  {
+   "id": "feira-organica-cca-ufsc-recorrente",
+   "ponto_id": "feira-organica-cca-ufsc",
+   "titulo": "Feira orgânica do CCA/UFSC · Itacorubi",
+   "categoria": "feira",
+   "data": "2026-10-30",
+   "inicio": "07:30",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de orgânicos no Centro de Ciências Agrárias da UFSC, com produtores de Biguaçu, Correia Pinto, Florianópolis e Santa Rosa de Lima.",
+   "fonte": "https://viveremsc.com.br/blog/feiras-mercados-publicos-florianopolis/"
+  },
+  {
+   "id": "feira-estreito-av-santa-catarina-recorrente",
+   "ponto_id": "feira-estreito-av-santa-catarina",
+   "titulo": "Feira da Avenida Santa Catarina · Balneário do Estreito",
+   "categoria": "feira",
+   "data": "2026-10-29",
+   "inicio": "06:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira tradicional montada há mais de 50 anos perto da orla, com cerca de dez bancas de frutas, verduras, queijos, produtos coloniais e orgânicos, além de pastel com caldo de cana.",
+   "fonte": "https://www.nsctotal.com.br/noticias/confira-os-enderecos-e-horarios-das-feiras-de-rua-na-regiao-continental-em-florianopolis",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; a reportagem de 2023 confirma a feira, mas não o dia. Confirme antes de ir."
+  },
+  {
+   "id": "feira-itaguacu-recorrente",
+   "ponto_id": "feira-itaguacu",
+   "titulo": "Feira de Itaguaçu",
+   "categoria": "feira",
+   "data": "2026-10-27",
+   "inicio": "06:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti na região continental, no final da Avenida Desembargador Pedro Silva.",
+   "fonte": "https://www.nsctotal.com.br/noticias/confira-os-enderecos-e-horarios-das-feiras-de-rua-na-regiao-continental-em-florianopolis",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; confirme se a feira continua."
+  },
+  {
+   "id": "feira-abraao-recorrente",
+   "ponto_id": "feira-abraao",
+   "titulo": "Feira do Abraão",
+   "categoria": "feira",
+   "data": "2026-10-29",
+   "inicio": "06:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti na região continental, no final da Rua João Meirelles.",
+   "fonte": "https://www.nsctotal.com.br/noticias/confira-os-enderecos-e-horarios-das-feiras-de-rua-na-regiao-continental-em-florianopolis",
+   "confirmar": "Dia e horário de matéria de cerca de 15 anos; confirme se a feira continua."
+  },
+  {
+   "id": "feira-estreito-max-de-souza-recorrente",
+   "ponto_id": "feira-estreito-max-de-souza",
+   "titulo": "Feira da Avenida Max de Souza · Estreito",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "08:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de sábado de manhã na região continental, listada pela prefeitura entre as feiras de bairro.",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário com base em dados da PMF/SUSP, sem data de atualização; ponto no mapa aproximado."
+  },
+  {
+   "id": "feira-parque-coqueiros-recorrente",
+   "ponto_id": "feira-parque-coqueiros",
+   "titulo": "Feira do Parque de Coqueiros",
+   "categoria": "feira",
+   "data": "2026-10-25",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de domingo pela manhã no Parque de Coqueiros, listada entre as feiras de bairro da cidade.",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Fonte informa só \"manhã\", sem horário exato e sem data de atualização; confirme antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-santa-monica-recorrente",
+   "ponto_id": "feira-santa-monica",
+   "titulo": "Feira de Santa Mônica",
+   "categoria": "feira",
+   "data": "2026-10-29",
+   "inicio": "06:00",
+   "fim": "14:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro semanal às quintas-feiras em Santa Mônica.",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Endereço exato não informado na fonte; diretório sem data de atualização."
+  },
+  {
+   "id": "feira-trindade-santos-dumont-recorrente",
+   "ponto_id": "feira-trindade-santos-dumont",
+   "titulo": "Feira da Praça Santos Dumont · Trindade",
+   "categoria": "feira",
+   "data": "2026-10-28",
+   "repete": "dias_semana",
+   "dias_semana": [
+    3,
+    5
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios na Praça Santos Dumont, duas vezes por semana.",
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-canto-da-lagoa-recorrente",
+   "ponto_id": "feira-canto-da-lagoa",
+   "titulo": "Feira do Canto da Lagoa",
+   "categoria": "feira",
+   "data": "2026-10-27",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios às terças-feiras no Canto da Lagoa.",
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-porto-da-lagoa-recorrente",
+   "ponto_id": "feira-porto-da-lagoa",
+   "titulo": "Feira do Porto da Lagoa",
+   "categoria": "feira",
+   "data": "2026-10-30",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro às sextas-feiras no Porto da Lagoa, com apoio da associação de moradores (AMPOLA).",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-barra-da-lagoa-recorrente",
+   "ponto_id": "feira-barra-da-lagoa",
+   "titulo": "Feira da Barra da Lagoa",
+   "categoria": "feira",
+   "data": "2026-10-28",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti na Barra da Lagoa.",
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Fontes divergem (quarta na Rua Altamiro Barcellos Dutra ou quinta na Rua Laurindo José de Souza) e não há horário; confirme antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-carianos-recorrente",
+   "ponto_id": "feira-carianos",
+   "titulo": "Feira de Carianos",
+   "categoria": "feira",
+   "data": "2026-10-28",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti, bolachas e frios às quartas-feiras em Carianos.",
+   "fonte": "https://www.somosaldeia.com.br/en/alimentacao",
+   "confirmar": "Fontes citam dois endereços (Rua Jornalista Carlos Castello Branco e Ressacada) e não informam horário; confirme antes de ir.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-jurere-tradicional-recorrente",
+   "ponto_id": "feira-jurere-tradicional",
+   "titulo": "Feira de Jurerê Tradicional (AMOJU)",
+   "categoria": "feira",
+   "data": "2026-10-30",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro às sextas-feiras organizada pela associação de moradores de Jurerê Tradicional (AMOJU).",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário baseado em dados da PMF/SUSP, sem data de atualização e sem horário; confirme dia e horário antes de ir. Endereço não informado.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-organica-armacao-recorrente",
+   "ponto_id": "feira-organica-armacao",
+   "titulo": "Feira orgânica da Armação",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "07:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de produtos orgânicos aos sábados pela manhã, no trevo de acesso à Armação, no sul da Ilha.",
+   "fonte": "https://www.somosaldeia.com.br/en/feiras",
+   "confirmar": "Diretório comunitário sem data de atualização; confirme antes de ir."
+  },
+  {
+   "id": "feira-ribeirao-bandeirante-recorrente",
+   "ponto_id": "feira-ribeirao-bandeirante",
+   "titulo": "Feira do Ribeirão da Ilha · Campo do Bandeirante",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti no Ribeirão da Ilha, na rodovia Baldicero Filomeno.",
+   "fonte": "https://ndmais.com.br/economia/e-dia-de-feira-e-elas-estao-por-toda-florianopolis-saiba-onde-encontra-las/",
+   "confirmar": "Matéria de 2023 com dados da prefeitura; o dia (sábado) e o horário precisam ser confirmados.",
+   "sem_horario": true
+  },
+  {
+   "id": "feira-pantano-do-sul-recorrente",
+   "ponto_id": "feira-pantano-do-sul",
+   "titulo": "Feira do Pântano do Sul",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro de hortifrúti no Conselho Comunitário do Pântano do Sul.",
+   "fonte": "https://ndmais.com.br/economia/e-dia-de-feira-e-elas-estao-por-toda-florianopolis-saiba-onde-encontra-las/",
+   "confirmar": "Matéria de 2023 com dados da prefeitura; o dia (sábado) e o horário precisam ser confirmados.",
+   "sem_horario": true
+  },
+  {
+   "id": "feirarte-beira-mar-recorrente",
+   "ponto_id": "feirarte-beira-mar",
+   "titulo": "Feirarte · Beira-Mar Norte",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "09:00",
+   "fim": "21:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    0,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato na Praça Portugal, na Beira-Mar Norte, uma das feiras municipais de artesanato. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feirarte-catedral-recorrente",
+   "ponto_id": "feirarte-catedral",
+   "titulo": "Feirarte Catedral · Centro",
+   "categoria": "feira",
+   "data": "2026-10-28",
+   "inicio": "08:30",
+   "fim": "17:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    3,
+    4,
+    5
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato no Largo da Catedral, no Centro, aberta o ano inteiro em dias de semana. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/"
+  },
+  {
+   "id": "feira-miramar-recorrente",
+   "ponto_id": "feira-miramar",
+   "titulo": "Feira Miramar · Praça Fernando Machado",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "08:00",
+   "fim": "18:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato na Praça Fernando Machado, no Centro, aberta de segunda a sábado o ano inteiro. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/"
+  },
+  {
+   "id": "feira-da-maricota-recorrente",
+   "ponto_id": "feira-da-maricota",
+   "titulo": "Feira da Maricota · Av. Paulo Fontes",
+   "categoria": "feira",
+   "data": "2026-10-27",
+   "inicio": "09:00",
+   "fim": "18:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato em frente ao Terminal de Integração do Centro (TICEN). Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-guarapuvu-lagoa-recorrente",
+   "ponto_id": "feira-guarapuvu-lagoa",
+   "titulo": "Feira Guarapuvu · Praça Bento Silvério",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "14:00",
+   "fim": "22:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    0,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato na praça central da Lagoa, que funciona ao lado da feira da AAFLA nos fins de semana. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Outra fonte indica 15h–20h; confirme o horário antes de ir."
+  },
+  {
+   "id": "canasarte-recorrente",
+   "ponto_id": "canasarte",
+   "titulo": "Canasarte · Canasvieiras",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "10:00",
+   "fim": "19:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    5,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato de Canasvieiras, que no verão passa a funcionar à noite. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-linear-ingleses-recorrente",
+   "ponto_id": "feira-linear-ingleses",
+   "titulo": "Feira Linear dos Ingleses · Praça Charles Bento",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "13:00",
+   "fim": "20:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    0,
+    4,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato na Praça Charles Bento, nos Ingleses, com horário ampliado na temporada. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir."
+  },
+  {
+   "id": "feira-artesanato-jurere-recorrente",
+   "ponto_id": "feira-artesanato-jurere",
+   "titulo": "Feira de artesanato de Jurerê",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "08:00",
+   "fim": "16:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    0,
+    6
+   ],
+   "preco": "Grátis",
+   "descricao": "Feira de artesanato na avenida principal de Jurerê Internacional. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Horário de inverno (fev.–nov.) segundo guia de dezembro de 2025; no verão o horário muda. Confirme antes de ir. Programação da Maratona Cultural de 2026 cita outro endereço (Av. dos Búzios, 300) e horário (16h–22h)."
+  },
+  {
+   "id": "feira-afro-artesanal-rosario-recorrente",
+   "ponto_id": "feira-afro-artesanal-rosario",
+   "titulo": "Feira Afro Artesanal · Escadaria do Rosário",
+   "categoria": "feira",
+   "data": "2026-10-27",
+   "inicio": "09:00",
+   "fim": "19:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira semanal de artesanato afro-brasileiro nas imediações da Escadaria do Rosário, no Centro. Entrada gratuita.",
+   "fonte": "https://conectasc.com.br/2025/12/19/confira-quais-as-principais-feiras-de-florianopolis/",
+   "confirmar": "Guia de dezembro de 2025 só informa o horário de inverno; confirme antes de ir."
+  },
+  {
+   "id": "feira-da-freguesia-sao-jose-recorrente",
+   "ponto_id": "feira-da-freguesia-sao-jose",
+   "titulo": "Feira da Freguesia · Centro Histórico de São José",
+   "categoria": "feira",
+   "data": "2026-11-08",
+   "inicio": "10:00",
+   "fim": "19:00",
+   "repete": "mensal_semana",
+   "preco": "Grátis",
+   "descricao": "Feira mensal da Prefeitura de São José no Centro Histórico, com artesanato, gastronomia e atrações culturais, realizada desde 2014. Entrada gratuita.",
+   "fonte": "https://saojose.sc.gov.br/feira-da-freguesia-traz-edicao-especial-de-dia-das-criancas-a-sao-jose/107896/",
+   "confirmar": "Algumas edições mudam de domingo (ex.: Dia dos Pais); confirme a data no site da prefeitura."
+  },
+  {
+   "id": "feira-empreendedor-beira-mar-sj-recorrente",
+   "ponto_id": "feira-empreendedor-beira-mar-sj",
+   "titulo": "Feira do Empreendedor · Beira-Mar de São José",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "10:00",
+   "fim": "22:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira da Prefeitura de São José com cerca de 40 a 50 expositores locais de artesanato, gastronomia e produtos autorais, aos sábados na Beira-Mar. Entrada gratuita.",
+   "fonte": "https://saojose.sc.gov.br/empreendedorismo-e-lazer-movimentam-a-beira-mar-neste-sabado-28/96649/",
+   "confirmar": "Fonte mais recente é de março de 2026 e não deixa claro se a feira é semanal; pode ser cancelada com chuva. Confirme antes de ir."
+  },
+  {
+   "id": "cinema-frances-2026",
+   "ponto_id": "paradigma-cine-arte",
+   "titulo": "17º Festival de Cinema Francês do Brasil",
+   "categoria": "audiovisual",
+   "data": "2026-10-29",
+   "repete": "diaria",
+   "repete_ate": "2026-11-18",
+   "preco": "Consulte",
+   "descricao": "Festival exibe 21 filmes franceses no Paradigma Cine Arte entre 29/10 e 18/11.",
+   "fonte": "https://floripa.com/a-cidade/cultura/festival-cinema-frances-florianopolis-2026/",
+   "confirmar": "Horários das sessões e preços não localizados; consulte a programação do cinema."
+  },
+  {
+   "id": "rafael-portugal-tac-2026",
+   "ponto_id": "tac",
+   "titulo": "Rafael Portugal · “Tô Só Desabafando”",
+   "categoria": "teatro",
+   "data": "2026-11-06",
+   "inicio": "20:00",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Espetáculo de humor que combina stand-up, música e improvisação, no Teatro Álvaro de Carvalho.",
+   "fonte": "https://floripa.com/eventos/rafael-portugal-to-so-desabafando/"
+  },
+  {
+   "id": "haru-matsuri-2026",
+   "ponto_id": "jardim-botanico",
+   "titulo": "4º Haru Matsuri · festival de cultura japonesa",
+   "categoria": "popular",
+   "data": "2026-11-07",
+   "inicio": "10:00",
+   "fim": "17:00",
+   "repete": "diaria",
+   "repete_ate": "2026-11-08",
+   "preco": "Grátis",
+   "descricao": "Festival de cultura japonesa no Jardim Botânico de Florianópolis, no Itacorubi, no sábado e no domingo. Entrada gratuita.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/haru-matsuri-2026-jardim-botanico-florianopolis/"
+  },
+  {
+   "id": "ivangelica-tino-2026",
+   "ponto_id": "teatro-dionisio",
+   "titulo": "Ivangélica · “Ela Tem o Tino”",
+   "categoria": "teatro",
+   "data": "2026-11-07",
+   "inicio": "19:00",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Duas sessões no Teatro Dionísio, nos Ingleses: sessão extra às 19h e sessão às 21h.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/ivangelica-ela-tem-o-tino-teatro-dionisio-florianopolis/"
+  },
+  {
+   "id": "beltane-festival-2026",
+   "ponto_id": "sitio-costa-de-dentro",
+   "titulo": "Beltane Festival · edição Ilha da Magia",
+   "categoria": "festa",
+   "data": "2026-11-07",
+   "inicio": "14:00",
+   "fim": "22:00",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Quinta edição do festival e a primeira em Florianópolis, com música e atividades de temática medieval, incluindo arquearia, no Sítio Costa de Dentro, Pântano do Sul.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/beltane-festival-ilha-da-magia-pantano-do-sul-2026/"
+  },
+  {
+   "id": "white-buffalo-2026",
+   "ponto_id": "life-club-floripa",
+   "titulo": "The White Buffalo · show em Florianópolis",
+   "categoria": "musica",
+   "data": "2026-11-11",
+   "inicio": "19:00",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Show do músico norte-americano The White Buffalo no Life Club Floripa, na Vargem Pequena.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/the-white-buffalo-life-club-floripa-novembro-2026/"
+  },
+  {
+   "id": "conta-carolina-ubro-2026",
+   "ponto_id": "teatro-ubro",
+   "titulo": "“Conta Carolina: Diário de uma favelada”",
+   "categoria": "teatro",
+   "data": "2026-11-14",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Peça baseada em textos da escritora, compositora e poeta Carolina Maria de Jesus, no Teatro da UBRO.",
+   "fonte": "https://floripa.com/eventos/peca-de-teatro-conta-carolina-diario-de-uma-favelada/",
+   "confirmar": "Horário não localizado; confira na página do evento.",
+   "sem_horario": true
+  },
+  {
+   "id": "novembro-negro-ufsc-2026",
+   "ponto_id": "ufsc",
+   "titulo": "Novembro Negro UFSC 2026",
+   "categoria": "social",
+   "data": "2026-11-01",
+   "repete": "diaria",
+   "repete_ate": "2026-11-30",
+   "preco": "Consulte",
+   "descricao": "A UFSC organiza ao longo de novembro atividades alusivas ao Dia da Consciência Negra. A programação é divulgada em novembronegro.ufsc.br.",
+   "fonte": "https://noticias.ufsc.br/categoria/novembro-negro/",
+   "confirmar": "Programação, dias e locais de 2026 ainda não localizados; consulte novembronegro.ufsc.br."
+  },
+  {
+   "id": "desterro-negro-2026",
+   "ponto_id": "praca-xv",
+   "titulo": "Caminhada “Desterro Negro: Cultura e Resistência”",
+   "categoria": "popular",
+   "data": "2026-11-20",
+   "inicio": "15:00",
+   "fim": "17:00",
+   "repete": "nao",
+   "preco": "Consulte",
+   "descricao": "Roteiro a pé de cerca de duas horas por pontos da história negra no Centro Histórico, no Dia da Consciência Negra. Ponto de encontro na Catedral Metropolitana; há saídas às 15h e às 17h.",
+   "fonte": "https://floripa.com/eventos/desterro-negro-cultura-e-resistencia-florianopolis-20-11/",
+   "confirmar": "Gratuidade e necessidade de inscrição não confirmadas."
+  },
+  {
+   "id": "renda-bilro-expo-mercado-2026",
+   "ponto_id": "mercado-publico",
+   "titulo": "Exposição “Renda de Bilro – cultura viva de Florianópolis”",
+   "categoria": "arte",
+   "data": "2026-10-21",
+   "inicio": "17:00",
+   "repete": "diaria",
+   "repete_ate": "2026-12-05",
+   "preco": "Grátis",
+   "descricao": "Exposição na Galeria de Arte do Mercado Público, realizada pela Fundação Franklin Cascaes com o Museu de Arqueologia e Etnologia da UFSC, com acervo do folclorista Doralécio Soares. Abriu em 21/10, Dia Municipal da Rendeira e do Rendeiro.",
+   "fonte": "https://floripamanha.org/2026/10/dia-municipal-da-rendeira-e-do-rendeiro-celebrado-com-exposicao-e-lancamento-de-encontro-internacional/",
+   "confirmar": "Data de encerramento e horários de visitação não localizados; o fim em 05/12 é estimado (fim do Encontro Internacional)."
+  },
+  {
+   "id": "encontro-renda-bilro-2026",
+   "ponto_id": "mercado-publico",
+   "titulo": "Encontro Internacional da Renda de Bilro",
+   "categoria": "popular",
+   "data": "2026-12-02",
+   "repete": "diaria",
+   "repete_ate": "2026-12-05",
+   "preco": "Grátis",
+   "descricao": "Quatro dias de atividades gratuitas com cerca de 200 rendeiras de Florianópolis, convidadas de outras regiões do Brasil e representantes de Portugal, Espanha e Bélgica.",
+   "fonte": "https://floripamanha.org/2026/10/dia-municipal-da-rendeira-e-do-rendeiro-celebrado-com-exposicao-e-lancamento-de-encontro-internacional/",
+   "confirmar": "Locais e horários das atividades ainda não divulgados; o ponto no Mercado Público é o do lançamento."
+  },
+  {
+   "id": "hassis-brincante",
+   "ponto_id": "fundacao-hassis",
+   "titulo": "Exposição “Hassis Brincante” · Hassis 100 anos",
+   "categoria": "arte",
+   "data": "2026-07-30",
+   "repete": "diaria",
+   "repete_ate": "2027-01-30",
+   "preco": "Grátis",
+   "descricao": "Exposição do centenário de Hassis na Fundação Hassis, em cartaz até 30/01/2027. Entrada gratuita.",
+   "fonte": "https://floripa.com/a-cidade/cultura/10-exposicoes-gratuitas-em-florianopolis-veja-onde-visitar/",
+   "confirmar": "Dias e horários de visitação não localizados; confirme com a Fundação Hassis."
+  },
+  {
+   "id": "sarava-2026-1",
+   "ponto_id": "alcateia-park-campeche",
+   "titulo": "Festival Saravá 2026 · 1º dia",
+   "categoria": "musica",
+   "data": "2026-12-12",
+   "inicio": "16:00",
+   "repete": "nao",
+   "preco": "A partir de R$ 170",
+   "descricao": "Festival com Seu Jorge, Gaby Amarantos, Luedji Luna, Don L e Exclusive os Cabides, entre outros, em dois palcos e com intervenções artísticas. Classificação 18 anos; menores só acompanhados dos responsáveis.",
+   "fonte": "https://billboard.com.br/festival-sarava-2026-data-primeiras-atracoes/",
+   "confirmar": "Horário de início varia entre as fontes (Billboard: 16h às 4h)."
+  },
+  {
+   "id": "sarava-2026-2",
+   "ponto_id": "alcateia-park-campeche",
+   "titulo": "Festival Saravá 2026 · 2º dia",
+   "categoria": "musica",
+   "data": "2026-12-13",
+   "inicio": "15:00",
+   "repete": "nao",
+   "preco": "A partir de R$ 170",
+   "descricao": "Segundo dia do festival no Alcateia Park, no Campeche, com show de Caetano Veloso. Classificação 18 anos; menores só acompanhados dos responsáveis.",
+   "fonte": "https://shotgun.live/pt-br/festivals/festivalsarava2026",
+   "confirmar": "Escalação completa e horário a confirmar (Shotgun indica 15h às 3h; Billboard, 16h às 4h)."
+  },
+  {
+   "id": "iemanja-campeche-2027",
+   "ponto_id": "iemanja-campeche",
+   "titulo": "Presente de Iemanjá · cortejo e oferendas no Campeche",
+   "categoria": "popular",
+   "data": "2027-02-02",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Cortejo com a imagem de Iemanjá do terreiro Ilê Axé Omi Olodo Tolá até a Praia do Pequeno Príncipe, onde as oferendas são entregues ao mar. Celebração das comunidades de umbanda e candomblé, aberta ao público e registrada como patrimônio imaterial de Florianópolis.",
+   "fonte": "https://ndmais.com.br/religiao/iemanja-celebracao-no-campeche-vira-patrimonio-cultural-em-florianopolis/",
+   "confirmar": "Data tradicional (2 de fevereiro); horário e programação de 2027 ainda não divulgados.",
+   "sem_horario": true
+  },
+  {
+   "id": "felabration-felapretas-2026",
+   "ponto_id": "bugio-centro",
+   "titulo": "FELABRATION Floripa 2026 · noite de abertura Felapretas",
+   "categoria": "festa",
+   "data": "2026-10-23",
+   "inicio": "19:00",
+   "repete": "nao",
+   "preco": "Grátis",
+   "descricao": "Abertura da 5ª edição do FELABRATION Floripa, com protagonismo de mulheres negras: DJ Badu e DJ Gazal, Manicongo, NAKIA + PRESTESS, Ana Paula Leão e Cris do SNJ, com música, poesia e dança.",
+   "fonte": "https://floripa.com/eventos/felabration-floripa-2026-noite-de-abertura-com-felapretas/",
+   "confirmar": "Gratuidade informada por apenas uma das fontes consultadas."
+  },
+  {
+   "id": "felabration-mariquinha-2026",
+   "ponto_id": "felabration-floripa",
+   "titulo": "FELABRATION Floripa 2026 · dias de festival no Morro da Mariquinha",
+   "categoria": "festa",
+   "data": "2026-10-31",
+   "repete": "diaria",
+   "repete_ate": "2026-11-01",
+   "preco": "Consulte",
+   "descricao": "Dias principais do festival em homenagem a Fela Kuti, com música, arte e cultura negra no Morro da Mariquinha.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/felabration-floripa-2026-fela-kuti-morro-da-mariquinha/",
+   "confirmar": "Horários e preço não informados nos trechos; programação completa em felabrationfloripa.net."
+  },
+  {
+   "id": "viva-feira-campeche-sabado",
+   "ponto_id": "viva-feira-campeche",
+   "titulo": "Viva Feira Campeche",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "inicio": "07:00",
+   "fim": "12:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira semanal de produtores e consumidores do Campeche, com orgânicos e produtos artesanais. Entrada gratuita.",
+   "fonte": "https://acontecendoaqui.com.br/eventos/campeche-sedia-2a-edicao-da-viva-feira-festiva-neste-sabado-27/",
+   "confirmar": "Horário tomado da edição festiva de junho de 2026; confirme o horário regular antes de ir."
+  },
+  {
+   "id": "feira-organica-ufsc-quarta",
+   "ponto_id": "feira-organica-ufsc",
+   "titulo": "Feira de orgânicos da UFSC",
+   "categoria": "feira",
+   "data": "2026-10-28",
+   "inicio": "06:00",
+   "fim": "18:00",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de orgânicos e produtos da agricultura familiar na Praça da Cidadania, em frente à Reitoria da UFSC.",
+   "fonte": "https://periodicos.ufv.br/elo/article/download/1026/574/5318",
+   "confirmar": "Dia e horário de fonte de cerca de 2013–2014; confirme antes de ir."
+  },
+  {
+   "id": "imperatriz-samba-enredo-2027",
+   "ponto_id": "imperatriz-grande-ilha",
+   "titulo": "Imperatriz da Grande Ilha · coroação da corte e lançamento do samba-enredo 2027",
+   "categoria": "samba",
+   "data": "2026-11-01",
+   "inicio": "18:00",
+   "repete": "nao",
+   "preco": "R$ 15 antecipado (Sympla); entrada gratuita com a camiseta oficial do enredo",
+   "descricao": "Coroação da corte e lançamento do samba-enredo “O Itã de Oxóssi”, na AMOCOP, Costeira do Pirajubaé.",
+   "fonte": "https://floripa.com/eventos/src-imperatriz-da-grande-ilha-coroacao-da-corte-e-lancamento-do-samba-enredo-2027/"
+  },
+  {
+   "id": "floripa-blues-session-terca",
+   "ponto_id": "floripa-blues-session",
+   "titulo": "Floripa Blues Session · jam de blues e jazz",
+   "categoria": "musica",
+   "data": "2026-10-27",
+   "inicio": "20:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Jam session semanal com blues, jazz, soul e MPB, aberta a músicos.",
+   "fonte": "https://preview2.bluessession.com.br/",
+   "confirmar": "Local exato do Tio Gether's (Sul da Ilha) não informado; confirme antes de ir."
+  },
+  {
+   "id": "rancho-bastiao-samba-domingo",
+   "ponto_id": "rancho-do-bastiao",
+   "titulo": "Roda de samba de domingo no Rancho do Bastião",
+   "categoria": "samba",
+   "data": "2026-10-25",
+   "inicio": "19:30",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Roda de samba aos domingos em Santo Antônio de Lisboa.",
+   "fonte": "https://floripa.com/eventos/samba-de-domingo-no-rancho/",
+   "confirmar": "As edições divulgadas vão até setembro de 2026; confirme a continuidade nas redes do espaço."
+  },
+  {
+   "id": "bugio-centro-samba-domingo",
+   "ponto_id": "bugio-centro",
+   "titulo": "Roda de samba de domingo no Bugio Centro",
+   "categoria": "samba",
+   "data": "2026-10-25",
+   "inicio": "20:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Rodas de samba aos domingos, a partir das 20h, no Bugio do Centro Histórico. Aos sábados a casa recebe o Samba de Antonieta.",
+   "fonte": "https://floripa.com/o-que-fazer/guia-para-curtir-samba-pagode-e-chorinho-em-floripa/",
+   "confirmar": "Guia sem data de publicação visível; confirme a programação nas redes do bar."
+  },
+  {
+   "id": "choro-bugio-trindade-segunda",
+   "ponto_id": "bugio-trindade",
+   "titulo": "Choro Bugio · roda de choro",
+   "categoria": "samba",
+   "data": "2026-10-26",
+   "inicio": "19:30",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Roda de choro às segundas-feiras no Bugio Trindade.",
+   "fonte": "https://chorolab.com/rodas-de-choro/",
+   "confirmar": "Listagem sem data de atualização; confirme se a roda continua às segundas."
+  },
+  {
+   "id": "choro-ze-mane-terca",
+   "ponto_id": "choro-ze-mane",
+   "titulo": "Roda de choro Choro Zé Mané",
+   "categoria": "samba",
+   "data": "2026-10-27",
+   "inicio": "20:00",
+   "repete": "semanal",
+   "preco": "Consulte",
+   "descricao": "Roda de choro às terças-feiras em Coqueiros.",
+   "fonte": "https://chorolab.com/rodas-de-choro/",
+   "confirmar": "Listagem sem data de atualização e sem endereço; confirme antes de ir."
   }
  ]
 }
