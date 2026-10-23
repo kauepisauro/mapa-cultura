@@ -2125,6 +2125,26 @@
     "cultura"
    ],
    "fonte": "https://repositorio.ufsc.br/handle/123456789/245878"
+  },
+  {
+   "id": "feira-igreja-de-pedra",
+   "nome": "Feira da Igreja de Pedra · Rio Tavares",
+   "categoria": "feira",
+   "lat": -27.6438,
+   "lng": -48.4852,
+   "aprox": true,
+   "bairro": "Rio Tavares",
+   "endereco": "Rodovia Dr. Antônio Luiz Moura Gonzaga, junto à Igreja de Pedra (São Luiz Gonzaga)",
+   "descricao": "Feira de bairro aos sábados ao lado da Igreja de Pedra, com hortifrúti, bolachas, frios e pastéis.",
+   "horario": "Sábados",
+   "confirmar": "Listada em matérias antigas sobre as feiras de bairro; confirme o horário antes de ir.",
+   "tags": [
+    "feira",
+    "hortifrúti",
+    "sábado",
+    "Sul da Ilha"
+   ],
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/veja_a_programacao_das_feira_hortifruti_em_florianopolis/"
   }
  ],
  "eventos": [
@@ -3059,6 +3079,18 @@
    "descricao": "Desfile das escolas de samba mais bem colocadas no Carnaval 2027, na terça-feira, depois da apuração de 8 de fevereiro.",
    "fonte": "https://floripa.com/a-cidade/agenda-do-carnaval/carnaval-de-florianopolis-2027-tem-calendario-oficial-divulgado/",
    "confirmar": "Horário ainda não divulgado."
+  },
+  {
+   "id": "feira-igreja-de-pedra-sabado",
+   "ponto_id": "feira-igreja-de-pedra",
+   "titulo": "Feira da Igreja de Pedra",
+   "categoria": "feira",
+   "data": "2026-10-24",
+   "repete": "semanal",
+   "preco": "Grátis",
+   "descricao": "Feira de bairro com hortifrúti, bolachas, frios e pastéis, ao lado da Igreja de Pedra.",
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/veja_a_programacao_das_feira_hortifruti_em_florianopolis/",
+   "confirmar": "Horário não informado na fonte; costuma ser pela manhã. Confirme antes de ir."
   }
  ]
 }
