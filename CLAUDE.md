@@ -11,6 +11,8 @@ Site estático (HTML/CSS/JS, sem build) + app instalável (PWA), publicado no Gi
 
 ## Dados (`data/seed.json`)
 - Só lugares/eventos **reais, com `fonte`** (link). Nada inventado; exemplos de teste usam `"exemplo": true`.
+  Material entregue pelo autor sem link (ex.: mapeamento do Fórum da Capoeira 2025) → citar a origem na `descricao`.
+- Locais de mestres/mestras (casas, aulas particulares) não entram; só rodas e espaços públicos ou de grupo.
 - Dia/horário incompleto ou de fonte antiga → campo `confirmar` com o motivo (aparece “confirme antes de ir”).
 - Coordenadas incertas → `"aprox": true` (a ficha mostra “marcado no bairro, não é o endereço exato”).
 - Movimentos/coletivos: marcar no bairro (nunca casa de liderança), campo `participar` = como se juntar; ocupações

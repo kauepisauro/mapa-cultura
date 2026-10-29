@@ -439,10 +439,10 @@
   },
   {
    "id": "roda-calcadao",
-   "nome": "Roda do Calçadão · Centro",
+   "nome": "Roda do Calçadão · Esquina Democrática",
    "categoria": "capoeira",
-   "lat": -27.5952,
-   "lng": -48.5489,
+   "lat": -27.5967,
+   "lng": -48.5506,
    "bairro": "Centro",
    "descricao": "Roda tradicional de capoeira de rua do Calçadão do Centro, registrada no Mapeamento Social da Capoeira em Florianópolis. Registro de pesquisa anterior: confirme se a roda segue ativa.",
    "aprox": true,
@@ -451,7 +451,8 @@
     "capoeira"
    ],
    "horario": "Consulte o Fórum da Capoeira da Grande Florianópolis",
-   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf",
+   "endereco": "Rua Felipe Schmidt com Rua Trajano (Esquina Democrática)"
   },
   {
    "id": "feira-lagoa",
@@ -3379,6 +3380,372 @@
    ],
    "fonte": "https://chorolab.com/rodas-de-choro/",
    "confirmar": "Listagem sem data de atualização e sem endereço. Confirme se a roda continua, o local exato e o horário."
+  },
+  {
+   "id": "roda-catedral",
+   "nome": "Roda da Catedral",
+   "categoria": "capoeira",
+   "lat": -27.5964,
+   "lng": -48.54935,
+   "aprox": false,
+   "bairro": "Centro",
+   "descricao": "Roda tradicional de capoeira de rua no Largo da Catedral, uma das rodas históricas do Centro. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "endereco": "Largo da Catedral (Largo São João Paulo II)",
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-rosario",
+   "nome": "Roda do Rosário · Escadaria do Rosário",
+   "categoria": "capoeira",
+   "lat": -27.59562,
+   "lng": -48.5496,
+   "aprox": false,
+   "bairro": "Centro",
+   "descricao": "Roda de capoeira na Escadaria do Rosário, território histórico da população negra de Florianópolis. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua",
+    "território negro"
+   ],
+   "endereco": "Escadaria do Rosário",
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-ticen",
+   "nome": "Roda do Terminal (TICEN)",
+   "categoria": "capoeira",
+   "lat": -27.5987,
+   "lng": -48.5536,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Roda de capoeira no Terminal Integrado do Centro. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-largo-alfandega",
+   "nome": "Roda do Largo da Alfândega",
+   "categoria": "capoeira",
+   "lat": -27.59795,
+   "lng": -48.55205,
+   "aprox": true,
+   "bairro": "Centro",
+   "descricao": "Roda de capoeira no Largo da Alfândega, junto ao Mercado Público. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-barra-lagoa",
+   "nome": "Roda da Barra da Lagoa",
+   "categoria": "capoeira",
+   "lat": -27.5747,
+   "lng": -48.4262,
+   "aprox": true,
+   "bairro": "Barra da Lagoa",
+   "descricao": "Roda de capoeira na Barra da Lagoa, com registros desde o início dos anos 1990. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-lagoa",
+   "nome": "Roda da Lagoa da Conceição",
+   "categoria": "capoeira",
+   "lat": -27.6036,
+   "lng": -48.4656,
+   "aprox": true,
+   "bairro": "Lagoa da Conceição",
+   "descricao": "Roda de capoeira na Lagoa da Conceição. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-deck-campeche",
+   "nome": "Roda do Deck do Campeche",
+   "categoria": "capoeira",
+   "lat": -27.685,
+   "lng": -48.4815,
+   "aprox": true,
+   "bairro": "Campeche",
+   "descricao": "Roda de capoeira no deck da Praia do Campeche. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-pacuca",
+   "nome": "Roda do PACUCA · Parque Cultural do Campeche",
+   "categoria": "capoeira",
+   "lat": -27.6825,
+   "lng": -48.48801,
+   "aprox": true,
+   "bairro": "Campeche",
+   "descricao": "Roda de capoeira no Parque Cultural do Campeche (PACUCA). Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-lua-cheia",
+   "nome": "Roda da Lua Cheia",
+   "categoria": "capoeira",
+   "lat": -27.65,
+   "lng": -48.493,
+   "aprox": true,
+   "bairro": "Rio Tavares",
+   "descricao": "Roda de capoeira do Rio Tavares que, pelo nome, acontece em noites de lua cheia. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-ingleses",
+   "nome": "Roda dos Ingleses · Centrinho",
+   "categoria": "capoeira",
+   "lat": -27.43265,
+   "lng": -48.40222,
+   "aprox": true,
+   "bairro": "Ingleses",
+   "descricao": "Roda de capoeira no centrinho dos Ingleses. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-santinho",
+   "nome": "Rodas do Santinho (Escola e Deck)",
+   "categoria": "capoeira",
+   "lat": -27.45374,
+   "lng": -48.37911,
+   "aprox": true,
+   "bairro": "Santinho",
+   "descricao": "Duas rodas de capoeira no Santinho: a da escola e a do deck da praia. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-vargem-grande",
+   "nome": "Roda de Vargem Grande",
+   "categoria": "capoeira",
+   "lat": -27.46208,
+   "lng": -48.44852,
+   "aprox": true,
+   "bairro": "Vargem Grande",
+   "descricao": "Roda de capoeira no bairro Vargem Grande, norte da Ilha. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-basico-ufsc",
+   "nome": "Roda do Básico · UFSC",
+   "categoria": "capoeira",
+   "lat": -27.6006,
+   "lng": -48.5212,
+   "aprox": true,
+   "bairro": "Trindade (UFSC)",
+   "descricao": "Roda histórica do campus da UFSC, com registros desde 1990. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-convivencia-ufsc",
+   "nome": "Roda do Centro de Convivência · UFSC",
+   "categoria": "capoeira",
+   "lat": -27.60105,
+   "lng": -48.51985,
+   "aprox": true,
+   "bairro": "Trindade (UFSC)",
+   "descricao": "Roda de capoeira junto ao Centro de Convivência da UFSC, ao lado da Praça da Cidadania. Registrada no Mapeamento Social da Capoeira em Florianópolis (Fórum da Capoeira, 2019) e de novo na atualização de 2025.",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
+  },
+  {
+   "id": "roda-piquenique-continental",
+   "nome": "Roda do Piquenique · Beira-Mar Continental",
+   "categoria": "capoeira",
+   "lat": -27.5915,
+   "lng": -48.571,
+   "aprox": true,
+   "bairro": "Estreito · Beira-Mar Continental",
+   "descricao": "Roda de capoeira em piquenique na Beira-Mar Continental. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-procasa-sj",
+   "nome": "Roda do Procasa",
+   "categoria": "capoeira",
+   "lat": -27.5862,
+   "lng": -48.6083,
+   "aprox": true,
+   "bairro": "Procasa · Barreiros · São José",
+   "descricao": "Roda de capoeira na comunidade do Procasa, em São José. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-centro-historico-sj",
+   "nome": "Roda do Centro Histórico de São José",
+   "categoria": "capoeira",
+   "lat": -27.6157,
+   "lng": -48.6279,
+   "aprox": true,
+   "bairro": "Centro Histórico · São José",
+   "descricao": "Roda de capoeira no Centro Histórico de São José, onde fica a Casa da Cultura. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-bela-vista-sj",
+   "nome": "Roda do Centro Comunitário Bela Vista",
+   "categoria": "capoeira",
+   "lat": -27.57312,
+   "lng": -48.62083,
+   "aprox": true,
+   "bairro": "Bela Vista · São José",
+   "descricao": "Roda de capoeira no Centro Comunitário do bairro Bela Vista, em São José. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-passagem-maciambu",
+   "nome": "Roda da Passagem do Maciambu",
+   "categoria": "capoeira",
+   "lat": -27.82965,
+   "lng": -48.61569,
+   "aprox": true,
+   "bairro": "Passagem do Maciambu · Palhoça",
+   "descricao": "Roda de capoeira na Passagem do Maciambu, em Palhoça. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-praca-palhoca",
+   "nome": "Roda da Praça · Centro de Palhoça",
+   "categoria": "capoeira",
+   "lat": -27.64572,
+   "lng": -48.66742,
+   "aprox": true,
+   "bairro": "Centro · Palhoça",
+   "descricao": "Roda de capoeira na praça central de Palhoça. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "roda-bom-viver-biguacu",
+   "nome": "Roda do Bom Viver",
+   "categoria": "capoeira",
+   "lat": -27.53198,
+   "lng": -48.63972,
+   "aprox": true,
+   "bairro": "Bom Viver · Biguaçu",
+   "descricao": "Roda de capoeira no bairro Bom Viver, em Biguaçu. Listada no Mapeamento Social da Capoeira atualizado na 14ª Semana da Capoeira (Fórum da Capoeira da Grande Florianópolis, 2025).",
+   "participar": "Roda aberta ao público para assistir. Para jogar, chegue com respeito e peça licença a quem comanda a roda.",
+   "confirmar": "O mapeamento do Fórum da Capoeira lista a roda, mas não traz dia e horário; confirme com os grupos ou com o Fórum antes de ir.",
+   "tags": [
+    "roda de capoeira",
+    "roda de rua"
+   ]
+  },
+  {
+   "id": "forum-capoeira",
+   "nome": "Fórum da Capoeira da Grande Florianópolis",
+   "categoria": "capoeira",
+   "lat": -27.5938,
+   "lng": -48.5501,
+   "aprox": true,
+   "bairro": "Grande Florianópolis (sem sede fixa)",
+   "descricao": "Coletivo aberto criado em 8 de março de 2014, que reúne grupos, mestras e mestres de vários estilos da capoeira da Grande Florianópolis. Organiza a Semana da Capoeira em torno do Dia Municipal da Capoeira (1º de agosto, Lei nº 8.212/2010), as Rodas da Cidade e o Mapeamento Social da Capoeira. Na contagem de 2025, a Grande Florianópolis tinha ao menos 4 mestras e 47 mestres em atividade.",
+   "participar": "O Fórum é aberto a representantes de qualquer grupo. Contato publicado no mapeamento: forumcapoeira@gmail.com. Grupos podem atualizar seus dados no formulário do Mapeamento Social da Capoeira.",
+   "tags": [
+    "capoeira",
+    "articulação",
+    "patrimônio imaterial",
+    "mapeamento"
+   ],
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf"
   }
  ],
  "eventos": [
@@ -5150,6 +5517,19 @@
    "descricao": "Roda de choro às terças-feiras em Coqueiros.",
    "fonte": "https://chorolab.com/rodas-de-choro/",
    "confirmar": "Listagem sem data de atualização e sem endereço; confirme antes de ir."
+  },
+  {
+   "id": "dia-capoeira-2027",
+   "ponto_id": "forum-capoeira",
+   "titulo": "Dia Municipal da Capoeira · Semana da Capoeira 2027",
+   "categoria": "capoeira",
+   "data": "2027-08-01",
+   "repete": "nao",
+   "preco": "Grátis",
+   "sem_horario": true,
+   "descricao": "Data instituída pela Lei Municipal nº 8.212/2010. O Fórum da Capoeira organiza a Semana da Capoeira com rodas, rodas de conversa e oficinas em Florianópolis, São José, Palhoça e Biguaçu.",
+   "fonte": "https://www.udesc.br/arquivos/ceart/id_cpmenu/3180/Mapeamento_Social_da_Capoeira_em_Florian_polis_15968236631292_3180.pdf",
+   "confirmar": "Programação de 2027 ainda não divulgada; em 2025 a abertura foi em 1º/8 no Museu da Escola Catarinense."
   }
  ]
 }
