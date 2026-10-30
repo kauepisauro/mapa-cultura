@@ -1457,20 +1457,24 @@
   },
   {
    "id": "bar-opium",
-   "nome": "Bar Opium",
+   "nome": "Opium · Casa Opium",
    "categoria": "festa",
-   "lat": -27.5965,
-   "lng": -48.554,
+   "lat": -27.60046,
+   "lng": -48.54842,
    "aprox": true,
    "bairro": "Centro",
-   "descricao": "Bar LGBTQIA+ com shows de humor, drag queens e burlesco; já sediou batalhas de drag.",
+   "descricao": "Clube alternativo no Centro, inspirado nos anos 1920, com noites de drag, burlesco, comédia, karaokê e festas de pop, pós-punk e new wave (como a MODE). Funciona às sextas e sábados.",
    "tags": [
     "LGBTQIA+",
+    "burlesco",
     "drag",
-    "burlesco"
+    "festa"
    ],
-   "fonte": "https://floripa.lgbt/vida-noturna/baladas-lgbt-florianopolis/",
-   "confirmar": "Endereço não confirmado (um guia cita R. Trajano, 341, mas a mesma numeração aparece para outro bar). Confirme local e horários."
+   "fonte": "https://www.pensanoevento.com.br/casas/819/opium",
+   "confirmar": "Programação muda a cada semana; confira no perfil da casa antes de ir.",
+   "endereco": "Avenida Hercílio Luz, 892 · Centro",
+   "horario": "Sextas e sábados, 21h–4h",
+   "instagram": "@bar.opium"
   },
   {
    "id": "bar-do-deca",
@@ -3920,6 +3924,48 @@
     "patrimônio",
     "Lagoa"
    ]
+  },
+  {
+   "id": "sarau-da-costeira",
+   "nome": "Sarau da Costeira",
+   "categoria": "literatura",
+   "lat": -27.6342,
+   "lng": -48.5228,
+   "aprox": true,
+   "bairro": "Costeira do Pirajubaé",
+   "endereco": "Pista de skate da Costeira do Pirajubaé",
+   "descricao": "Sarau comunitário realizado desde 2018, com mais de 28 edições, que ocupa a pista de skate do bairro com música, poesia, biblioteca comunitária, xadrez e atividades para crianças.",
+   "participar": "Propostas de apresentação e atividades são recebidas pelo perfil do sarau.",
+   "instagram": "@sarau_dacosteira",
+   "confirmar": "Edições sem calendário fixo; a 29ª foi em 11/10/2026. Acompanhe o perfil para a próxima data.",
+   "tags": [
+    "sarau",
+    "poesia",
+    "música",
+    "skate",
+    "biblioteca comunitária"
+   ],
+   "fonte": "https://www.federacaoanarquista.com.br/chamado-para-a-2-feira-de-ideias-para-adiar-o-fim-de-floripa-29-sarau-da-costeira"
+  },
+  {
+   "id": "fanfarra-da-ponte",
+   "nome": "Fanfarra da Ponte · Escola Popular da Ponte",
+   "categoria": "samba",
+   "lat": -27.5933,
+   "lng": -48.5633,
+   "aprox": true,
+   "bairro": "Centro · cabeceira insular da Ponte Hercílio Luz",
+   "descricao": "Fanfarra criada em 2020, com mais de 70 integrantes entre músicos profissionais e amadores, que faz cortejos no Carnaval (saindo da Ponte Hercílio Luz e do Bugio) e participa do festival HONK! Floripa. Mantém a Escola Popular da Ponte, com aulas coletivas de sopro e percussão.",
+   "participar": "As aulas da Escola Popular da Ponte começam no início do ano, com inscrição prévia no site do grupo; os ensaios abertos para o Carnaval costumam ser anunciados a partir de janeiro.",
+   "confirmar": "Datas de ensaios e aulas de 2027 ainda não divulgadas.",
+   "tags": [
+    "fanfarra",
+    "sopro",
+    "percussão",
+    "carnaval de rua",
+    "aulas de música"
+   ],
+   "fonte": "https://www.tvbv.com.br/carnaval-fanfarra-da-ponte-faz-ensaio-gratuito-em-florianopolis/"
   }
  ],
  "eventos": [
@@ -6121,6 +6167,41 @@
    "fonte": "https://www.desterro.org/2026/03/13/quando-a-negritude-desfila/",
    "confirmar": "Data estimada pela tradição (sexta-feira de Carnaval). O cortejo de 2027 e o horário de saída ainda não foram anunciados pelo grupo.",
    "sem_horario": true
+  },
+  {
+   "id": "opium-noites",
+   "ponto_id": "bar-opium",
+   "titulo": "Noites no Opium (drag, burlesco, festas)",
+   "categoria": "festa",
+   "data": "2026-10-30",
+   "inicio": "21:00",
+   "fim": "04:00",
+   "repete": "dias_semana",
+   "dias_semana": [
+    5,
+    6
+   ],
+   "preco": "Consulte",
+   "descricao": "A casa abre às sextas e sábados com programação que alterna drag, burlesco, comédia, karaokê e festas temáticas.",
+   "fonte": "https://www.tripadvisor.com/Attraction_Review-g303576-d25156313-Reviews-Opium-Florianopolis_State_of_Santa_Catarina.html",
+   "confirmar": "Atração de cada noite muda; confira no perfil @bar.opium."
+  },
+  {
+   "id": "odara-noites",
+   "ponto_id": "casa-odara",
+   "titulo": "Noites na Casa Odara (shows e rodas)",
+   "categoria": "samba",
+   "data": "2026-10-30",
+   "repete": "dias_semana",
+   "dias_semana": [
+    5,
+    6
+   ],
+   "preco": "Consulte",
+   "sem_horario": true,
+   "descricao": "Programação de shows, rodas de samba e festas de cultura negra, concentrada às sextas e sábados à noite.",
+   "fonte": "https://tocaonde.com.br/venues/131698-casa-odara-florianopolis",
+   "confirmar": "Programação semanal não publicada com antecedência; confira no Instagram ou no Sympla da casa."
   }
  ]
 }
