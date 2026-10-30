@@ -149,7 +149,14 @@ export function linkSite(v) {
   const s = String(v).trim();
   return /^https?:\/\//i.test(s) ? s : `https://${s}`;
 }
-export const linkRota = (p) => `https://www.openstreetmap.org/directions?to=${p.lat}%2C${p.lng}`;
+/** Rota no app de mapas do celular. Ponto aproximado com endereço → busca pelo endereço escrito (acerta o número). */
+export const linkRota = (p) => {
+  const cidade = /São José|Palhoça|Biguaçu|Águas Mornas|Santo Amaro/.exec(p.bairro || '')?.[0] || 'Florianópolis';
+  const destino = p.aprox && p.endereco
+    ? `${String(p.endereco).replace(/\(.*?\)/g, '').trim()}, ${cidade} - SC`
+    : `${p.lat},${p.lng}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destino)}`;
+};
 export const linkGoogleMaps = (p) => `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
 
 // ---------- calendário (.ics) ----------

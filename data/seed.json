@@ -375,8 +375,8 @@
    "id": "galeria-berlin",
    "nome": "Galeria Berlin",
    "categoria": "arte",
-   "lat": -27.5946,
-   "lng": -48.5503,
+   "lat": -27.58876,
+   "lng": -48.54491,
    "bairro": "Centro",
    "descricao": "Galeria de arte do Centro, na Rua Vítor Konder, 409.",
    "aprox": true,
@@ -385,7 +385,8 @@
     "exposições"
    ],
    "horario": "Terça a sábado, 13h30–23h",
-   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/10-exposicoes-arte-gratuitas-florianopolis-outubro-2026/"
+   "fonte": "https://www.deolhonailha.com.br/florianopolis/noticias/10-exposicoes-arte-gratuitas-florianopolis-outubro-2026/",
+   "endereco": "Rua Vítor Konder, 409"
   },
   {
    "id": "fundacao-hassis",
@@ -636,8 +637,8 @@
    "id": "instituto-ecologizacao",
    "nome": "Instituto de Ecologização · Tapera",
    "categoria": "atelie",
-   "lat": -27.705,
-   "lng": -48.557,
+   "lat": -27.69521,
+   "lng": -48.55146,
    "bairro": "Tapera",
    "descricao": "Instituto na Tapera, no sul da Ilha, que recebe oficinas comunitárias de cerâmica.",
    "aprox": true,
@@ -646,7 +647,8 @@
     "oficina",
     "comunidade"
    ],
-   "fonte": "https://suldefloripa.com.br/oficinas-gratuitas-de-ceramica-estao-com-inscricoes-abertas-na-tapera-em-florianopolis/"
+   "fonte": "https://suldefloripa.com.br/oficinas-gratuitas-de-ceramica-estao-com-inscricoes-abertas-na-tapera-em-florianopolis/",
+   "endereco": "Rua José Olímpio da Silva, 1326"
   },
   {
    "id": "centro-cultural-veras",
@@ -668,8 +670,8 @@
    "id": "casa-literatura",
    "nome": "Casa da Literatura Catarinense",
    "categoria": "literatura",
-   "lat": -27.5962,
-   "lng": -48.5499,
+   "lat": -27.59775,
+   "lng": -48.54905,
    "bairro": "Centro",
    "aprox": true,
    "descricao": "Espaço dedicado à literatura de Santa Catarina, no Centro de Florianópolis. Recebe atividades de encontros literários e festivais, como o Ponte de Palavras (13 a 15/11/2026) e o Festival Choro Mulheril.",
@@ -679,7 +681,8 @@
     "Centro"
    ],
    "fonte": "https://floripa.com/a-cidade/cultura/ponte-de-palavras-tudo-sobre-o-encontro-literario-de-florianopolis/",
-   "horario": "Consulte a programação da Casa. Localização aproximada no Centro"
+   "horario": "Consulte a programação da Casa. Localização aproximada no Centro",
+   "endereco": "Praça XV de Novembro, esquina com a Rua Victor Meirelles"
   },
   {
    "id": "ticen",
@@ -1041,8 +1044,8 @@
    "id": "cais-escola-artes",
    "nome": "CAIS Escola de Artes",
    "categoria": "atelie",
-   "lat": -27.6075,
-   "lng": -48.516,
+   "lat": -27.60892,
+   "lng": -48.51689,
    "aprox": true,
    "bairro": "Pantanal",
    "descricao": "Escola de artes visuais aberta em 2026 por Kamilla Nunes e Aline Natureza (CAIS Editora), com cursos de desenho, pintura, aquarela, história da arte e curadoria para crianças, jovens e adultos, além de ateliê compartilhado para artistas e estudantes.",
@@ -1053,7 +1056,8 @@
     "artes visuais"
    ],
    "fonte": "https://acontecendoaqui.com.br/?p=252848",
-   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Pantanal)."
+   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Pantanal).",
+   "endereco": "Rua Vereador Frederico Veras, 159, sala 4"
   },
   {
    "id": "lanterna-magica-ribeirao",
@@ -1111,8 +1115,8 @@
    "id": "kazabaka",
    "nome": "Kaza das Artes KazaBaka",
    "categoria": "teatro",
-   "lat": -27.5935,
-   "lng": -48.5895,
+   "lat": -27.59348,
+   "lng": -48.58315,
    "aprox": true,
    "bairro": "Estreito",
    "descricao": "Sede da KazaBaka Cia. de Teatro, na parte continental de Florianópolis, onde a companhia apresenta seus espetáculos.",
@@ -1122,7 +1126,8 @@
     "continente"
    ],
    "fonte": "https://acontecendoaqui.com.br/colunas/de-floripa-que-horror-a-circuito-mundial-rock-na-agenda-da-semana/",
-   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Estreito)."
+   "confirmar": "Endereço exato não informado na fonte (apenas o bairro Estreito).",
+   "endereco": "Rua Dr. Heitor Blum, 687"
   },
   {
    "id": "museu-victor-meirelles",
@@ -1405,8 +1410,8 @@
    "id": "mada-bar",
    "nome": "Madá Bar (antigo Madalena Bar)",
    "categoria": "festa",
-   "lat": -27.596,
-   "lng": -48.55,
+   "lat": -27.59855,
+   "lng": -48.54862,
    "aprox": true,
    "bairro": "Centro",
    "descricao": "Bar de dois andares no Centro, citado em guias como espaço seguro para o público LGBTQIA+, com sócias lésbicas. Recebe festas de música eletrônica, como a Undrsystem Showcase (2025).",
@@ -1416,7 +1421,8 @@
     "lésbicas"
    ],
    "fonte": "https://www.nsctotal.com.br/noticias/guia-lista-bares-e-roles-lgbtqia-em-florianopolis-confira",
-   "confirmar": "Endereço não confirmado (um guia cita R. Tiradentes, 233, mesmo endereço atribuído a outro bar). Nome atual 'Madá Bar' segundo https://shotgun.live/pt-br/events/undrsystem-showcase-005."
+   "confirmar": "Endereço não confirmado (um guia cita R. Tiradentes, 233, mesmo endereço atribuído a outro bar). Nome atual 'Madá Bar' segundo https://shotgun.live/pt-br/events/undrsystem-showcase-005.",
+   "endereco": "Rua Victor Meirelles, 230"
   },
   {
    "id": "jivago-social-club",
@@ -1693,8 +1699,8 @@
    "id": "engenho-andrade",
    "nome": "Casarão Engenho dos Andrade",
    "categoria": "popular",
-   "lat": -27.506,
-   "lng": -48.517,
+   "lat": -27.5081,
+   "lng": -48.51862,
    "aprox": true,
    "bairro": "Santo Antônio de Lisboa",
    "descricao": "Casarão rústico de estilo açoriano datado de 1860, preservado pela própria família, que guarda equipamentos de fabricação de farinha de mandioca, açúcar mascavo e aguardente de cana. Fica no caminho da Rua Caminho dos Açores.",
@@ -1705,7 +1711,8 @@
     "patrimônio"
    ],
    "fonte": "https://quantocustaviajar.com/blog/santo-antonio-de-lisboa/",
-   "confirmar": "Fonte de blog de viagem; o local pode estar fechado e a entrada depende de autorização da família."
+   "confirmar": "Fonte de blog de viagem; o local pode estar fechado e a entrada depende de autorização da família.",
+   "endereco": "Rua Caminho dos Açores (sem número)"
   },
   {
    "id": "engenho-costa-lagoa",
@@ -2077,11 +2084,11 @@
    "id": "protegidos-da-princesa",
    "nome": "Os Protegidos da Princesa · escola de samba",
    "categoria": "samba",
-   "lat": -27.57322,
-   "lng": -48.51126,
+   "lat": -27.57318,
+   "lng": -48.51133,
    "aprox": true,
    "bairro": "Itacorubi",
-   "endereco": "Rua Coronel Luiz Caldeira, s/n, Itacorubi",
+   "endereco": "Rua Coronel Luiz Caldeira, 200",
    "descricao": "Escola de samba fundada em 18 de outubro de 1948, ligada às origens no Morro do Mocotó; o nome homenageia a princesa Isabel. É uma das escolas mais vezes campeãs do Carnaval de Florianópolis e desfila no Carnaval 2027.",
    "tags": [
     "escola de samba",
@@ -2089,14 +2096,14 @@
     "cultura negra"
    ],
    "fonte": "https://portalelegis.alesc.sc.gov.br/documentos/NpX96",
-   "confirmar": "Endereço vem do cadastro da escola em documento de 2024; a sede de ensaios pode ser outra. Confirme datas de ensaio nas redes da escola."
+   "confirmar": "Endereço vem do cadastro da escola em documento de 2024; a sede de ensaios pode ser outra. Confirme datas de ensaio nas redes da escola. Uma reportagem de 2026 situa a quadra no Morro do Mocotó; confirme o local dos ensaios."
   },
   {
    "id": "embaixada-copa-lord",
    "nome": "Embaixada Copa Lord · escola de samba",
    "categoria": "samba",
-   "lat": -27.5905,
-   "lng": -48.542,
+   "lat": -27.5934,
+   "lng": -48.53287,
    "aprox": true,
    "bairro": "Monte Serrat (Maciço do Morro da Cruz)",
    "descricao": "Sociedade Recreativa Cultural e Samba Embaixada Copa Lord, fundada em 1955 e nascida na comunidade de Nossa Senhora do Mont Serrat, no Morro da Cruz. Um de seus fundadores, Nego Quirido, dá nome à passarela do samba da cidade.",
@@ -2106,7 +2113,8 @@
     "Maciço do Morro da Cruz"
    ],
    "fonte": "https://anppom.org.br/anais/anaiscongresso_anppom_2007/etnomusicologia/etnom_ADSilva.pdf",
-   "confirmar": "Localização pela comunidade de origem, não pelo endereço da quadra. Confirme local e datas de ensaio nas redes da escola."
+   "confirmar": "Localização pela comunidade de origem, não pelo endereço da quadra. Confirme local e datas de ensaio nas redes da escola.",
+   "endereco": "Rua General Vieira da Rosa, 241"
   },
   {
    "id": "sos-lagoa",
@@ -2975,9 +2983,9 @@
    "id": "cepagro",
    "nome": "Cepagro · Centro de Estudos e Promoção da Agricultura de Grupo",
    "categoria": "social",
-   "lat": -27.585,
-   "lng": -48.505,
-   "aprox": true,
+   "lat": -27.58225,
+   "lng": -48.5052,
+   "aprox": false,
    "bairro": "Itacorubi · Florianópolis",
    "descricao": "Organização de agroecologia e agricultura urbana com sede no Itacorubi. Promoveu o ciclo gratuito de oficinas práticas “Saber na Prática”, sobre compostagem, horta agroecológica, plantas medicinais, produção de mudas e PANCs.",
    "participar": "Contato informado na fonte: cepagro@cepagro.org.br.",
@@ -2988,7 +2996,8 @@
     "compostagem"
    ],
    "fonte": "https://cadernos.aba-agroecologia.org.br/cadernos/article/download/218/1879/3824",
-   "confirmar": "Oficinas descritas em artigo de 2018; agenda atual não confirmada. Endereço exato não consta no trecho consultado."
+   "confirmar": "Oficinas descritas em artigo de 2018; agenda atual não confirmada. Endereço exato não consta no trecho consultado.",
+   "endereco": "Rodovia Admar Gonzaga, 1346 (CCA/UFSC)"
   },
   {
    "id": "culturaberta-matura",
@@ -3007,7 +3016,8 @@
     "educação ambiental"
    ],
    "fonte": "https://acontecendoaqui.com.br/?p=161386",
-   "confirmar": "Programação de 2023; confirmar se o projeto segue ativo em 2026. Localização aproximada (bairro)."
+   "confirmar": "Programação de 2023; confirmar se o projeto segue ativo em 2026. Localização aproximada (bairro).",
+   "endereco": "Rodovia SC-405 (Rod. Francisco Magno Vieira), 3451"
   },
   {
    "id": "casa-chico-mendes",
@@ -3025,7 +3035,8 @@
     "Continente"
    ],
    "fonte": "https://periodicos.ufsc.br/index.php/zeroseis/article/download/1980-4512.2011n24p57/18185/62668",
-   "confirmar": "Fonte de 2011; atividades atuais, endereço e horários da ONG não confirmados."
+   "confirmar": "Fonte de 2011; atividades atuais, endereço e horários da ONG não confirmados.",
+   "endereco": "Rua Pau Brasil, 88"
   },
   {
    "id": "goj-ta-sa",
@@ -3104,8 +3115,8 @@
    "id": "unidos-da-coloninha",
    "nome": "Unidos da Coloninha · escola de samba",
    "categoria": "samba",
-   "lat": -27.5935,
-   "lng": -48.5975,
+   "lat": -27.58883,
+   "lng": -48.59048,
    "aprox": true,
    "bairro": "Coloninha · Florianópolis (Continente)",
    "descricao": "Sociedade Recreativa e Cultural Unidos da Coloninha, fundada em 1962 na comunidade da Coloninha, na parte continental de Florianópolis. Filiada à Liga das Escolas de Samba de Florianópolis (LIESF) e várias vezes campeã do Carnaval da cidade.",
@@ -3115,7 +3126,8 @@
     "Continente"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pela comunidade, não pelo endereço da quadra. Em 2023 os ensaios eram no Estádio Orlando Scarpelli (Estreito): bateria às terças, ensaio geral às quintas e ensaios com atrações aos domingos (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme local e dias da temporada 2027 nas redes da escola."
+   "confirmar": "Localização pela comunidade, não pelo endereço da quadra. Em 2023 os ensaios eram no Estádio Orlando Scarpelli (Estreito): bateria às terças, ensaio geral às quintas e ensaios com atrações aos domingos (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme local e dias da temporada 2027 nas redes da escola.",
+   "endereco": "Rua Tupinambá, 475"
   },
   {
    "id": "consulado-escola-samba",
@@ -3156,8 +3168,8 @@
    "id": "nacao-guarany",
    "nome": "Nação Guarany · escola de samba",
    "categoria": "samba",
-   "lat": -27.642,
-   "lng": -48.672,
+   "lat": -27.64648,
+   "lng": -48.68113,
    "aprox": true,
    "bairro": "Caminho Novo · Palhoça",
    "descricao": "Escola de samba fundada em 2009 no bairro Caminho Novo, em Palhoça, filiada à LIESF e participante dos desfiles de Florianópolis. Para o Carnaval 2027 escolheu samba-enredo em homenagem ao povo Tupinambá.",
@@ -3167,16 +3179,17 @@
     "Palhoça"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pelo bairro. Em 2019 os ensaios eram às terças e quintas, às 19h30, no ginásio do bairro Caminho Novo (ND+, https://ndmais.com.br/cultura/conheca-o-trabalho-das-escolas-de-samba-de-florianopolis-durante-o-ano/). Informação antiga; confirme nas redes da escola."
+   "confirmar": "Localização pelo bairro. Em 2019 os ensaios eram às terças e quintas, às 19h30, no ginásio do bairro Caminho Novo (ND+, https://ndmais.com.br/cultura/conheca-o-trabalho-das-escolas-de-samba-de-florianopolis-durante-o-ano/). Informação antiga; confirme nas redes da escola.",
+   "endereco": "Rua José de Anchieta, 140 (Ginásio Caminho Novo)"
   },
   {
    "id": "jardim-das-palmeiras-escola-samba",
    "nome": "Jardim das Palmeiras · escola de samba",
    "categoria": "samba",
-   "lat": -27.58,
-   "lng": -48.653,
+   "lat": -27.59434,
+   "lng": -48.64375,
    "aprox": true,
-   "bairro": "Jardim das Palmeiras / Forquilhinha · São José",
+   "bairro": "Jardim das Palmeiras · São José",
    "descricao": "Escola de samba fundada em 2005 na comunidade Jardim das Palmeiras, na Forquilhinha, em São José. Filiada à LIESF, desfila no Carnaval de Florianópolis.",
    "tags": [
     "escola de samba",
@@ -3184,14 +3197,15 @@
     "São José"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pela comunidade; a fonte não informa endereço de quadra nem dias de ensaio. Confirme nas redes da escola."
+   "confirmar": "Localização pela comunidade; a fonte não informa endereço de quadra nem dias de ensaio. Confirme nas redes da escola.",
+   "endereco": "Rua Orivaldo Martins, 45"
   },
   {
    "id": "imperio-vermelho-e-branco",
    "nome": "Império Vermelho e Branco · escola de samba",
    "categoria": "samba",
-   "lat": -27.6075,
-   "lng": -48.5165,
+   "lat": -27.60595,
+   "lng": -48.51825,
    "aprox": true,
    "bairro": "Pantanal · Florianópolis",
    "descricao": "Escola de samba fundada em 2012 no bairro Pantanal. Ficou em terceiro lugar no Carnaval 2026 de Florianópolis.",
@@ -3201,14 +3215,15 @@
     "Pantanal"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às terças, 20h, no ginásio da escola Beatriz, no Pantanal (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às terças, 20h, no ginásio da escola Beatriz, no Pantanal (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027.",
+   "endereco": "Rua Deputado Antônio Edu Vieira, 797"
   },
   {
    "id": "uniao-ilha-da-magia",
    "nome": "União da Ilha da Magia · escola de samba",
    "categoria": "samba",
-   "lat": -27.603,
-   "lng": -48.469,
+   "lat": -27.6107,
+   "lng": -48.45272,
    "aprox": true,
    "bairro": "Lagoa da Conceição · Florianópolis",
    "descricao": "Escola de samba da Lagoa da Conceição, fundada em 2008. Campeã do Carnaval de Florianópolis em 2011, 2012 e 2023.",
@@ -3218,14 +3233,15 @@
     "Lagoa da Conceição"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às sextas e domingos, 19h30, na Praça Bento Silvério (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+   "confirmar": "Localização pelo bairro. Em 2023 os ensaios eram às sextas e domingos, 19h30, na Praça Bento Silvério (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027.",
+   "endereco": "Servidão Manoel Luiz Duarte (sem número)"
   },
   {
    "id": "academicos-sul-da-ilha",
    "nome": "Acadêmicos do Sul da Ilha · escola de samba",
    "categoria": "samba",
-   "lat": -27.693,
-   "lng": -48.56,
+   "lat": -27.68679,
+   "lng": -48.55897,
    "aprox": true,
    "bairro": "Tapera · Florianópolis",
    "descricao": "Agremiação da Tapera, fundada em 2008 e escola de samba desde 2015. Ficou em quarto lugar no Carnaval 2026 de Florianópolis.",
@@ -3236,7 +3252,8 @@
     "Tapera"
    ],
    "fonte": "https://pt.wikipedia.org/wiki/Liga_das_Escolas_de_Samba_de_Florian%C3%B3polis",
-   "confirmar": "Localização pelo bairro. Em 2023 a bateria ensaiava às terças, 20h, no Conselho Comunitário da Tapera, e o ensaio geral era aos domingos, 20h, na Praça da Tapera (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027."
+   "confirmar": "Localização pelo bairro. Em 2023 a bateria ensaiava às terças, 20h, no Conselho Comunitário da Tapera, e o ensaio geral era aos domingos, 20h, na Praça da Tapera (ND+, https://ndmais.com.br/cultura/carnaval-2023-saiba-como-acompanhar-os-ensaios-das-escolas-de-samba-de-florianopolis/). Confirme a temporada 2027.",
+   "endereco": "Servidão Fortunato José Albino (sem número)"
   },
   {
    "id": "imperatriz-grande-ilha",
@@ -3299,8 +3316,8 @@
    "id": "o-araca-lagoa",
    "nome": "O Araçá",
    "categoria": "samba",
-   "lat": -27.602,
-   "lng": -48.47,
+   "lat": -27.60216,
+   "lng": -48.46918,
    "aprox": true,
    "bairro": "Lagoa da Conceição · Florianópolis",
    "descricao": "Bar na Lagoa da Conceição com programação fixa de samba aos domingos.",
@@ -3311,7 +3328,8 @@
     "Lagoa da Conceição"
    ],
    "fonte": "https://ndmais.com.br/turismo/11-lugares-para-curtir-roda-de-samba-em-florianopolis/",
-   "confirmar": "Reportagem de fim de 2024, sem horário nem endereço. Confirme se a roda continua e o horário."
+   "confirmar": "Reportagem de fim de 2024, sem horário nem endereço. Confirme se a roda continua e o horário.",
+   "endereco": "Rua Manoel Severino de Oliveira, 19"
   },
   {
    "id": "bar-do-noel",
@@ -3329,7 +3347,8 @@
     "Centro"
    ],
    "fonte": "https://ndmais.com.br/turismo/11-lugares-para-curtir-roda-de-samba-em-florianopolis/",
-   "confirmar": "Reportagem de fim de 2024, sem horários. Posição pela Travessa Ratcliff; confirme horários antes de ir."
+   "confirmar": "Reportagem de fim de 2024, sem horários. Posição pela Travessa Ratcliff; confirme horários antes de ir.",
+   "endereco": "Travessa Ratcliff (sem número)"
   },
   {
    "id": "rancho-do-bastiao",
@@ -3383,7 +3402,8 @@
     "Continente"
    ],
    "fonte": "https://chorolab.com/rodas-de-choro/",
-   "confirmar": "Listagem sem data de atualização e sem endereço. Confirme se a roda continua, o local exato e o horário."
+   "confirmar": "Listagem sem data de atualização e sem endereço. Confirme se a roda continua, o local exato e o horário. O local (Boteco Zé Mané) foi deduzido pelo nome; confirme antes de ir.",
+   "endereco": "Rua Desembargador Pedro Silva, 2360 (Boteco Zé Mané)"
   },
   {
    "id": "roda-catedral",
@@ -3834,7 +3854,7 @@
    "lng": -48.5491,
    "aprox": true,
    "bairro": "Centro",
-   "endereco": "Rua João Pinto, 198 · Centro · Florianópolis (a fonte também cita a Rua Antônio Luz, 159)",
+   "endereco": "Rua João Pinto, 198 (2ª entrada pela Rua Antônio 'Nico' Luz, 159)",
    "descricao": "Galeria de arte no Centro de Florianópolis com calendário anual de exposições de entrada gratuita.",
    "fonte": "https://en.guiafloripa.com.br/agenda/exposicoes/artista-mineiro-abre-calendario-expositivo-da-galeria-lama.php",
    "tags": [
@@ -3924,7 +3944,8 @@
     "açoriano",
     "patrimônio",
     "Lagoa"
-   ]
+   ],
+   "endereco": "Rua Francisca Luiza Vieira, 220"
   },
   {
    "id": "sarau-da-costeira",
